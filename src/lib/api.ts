@@ -29,7 +29,13 @@ export function getItemBySlug(collection: string, slug: string, lang: string) {
     excerpt: data.excerpt || '',
     ogImage: data.ogImage || { url: data.coverImage || '/assets/blog/preview/cover.jpg' },
     content,
-    preview: data.preview || false, 
+    preview: data.preview || false,
+    intro: data.intro || '',
+    location: data.location || '',
+    type: data.type || '',
+    sorting: data.sorting || 0,
+    area: data.area || [],
+    skill: data.skill || [],
   };
 
   return post;

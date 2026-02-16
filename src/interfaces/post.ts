@@ -12,4 +12,11 @@ export type Post = {
   };
   content: string;
   preview?: boolean;
+  // New fields
+  intro?: string;
+  location?: string;
+  type?: string;
+  sorting?: number;
+  area?: string[];
+  skill?: string[];
 };

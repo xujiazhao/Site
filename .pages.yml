@@ -16,22 +16,25 @@ content:
         label: Date
         type: date
         required: true
+      - name: intro
+        label: Intro
+        type: text
+      - name: location
+        label: Location
+        type: string
+      - name: type
+        label: Type
+        type: string
+      - name: sorting
+        label: Sorting
+        type: number
+      - name: area
+        label: Area
+        type: string
+        list: true
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -49,22 +52,25 @@ content:
         label: Date
         type: date
         required: true
+      - name: intro
+        label: Intro
+        type: text
+      - name: location
+        label: Location
+        type: string
+      - name: type
+        label: Type
+        type: string
+      - name: sorting
+        label: Sorting
+        type: number
+      - name: area
+        label: Area
+        type: string
+        list: true
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -82,22 +88,15 @@ content:
         label: Date
         type: date
         required: true
+      - name: intro
+        label: Intro
+        type: text
+      - name: sorting
+        label: Sorting
+        type: number
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -115,22 +114,15 @@ content:
         label: Date
         type: date
         required: true
+      - name: intro
+        label: Intro
+        type: text
+      - name: sorting
+        label: Sorting
+        type: number
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -148,22 +140,12 @@ content:
         label: Date
         type: date
         required: true
+      - name: type
+        label: Type
+        type: string
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -181,22 +163,12 @@ content:
         label: Date
         type: date
         required: true
+      - name: type
+        label: Type
+        type: string
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -214,22 +186,13 @@ content:
         label: Date
         type: date
         required: true
+      - name: skill
+        label: Skill
+        type: string
+        list: true
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
@@ -247,22 +210,13 @@ content:
         label: Date
         type: date
         required: true
+      - name: skill
+        label: Skill
+        type: string
+        list: true
       - name: coverImage
         label: Cover Image
         type: image
-      - name: excerpt
-        label: Excerpt
-        type: text
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - name: name
-            label: Name
-            type: string
-          - name: picture
-            label: Picture
-            type: image
       - name: body
         label: Body
         type: rich-text
