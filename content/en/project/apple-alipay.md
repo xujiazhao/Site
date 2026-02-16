@@ -14,7 +14,7 @@ In the Greater China area, Alipay had built a strong relationship with Apple’s
 
 I was in charge of continuously improving the binding flow of Alipay at AppStore:
 
-![Alipay’s binding has higher success rate and shorter time-on-task than WeChat](/assets/blog/project/apple-alipay/apple-alipay-Untitled.png)
+![Alipay’s binding has higher success rate and shorter time-on-task than WeChat](/assets/blog/apple-alipay/apple-alipay-Untitled.png)
 
 Alipay’s binding has higher success rate and shorter time-on-task than WeChat
 
@@ -22,15 +22,15 @@ Alipay was Apple’s first partner eWallet in Greater China. In 2016, Alipay est
 
 I took over this project in 2022. With my team’s efforts, we successfully convinced Apple to use MiniProgram to host the Zone. It was the first time Apple accepted media like MiniProgram. In this version of the Zone, I had redesigned the zone to have a much stronger Apple feeling. The new design looks much younger and suits youth. In this project, I communicated with Apples WW MarCom a lot to sell my design. Though there were some arguments between the two teams, we had finally convinced them that we understand Chinese users and their sense of aesthetics better than Apple.
 
-![Order Apple Zone to Newer Apple Zone as MiniProgram](/assets/blog/project/apple-alipay/apple-alipay-Untitled_3.png)
+![Order Apple Zone to Newer Apple Zone as MiniProgram](/assets/blog/apple-alipay/apple-alipay-Untitled_3.png)
 
 Order Apple Zone to Newer Apple Zone as MiniProgram
 
-![Key pages of the Apple Zone](/assets/blog/project/apple-alipay/apple-alipay-Untitled_1.png)
+![Key pages of the Apple Zone](/assets/blog/apple-alipay/apple-alipay-Untitled_1.png)
 
 Key pages of the Apple Zone
 
-![Apple Zone’s members’ credit system](/assets/blog/project/apple-alipay/apple-alipay-Untitled_2.png)
+![Apple Zone’s members’ credit system](/assets/blog/apple-alipay/apple-alipay-Untitled_2.png)
 
 Apple Zone’s members’ credit system
 

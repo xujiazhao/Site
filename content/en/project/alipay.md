@@ -18,19 +18,19 @@ My main job at Alipay+ is building its three payment products. Based on my under
 - Offline Payment
 - Auto Debit
 
-![Untitled](/assets/blog/project/alipay/alipay-Untitled.png)
+![Untitled](/assets/blog/alipay/alipay-Untitled.png)
 
-![Online Payment - from Alipay+ doc center](/assets/blog/project/alipay/alipay-Untitled_1.png)
+![Online Payment - from Alipay+ doc center](/assets/blog/alipay/alipay-Untitled_1.png)
 
 Online Payment - from Alipay+ doc center
 
-![Untitled](/assets/blog/project/alipay/alipay-Untitled_2.png)
+![Untitled](/assets/blog/alipay/alipay-Untitled_2.png)
 
-![Offline Payment - from Alipay+ doc center](/assets/blog/project/alipay/alipay-Untitled_3.png)
+![Offline Payment - from Alipay+ doc center](/assets/blog/alipay/alipay-Untitled_3.png)
 
 Offline Payment - from Alipay+ doc center
 
-![Auto Debit - from Alipay+ doc center](/assets/blog/project/alipay/alipay-Untitled_4.png)
+![Auto Debit - from Alipay+ doc center](/assets/blog/alipay/alipay-Untitled_4.png)
 
 Auto Debit - from Alipay+ doc center
 
@@ -60,18 +60,18 @@ As a payment network provider, it builds partnerships with Acquirers and Wallets
 
 Thus, I also define Alipay+ UX standards and guidance and manage part of the design work of **[Ant Intl Doc Platform](notion://www.notion.so/c236c15f690c4cbda5a5897ddb2e8db4)** to maintain Alipay+’s related product offerings.
 
-![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/blog/project/alipay/alipay-Untitled_5.png)
+![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/blog/alipay/alipay-Untitled_5.png)
 
 Alipay+ product & UX guidelines - screenshot from the doc center
 
-![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/blog/project/alipay/alipay-Untitled.png)
+![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/blog/alipay/alipay-Untitled.png)
 
 Alipay+’s acceptance mark generator - screenshot from the doc center
 
-![Searching - screenshot from the doc center](/assets/blog/project/alipay/alipay-Untitled_1.png)
+![Searching - screenshot from the doc center](/assets/blog/alipay/alipay-Untitled_1.png)
 
 Searching - screenshot from the doc center
 
-![API explorer - screenshot from the doc center](/assets/blog/project/alipay/alipay-Untitled_2.png)
+![API explorer - screenshot from the doc center](/assets/blog/alipay/alipay-Untitled_2.png)
 
 API explorer - screenshot from the doc center

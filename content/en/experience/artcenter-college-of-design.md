@@ -30,16 +30,16 @@ Other experiences & awards:
 - Departmental Scholarship;
 - Computer Lab Assistant;
 
-![Me first time applying for a scholarship.](/assets/blog/experience/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
+![Me first time applying for a scholarship.](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
 
 Me first time applying for a scholarship.
 
-![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/blog/experience/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
+![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
 
 Preparing the final presentation for SIG Combibloc’s sponsorship.
 
 About the SIG sponsorship, see: [SIG CombiONE](/en/project/sig-combione)
 
-![Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires. ](/assets/blog/experience/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.jpeg)
+![Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires. ](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.jpeg)
 
 Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires.

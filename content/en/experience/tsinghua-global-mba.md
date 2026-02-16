@@ -12,4 +12,4 @@ location: "Beijing  - Now"
 
 In September 2024, I began pursuing a Master of Business Administration at the School of Economics and Management, Tsinghua University.
 
-![合影.png](/assets/blog/experience/tsinghua-global-mba/tsinghua-global-mba-合影.png)
+![合影.png](/assets/blog/tsinghua-global-mba/tsinghua-global-mba-合影.png)

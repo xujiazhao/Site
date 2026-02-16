@@ -21,7 +21,7 @@ Based on the research of the existing product line/the market/users and my inter
 
 ### **Xiaomi's Current Product Line**
 
-![Untitled](/assets/blog/writing/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled.png)
+![Untitled](/assets/blog/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled.png)
 
 Currently, Xiaomi has one leading smart home brand: Mi Home, and other affiliated brands under the eco-system like Zhimi, Yunmi. This big family produces more than 200 different products, including smart appliances, customer electronics, furniture, accessories, and outdoor products.
 
@@ -82,10 +82,10 @@ Home supposed to be a place of happiness and laugh. U Home wants to create endle
 
 I consider Microsoft as a role model for U Home on the detailing. Its aesthetic characteristic on the Surface series is very powerful.
 
-![Untitled](/assets/blog/writing/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_1.png)
+![Untitled](/assets/blog/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_1.png)
 
 **Steelcase - environment language**
 
 I consider Steelcase as a role model for U Home on the general environment feeling. Its color, shape, atmosphere work well together.
 
-![Untitled](/assets/blog/writing/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_2.png)
+![Untitled](/assets/blog/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_2.png)

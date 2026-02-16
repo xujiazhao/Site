@@ -16,7 +16,7 @@ Although the search engine is a mature product, delivering quality news within i
 
 ### Business Growth
 
-![The iteration process of Bing News on mobile end](/assets/blog/project/bing-news/bing-news-Untitled.png)
+![The iteration process of Bing News on mobile end](/assets/blog/bing-news/bing-news-Untitled.png)
 
 The iteration process of Bing News on mobile end
 
@@ -34,11 +34,11 @@ Due to business growth pressure, I changed the news title color from black to "B
 
 ### User Experience
 
-![News landing page (triggered when user search for “news” related queries)](/assets/blog/project/bing-news/bing-news-Category_news.gif)
+![News landing page (triggered when user search for “news” related queries)](/assets/blog/bing-news/bing-news-Category_news.gif)
 
 News landing page (triggered when user search for “news” related queries)
 
-![Impactful event landing page (triggered when query match a big event)](/assets/blog/project/bing-news/bing-news-Untitled_1.png)
+![Impactful event landing page (triggered when query match a big event)](/assets/blog/bing-news/bing-news-Untitled_1.png)
 
 Impactful event landing page (triggered when query match a big event)
 
@@ -50,19 +50,19 @@ While continuously iterating the news module, I also took charge of designing tw
 
 ### News in Bing Chat (now Copilot)
 
-![Untitled](/assets/blog/project/bing-news/bing-news-Untitled_2.png)
+![Untitled](/assets/blog/bing-news/bing-news-Untitled_2.png)
 
 The AI boom in 2023 prompted Microsoft to launch Bing Chat and related capabilities promptly. Within 3 months, Microsoft rapidly rolled out hundreds of new features in Chat, among which the news module I was responsible for stood out as one of the WoW features.
 
 ### Trending on Bing
 
-![Trending on Bing in Bing homepage](/assets/blog/project/bing-news/bing-news-Untitled_3.png)
+![Trending on Bing in Bing homepage](/assets/blog/bing-news/bing-news-Untitled_3.png)
 
 Trending on Bing in Bing homepage
 
 I noted that in the China, Japan, and Korea, users are more sensitive to text-based news, whereas in Western markets, users are more responsive to images. I believe this difference is due to the varying information density and text readability in different languages. Therefore, I designed different versions of the user interface accordingly.
 
-![Trending on Bing landing page](/assets/blog/project/bing-news/bing-news-Untitled_4.png)
+![Trending on Bing landing page](/assets/blog/bing-news/bing-news-Untitled_4.png)
 
 Trending on Bing landing page
 
@@ -79,7 +79,7 @@ All feature shipments of Bing require a flight test first. The test results must
 
 Fortunately, we can leverage the immense traffic of the search engine to conduct extensive A/B testing. Additionally, Microsoft provides numerous mature professional tools to help us evaluate the effectiveness of design solutions. This allows me to efficiently measure and optimize the user experience, ensuring that every feature released achieves the best possible outcome.
 
-![AB Test example](/assets/blog/project/bing-news/bing-news-Untitled_5.png)
+![AB Test example](/assets/blog/bing-news/bing-news-Untitled_5.png)
 
 AB Test example
 
@@ -91,7 +91,7 @@ Bing News has very strict requirements for information authority and search neut
 
 Over the past year of managing the news product, I have developed very healthy and beneficial information consumption habits. Perhaps you can do the same—turn off algorithmic personalized recommendations on all content platforms and explore a wider variety of information. As I mentioned at the beginning, I hope more people can break out of their information cocoons. For example, in the feature below, I designed a **"Related News"** function for all top stories, allowing users to access a dedicated page for comprehensive coverage.
 
-![Untitled](/assets/blog/project/bing-news/bing-news-Untitled_6.png)
+![Untitled](/assets/blog/bing-news/bing-news-Untitled_6.png)
 
 ---
 

@@ -10,7 +10,7 @@ location: "Beijing  – 2024"
 # BJMUN
 
 
-![Untitled](/assets/blog/experience/bjmun/bjmun-Untitled.png)
+![Untitled](/assets/blog/bjmun/bjmun-Untitled.png)
 
 > **A 11-year dream of educational social activities.**
 > 
@@ -19,7 +19,7 @@ BJMUN is a non-profit organization that holds educational activities like Model 
 
 In 2013, I joined BJMUN as an average delegate when I was in my 10th grade. Starting from then, I gradually changed my role from a participant to a leader and planner. After 8 years, I now work as a part-time adviser for the current BJMUN student team, helping them solve all the issues regards to legal, finance, and public relationship.
 
-![Untitled](/assets/blog/experience/bjmun/bjmun-Untitled_1.png)
+![Untitled](/assets/blog/bjmun/bjmun-Untitled_1.png)
 
 **Education is a field that requires long-period and continuous input.** To keep bringing meaningful and insightful contents to the students, I closely follow social trends and international situations. It is also a field that follows general rules of market behaviors. I keep pushing the organization to generate new activities and topics to attract more schools and students.
 
@@ -31,38 +31,38 @@ Someday in the future, I may have my own startup making educational product. BJM
 
 [https://youtu.be/DNERXCRvxj0](https://youtu.be/DNERXCRvxj0)
 
-![The largest school team we ever had, 120 delegates](/assets/blog/experience/bjmun/bjmun-bjmun_photo_10.jpg)
+![The largest school team we ever had, 120 delegates](/assets/blog/bjmun/bjmun-bjmun_photo_10.jpg)
 
 The largest school team we ever had, 120 delegates
 
-![Delegates learning social dance](/assets/blog/experience/bjmun/bjmun-bjmun_photo_1.jpg)
+![Delegates learning social dance](/assets/blog/bjmun/bjmun-bjmun_photo_1.jpg)
 
 Delegates learning social dance
 
-![Delegate role playing a Ming dynasty character](/assets/blog/experience/bjmun/bjmun-bjmun_photo_7.jpg)
+![Delegate role playing a Ming dynasty character](/assets/blog/bjmun/bjmun-bjmun_photo_7.jpg)
 
 Delegate role playing a Ming dynasty character
 
-![Shooting our new marketing video](/assets/blog/experience/bjmun/bjmun-bjmun_photo_3.jpg)
+![Shooting our new marketing video](/assets/blog/bjmun/bjmun-bjmun_photo_3.jpg)
 
 Shooting our new marketing video
 
-![After the Covid-19 era, we had our largest (700 participants) conference ever](/assets/blog/experience/bjmun/bjmun-bjmun_photo_4.jpg)
+![After the Covid-19 era, we had our largest (700 participants) conference ever](/assets/blog/bjmun/bjmun-bjmun_photo_4.jpg)
 
 After the Covid-19 era, we had our largest (700 participants) conference ever
 
-![Enjoyable tea break](/assets/blog/experience/bjmun/bjmun-bjmun_photo_2.jpg)
+![Enjoyable tea break](/assets/blog/bjmun/bjmun-bjmun_photo_2.jpg)
 
 Enjoyable tea break
 
-![Social ball](/assets/blog/experience/bjmun/bjmun-bjmun_photo_6.jpg)
+![Social ball](/assets/blog/bjmun/bjmun-bjmun_photo_6.jpg)
 
 Social ball
 
-![Tea break](/assets/blog/experience/bjmun/bjmun-bjmun_photo_8.jpg)
+![Tea break](/assets/blog/bjmun/bjmun-bjmun_photo_8.jpg)
 
 Tea break
 
-![Delegate studying map](/assets/blog/experience/bjmun/bjmun-bjmun_photo_9.jpg)
+![Delegate studying map](/assets/blog/bjmun/bjmun-bjmun_photo_9.jpg)
 
 Delegate studying map

@@ -14,13 +14,13 @@ The **Copilot Content Ecosystem** encompasses the products involved in Microsoft
 
 The Ecosystem partners with more than **20,000 global media organizations** daily to deliver news, finance, sports, and lifestyle content in multiple languages across various sectors. This content integrates into Microsoft's global distribution system and powers user products like **Windows, Copilot, Bing, MSN, and Edge New Tab Page**, providing personalized information experiences for hundreds of millions of users. I am responsible for designing both the user-facing and media partner experiences, covering the entire content supply and distribution chain.
 
-![Microsoft's content stakeholders](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image.png)
+![Microsoft's content stakeholders](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image.png)
 
 Microsoft's content stakeholders
 
 You can experience our content by opening a new tab in the Edge browser (the image on the left below shows the beta version of Copilot Discover) or by visiting [msn.com](http://msn.com) directly.
 
-![Edge new tab page and MSN](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_1.png)
+![Edge new tab page and MSN](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_1.png)
 
 Edge new tab page and MSN
 
@@ -36,7 +36,7 @@ Throughout the design process, I addressed several key challenges:
 - **AI Conversation and Content Fusion** – Explored how AI can assist users in reading, summarizing, and extending content within Copilot’s conversational and generative contexts.
 - **Design System Evolution** – As a business designer, I frequently collaborated with the headquarters team to align with the latest experience standards, while distilling insights from my own domain to feed back into Copilot’s foundational experience and design system.
 
-![ Weather, news, finance, etc.](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_2.png)
+![ Weather, news, finance, etc.](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_2.png)
 
  Weather, news, finance, etc.
 
@@ -49,14 +49,14 @@ Typically, users approach Copilot with expectations similar to traditional AI to
 
 </aside>
 
-![Stock information page](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_3.png)
+![Stock information page](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_3.png)
 
 Stock information page
 
 I am also responsible for the design of the MSN Finance product.
 Compared with Copilot, the MSN interface features higher information density and a more compact layout. This difference stems from the distinct user mindsets between the two products: Copilot users tend to browse content casually and check stocks occasionally, while MSN Finance targets semi-professional users, where information completeness takes priority over reading comfort.
 
-![Copilot vs MSN](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_4.png)
+![Copilot vs MSN](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_4.png)
 
 Copilot vs MSN
 
@@ -73,7 +73,7 @@ I am responsible for the end-to-end design of this platform, including its infor
 - Audience growth and revenue monitoring
 - Account and brand management
 
-![ MSN Partner Hub Homepage](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_5.png)
+![ MSN Partner Hub Homepage](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_5.png)
 
  MSN Partner Hub Homepage
 
@@ -86,7 +86,7 @@ I can't provide more screenshots of this platform due to data compliance require
 
 I am also working on introducing AI-assisted creation features — such as an AI writing assistant and content optimization tools — to help partners improve both the efficiency and quality of their content production.
 
-![Confidential Program](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_6.png)
+![Confidential Program](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_6.png)
 
 Confidential Program
 
@@ -100,6 +100,6 @@ Within this project, we place particular emphasis on copyright protection and AI
 Also, I am responsible for maintaining the platform’s design system and collaborating closely with the front-end development team to ensure visual consistency and high design fidelity.
 Recently, I led a major upgrade of the platform’s visual system, focusing on:
 
-![Before and after of visual system upgrade](/assets/blog/project/copilot-content-ecosystem/copilot-content-ecosystem-image_7.png)
+![Before and after of visual system upgrade](/assets/blog/copilot-content-ecosystem/copilot-content-ecosystem-image_7.png)
 
 Before and after of visual system upgrade

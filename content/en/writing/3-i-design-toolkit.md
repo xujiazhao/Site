@@ -17,10 +17,10 @@ Language: English
 > **A simple tool to learn how to insight, ideate, and iterate for design**
 > 
 
-![Untitled](/assets/blog/writing/3-i-design-toolkit/3-i-design-toolkit-Untitled.png)
+![Untitled](/assets/blog/3-i-design-toolkit/3-i-design-toolkit-Untitled.png)
 
-![Untitled](/assets/blog/writing/3-i-design-toolkit/3-i-design-toolkit-Untitled_1.png)
+![Untitled](/assets/blog/3-i-design-toolkit/3-i-design-toolkit-Untitled_1.png)
 
-![Untitled](/assets/blog/writing/3-i-design-toolkit/3-i-design-toolkit-Untitled_2.png)
+![Untitled](/assets/blog/3-i-design-toolkit/3-i-design-toolkit-Untitled_2.png)
 
-![Untitled](/assets/blog/writing/3-i-design-toolkit/3-i-design-toolkit-Untitled_3.png)
+![Untitled](/assets/blog/3-i-design-toolkit/3-i-design-toolkit-Untitled_3.png)
