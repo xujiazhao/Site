@@ -193,34 +193,10 @@ content:
         label: Body
         type: rich-text
 
-  - name: creation-en
-    label: Creation (English)
+  - name: creation
+    label: Creation
     type: collection
-    path: content/en/creation
-    fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
-      - name: date
-        label: Date
-        type: date
-        required: true
-      - name: skill
-        label: Skill
-        type: string
-        list: true
-      - name: coverImage
-        label: Cover Image
-        type: image
-      - name: body
-        label: Body
-        type: rich-text
-
-  - name: creation-zh
-    label: Creation (Chinese)
-    type: collection
-    path: content/zh/creation
+    path: content/creation
     fields:
       - name: title
         label: Title

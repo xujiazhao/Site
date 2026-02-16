@@ -5,15 +5,22 @@ import { join } from "path";
 
 const contentDirectory = join(process.cwd(), "content");
 
+// Collections that are not language-specific
+const sharedCollections = ['creation'];
+
 export function getSlugs(collection: string, lang: string) {
-  const dir = join(contentDirectory, lang, collection);
+  const dir = sharedCollections.includes(collection)
+    ? join(contentDirectory, collection)
+    : join(contentDirectory, lang, collection);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir);
 }
 
 export function getItemBySlug(collection: string, slug: string, lang: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(contentDirectory, lang, collection, `${realSlug}.md`);
+  const fullPath = sharedCollections.includes(collection)
+    ? join(contentDirectory, collection, `${realSlug}.md`)
+    : join(contentDirectory, lang, collection, `${realSlug}.md`);
   
   if (!fs.existsSync(fullPath)) return null;
 
