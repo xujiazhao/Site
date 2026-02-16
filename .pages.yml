@@ -1,6 +1,6 @@
 media:
-  input: public/images
-  output: /images
+  input: public/assets/blog
+  output: /assets/blog
 
 content:
   - name: experience-en
