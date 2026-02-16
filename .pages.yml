@@ -1,6 +1,9 @@
-media: public/images
+media:
+  input: public/images
+  output: /images
+
 content:
-  - slug: experience-en
+  - name: experience-en
     label: Experience (English)
     type: collection
     path: content/en/experience
@@ -33,7 +36,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: experience-zh
+  - name: experience-zh
     label: Experience (Chinese)
     type: collection
     path: content/zh/experience
@@ -66,7 +69,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: project-en
+  - name: project-en
     label: Project (English)
     type: collection
     path: content/en/project
@@ -99,7 +102,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: project-zh
+  - name: project-zh
     label: Project (Chinese)
     type: collection
     path: content/zh/project
@@ -132,7 +135,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: writing-en
+  - name: writing-en
     label: Writing (English)
     type: collection
     path: content/en/writing
@@ -165,7 +168,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: writing-zh
+  - name: writing-zh
     label: Writing (Chinese)
     type: collection
     path: content/zh/writing
@@ -198,7 +201,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: creation-en
+  - name: creation-en
     label: Creation (English)
     type: collection
     path: content/en/creation
@@ -231,7 +234,7 @@ content:
         label: Body
         type: rich-text
 
-  - slug: creation-zh
+  - name: creation-zh
     label: Creation (Chinese)
     type: collection
     path: content/zh/creation
