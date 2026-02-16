@@ -11,6 +11,8 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  lang: string;
+  section: string;
 };
 
 export function PostPreview({
@@ -20,16 +22,18 @@ export function PostPreview({
   excerpt,
   author,
   slug,
+  lang,
+  section,
 }: Props) {
+  const href = `/${lang}/${section}/${slug}`;
   return (
     <div>
       <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+        <CoverImage title={title} src={coverImage} href={href} />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
-          as={`/posts/${slug}`}
-          href="/posts/[slug]"
+          href={href}
           className="hover:underline"
         >
           {title}

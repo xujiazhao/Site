@@ -3,26 +3,44 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "_posts");
+const contentDirectory = join(process.cwd(), "content");
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getSlugs(collection: string, lang: string) {
+  const dir = join(contentDirectory, lang, collection);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir);
 }
 
-export function getPostBySlug(slug: string) {
+export function getItemBySlug(collection: string, slug: string, lang: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(contentDirectory, lang, collection, `${realSlug}.md`);
+  
+  if (!fs.existsSync(fullPath)) return null;
+
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, slug: realSlug, content } as Post;
+  const post: Post = {
+    slug: realSlug,
+    title: data.title || 'Untitled',
+    date: data.date || new Date().toISOString(),
+    coverImage: data.coverImage || '/assets/blog/preview/cover.jpg',
+    author: data.author || { name: 'Jiazhao Xu', picture: '/assets/blog/authors/jj.jpeg' },
+    excerpt: data.excerpt || '',
+    ogImage: data.ogImage || { url: data.coverImage || '/assets/blog/preview/cover.jpg' },
+    content,
+    preview: data.preview || false, 
+  };
+
+  return post;
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
+export function getAllItems(collection: string, lang: string): Post[] {
+  const slugs = getSlugs(collection, lang);
   const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
+    .map((slug) => getItemBySlug(collection, slug, lang))
+    .filter((post): post is Post => post !== null)
+    // Sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }

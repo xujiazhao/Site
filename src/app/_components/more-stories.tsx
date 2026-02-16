@@ -3,9 +3,11 @@ import { PostPreview } from "./post-preview";
 
 type Props = {
   posts: Post[];
+  lang: string;
+  section: string;
 };
 
-export function MoreStories({ posts }: Props) {
+export function MoreStories({ posts, lang, section }: Props) {
   return (
     <section>
       <h2 className="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -21,6 +23,8 @@ export function MoreStories({ posts }: Props) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            lang={lang}
+            section={section}
           />
         ))}
       </div>
