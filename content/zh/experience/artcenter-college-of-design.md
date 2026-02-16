@@ -26,16 +26,16 @@ location: "洛杉矶  - 2021.4"
 - 院系奖学金；
 - 计算机实验室助理；
 
-![我第一次申请奖学金](/assets/blog/artcenter-college-of-design-zh/艺术中心设计学院-Untitled.jpeg)
+![我第一次申请奖学金](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
 
 我第一次申请奖学金
 
-![为校企合作项目SIG CombiONE布置汇报墙 - 校企合作是ArtCenter一类常见的课程，我们将会作为专业设计咨询的身份为企业客户合作，并提供设计服务](/assets/blog/artcenter-college-of-design-zh/艺术中心设计学院-Untitled_1.jpeg)
+![为校企合作项目SIG CombiONE布置汇报墙 - 校企合作是ArtCenter一类常见的课程，我们将会作为专业设计咨询的身份为企业客户合作，并提供设计服务](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
 
 为校企合作项目SIG CombiONE布置汇报墙 - 校企合作是ArtCenter一类常见的课程，我们将会作为专业设计咨询的身份为企业客户合作，并提供设计服务
 
 关于SIG CombiONE项目，详见：[SIG CombiONE](/zh/project/sig-combione)
 
-![在ArtCenter展厅布置FireSight项目 - FireSight是一个为预防山火而设计的消防用滑翔机](/assets/blog/artcenter-college-of-design-zh/艺术中心设计学院-Untitled_2.jpeg)
+![在ArtCenter展厅布置FireSight项目 - FireSight是一个为预防山火而设计的消防用滑翔机](/assets/blog/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.jpeg)
 
 在ArtCenter展厅布置FireSight项目 - FireSight是一个为预防山火而设计的消防用滑翔机
