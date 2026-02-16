@@ -1,28 +1,265 @@
-media:
-  input: public/assets
-  output: /assets
-  categories: [ "image" ]
+media: public/images
 content:
-  - name: posts
-    label: Posts
+  - slug: experience-en
+    label: Experience (English)
     type: collection
-    path: _posts
-    view:
-      fields: [ coverImage, title, date ]
+    path: content/en/experience
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: excerpt, label: Excerpt, type: string }
-      - { name: coverImage, label: Cover image, type: image }
-      - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" } }
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
       - name: author
         label: Author
         type: object
         fields:
-          - { name: name, label: Name, type: string }
-          - { name: picture, label: Picture, type: image }
-      - name: ogImage
-        label: Image (social sharing)
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: experience-zh
+    label: Experience (Chinese)
+    type: collection
+    path: content/zh/experience
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
         type: object
         fields:
-          - { name: url, label: URL, type: image }
-      - { name: body, label: Body, type: rich-text }
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: project-en
+    label: Project (English)
+    type: collection
+    path: content/en/project
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: project-zh
+    label: Project (Chinese)
+    type: collection
+    path: content/zh/project
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: writing-en
+    label: Writing (English)
+    type: collection
+    path: content/en/writing
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: writing-zh
+    label: Writing (Chinese)
+    type: collection
+    path: content/zh/writing
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: creation-en
+    label: Creation (English)
+    type: collection
+    path: content/en/creation
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
+
+  - slug: creation-zh
+    label: Creation (Chinese)
+    type: collection
+    path: content/zh/creation
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: coverImage
+        label: Cover Image
+        type: image
+      - name: excerpt
+        label: Excerpt
+        type: text
+      - name: author
+        label: Author
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: picture
+            label: Picture
+            type: image
+      - name: body
+        label: Body
+        type: rich-text
