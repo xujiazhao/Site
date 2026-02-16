@@ -12,4 +12,4 @@ location: "北京  - 现在"
 
 2024年9月，我开始在清华大学经济管理学院攻读工商管理硕士。
 
-![合影.png](/assets/blog/tsinghua-global-mba/tsinghua-global-mba-合影.png)
+![合影.png](/assets/images/tsinghua-global-mba/tsinghua-global-mba-合影.png)

@@ -8,10 +8,10 @@ skill: ["Photoshop"]
 
 Tags: Photoshop
 
-![photomessup_1.jpg](/assets/blog/photobashing/photobashing-photomessup_1.jpg)
+![photomessup_1.jpg](/assets/images/photobashing/photobashing-photomessup_1.jpg)
 
-![photomessup_2.jpg](/assets/blog/photobashing/photobashing-photomessup_2.jpg)
+![photomessup_2.jpg](/assets/images/photobashing/photobashing-photomessup_2.jpg)
 
-![photomessup_3.jpg](/assets/blog/photobashing/photobashing-photomessup_3.jpg)
+![photomessup_3.jpg](/assets/images/photobashing/photobashing-photomessup_3.jpg)
 
-![photomessup_4.jpg](/assets/blog/photobashing/photobashing-photomessup_4.jpg)
+![photomessup_4.jpg](/assets/images/photobashing/photobashing-photomessup_4.jpg)

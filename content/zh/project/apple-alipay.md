@@ -14,23 +14,23 @@ sorting: 2
 
 谈到绑定，其中最为重要的业务指标便是绑定成功率，而作为设计师，我负责设计一套简单、流畅且能向用户充分说明功能的绑定链路：
 
-![目前支付宝的AppStore签约流程的时效和成功率均比微信高](/assets/blog/apple-alipay/apple-alipay-Untitled.png)
+![目前支付宝的AppStore签约流程的时效和成功率均比微信高](/assets/images/apple-alipay/apple-alipay-Untitled.png)
 
 目前支付宝的AppStore签约流程的时效和成功率均比微信高
 
 而钱包内产品则是以支付宝内的“Apple专区”为主：支付宝作为全球最早和苹果建立合作的钱包，二者之间的合作最为紧密。2017 年，支付宝上线了“Apple专区”生活号，它作为支付宝端内的一个流量分发平台，通过发放 AppStore 消费红包和苹Apple服务试用权益的方式不断吸引新用户在 AppStore 绑定支付宝。目前这一平台已经成为支付宝用于同微信竞争的核心途径之一。
 
-![专区核心页面](/assets/blog/apple-alipay/apple-alipay-Untitled_1.png)
+![专区核心页面](/assets/images/apple-alipay/apple-alipay-Untitled_1.png)
 
 专区核心页面
 
-![专区会员积分体系](/assets/blog/apple-alipay/apple-alipay-Untitled_2.png)
+![专区会员积分体系](/assets/images/apple-alipay/apple-alipay-Untitled_2.png)
 
 专区会员积分体系
 
 自 2022 年我接手项目后，在团队的共同努力下我们推动了苹果第一次接纳了“小程序”这一媒介，并将专区正式迁移至小程序平台。通过这次升级，我对专区整体的用户体验进行了一次调整，使之更贴近苹果的风格调性。也将整体设计调整的更年轻，更有活力，以满足日渐增长的 95 后、00 后用户群体。在项目中，为了说服苹果认可我们的交互及视觉方案，我同苹果 WW MarCom 团队进行了多次沟通，虽然有观念的碰撞，但最终他们还是认可我们更为了解中国消费者的用户习惯和审美。
 
-![生活号专区升级小程序专区](/assets/blog/apple-alipay/apple-alipay-Untitled_3.png)
+![生活号专区升级小程序专区](/assets/images/apple-alipay/apple-alipay-Untitled_3.png)
 
 生活号专区升级小程序专区
 

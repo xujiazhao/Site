@@ -8,12 +8,12 @@ skill: ["Procreate", "Sketch"]
 
 Tags: Procreate, Sketch
 
-![fct_case1.jpg](/assets/blog/a-faucet-design/a-faucet-design-fct_case1.jpg)
+![fct_case1.jpg](/assets/images/a-faucet-design/a-faucet-design-fct_case1.jpg)
 
-![fct_case2.jpg](/assets/blog/a-faucet-design/a-faucet-design-fct_case2.jpg)
+![fct_case2.jpg](/assets/images/a-faucet-design/a-faucet-design-fct_case2.jpg)
 
-![fct_case3.jpg](/assets/blog/a-faucet-design/a-faucet-design-fct_case3.jpg)
+![fct_case3.jpg](/assets/images/a-faucet-design/a-faucet-design-fct_case3.jpg)
 
-![fct_casea.jpg](/assets/blog/a-faucet-design/a-faucet-design-fct_casea.jpg)
+![fct_casea.jpg](/assets/images/a-faucet-design/a-faucet-design-fct_casea.jpg)
 
-![uf_cover.jpg](/assets/blog/a-faucet-design/a-faucet-design-uf_cover.jpg)
+![uf_cover.jpg](/assets/images/a-faucet-design/a-faucet-design-uf_cover.jpg)

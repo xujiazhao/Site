@@ -31,7 +31,7 @@ Language: 中文
 
 指的是商户前端对于每个渠道都是用一个固定尺寸的按钮、选项承载的，上面理论上只能摆放一个Logo，如：
 
-![Farfetch, Drop和GooglePay选择绑卡页面](/assets/blog/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_1.png)
+![Farfetch, Drop和GooglePay选择绑卡页面](/assets/images/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_1.png)
 
 Farfetch, Drop和GooglePay选择绑卡页面
 
@@ -39,7 +39,7 @@ Farfetch, Drop和GooglePay选择绑卡页面
 
 指的是商户的前端要求每个渠道必须在特定高度内展示，宽度在不超过页面边缘的前提下不做限制，A+聚合logo多需要以左右摆放形式露出在收银台，如：
 
-![UnivaPaycast - 日本的一家收单机构](/assets/blog/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_2.png)
+![UnivaPaycast - 日本的一家收单机构](/assets/images/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_2.png)
 
 UnivaPaycast - 日本的一家收单机构
 
@@ -55,7 +55,7 @@ UnivaPaycast - 日本的一家收单机构
 
 指的是商户上仅用一个方块+文字代表支付渠道，多出现在移动端
 
-![Trainline, Yamibuy 和 Gojek](/assets/blog/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_4.png)
+![Trainline, Yamibuy 和 Gojek](/assets/images/merchant-checkout-frontend-abstraction/商家收银台前端能力抽象-Untitled_4.png)
 
 Trainline, Yamibuy 和 Gojek
 
