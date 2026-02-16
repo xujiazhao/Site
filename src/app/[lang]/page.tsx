@@ -38,7 +38,10 @@ export default function Index({ params }: { params: { lang: string } }) {
                 {experiences.map((exp) => (
                   <tr key={exp.slug} className="group hover:bg-neutral-50 transition-colors rounded-lg">
                     <td className="py-4 pr-4 pl-2 font-bold align-top border-b border-neutral-100 group-hover:border-transparent">
-                      <Link href={`/${params.lang}/experience/${exp.slug}`} className="hover:underline">
+                      <Link href={`/${params.lang}/experience/${exp.slug}`} className="hover:underline flex items-center gap-2">
+                        {exp.favicon && (
+                          <img src={exp.favicon} alt="" className="w-5 h-5 inline-block flex-shrink-0" />
+                        )}
                         {exp.title}
                       </Link>
                     </td>
@@ -78,19 +81,36 @@ export default function Index({ params }: { params: { lang: string } }) {
              {isEn ? "Project" : "项目"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8">
-            {projects.map((post) => (
-              <PostPreview
-                key={post.slug}
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                dateRange={post.dateRange}
-                slug={post.slug}
-                excerpt={post.intro || post.excerpt} /* Use intro if available for cleaner cards */
-                lang={params.lang}
-                section="project"
-              />
-            ))}
+            {projects.map((post) => {
+              const href = `/${params.lang}/project/${post.slug}`;
+              return (
+                <Link key={post.slug} href={href} className="group block">
+                  <div className="relative overflow-hidden rounded-lg">
+                    {post.coverImage ? (
+                      <img
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full aspect-[4/3] bg-neutral-100" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                      <div className="flex items-center gap-2 mb-2">
+                        {post.favicon && (
+                          <img src={post.favicon} alt="" className="w-5 h-5 flex-shrink-0" />
+                        )}
+                        <h3 className="text-xl font-bold leading-snug">{post.title}</h3>
+                      </div>
+                      {(post.intro || post.excerpt) && (
+                        <p className="text-sm text-white/80 line-clamp-2">{post.intro || post.excerpt}</p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
@@ -118,25 +138,27 @@ export default function Index({ params }: { params: { lang: string } }) {
           </div>
         </section>
 
-        {/* Creation Section - Cards */}
+        {/* Creation Section - Masonry */}
         <section className="mb-32">
           <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
              {isEn ? "Creation" : "创作"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8">
-            {creations.map((post) => (
-              <PostPreview
-                key={post.slug}
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                dateRange={post.dateRange}
-                slug={post.slug}
-                excerpt={post.intro || post.excerpt}
-                lang={params.lang}
-                section="creation"
-              />
-            ))}
+          <div className="columns-2 md:columns-3 gap-4 space-y-4">
+            {creations.map((post) => {
+              const href = `/${params.lang}/creation/${post.slug}`;
+              return (
+                <Link key={post.slug} href={href} className="group block break-inside-avoid">
+                  {post.firstImage && (
+                    <img
+                      src={post.firstImage}
+                      alt={post.title}
+                      className="w-full rounded-lg group-hover:opacity-90 transition-opacity duration-200"
+                    />
+                  )}
+                  <h3 className="mt-2 text-lg font-medium group-hover:underline">{post.title}</h3>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </Container>

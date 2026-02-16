@@ -19,4 +19,5 @@ export type Post = {
   area?: string[];
   skill?: string[];
   favicon?: string;
+  firstImage?: string;
 };

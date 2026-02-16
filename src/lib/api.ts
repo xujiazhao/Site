@@ -43,6 +43,11 @@ export function getItemBySlug(collection: string, slug: string, lang: string) {
     sorting: data.sorting || 0,
     area: data.area || [],
     skill: data.skill || [],
+    favicon: data.favicon || '',
+    firstImage: (() => {
+      const match = content.match(/!\[.*?\]\((.*?)\)/);
+      return data.coverImage || (match ? match[1] : '');
+    })(),
   };
 
   return post;
