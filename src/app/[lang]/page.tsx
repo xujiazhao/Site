@@ -1,33 +1,130 @@
 import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
 import { getAllItems } from "@/lib/api";
+import { SelfIntro } from "@/app/_components/self-intro";
+import { PostPreview } from "@/app/_components/post-preview";
+import Link from "next/link";
+import DateFormatter from "@/app/_components/date-formatter";
 
 export default function Index({ params }: { params: { lang: string } }) {
-  const allPosts = getAllItems("writing", params.lang);
+  const experiences = getAllItems("experience", params.lang);
+  const projects = getAllItems("project", params.lang);
+  const writings = getAllItems("writing", params.lang);
+  const creations = getAllItems("creation", params.lang);
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
+  const isEn = params.lang === "en";
 
   return (
     <main>
       <Container>
-        <Intro />
-        {heroPost && (
-          <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
-            lang={params.lang}
-            section="writing"
-          />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} lang={params.lang} section="writing" />}
+        <SelfIntro lang={params.lang} />
+
+        {/* Experience Section - Table */}
+        <section className="mb-32">
+          <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+            {isEn ? "Experience" : "经历"}
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="table-auto w-full text-lg border-separate border-spacing-y-4">
+              <thead>
+                <tr className="text-left text-neutral-500 font-normal border-b">
+                  <th className="pb-4 pr-4 pl-2">{isEn ? "Organization" : "机构"}</th>
+                  <th className="pb-4 pr-4 w-1/3">{isEn ? "Role & Intro" : "角色与介绍"}</th>
+                  <th className="pb-4 pr-4">{isEn ? "Location" : "地点"}</th>
+                  <th className="pb-4 pr-2 text-right">{isEn ? "Date" : "时间"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {experiences.map((exp) => (
+                  <tr key={exp.slug} className="group hover:bg-neutral-50 transition-colors rounded-lg">
+                    <td className="py-4 pr-4 pl-2 font-bold align-top border-b border-neutral-100 group-hover:border-transparent">
+                      <Link href={`/${params.lang}/experience/${exp.slug}`} className="hover:underline">
+                        {exp.title}
+                      </Link>
+                    </td>
+                    <td className="py-4 pr-4 align-top border-b border-neutral-100 group-hover:border-transparent">
+                      <div className="font-medium text-neutral-800">{exp.intro}</div>
+                      {exp.type && <div className="text-sm text-neutral-500 mt-1">{exp.type}</div>}
+                    </td>
+                    <td className="py-4 pr-4 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
+                      {exp.location}
+                    </td>
+                    <td className="py-4 pr-2 align-top text-neutral-600 font-mono text-sm text-right border-b border-neutral-100 group-hover:border-transparent">
+                      {exp.dateRange || <DateFormatter dateString={exp.date} />}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Project Section - Cards */}
+        <section className="mb-32">
+          <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+             {isEn ? "Project" : "项目"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8">
+            {projects.map((post) => (
+              <PostPreview
+                key={post.slug}
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                dateRange={post.dateRange}
+                slug={post.slug}
+                excerpt={post.intro || post.excerpt} /* Use intro if available for cleaner cards */
+                lang={params.lang}
+                section="project"
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Writing Section - List */}
+        <section className="mb-32">
+          <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+             {isEn ? "Writing" : "写作"}
+          </h2>
+          <div className="flex flex-col">
+            {writings.map((post) => (
+              <div key={post.slug} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-6 hover:bg-neutral-50 transition-colors px-2 rounded-lg">
+                <div className="md:w-3/4">
+                  <h3 className="text-2xl mb-2 font-medium">
+                    <Link href={`/${params.lang}/writing/${post.slug}`} className="hover:underline">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-lg text-neutral-500">{post.excerpt}</p>
+                </div>
+                <div className="md:w-1/4 text-neutral-400 font-mono md:text-right mt-2 md:mt-0 text-sm">
+                  <DateFormatter dateString={post.date} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Creation Section - Cards */}
+        <section className="mb-32">
+          <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+             {isEn ? "Creation" : "创作"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8">
+            {creations.map((post) => (
+              <PostPreview
+                key={post.slug}
+                title={post.title}
+                coverImage={post.coverImage}
+                date={post.date}
+                dateRange={post.dateRange}
+                slug={post.slug}
+                excerpt={post.intro || post.excerpt}
+                lang={params.lang}
+                section="creation"
+              />
+            ))}
+          </div>
+        </section>
       </Container>
     </main>
   );

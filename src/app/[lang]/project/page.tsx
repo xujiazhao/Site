@@ -19,7 +19,6 @@ export default function Project({ params }: { params: { lang: string } }) {
             title={heroItem.title}
             coverImage={heroItem.coverImage}
             date={heroItem.date}
-            author={heroItem.author}
             slug={heroItem.slug}
             excerpt={heroItem.excerpt}
             lang={params.lang}

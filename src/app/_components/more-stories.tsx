@@ -20,7 +20,7 @@ export function MoreStories({ posts, lang, section }: Props) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
+            dateRange={post.dateRange}
             slug={post.slug}
             excerpt={post.excerpt}
             lang={lang}

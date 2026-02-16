@@ -1,11 +1,9 @@
-import { type Author } from "./author";
 
 export type Post = {
   slug: string;
   title: string;
   date: string;
   coverImage: string;
-  author: Author;
   excerpt: string;
   ogImage: {
     url: string;
@@ -15,6 +13,7 @@ export type Post = {
   // New fields
   intro?: string;
   location?: string;
+  dateRange?: string;
   type?: string;
   sorting?: number;
   area?: string[];

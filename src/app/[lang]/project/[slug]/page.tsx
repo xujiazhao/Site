@@ -35,7 +35,6 @@ export default async function Project({ params }: Params) {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={post.author}
           />
           <PostBody content={content} />
         </article>

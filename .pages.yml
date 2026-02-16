@@ -13,9 +13,13 @@ content:
         type: string
         required: true
       - name: date
-        label: Date
+        label: Date (Sort)
         type: date
         required: true
+        hidden: true
+      - name: dateRange
+        label: Date Range
+        type: string
       - name: intro
         label: Intro
         type: text
@@ -49,9 +53,13 @@ content:
         type: string
         required: true
       - name: date
-        label: Date
+        label: Date (Sort)
         type: date
         required: true
+        hidden: true
+      - name: dateRange
+        label: Date Range
+        type: string
       - name: intro
         label: Intro
         type: text

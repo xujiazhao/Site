@@ -19,7 +19,6 @@ export default function Creation({ params }: { params: { lang: string } }) {
             title={heroItem.title}
             coverImage={heroItem.coverImage}
             date={heroItem.date}
-            author={heroItem.author}
             slug={heroItem.slug}
             excerpt={heroItem.excerpt}
             lang={params.lang}

@@ -1,7 +1,8 @@
 import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"; // import { LanguageToggle } from "@/app/_components/language-toggle";
+import { LanguageToggle } from "@/app/_components/language-toggle";
 
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body className={inter.className}>
+        <LanguageToggle lang={params.lang} />
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>

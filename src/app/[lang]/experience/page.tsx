@@ -1,6 +1,5 @@
 import Container from "@/app/_components/container";
 import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro"; // Maybe distinct intro for sections
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllItems } from "@/lib/api";
 
@@ -20,7 +19,7 @@ export default function Experience({ params }: { params: { lang: string } }) {
             title={heroItem.title}
             coverImage={heroItem.coverImage}
             date={heroItem.date}
-            author={heroItem.author}
+            dateRange={heroItem.dateRange}
             slug={heroItem.slug}
             excerpt={heroItem.excerpt}
             lang={params.lang}
