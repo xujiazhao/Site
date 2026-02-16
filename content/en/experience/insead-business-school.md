@@ -5,6 +5,7 @@ intro: "Teaching design at the best business school in the world."
 type: "Part-time"
 area: ["Design+Business", "Teaching"]
 location: "Singapore  - 2023.5"
+coverImage: "/assets/images/cover-image/INSEAD.png"
 ---
 
 # INSEAD Business School

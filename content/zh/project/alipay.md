@@ -3,6 +3,8 @@ title: "Alipay+"
 date: "2026-02-16"
 intro: "Pay beyond borders"
 sorting: 3
+coverImage: "/assets/images/cover-image/Alipay+.png"
+favicon: "/assets/images/favicon/plusicon.png"
 ---
 
 # Alipay+

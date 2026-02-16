@@ -5,6 +5,7 @@ intro: "在全球顶级商学院讲授设计思维"
 type: "兼职"
 area: ["商业+设计", "教学"]
 location: "新加坡  - 2023.5"
+coverImage: "/assets/images/cover-image/INSEAD.png"
 ---
 
 # 欧洲工商管理学院

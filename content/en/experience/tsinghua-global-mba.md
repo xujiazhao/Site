@@ -5,6 +5,8 @@ intro: "School of Economics and Management"
 type: "Master"
 area: ["Diverse Environment", "MBA"]
 location: "Beijing  - Now"
+coverImage: "/assets/images/cover-image/SEM.png"
+favicon: "/assets/images/favicon/THU.png"
 ---
 
 # Tsinghua Global MBA

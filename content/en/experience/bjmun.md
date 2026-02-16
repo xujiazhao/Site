@@ -5,6 +5,7 @@ intro: "A 10-year dream of educational social activities."
 type: "Start-up"
 area: ["Public Education", "Teenager"]
 location: "Beijing  – 2024"
+coverImage: "/assets/images/cover-image/bjmun.png"
 ---
 
 # BJMUN

@@ -5,6 +5,8 @@ intro: "4 years chasing the design dream"
 type: "Bachelor"
 area: ["Bachelor of Science", "Product Design"]
 location: "Los Angeles  - 2021.4"
+coverImage: "/assets/images/cover-image/ArtCenter.png"
+favicon: "/assets/images/favicon/artcentericon.png"
 ---
 
 # ArtCenter College of Design

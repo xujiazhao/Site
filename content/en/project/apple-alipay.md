@@ -3,6 +3,8 @@ title: "Apple ✕ Alipay"
 date: "2026-02-16"
 intro: "Build the best purchasing experience at AppStore"
 sorting: 2
+coverImage: "/assets/images/cover-image/AppleAlipay.png"
+favicon: "/assets/images/favicon/appleicon.png"
 ---
 
 # Apple ✕ Alipay

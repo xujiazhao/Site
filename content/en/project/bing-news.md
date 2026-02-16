@@ -3,6 +3,8 @@ title: "Bing News"
 date: "2026-02-16"
 intro: "Help people break their information cocoons"
 sorting: 4
+coverImage: "/assets/images/cover-image/Bing News.png"
+favicon: "/assets/images/favicon/Bing icon.png"
 ---
 
 # Bing News

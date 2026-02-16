@@ -5,6 +5,8 @@ intro: "Master a little of the Payment"
 type: "Full-time"
 area: ["Payment", "To-developer", "UX Design"]
 location: "Shanghai  - 2022.12"
+coverImage: "/assets/images/cover-image/Ant.png"
+favicon: "/assets/images/favicon/anticon.png"
 ---
 
 # Ant International
