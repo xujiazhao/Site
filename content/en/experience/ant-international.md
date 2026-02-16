@@ -27,7 +27,7 @@ Projects I’ve been work on:
 
 Besides the work for business, I also put effort into other areas and worked as an excellent team player. I used to promote Figma at Ant Design Team, to save my colleagues from Sketch’s glitches and crashes as well as enhance our productivity. Through after Figma banned DJI’s account, it is hard to widely deploy Figma inner Ant. I can still promote other Chinese tools inside Ant. I was the first person outreaching out to MasterGo at Ant, and we already started its usability testing within Alibaba & Ant.
 
-- [[Chinese] Now Figma is banning DJI’s account, what should Alibaba & Ant designer use?](/en/writing/写在figma收回dji账号之后-关于设计工具的思考)
+- [[Chinese] Now Figma is banning DJI’s account, what should Alibaba & Ant designer use?](/en/writing/thoughts-on-design-tools-after-figma-revoked-dji)
 
 I also participate in other activities such as commonweal and broadcasting. I am glad to share my ideas with the public. During the 2022 U Design Week, I volunteered as one of the organizers as well as a translator for VIPs.
 

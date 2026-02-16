@@ -10,6 +10,7 @@ export function PostBody({ content }: Props) {
       <div
         className={markdownStyles["markdown"]}
         dangerouslySetInnerHTML={{ __html: content }}
+        suppressHydrationWarning
       />
     </div>
   );

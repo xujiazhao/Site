@@ -17,17 +17,17 @@ location: "上海  - 2022.12"
 不同于杭州的支付宝团队，上海的国际事业群主营业务均是蚂蚁及阿里巴巴的出海业务，而我主要负责的工作包括国际支付类产品和苹果相关业务的设计工作，项目包括：
 
 - [Alipay+](/zh/project/alipay)
-- [苹果相关业务（专区及支付）](/zh/project/苹果-支付宝)
+- [苹果相关业务（专区及支付）](/zh/project/apple-alipay)
 - [蚂蚁国际文档平台](https://www.notion.so/7bd4e8d2ab134fb383c3102b00d780bc?pvs=21)
 - 天猫/淘宝国际站的支付产品
 - 支付宝国际商户平台
 
 除去业务项目之外，在蚂蚁我也是一名积极肯干、极富团队精神的员工，永不拘泥于自己的一亩三分地。我曾尝试在蚂蚁内部推广 Figma，以让团队同事不再苦恼于 Sketch 的卡顿和功能限制，提高生产效率。虽然很遗憾目前由于中美关系我们无法大面积使用 Figma，但这不妨碍我继续尝试内部推广国产工具如 MasterGo 等。我曾是集团内第一个联系到MasterGo的设计师，而目前我们已经在内部实测其工作可用性。
 
-- [写在Figma收回DJI账号之后 - 关于设计工具的思考](/zh/writing/写在figma收回dji账号之后-关于设计工具的思考)
+- [写在Figma收回DJI账号之后 - 关于设计工具的思考](/zh/writing/thoughts-on-design-tools-after-figma-revoked-dji)
 
 我也参与过多期设计团队电台节目的录制，同行业分享自己的想法和见闻。我也志愿参与阿里巴巴U设计周的筹备工作，负责受邀嘉宾的内容翻译和出行接待工作。
 
-![我与师姐的合影](/assets/blog/蚂蚁国际/蚂蚁国际-Untitled.jpeg)
+![我与师姐的合影](/assets/blog/ant-international-zh/蚂蚁国际-Untitled.jpeg)
 
 我与师姐的合影

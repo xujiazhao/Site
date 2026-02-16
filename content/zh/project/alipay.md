@@ -34,7 +34,7 @@ Offline Payment - from Alipay+ doc center
 
 Auto Debit - from Alipay+ doc center
 
-I created a UX self-evaluating chart to design a better user experience for payment product, see: [UX self-evaluate chart for payment product](/zh/writing/收银支付ux自查表-ux-self-evaluate-chart-for-payment-produ)
+I created a UX self-evaluating chart to design a better user experience for payment product, see: [UX self-evaluate chart for payment product](/zh/writing/ux-self-evaluate-chart-for-payment-product)
 
 In addition, I designed the Product Intro part of the official [Alipay+](https://www.alipayplus.com/) site. 
 

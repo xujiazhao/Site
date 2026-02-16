@@ -16,7 +16,7 @@ sorting: 4
 
 ### 业务增长
 
-![新闻模块迭代过程，以移动端为例](/assets/blog/必应新闻/必应新闻-Untitled.png)
+![新闻模块迭代过程，以移动端为例](/assets/blog/bing-news-zh/必应新闻-Untitled.png)
 
 新闻模块迭代过程，以移动端为例
 
@@ -34,11 +34,11 @@ sorting: 4
 
 ### 用户体验
 
-![新闻落地页（当用户检索“新闻”等关键词时触发）](/assets/blog/必应新闻/必应新闻-Category_news.gif)
+![新闻落地页（当用户检索“新闻”等关键词时触发）](/assets/blog/bing-news-zh/必应新闻-Category_news.gif)
 
 新闻落地页（当用户检索“新闻”等关键词时触发）
 
-![重大新闻事件落地页（当检索匹配到重大事件时触发）](/assets/blog/必应新闻/必应新闻-Untitled_1.png)
+![重大新闻事件落地页（当检索匹配到重大事件时触发）](/assets/blog/bing-news-zh/必应新闻-Untitled_1.png)
 
 重大新闻事件落地页（当检索匹配到重大事件时触发）
 
@@ -50,19 +50,19 @@ sorting: 4
 
 ### Bing Chat （现名Copilot）中的新闻
 
-![Untitled](/assets/blog/必应新闻/必应新闻-Untitled_2.png)
+![Untitled](/assets/blog/bing-news-zh/必应新闻-Untitled_2.png)
 
 2023年的AI热潮让微软第一时间上线了Bing Chat及相关能力，在三个月内，微软突击上线了在Chat中的上百个新能力，其中我负责的新闻模块也是其中体验效果特别突出的一个功能之一。
 
 ### 必应热点（Trending on Bing）
 
-![必应首页的热点新闻](/assets/blog/必应新闻/必应新闻-Untitled_3.png)
+![必应首页的热点新闻](/assets/blog/bing-news-zh/必应新闻-Untitled_3.png)
 
 必应首页的热点新闻
 
 我发现，在中国、日本及韩国市场，用户对于纯文字新闻更加敏感，而在西方市场，用户则对图片更加敏感。我认为这背后的原因是不同语言的的信息密度及文本可读性有一定差异。因此我设计了不同版本的用户界面。
 
-![必应热点落地页](/assets/blog/必应新闻/必应新闻-Untitled_4.png)
+![必应热点落地页](/assets/blog/bing-news-zh/必应新闻-Untitled_4.png)
 
 必应热点落地页
 
@@ -79,7 +79,7 @@ sorting: 4
 
 好在，我们可以依托搜索引擎自身的巨大流量投放海量的灰度测试，同时微软也提供了大量成熟的专业工具，帮助我们评估每一个设计方案的设计效果。这让我能够高效、准确地衡量和优化用户体验，确保每一个上线的功能都能达到最佳效果。
 
-![AB 测试案例](/assets/blog/必应新闻/必应新闻-Untitled_5.png)
+![AB 测试案例](/assets/blog/bing-news-zh/必应新闻-Untitled_5.png)
 
 AB 测试案例
 
@@ -89,7 +89,7 @@ AB 测试案例
 
 必应新闻有非常严格的信息权威性和搜索平权要求，让用户获得没有偏见的信息这一理念是深深植入每一个新闻人心中的。这一理念也改变了我，在负责新闻产品的这一年里，我养成了非常健康的非常好的信息获取习惯，也许你也可以和我一样，关闭所有内容平台的算法个性化推荐，阅读更多样化的信息，这一切就像我开篇说的，我希望更多的人跳出自己的信息茧房。比如下方功能，我对所有头条设计了**“相关新闻”**功能，允许用户进入相关专题页查看全方位的报道。
 
-![Untitled](/assets/blog/必应新闻/必应新闻-Untitled_6.png)
+![Untitled](/assets/blog/bing-news-zh/必应新闻-Untitled_6.png)
 
 ---
 

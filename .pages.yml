@@ -36,6 +36,9 @@ content:
         label: Area
         type: string
         list: true
+      - name: favicon
+        label: Favicon
+        type: image
       - name: coverImage
         label: Cover Image
         type: image
@@ -76,6 +79,9 @@ content:
         label: Area
         type: string
         list: true
+      - name: favicon
+        label: Favicon
+        type: image
       - name: coverImage
         label: Cover Image
         type: image
@@ -102,6 +108,9 @@ content:
       - name: sorting
         label: Sorting
         type: number
+      - name: favicon
+        label: Favicon
+        type: image
       - name: coverImage
         label: Cover Image
         type: image
@@ -128,6 +137,9 @@ content:
       - name: sorting
         label: Sorting
         type: number
+      - name: favicon
+        label: Favicon
+        type: image
       - name: coverImage
         label: Cover Image
         type: image

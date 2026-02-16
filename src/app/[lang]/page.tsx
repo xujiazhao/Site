@@ -28,9 +28,10 @@ export default function Index({ params }: { params: { lang: string } }) {
               <thead>
                 <tr className="text-left text-neutral-500 font-normal border-b">
                   <th className="pb-4 pr-4 pl-2">{isEn ? "Organization" : "机构"}</th>
-                  <th className="pb-4 pr-4 w-1/3">{isEn ? "Role & Intro" : "角色与介绍"}</th>
+                  <th className="pb-4 pr-4">{isEn ? "Type" : "类型"}</th>
+                  <th className="pb-4 pr-4">{isEn ? "Date Range" : "时间"}</th>
                   <th className="pb-4 pr-4">{isEn ? "Location" : "地点"}</th>
-                  <th className="pb-4 pr-2 text-right">{isEn ? "Date" : "时间"}</th>
+                  <th className="pb-4 pr-2">{isEn ? "Area" : "领域"}</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,15 +42,28 @@ export default function Index({ params }: { params: { lang: string } }) {
                         {exp.title}
                       </Link>
                     </td>
-                    <td className="py-4 pr-4 align-top border-b border-neutral-100 group-hover:border-transparent">
-                      <div className="font-medium text-neutral-800">{exp.intro}</div>
-                      {exp.type && <div className="text-sm text-neutral-500 mt-1">{exp.type}</div>}
+                    <td className="py-4 pr-4 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
+                      {exp.type}
+                    </td>
+                    <td className="py-4 pr-4 align-top text-neutral-600 font-mono text-sm border-b border-neutral-100 group-hover:border-transparent whitespace-nowrap">
+                      {exp.dateRange || <DateFormatter dateString={exp.date} />}
                     </td>
                     <td className="py-4 pr-4 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
                       {exp.location}
                     </td>
-                    <td className="py-4 pr-2 align-top text-neutral-600 font-mono text-sm text-right border-b border-neutral-100 group-hover:border-transparent">
-                      {exp.dateRange || <DateFormatter dateString={exp.date} />}
+                    <td className="py-4 pr-2 align-top border-b border-neutral-100 group-hover:border-transparent">
+                      {exp.area && exp.area.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5">
+                          {exp.area.map((tag) => (
+                            <span
+                              key={tag}
+                              className="inline-block bg-neutral-200 text-neutral-600 text-xs font-medium px-2.5 py-1 rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </td>
                   </tr>
                 ))}

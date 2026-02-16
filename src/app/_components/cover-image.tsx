@@ -1,6 +1,5 @@
 import cn from "classnames";
 import Link from "next/link";
-import Image from "next/image";
 
 type Props = {
   title: string;
@@ -10,21 +9,22 @@ type Props = {
 };
 
 const CoverImage = ({ title, src, slug, href }: Props) => {
+  if (!src) return null;
+
   const image = (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
       alt={`Cover Image for ${title}`}
       className={cn("shadow-sm w-full", {
         "hover:shadow-lg transition-shadow duration-200": slug || href,
       })}
-      width={1300}
-      height={630}
     />
   );
   return (
     <div className="sm:mx-0">
       {slug || href ? (
-        <Link as={href || `/posts/${slug}`} href={href || "/posts/[slug]"} aria-label={title}>
+        <Link href={href || `/posts/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (

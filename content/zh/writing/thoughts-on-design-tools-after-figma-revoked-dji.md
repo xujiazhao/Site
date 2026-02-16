@@ -26,7 +26,7 @@ Language: 中文
 
 3月12日美国Figma公司，也就是UI/UX设计行业市场占有率第一的SaaS服务提供商邮件通知大疆创新，由于美国政府制裁及法律要求，Figma冻结了大疆的Figma账号，并不再允许大疆使用它的服务。（Figma的市场占有率已于2019年超过Sketch）
 
-![Untitled](/assets/blog/写在figma收回dji账号之后-关于设计工具的思考/写在figma收回dji账号之后-关于设计工具的思考-Untitled.png)
+![Untitled](/assets/blog/thoughts-on-design-tools-after-figma-revoked-dji/写在figma收回dji账号之后-关于设计工具的思考-Untitled.png)
 
 而目前国内已经大量部署使用 Figma 的公司有字节跳动、腾讯、网易、平安保险等，各大公司也都第一时间对相关问题做出回应，比如字节要求所有设计师紧急备份设计文件以防不测。
 

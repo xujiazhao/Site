@@ -31,6 +31,6 @@ Language: 中文
 
 这世界的参差，让人无力。
 
-![Untitled](/assets/blog/我不知道我们应如何应对这世界上如此多的苦难/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
+![Untitled](/assets/blog/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
 
-![Untitled](/assets/blog/我不知道我们应如何应对这世界上如此多的苦难/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)
+![Untitled](/assets/blog/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)
