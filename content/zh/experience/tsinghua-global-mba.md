@@ -7,6 +7,7 @@ area: ["多元化环境", "工商管理硕士"]
 location: "北京  - 现在"
 coverImage: "/assets/images/cover-image/SEM.png"
 favicon: "/assets/images/favicon/THU.png"
+sorting: 4
 ---
 
 # 清华大学全球MBA

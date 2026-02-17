@@ -6,6 +6,8 @@ type: "创业"
 area: ["公众教育", "青少年活动"]
 location: "北京  – 2024"
 coverImage: "/assets/images/cover-image/bjmun.png"
+favicon: "/assets/images/favicon/bjmun.webp"
+sorting: 1
 ---
 
 # 北京模联BJMUN

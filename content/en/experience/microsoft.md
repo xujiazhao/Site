@@ -5,6 +5,8 @@ intro: "All in AI"
 type: "Full-time"
 area: ["AI", "Content Service", "Cross-border Collaboration", "Design for Global Market", "Product Design"]
 location: "Beijing  - Now"
+favicon: "/assets/images/favicon/msft.png"
+sorting: 6
 ---
 
 # Microsoft

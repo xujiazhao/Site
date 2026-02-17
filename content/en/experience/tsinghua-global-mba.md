@@ -7,6 +7,7 @@ area: ["Diverse Environment", "MBA"]
 location: "Beijing  - Now"
 coverImage: "/assets/images/cover-image/SEM.png"
 favicon: "/assets/images/favicon/THU.png"
+sorting: 4
 ---
 
 # Tsinghua Global MBA

@@ -7,6 +7,7 @@ area: ["Bachelor of Science", "Product Design"]
 location: "Los Angeles  - 2021.4"
 coverImage: "/assets/images/cover-image/ArtCenter.png"
 favicon: "/assets/images/favicon/artcentericon.png"
+sorting: 3
 ---
 
 # ArtCenter College of Design

@@ -1,3 +1,5 @@
+"use client";
+
 type Props = {
   lang: string;
 };
@@ -32,10 +34,19 @@ export function SelfIntro({ lang }: Props) {
             </>
           )}
         </div>
-        <div className="flex gap-4 text-lg font-bold">
-          <a href="mailto:hello@xujiazhao.com" className="hover:underline">Email</a>
-          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-          {isEn ? <span>WeChat: xux-ai</span> : <span>微信: xux-ai</span>}
+        <div className="flex gap-3 text-sm">
+          <a href="mailto:hello@xujiazhao.com" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors">
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors">
+            LinkedIn
+          </a>
+          <button
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors cursor-pointer"
+            onClick={() => { navigator.clipboard.writeText('xux-ai'); alert(isEn ? 'WeChat ID copied: xux-ai' : '微信号已复制: xux-ai'); }}
+          >
+            {isEn ? "WeChat" : "微信"}
+          </button>
         </div>
       </div>
     </section>

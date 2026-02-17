@@ -6,6 +6,8 @@ type: "兼职"
 area: ["商业+设计", "教学"]
 location: "新加坡  - 2023.5"
 coverImage: "/assets/images/cover-image/INSEAD.png"
+favicon: "/assets/images/favicon/insead.webp"
+sorting: 2
 ---
 
 # 欧洲工商管理学院

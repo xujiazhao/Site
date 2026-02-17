@@ -6,6 +6,8 @@ type: "Part-time"
 area: ["Design+Business", "Teaching"]
 location: "Singapore  - 2023.5"
 coverImage: "/assets/images/cover-image/INSEAD.png"
+favicon: "/assets/images/favicon/insead.webp"
+sorting: 2
 ---
 
 # INSEAD Business School

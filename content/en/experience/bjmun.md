@@ -6,6 +6,8 @@ type: "Start-up"
 area: ["Public Education", "Teenager"]
 location: "Beijing  – 2024"
 coverImage: "/assets/images/cover-image/bjmun.png"
+favicon: "/assets/images/favicon/bjmun.webp"
+sorting: 1
 ---
 
 # BJMUN

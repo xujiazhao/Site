@@ -7,6 +7,7 @@ area: ["产品设计", "理学学士"]
 location: "洛杉矶  - 2021.4"
 coverImage: "/assets/images/cover-image/ArtCenter.png"
 favicon: "/assets/images/favicon/artcentericon.png"
+sorting: 3
 ---
 
 # 艺术中心设计学院

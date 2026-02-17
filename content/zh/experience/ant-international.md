@@ -6,6 +6,7 @@ area: ["B端", "C端", "交互设计", "全球业务", "工具产品", "支付",
 location: "上海  - 2022.12"
 coverImage: "/assets/images/cover-image/Ant.png"
 favicon: "/assets/images/favicon/anticon.png"
+sorting: 5
 ---
 
 # 蚂蚁国际
