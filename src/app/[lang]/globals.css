@@ -103,8 +103,12 @@ body {
   min-width: 0;
 }
 
-.md-grid-col > p {
-  margin: 0;
+.md-grid-col > p:first-child {
+  margin-top: 0;
+}
+
+.md-grid-col > p:last-child {
+  margin-bottom: 0;
 }
 
 .md-grid-col figure {

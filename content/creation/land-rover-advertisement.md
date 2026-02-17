@@ -21,6 +21,25 @@ These are promotional videos I created for Land Rover. All assets were created u
 - Keyframe to video clips: MiniMax Hailuo
 - Voiceover: ElevenLabs
 
-[钱绪.mp4](Land%20Rover%20Advertisement/%E9%92%B1%E7%BB%AA.mp4)
 
-[王茗.mp4](Land%20Rover%20Advertisement/%E7%8E%8B%E8%8C%97.mp4)
+<div class="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/cdMHS-6cuQQ"
+    title="Land Rover Video 1"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<div class="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/8iULxgtkJ2M"
+    title="Land Rover Video 2"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>

@@ -12,7 +12,6 @@ sorting: 1
 
 > **A 11-year dream of educational social activities.**
 > 
-![](/assets/images/bjmun/bjmun-Untitled.png)
 
 BJMUN is a non-profit organization that holds educational activities like Model United Nations conferences for high school and college students in Beijing. Started in 2010, BJMUN has already held over 200 activities, speeches, and discussions that benefited over 10 thousand participants (person-time). It is one of the largest and oldest organizers of [Model United Nations](https://www.un.org/en/mun) in China.
 
@@ -28,7 +27,16 @@ The satisfaction of working at BJMUN is seeing the happy faces and grateful post
 
 Someday in the future, I may have my own startup making educational product. BJMUN will definitely become a valuable resource for me to study the market, users, and trends.
 
-[https://youtu.be/DNERXCRvxj0](https://youtu.be/DNERXCRvxj0)
+<div class="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/DNERXCRvxj0"
+    title="BJMUN YouTube Video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
 :::grid
 

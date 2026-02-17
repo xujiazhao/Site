@@ -29,7 +29,16 @@ sorting: 1
 
 未来的某一天，我或许会创办自己的教育产品公司，BJMUN必将成为我研究市场、用户和趋势的宝贵资源。
 
-[https://youtu.be/DNERXCRvxj0](https://youtu.be/DNERXCRvxj0)
+<div class="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/DNERXCRvxj0"
+    title="BJMUN YouTube Video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
 :::grid
 

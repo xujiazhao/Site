@@ -86,5 +86,11 @@ export default async function markdownToHtml(markdown: string) {
     }
   );
 
+  // Open external links in a new tab
+  htmlStr = htmlStr.replace(
+    /<a\s+href="(https?:\/\/[^"]+)"/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer"'
+  );
+
   return htmlStr;
 }
