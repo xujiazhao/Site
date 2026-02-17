@@ -44,7 +44,7 @@ While continuously iterating the news module, I also took charge of designing tw
 
 ### News in Bing Chat (now Copilot)
 
-![Untitled](/assets/images/bing-news/bing-news-Untitled_2.png)
+![](/assets/images/bing-news/bing-news-Untitled_2.png)
 
 The AI boom in 2023 prompted Microsoft to launch Bing Chat and related capabilities promptly. Within 3 months, Microsoft rapidly rolled out hundreds of new features in Chat, among which the news module I was responsible for stood out as one of the WoW features.
 
@@ -57,7 +57,9 @@ I noted that in the China, Japan, and Korea, users are more sensitive to text-ba
 ![Trending on Bing landing page](/assets/images/bing-news/bing-news-Untitled_4.png)
 
 <aside>
-😆 **Fun fact:** I made several attempts to take down the black and gray color theme of Trending on Bing, trying various different visual design styles. Unfortunately, the flight data indicated that only the heavy, dark design could ensure the user click-through rate on the page. So, as shown in the image, it remains... black…
+😆 
+
+**Fun fact:** I made several attempts to take down the black and gray color theme of Trending on Bing, trying various different visual design styles. Unfortunately, the flight data indicated that only the heavy, dark design could ensure the user click-through rate on the page. So, as shown in the image, it remains... black…
 
 </aside>
 
@@ -79,7 +81,7 @@ Bing News has very strict requirements for information authority and search neut
 
 Over the past year of managing the news product, I have developed very healthy and beneficial information consumption habits. Perhaps you can do the same—turn off algorithmic personalized recommendations on all content platforms and explore a wider variety of information. As I mentioned at the beginning, I hope more people can break out of their information cocoons. For example, in the feature below, I designed a **"Related News"** function for all top stories, allowing users to access a dedicated page for comprehensive coverage.
 
-![Untitled](/assets/images/bing-news/bing-news-Untitled_6.png)
+![](/assets/images/bing-news/bing-news-Untitled_6.png)
 
 ---
 

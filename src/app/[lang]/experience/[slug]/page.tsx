@@ -31,6 +31,7 @@ export default async function Post({ params }: Params) {
           <PostHeader
             title={post.title}
             date={post.date}
+            favicon={post.favicon}
           />
           <PostBody content={content} />
         </article>

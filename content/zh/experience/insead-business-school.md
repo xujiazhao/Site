@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/insead.webp"
 sorting: 2
 ---
 
-# 欧洲工商管理学院
-
-
 > **在全球顶级商学院讲授设计思维**
 > 
 

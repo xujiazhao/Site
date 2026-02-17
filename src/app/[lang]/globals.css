@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
 }
 
@@ -57,4 +56,88 @@ body {
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out both;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-img {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-lightbox-in {
+  animation: lightbox-in 0.2s ease-out both;
+}
+
+.animate-lightbox-img {
+  animation: lightbox-img 0.25s ease-out both;
+}
+
+/* Markdown grid layout */
+.md-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .md-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.md-grid-col {
+  min-width: 0;
+}
+
+.md-grid-col > p {
+  margin: 0;
+}
+
+.md-grid-col figure {
+  margin: 0;
+}
+
+/* Markdown columns layout (legacy) */
+.md-columns-1 {
+  @apply grid grid-cols-1 gap-4 my-6;
+}
+
+.md-columns-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 my-6;
+}
+
+.md-columns-3 {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4 my-6;
+}
+
+.md-columns-4 {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-6;
+}
+
+.md-columns-1 > p,
+.md-columns-2 > p,
+.md-columns-3 > p,
+.md-columns-4 > p {
+  @apply my-0;
+}
+
+.md-columns-1 figure,
+.md-columns-2 figure,
+.md-columns-3 figure,
+.md-columns-4 figure {
+  @apply my-0;
 }

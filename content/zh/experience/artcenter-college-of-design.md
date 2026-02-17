@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/artcentericon.png"
 sorting: 3
 ---
 
-# 艺术中心设计学院
-
-
 > **四年亦痛亦幻的设计追梦之路**
 > 
 

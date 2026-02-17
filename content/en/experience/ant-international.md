@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/anticon.png"
 sorting: 5
 ---
 
-# Ant International
-
-
 > **Master a little of the Payment**
 > 
 

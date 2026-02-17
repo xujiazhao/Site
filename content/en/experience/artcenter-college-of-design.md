@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/artcentericon.png"
 sorting: 3
 ---
 
-# ArtCenter College of Design
-
-
 > 4 years chasing the design dream
 > 
 

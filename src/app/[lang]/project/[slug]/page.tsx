@@ -30,6 +30,7 @@ export default async function Project({ params }: Params) {
           <PostHeader
             title={post.title}
             date={post.date}
+            favicon={post.favicon}
           />
           <PostBody content={content} />
         </article>

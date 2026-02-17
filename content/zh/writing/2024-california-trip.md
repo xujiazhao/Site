@@ -5,8 +5,6 @@ type: "随记"
 
 ---
 
-# 2024 加州之行
-
 Created: May 4, 2024
 Tags: Causerie
 Language: 中文
@@ -25,12 +23,12 @@ Language: 中文
 
 可惜人生没有如果，我也没有假期了，登机，回家。
 
-![Untitled](/assets/images/2024-california-trip/2024-加州之行-Untitled.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled.png)
 
-![Untitled](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.png)
 
-![Untitled](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.png)
 
-![Untitled](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.png)
 
-![Untitled](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.png)

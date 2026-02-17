@@ -2,12 +2,18 @@ import { ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
+  favicon?: string;
 };
 
-export function PostTitle({ children }: Props) {
+export function PostTitle({ children, favicon }: Props) {
   return (
-    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
-      {children}
-    </h1>
+    <div className="flex items-center justify-between mb-8">
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight text-left">
+        {children}
+      </h1>
+      {favicon && (
+        <img src={favicon} alt="" className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 flex-shrink-0 ml-4" />
+      )}
+    </div>
   );
 }

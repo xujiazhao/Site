@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/Copilot.png"
 favicon: "/assets/images/favicon/Copilot icon.png"
 ---
 
-# Copilot 内容生态
-
 > **为AI设计端到端内容体验**
 > 
 

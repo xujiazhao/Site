@@ -5,8 +5,6 @@ type: "思考"
 
 ---
 
-# Vibe Coding 到底意味着什么？
-
 Created: September 13, 2025
 Tags: Thinking
 Language: 中文

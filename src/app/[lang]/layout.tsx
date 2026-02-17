@@ -3,7 +3,7 @@ import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import { SiteHeader } from "@/app/_components/site-header";
-
+import { ScrollReset } from "@/app/_components/scroll-reset";
 import "./globals.css";
 
 const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], variable: "--font-barlow" });
@@ -60,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className={`${barlow.variable} ${params.lang === 'en' ? barlow.className : ''}`}>
         <SiteHeader lang={params.lang} />
+        <ScrollReset />
         <div className="min-h-screen pt-14">{children}</div>
         <Footer lang={params.lang} />
       </body>

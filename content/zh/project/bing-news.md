@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/Bing News.png"
 favicon: "/assets/images/favicon/Bing icon.png"
 ---
 
-# 必应新闻
-
 > 帮人们打破信息茧房
 > 
 
@@ -46,7 +44,7 @@ favicon: "/assets/images/favicon/Bing icon.png"
 
 ### Bing Chat （现名Copilot）中的新闻
 
-![Untitled](/assets/images/bing-news/bing-news-Untitled_2.png)
+![](/assets/images/bing-news/bing-news-Untitled_2.png)
 
 2023年的AI热潮让微软第一时间上线了Bing Chat及相关能力，在三个月内，微软突击上线了在Chat中的上百个新能力，其中我负责的新闻模块也是其中体验效果特别突出的一个功能之一。
 
@@ -59,7 +57,9 @@ favicon: "/assets/images/favicon/Bing icon.png"
 ![必应热点落地页](/assets/images/bing-news/bing-news-Untitled_4.png)
 
 <aside>
-😆 有趣的是，在负责新闻的这一年时间里，我数次努力推动迭代掉此页面的黑灰色系，尝试了各种不同的视觉设计风格。但很遗憾的是，测试数据表示只有又黑又重的页面设计才能保证页内内容的用户点击率，所以如图所示，它还是，黑的。。。
+😆 
+
+有趣的是，在负责新闻的这一年时间里，我数次努力推动迭代掉此页面的黑灰色系，尝试了各种不同的视觉设计风格。但很遗憾的是，测试数据表示只有又黑又重的页面设计才能保证页内内容的用户点击率，所以如图所示，它还是，黑的。。。
 
 </aside>
 
@@ -79,7 +79,7 @@ favicon: "/assets/images/favicon/Bing icon.png"
 
 必应新闻有非常严格的信息权威性和搜索平权要求，让用户获得没有偏见的信息这一理念是深深植入每一个新闻人心中的。这一理念也改变了我，在负责新闻产品的这一年里，我养成了非常健康的非常好的信息获取习惯，也许你也可以和我一样，关闭所有内容平台的算法个性化推荐，阅读更多样化的信息，这一切就像我开篇说的，我希望更多的人跳出自己的信息茧房。比如下方功能，我对所有头条设计了**“相关新闻”**功能，允许用户进入相关专题页查看全方位的报道。
 
-![Untitled](/assets/images/bing-news/bing-news-Untitled_6.png)
+![](/assets/images/bing-news/bing-news-Untitled_6.png)
 
 ---
 

@@ -4,8 +4,6 @@ date: "2020-02-12"
 type: "Thinking"
 ---
 
-# 3 i Design Toolkit
-
 Created: February 12, 2020
 Tags: Thinking
 Language: English
@@ -18,10 +16,10 @@ Language: English
 > **A simple tool to learn how to insight, ideate, and iterate for design**
 > 
 
-![Untitled](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled.png)
+![](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled.png)
 
-![Untitled](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_1.png)
+![](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_1.png)
 
-![Untitled](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_2.png)
+![](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_2.png)
 
-![Untitled](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_3.png)
+![](/assets/images/3-i-design-toolkit/3-i-design-toolkit-Untitled_3.png)

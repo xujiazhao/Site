@@ -10,19 +10,16 @@ favicon: "/assets/images/favicon/bjmun.webp"
 sorting: 1
 ---
 
-# 北京模联BJMUN
-
-
 > **11年公益教育之梦**
 > 
 
-![Untitled](/assets/images/bjmun/bjmun-Untitled.png)
+![](/assets/images/bjmun/bjmun-Untitled.png)
 
 北京模联 BJMUN 是一个非营利组织，专门为北京的高中生和大学生举办模拟联合国会议等教育活动。自2010年成立以来，BJMUN 已经举办了超过200场活动、演讲和讨论，惠及了超过一万名参与者（人次）。它是中国规模最大、历史最悠久的模拟联合国组织之一。
 
 2013年，我在高二时以一名普通代表的身份加入了BJMUN。从那时起，我逐渐从一名参与者转变为领导者和策划者。经过8年的历练，我现在作为BJMUN学生团队的兼职顾问，帮助他们解决法律、财务和公共关系方面的所有问题。
 
-![Untitled](/assets/images/bjmun/bjmun-Untitled_1.png)
+![](/assets/images/bjmun/bjmun-Untitled_1.png)
 
 **教育是一个需要长期持续投入的领域。**为了不断为青年参与者带来有意义且富有洞察力的内容，我紧密关注社会趋势和国际局势。教育同样遵循市场行为的一般规律，我一直推动组织创造新的活动和主题，以吸引更多的学校和学生参与。
 
@@ -34,6 +31,10 @@ sorting: 1
 
 [https://youtu.be/DNERXCRvxj0](https://youtu.be/DNERXCRvxj0)
 
+:::grid
+
+:::col-1
+
 ![我们最大的学校代表团，120名代表](/assets/images/bjmun/bjmun-bjmun_photo_10.jpg)
 
 ![学习交际舞的代表](/assets/images/bjmun/bjmun-bjmun_photo_1.jpg)
@@ -42,7 +43,11 @@ sorting: 1
 
 ![拍摄我们全新的宣传片](/assets/images/bjmun/bjmun-bjmun_photo_3.jpg)
 
-![在新冠疫情期间，我们举办了自创办以来规模最大的一次会议，有超过700名模联人参与](/assets/images/bjmun/bjmun-bjmun_photo_4.jpg)
+
+
+:::
+
+:::col-2
 
 ![美味茶歇](/assets/images/bjmun/bjmun-bjmun_photo_2.jpg)
 
@@ -51,3 +56,9 @@ sorting: 1
 ![茶歇](/assets/images/bjmun/bjmun-bjmun_photo_8.jpg)
 
 ![研究地缘关系中的代表](/assets/images/bjmun/bjmun-bjmun_photo_9.jpg)
+
+
+![在新冠疫情期间，我们举办了自创办以来规模最大的一次会议，有超过700名模联人参与](/assets/images/bjmun/bjmun-bjmun_photo_4.jpg)
+:::
+
+:::end

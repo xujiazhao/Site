@@ -5,8 +5,6 @@ type: "思考"
 
 ---
 
-# 商家收银台前端能力抽象
-
 Created: August 12, 2022
 Tags: Thinking
 Language: 中文

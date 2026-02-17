@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/AppleAlipay.png"
 favicon: "/assets/images/favicon/appleicon.png"
 ---
 
-# 苹果 ✕ 支付宝
-
 > **打造最好的 AppStore 支付体验**
 > 
 

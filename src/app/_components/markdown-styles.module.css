@@ -16,6 +16,10 @@
   @apply my-0;
 }
 
+.markdown blockquote strong {
+  @apply font-semibold;
+}
+
 .markdown ul {
   @apply list-disc pl-6;
 }
@@ -28,16 +32,32 @@
   @apply my-1;
 }
 
+.markdown h1 {
+  @apply text-4xl mt-12 mb-4 leading-snug font-semibold;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug font-semibold;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug font-semibold;
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-3 leading-snug font-semibold;
+}
+
+.markdown h5 {
+  @apply text-lg mt-4 mb-2 leading-snug font-semibold;
+}
+
+.markdown h6 {
+  @apply text-base mt-4 mb-2 leading-snug font-semibold;
 }
 
 .markdown img {
-  @apply w-full rounded-lg;
+  @apply w-full rounded-lg cursor-zoom-in;
 }
 
 .markdown figure {
@@ -53,6 +73,24 @@
   @apply underline;
 }
 
+.markdown table {
+  @apply w-full my-6 border-collapse border border-neutral-200;
+}
+
+.markdown th:first-child,
+.markdown td:first-child {
+  @apply whitespace-nowrap w-0;
+}
+
+.markdown th,
+.markdown td {
+  @apply px-4 py-2 border border-neutral-200 text-left;
+}
+
+.markdown th {
+  @apply bg-neutral-50 font-semibold;
+}
+
 .markdown a:hover {
   color: #cc7a1a;
 }
@@ -62,7 +100,11 @@
 }
 
 .markdown aside {
-  @apply my-6 px-5 py-4 rounded-lg bg-neutral-50 border border-neutral-200 text-base leading-relaxed;
+  @apply my-6 px-5 py-4 rounded-lg bg-neutral-50 border border-neutral-200 text-lg leading-relaxed flex items-start gap-3;
+}
+
+.markdown aside img {
+  @apply inline w-5 h-5 mt-1 rounded-none flex-shrink-0;
 }
 
 .markdown aside p {

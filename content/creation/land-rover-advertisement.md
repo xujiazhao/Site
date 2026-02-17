@@ -5,8 +5,6 @@ skill: ["AIGC", "Video"]
 coverImage: "/assets/images/cover-image/LandRover.webp"
 ---
 
-# Land Rover Advertisement
-
 Tags: AIGC, Video
 
 以下是我为路虎创作的广告宣传片，全部素材使用AI创作，并使用 Adobe Premiere Pro 剪辑拼接。AI 使用具体情况如下：

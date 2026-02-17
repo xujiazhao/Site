@@ -5,8 +5,6 @@ type: "随记"
 
 ---
 
-# 我不知道我们应如何应对这世界上如此多的苦难
-
 Created: March 17, 2024
 Tags: Causerie
 Language: 中文
@@ -33,6 +31,6 @@ Language: 中文
 
 这世界的参差，让人无力。
 
-![Untitled](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
+![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
 
-![Untitled](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)
+![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)

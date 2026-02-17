@@ -8,197 +8,213 @@ favicon: "/assets/images/favicon/SIG_logo.svg"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 作为我还曾是工业设计师的证明…
+<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> As proof that I was once an industrial designer…
 
 </aside>
 
-> **SIG Combibloc 康美包新一代纸包装方案**
+> SIG Combibloc's next-generation carton packaging solution
 > 
 
-![sig_cover1.jpg](/assets/images/sig-combione/sig-combione-sig_cover1.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_cover1.jpg)
 
-CombiONE 是为 [**SIG**](https://www.sig.biz/en) 设计的一套无菌纸包装解决方案。我的团队专注于为他们设计新的压模线和包装开口。项目过程中涉及用户研究，包装设计，平面设计和产品设计等内容。
+CombiONE is an aseptic carton packaging solution designed for [**SIG**](https://www.sig.biz/en). My team focused on designing new die-cut lines and packaging openings for them. The project involved user research, packaging design, graphic design, and product design.
 
-SIG 是全球领先的食品和饮料纸包灌装领域方的案提供商之一。在2019年春天，SIG 来到艺术中心设计学院赞助我们完成了这一项目。项目的所有内容都先交付给他们进行验收，并在保密期之后被允许我对外用于作品集展示。
+SIG is one of the world's leading providers of food and beverage carton filling solutions. In the spring of 2019, SIG came to ArtCenter College of Design to sponsor this project. All deliverables were first submitted to them for review and, after the confidentiality period, I was permitted to showcase them in my portfolio.
 
-# **SIG 公司的需求**
+## SIG's Requirements ##
 
-![Untitled](/assets/images/sig-combione/sig-combione-Untitled.png)
+| Requirement | Description |
+| --- | --- |
+| Tethered Cap | According to European law, all food and beverage packaging must feature tethered caps to prevent littering and environmental pollution. |
+| Shipping Efficiency | SIG has a joke about "shipping air" — meaning there are large gaps between individual packaging units during transport. They wanted to minimize these gaps through design changes to improve shipping efficiency. |
+| Production Feasibility | All die-cut lines must be closed, and production must be achieved through folding rather than cutting openings. |
+| Multi-Pack Solution | SIG also wanted us to design multi-pack solutions for large families, filling a gap in their current product line. |
+| Grip Experience | SIG also wanted us to prioritize the ergonomic grip of the packaging, especially considering the experience of elderly users. |
 
-**连体瓶盖**
+## Research ##
 
-根据欧洲法律，所有食品和饮料包装都自带连体瓶盖，以防止被人随意丢弃而污染环境。
+First, we conducted an in-depth study of SIG's existing product offerings to better understand their market positioning and competitive strengths and weaknesses.
 
-![Untitled](/assets/images/sig-combione/sig-combione-Untitled_1.png)
+We then researched and analyzed several key topics related to the packaging industry and produced a report covering: smart packaging, industry trends, CMF, sustainability, and multi-pack solutions. This report served as a professional knowledge handbook on the packaging industry, helping us clarify our subsequent design direction.
 
-**运输效率**
+## Design ##
 
-SIG 有一个关于运输空气的笑话，意思是说运输时他们每一个包装单体之间都有很大的缝隙，他们希望通过改变设计而尽可能减小空隙以提高运输效率。
+![](/assets/images/sig-combione/sig-combione-sig_mockup.jpg)
 
-![Untitled](/assets/images/sig-combione/sig-combione-Untitled_2.png)
+We brainstormed hundreds of concepts for different potential user groups. Through continuous paper folding and prototyping, we validated the production feasibility of each concept. This iterative process continued for 4 weeks until we arrived at satisfactory solutions.
 
-**生产可行性**
+We also created user personas such as Uber drivers and flight attendants to define the functional positioning of each design. Overall, however, the ultimate goal of our solutions was to serve all users in their daily lives, rather than being limited to any specific user type.
 
-所有方案的压模线必须是闭合的，且仅可通过折叠而不是开口的方式进行生产。
+## Solutions ##
 
-![Untitled](/assets/images/sig-combione/sig-combione-Untitled_3.png)
+### CombiGrip + CombiSlide ###
 
-**组合包装方案**
+CombiGrip + CombiSlide is a medium-sized beverage packaging design.
 
-SIG 也希望我们尽可能的为大家庭用户设计出组合包装方案，以弥补他们现在的产品线缺口。
+Thanks to our newly designed die-cut lines and folding structure, CombiGrip provides an optimal grip, helping the elderly, children, and especially Parkinson's patients better hold the package while pouring.
 
-![Untitled](/assets/images/sig-combione/sig-combione-Untitled_4.png)
+CombiSlide features a slide-open spout with a nearly negligible height profile, significantly reducing wasted space caused by stacking during transport.
 
-**持握体验**
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.png)
+:::
+:::end
 
-同时 SIG 也希望我们在设计的时候多多考虑产品的握感，特别是要考虑到老年用户的体验。
+### CombiMax + CombiPull ###
 
-# **调研**
+CombiMax + CombiPull is a large-capacity beverage packaging set designed for big families.
 
-首先，我们深入了解了 SIG 的现有产品方案，以更好地了解它在市场中的定位及竞争优劣。
+CombiMax features an indentation on the front that allows the spout to sit flush with the body when not pulled open, thereby avoiding wasted space during transport.
 
-然后，我们深入研究分析了与包装行业相关的几个主要议题并制作了一份报告，其内容包括：智能包装，行业趋势，CMF，可持续性发展，组合包装。 该报告是我们对于包装行业一份专业信息知识手册，帮助了我们明确了后续的设计思路。
+CombiPull works like a standard water bottle cap — twist to unlock, then pull to break the seal.
 
-查看报告全文（英文），请访问：[https://issuu.com/xujiazhao/docs/sig-research-deck](https://issuu.com/xujiazhao/docs/sig-research-deck)
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.png)
+:::
+:::end
 
-# **设计**
 
-![sig_mockup.jpg](/assets/images/sig-combione/sig-combione-sig_mockup.jpg)
+### CombiPack + CombiAlways ###
 
-我们为不同的潜在用户群头脑风暴了数百个概念。 通过不断地折纸和尝试，我们验证了各个概念的生产可能性。此过程循环进行了 4 周，直到最终我们寻找出满意的解决方案为止。
+CombiPack + CombiAlways is a multi-pack packaging solution.
 
-我们还假想了如 Uber 司机、空乘等用户来为每个设计方案进行功能定位。但总得来说，我们的各个方案的最终目的尽可能地为所有用户提供日常使用的产品，而不仅局限于某一特定类型的用户。
+CombiPack uses a single sheet of cardboard as a carrier basket for the four individual packages inside.
 
-查看全部设计流程（英文），请访问： [https://issuu.com/xujiazhao/docs/sig-design-deck](https://issuu.com/xujiazhao/docs/sig-design-deck)
+CombiAlways is compatible with both standard flip-top caps and CombiTime tethered caps.
 
-# **解决方案**
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.png)
+:::
+:::end
 
-![SIG_CombiGrip_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.png)
 
-### CombiGrip + CombiSlide
+### CombiMeal + CombiZip ###
 
-CombiGrip + CombiSlide 是一套中等尺寸的饮料包装设计。
+CombiMeal + CombiZip is a compact, portable food packaging solution.
 
-因为我们设计了新的压模线和折叠结构，CombiGrip 可提供最佳的握感，帮助老年人以及孩子，特别是帕金森症患者在倒出液体时更好地持握包装。
+The zipper closure has two layers: an inner aluminum seal that is broken upon first use, and an outer resealable zipper.
 
-CombiSlide 是一个高度几乎可以忽略不计的滑开式瓶口，可以大大节省包装运输时堆叠导致的空间浪费。
+This solution can be used for microwaveable ready meals or takeout products.
 
-![SIG_CombiGrip_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.png)
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.png)
+:::
+:::end
 
-![SIG_CombiGrip_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.png)
 
-![SIG_CombiGrip_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.png)
+### CombiPalm + CombiSip ###
 
----
+CombiSqueeze + CombiPaste is a packaging solution for jelly/butter-type products.
 
-![SIG_CombiPull_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.png)
+CombiSqueeze can store two different types of jelly simultaneously, allowing users to enjoy both at once.
 
-### CombiMax + CombiPull
+Twist the CombiPaste spout to open the package, then twist it back to reseal.
 
-CombiMax + CombiPull 是一组为大家庭设计的大容量饮品包装。
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.png)
+:::
+:::end
 
-CombiMax 的正面有一个凹口，使瓶口在未被拉开时可以贴合瓶身的形状，因此在运输中同样可以避免空间浪费。
 
-CombiPull 与常规的纯净水瓶口相同，使用时先扭开再拉开以打开其密封层。
+### CombiStack + CombiTime ###
 
-![SIG_CombiPull_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.png)
+CombiStack + CombiTime is a small packaging solution with excellent stackability.
 
-![SIG_CombiPull_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.png)
+CombiStack has an indentation on the bottom, allowing individual units to stack neatly on top of one another.
 
-![SIG_CombiPull_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.png)
+CombiTime uses an ultra-thin plastic tether to connect the cap to the body, significantly reducing production costs.
 
----
+:::grid
+:::col-1
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.png)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.png)
+:::
+:::col-3
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.png)
+:::
+:::col-4
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.png)
+:::
+:::end
 
-![SIG_CombiPack_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.png)
+## Field Testing ##
 
-### CombiPack + CombiAlways
+We applied 365 Everyday Value® branding to the final prototypes and brought them to a local supermarket, placing them on real shelves to validate the designs in an actual retail environment.
 
-CombiPack + CombiAlways 是一套组合包装方案。
+:::grid
+:::col-1
 
-CombiPack 仅使用了一张卡纸用作其内部四个单体包装的提篮。
+![](/assets/images/sig-combione/sig-combione-sig_shelf1.jpg)
 
-CombiAlways 可以同时配装普通的翻盖式瓶盖或者CombiTime 连体式瓶盖。
+![](/assets/images/sig-combione/sig-combione-sig_shelf3.jpg)
 
-![SIG_CombiPack_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.png)
+![](/assets/images/sig-combione/sig-combione-sig_shelf7.jpg)
 
-![SIG_CombiPack_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.png)
+![](/assets/images/sig-combione/sig-combione-sig_shelf4.jpg)
+:::
+:::col-2
+![](/assets/images/sig-combione/sig-combione-sig_shelf2.jpg)
 
-![SIG_CombiPack_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.png)
+![](/assets/images/sig-combione/sig-combione-sig_shelf6.jpg)
 
----
+![](/assets/images/sig-combione/sig-combione-sig_shelf5.jpg)
 
-![SIG_CombiMeal_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.png)
+![](/assets/images/sig-combione/sig-combione-sig_shelf8.jpg)
+:::
+:::end
 
-### CombiMeal + CombiZip
+## Final Deliverables ##
 
-CombiMeal + CombiZip 是一组小型的便携式食品包装方案。
-
-其中的拉链封口有两层，里面一层是需要再首次使用时破开的密封铝层，而外面一层则是可以反复开闭的拉链。
-
-这一方案可被用于微波炉速热产品或是外卖产品。
-
-![SIG_CombiMeal_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.png)
-
-![SIG_CombiMeal_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.png)
-
-![SIG_CombiMeal_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.png)
-
----
-
-![SIG_CombiSqueeze_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.png)
-
-### CombiPalm + CombiSip
-
-CombiSqueeze + CombiPaste 是一套用于果冻/黄油类产品的包装。
-
-CombiSqueeze 可以同时存储两钟不同的果冻，用户可以同时享用。
-
-旋转 CombiPaste 瓶口以打开包装，打开后再反向转回去以再次密封包装。
-
-![SIG_CombiSqueeze_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.png)
-
-![SIG_CombiSqueeze_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.png)
-
-![SIG_CombiSqueeze_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.png)
-
----
-
-![SIG_CombiStack_2.png](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.png)
-
-### CombiStack + CombiTime
-
-CombiStack + CombiTime 是一种拥有较好堆叠储存能力的小包装方案。
-
-CombiStack 的底部有一个凹口，所以每一个单体之间可以正好堆叠在一起。
-
-CombiTime 使用一根极细的塑料来连接瓶身与瓶盖，节省了大量生产成本。
-
-![SIG_CombiStack_1.png](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.png)
-
-![SIG_CombiStack_3.png](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.png)
-
-![SIG_CombiStack_4.png](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.png)
-
-# **实地测试**
-
-我们将 365 Everyday Value® 的品牌元素应用在了终版样品上，并把它们带去了当地超市，放在真实的货架上去验证设计方案的实际效果。
-
-![sig_shelf1.jpg](/assets/images/sig-combione/sig-combione-sig_shelf1.jpg)
-
-![sig_shelf3.jpg](/assets/images/sig-combione/sig-combione-sig_shelf3.jpg)
-
-![sig_shelf7.jpg](/assets/images/sig-combione/sig-combione-sig_shelf7.jpg)
-
-![sig_shelf4.jpg](/assets/images/sig-combione/sig-combione-sig_shelf4.jpg)
-
-![sig_shelf2.jpg](/assets/images/sig-combione/sig-combione-sig_shelf2.jpg)
-
-![sig_shelf6.jpg](/assets/images/sig-combione/sig-combione-sig_shelf6.jpg)
-
-![sig_shelf5.jpg](/assets/images/sig-combione/sig-combione-sig_shelf5.jpg)
-
-![sig_shelf8.jpg](/assets/images/sig-combione/sig-combione-sig_shelf8.jpg)
-
-# **最终交付成果**
-
-![sig_posters.jpg](/assets/images/sig-combione/sig-combione-sig_posters.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_posters.jpg)

@@ -18,11 +18,11 @@ My main job at Alipay+ is building its three payment products. Based on my under
 - Offline Payment
 - Auto Debit
 
-![Untitled](/assets/images/alipay/alipay-Untitled.png)
+![](/assets/images/alipay/alipay-Untitled.png)
 
 ![Online Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_1.png)
 
-![Untitled](/assets/images/alipay/alipay-Untitled_2.png)
+![](/assets/images/alipay/alipay-Untitled_2.png)
 
 ![Offline Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_3.png)
 

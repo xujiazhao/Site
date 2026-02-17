@@ -9,9 +9,6 @@ favicon: "/assets/images/favicon/msft.png"
 sorting: 6
 ---
 
-# 微软
-
-
 > All in AI
 > 
 
