@@ -35,11 +35,7 @@ Other experiences & awards:
 
 ![Me first time applying for a scholarship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
 
-Me first time applying for a scholarship.
-
 ![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
-
-Preparing the final presentation for SIG Combibloc’s sponsorship.
 
 About the SIG sponsorship, see: [SIG CombiONE](/en/project/sig-combione)
 

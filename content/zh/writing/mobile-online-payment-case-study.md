@@ -26,8 +26,6 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 
 ![标准支付流程](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled.png)
 
-标准支付流程
-
 - 卡片选项在第一位；
 - 可以照片扫描添加卡；
 - 有卡bin识别（也会自动设置安全码位数）；
@@ -39,8 +37,6 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 - 刚刚更新的，现在强制要求用户设置小费（最后一图）。
 
 ![几个分支/异常页面](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_1.png)
-
-几个分支/异常页面
 
 ### Target （超级市场）
 

@@ -36,36 +36,18 @@ sorting: 1
 
 ![我们最大的学校代表团，120名代表](/assets/images/bjmun/bjmun-bjmun_photo_10.jpg)
 
-我们最大的学校代表团，120名代表
-
 ![学习交际舞的代表](/assets/images/bjmun/bjmun-bjmun_photo_1.jpg)
-
-学习交际舞的代表
 
 ![角色扮演明代历史人物中的代表](/assets/images/bjmun/bjmun-bjmun_photo_7.jpg)
 
-角色扮演明代历史人物中的代表
-
 ![拍摄我们全新的宣传片](/assets/images/bjmun/bjmun-bjmun_photo_3.jpg)
-
-拍摄我们全新的宣传片
 
 ![在新冠疫情期间，我们举办了自创办以来规模最大的一次会议，有超过700名模联人参与](/assets/images/bjmun/bjmun-bjmun_photo_4.jpg)
 
-在新冠疫情期间，我们举办了自创办以来规模最大的一次会议，有超过700名模联人参与
-
 ![美味茶歇](/assets/images/bjmun/bjmun-bjmun_photo_2.jpg)
-
-美味茶歇
 
 ![社交舞会](/assets/images/bjmun/bjmun-bjmun_photo_6.jpg)
 
-社交舞会
-
 ![茶歇](/assets/images/bjmun/bjmun-bjmun_photo_8.jpg)
 
-茶歇
-
 ![研究地缘关系中的代表](/assets/images/bjmun/bjmun-bjmun_photo_9.jpg)
-
-研究地缘关系中的代表

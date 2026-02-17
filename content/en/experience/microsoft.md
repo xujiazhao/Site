@@ -33,12 +33,6 @@ In my daily work, I actively use the **Vibecoding tool** to empower designers wi
 
 ![My Key Visual design for Microsoft 2024 Kickoff](/assets/images/microsoft/microsoft-IMG_0350.png)
 
-My Key Visual design for Microsoft 2024 Kickoff
-
 ![Sharing with visiting students from the Central Academy of Fine Arts.](/assets/images/microsoft/microsoft-IMG_9476.png)
 
-Sharing with visiting students from the Central Academy of Fine Arts.
-
 ![The team](/assets/images/microsoft/microsoft-合影.png)
-
-The team

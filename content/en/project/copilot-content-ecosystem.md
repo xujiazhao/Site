@@ -18,13 +18,9 @@ The Ecosystem partners with more than **20,000 global media organizations** dail
 
 ![Microsoft's content stakeholders](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image.png)
 
-Microsoft's content stakeholders
-
 You can experience our content by opening a new tab in the Edge browser (the image on the left below shows the beta version of Copilot Discover) or by visiting [msn.com](http://msn.com) directly.
 
 ![Edge new tab page and MSN](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_1.png)
-
-Edge new tab page and MSN
 
 ### Consumer-facing Content Distribution and Experience Design
 
@@ -40,8 +36,6 @@ Throughout the design process, I addressed several key challenges:
 
 ![ Weather, news, finance, etc.](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_2.png)
 
- Weather, news, finance, etc.
-
 <aside>
 🎨
 
@@ -53,14 +47,10 @@ Typically, users approach Copilot with expectations similar to traditional AI to
 
 ![Stock information page](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_3.png)
 
-Stock information page
-
 I am also responsible for the design of the MSN Finance product.
 Compared with Copilot, the MSN interface features higher information density and a more compact layout. This difference stems from the distinct user mindsets between the two products: Copilot users tend to browse content casually and check stocks occasionally, while MSN Finance targets semi-professional users, where information completeness takes priority over reading comfort.
 
 ![Copilot vs MSN](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_4.png)
-
-Copilot vs MSN
 
 Try Copilot at: [https://copilot.microsoft.com/](https://copilot.microsoft.com/)
 
@@ -77,8 +67,6 @@ I am responsible for the end-to-end design of this platform, including its infor
 
 ![ MSN Partner Hub Homepage](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_5.png)
 
- MSN Partner Hub Homepage
-
 <aside>
 🔒
 
@@ -89,8 +77,6 @@ I can't provide more screenshots of this platform due to data compliance require
 I am also working on introducing AI-assisted creation features — such as an AI writing assistant and content optimization tools — to help partners improve both the efficiency and quality of their content production.
 
 ![Confidential Program](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_6.png)
-
-Confidential Program
 
 <aside>
 💡
@@ -103,5 +89,3 @@ Also, I am responsible for maintaining the platform’s design system and collab
 Recently, I led a major upgrade of the platform’s visual system, focusing on:
 
 ![Before and after of visual system upgrade](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_7.png)
-
-Before and after of visual system upgrade

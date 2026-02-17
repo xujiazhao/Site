@@ -33,5 +33,3 @@ sorting: 5
 我也参与过多期设计团队电台节目的录制，同行业分享自己的想法和见闻。我也志愿参与阿里巴巴U设计周的筹备工作，负责受邀嘉宾的内容翻译和出行接待工作。
 
 ![我与师姐的合影](/assets/images/ant-international/ant-international-Untitled.jpeg)
-
-我与师姐的合影

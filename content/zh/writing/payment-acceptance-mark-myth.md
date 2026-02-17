@@ -20,8 +20,6 @@ Language: 中文
 
 ![现在随处可见的各式各样的支付受理标](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled.png)
 
-现在随处可见的各式各样的支付受理标
-
 ### **最初的受理标**
 
 支付受理标的概念和名称出现甚晚，甚至于到现在Acceptance Mark这一名词都不是非常通行的行业名词，但这一事物是早早就出现的，下图中我们可以看到，VISA还叫BankAmericard（1977年前）以及MasterCard还叫Master Charge（1979年前）的时候，就已经在线下门店的门口张贴LOGO揽客了
@@ -50,11 +48,7 @@ Language: 中文
 
 ![老版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_5.png)
 
-老版本
-
 ![新版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_6.png)
-
-新版本
 
 （注：Pentagram几乎参与了北美所有大型金融企业的品牌设计项目，同时收费极高，[作品展示](https://www.pentagram.com/work/sector/banking-finance)）
 

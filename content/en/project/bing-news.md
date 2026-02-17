@@ -20,8 +20,6 @@ Although the search engine is a mature product, delivering quality news within i
 
 ![The iteration process of Bing News on mobile end](/assets/images/bing-news/bing-news-Untitled.png)
 
-The iteration process of Bing News on mobile end
-
 **Before - Mar 2023**
 
 Added "Top News" and "Explore more news" which overall increased the DAU of the news module.
@@ -38,11 +36,7 @@ Due to business growth pressure, I changed the news title color from black to "B
 
 ![News landing page (triggered when user search for “news” related queries)](/assets/images/bing-news/bing-news-Category_news.gif)
 
-News landing page (triggered when user search for “news” related queries)
-
 ![Impactful event landing page (triggered when query match a big event)](/assets/images/bing-news/bing-news-Untitled_1.png)
-
-Impactful event landing page (triggered when query match a big event)
 
 The above are 2 standalone features maintained by News within Bing. The design occupies the entire top space of the search engine, aiming to provide users with a more immersive news reading experience. I have specially designed unique interaction patterns to ensure a smoother user experience.
 
@@ -60,13 +54,9 @@ The AI boom in 2023 prompted Microsoft to launch Bing Chat and related capabilit
 
 ![Trending on Bing in Bing homepage](/assets/images/bing-news/bing-news-Untitled_3.png)
 
-Trending on Bing in Bing homepage
-
 I noted that in the China, Japan, and Korea, users are more sensitive to text-based news, whereas in Western markets, users are more responsive to images. I believe this difference is due to the varying information density and text readability in different languages. Therefore, I designed different versions of the user interface accordingly.
 
 ![Trending on Bing landing page](/assets/images/bing-news/bing-news-Untitled_4.png)
-
-Trending on Bing landing page
 
 <aside>
 😆 **Fun fact:** I made several attempts to take down the black and gray color theme of Trending on Bing, trying various different visual design styles. Unfortunately, the flight data indicated that only the heavy, dark design could ensure the user click-through rate on the page. So, as shown in the image, it remains... black…
@@ -82,8 +72,6 @@ All feature shipments of Bing require a flight test first. The test results must
 Fortunately, we can leverage the immense traffic of the search engine to conduct extensive A/B testing. Additionally, Microsoft provides numerous mature professional tools to help us evaluate the effectiveness of design solutions. This allows me to efficiently measure and optimize the user experience, ensuring that every feature released achieves the best possible outcome.
 
 ![AB Test example](/assets/images/bing-news/bing-news-Untitled_5.png)
-
-AB Test example
 
 ---
 

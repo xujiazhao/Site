@@ -20,8 +20,6 @@ favicon: "/assets/images/favicon/Bing icon.png"
 
 ![新闻模块迭代过程，以移动端为例](/assets/images/bing-news/bing-news-Untitled.png)
 
-新闻模块迭代过程，以移动端为例
-
 **Before - Mar 2023**
 
 增加了“头条新闻”和“相关话题”，整体增加新闻模块的DAU。
@@ -38,11 +36,7 @@ favicon: "/assets/images/favicon/Bing icon.png"
 
 ![新闻落地页（当用户检索“新闻”等关键词时触发）](/assets/images/bing-news/bing-news-Category_news.gif)
 
-新闻落地页（当用户检索“新闻”等关键词时触发）
-
 ![重大新闻事件落地页（当检索匹配到重大事件时触发）](/assets/images/bing-news/bing-news-Untitled_1.png)
-
-重大新闻事件落地页（当检索匹配到重大事件时触发）
 
 上述两个页面都是新闻在搜索结果页面（Search Result Page）中独立维护的、由新闻主导的落地页。页面设计占用了搜索引擎顶部的全部空间，旨在为用户提供更为沉浸的新闻阅读体验。我们专门设计特别的页面交互效果，以确保用户体验更加顺滑和流畅。
 
@@ -60,13 +54,9 @@ favicon: "/assets/images/favicon/Bing icon.png"
 
 ![必应首页的热点新闻](/assets/images/bing-news/bing-news-Untitled_3.png)
 
-必应首页的热点新闻
-
 我发现，在中国、日本及韩国市场，用户对于纯文字新闻更加敏感，而在西方市场，用户则对图片更加敏感。我认为这背后的原因是不同语言的的信息密度及文本可读性有一定差异。因此我设计了不同版本的用户界面。
 
 ![必应热点落地页](/assets/images/bing-news/bing-news-Untitled_4.png)
-
-必应热点落地页
 
 <aside>
 😆 有趣的是，在负责新闻的这一年时间里，我数次努力推动迭代掉此页面的黑灰色系，尝试了各种不同的视觉设计风格。但很遗憾的是，测试数据表示只有又黑又重的页面设计才能保证页内内容的用户点击率，所以如图所示，它还是，黑的。。。
@@ -82,8 +72,6 @@ favicon: "/assets/images/favicon/Bing icon.png"
 好在，我们可以依托搜索引擎自身的巨大流量投放海量的灰度测试，同时微软也提供了大量成熟的专业工具，帮助我们评估每一个设计方案的设计效果。这让我能够高效、准确地衡量和优化用户体验，确保每一个上线的功能都能达到最佳效果。
 
 ![AB 测试案例](/assets/images/bing-news/bing-news-Untitled_5.png)
-
-AB 测试案例
 
 ---
 

@@ -18,13 +18,9 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 
 ![微软内容的供给和分发路径](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image.png)
 
-微软内容的供给和分发路径
-
 若想尝试体验微软的内容服务，你可以打开 Edge浏览器的新Tab页面（下方左图为Copilot Discover灰度版，您可能需要被灰到才能看到此版本），或者直接打开[msn.com](http://msn.com)
 
 ![Edge新标签页与MSN](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_1.png)
-
-Edge新标签页与MSN
 
 ### C端内容分发与体验体系
 
@@ -40,8 +36,6 @@ Edge新标签页与MSN
 
 ![天气、新闻、财经等内容设计](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_2.png)
 
-天气、新闻、财经等内容设计
-
 <aside>
 🎨
 
@@ -51,13 +45,9 @@ Edge新标签页与MSN
 
 ![独立股票信息页面](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_3.png)
 
-独立股票信息页面
-
 我同时负责 MSN 财经产品的设计。相比 Copilot，MSN 页面的信息密度更高，布局也更紧凑。这种差异源于两个产品的用户心理：Copilot 用户多为随意浏览内容、偶尔查看股票；MSN 财经则面向准专业用户，信息完整性优先于舒适的阅读体验。
 
 ![Copilot 与 MSN 对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_4.png)
-
-Copilot 与 MSN 对比
 
 欢迎体验Copilot：[https://copilot.microsoft.com/](https://copilot.microsoft.com/)
 
@@ -74,8 +64,6 @@ Copilot 与 MSN 对比
 
 ![MSN Partner Hub 首页](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_5.png)
 
-MSN Partner Hub 首页
-
 <aside>
 🔒
 
@@ -87,8 +75,6 @@ MSN Partner Hub 首页
 
 ![保密项目](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_6.png)
 
-保密项目
-
 <aside>
 💡
 
@@ -99,5 +85,3 @@ MSN Partner Hub 首页
 我负责维护该平台的设计系统，与前端团队协作，确保设计还原度和视觉一致性。近期，我主导了平台的视觉系统升级：
 
 ![平台视觉系统优化前后对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_7.png)
-
-平台视觉系统优化前后对比

@@ -36,36 +36,18 @@ Someday in the future, I may have my own startup making educational product. BJM
 
 ![The largest school team we ever had, 120 delegates](/assets/images/bjmun/bjmun-bjmun_photo_10.jpg)
 
-The largest school team we ever had, 120 delegates
-
 ![Delegates learning social dance](/assets/images/bjmun/bjmun-bjmun_photo_1.jpg)
-
-Delegates learning social dance
 
 ![Delegate role playing a Ming dynasty character](/assets/images/bjmun/bjmun-bjmun_photo_7.jpg)
 
-Delegate role playing a Ming dynasty character
-
 ![Shooting our new marketing video](/assets/images/bjmun/bjmun-bjmun_photo_3.jpg)
-
-Shooting our new marketing video
 
 ![After the Covid-19 era, we had our largest (700 participants) conference ever](/assets/images/bjmun/bjmun-bjmun_photo_4.jpg)
 
-After the Covid-19 era, we had our largest (700 participants) conference ever
-
 ![Enjoyable tea break](/assets/images/bjmun/bjmun-bjmun_photo_2.jpg)
-
-Enjoyable tea break
 
 ![Social ball](/assets/images/bjmun/bjmun-bjmun_photo_6.jpg)
 
-Social ball
-
 ![Tea break](/assets/images/bjmun/bjmun-bjmun_photo_8.jpg)
 
-Tea break
-
 ![Delegate studying map](/assets/images/bjmun/bjmun-bjmun_photo_9.jpg)
-
-Delegate studying map

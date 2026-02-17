@@ -36,12 +36,6 @@ sorting: 6
 
 ![我设计的年会KV](/assets/images/microsoft/microsoft-IMG_0350.png)
 
-我设计的年会KV
-
 ![我与中央美院到访学生交流](/assets/images/microsoft/microsoft-IMG_9476.png)
 
-我与中央美院到访学生交流
-
 ![团队合影](/assets/images/microsoft/microsoft-合影.png)
-
-团队合影

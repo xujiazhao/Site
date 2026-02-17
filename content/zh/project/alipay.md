@@ -24,17 +24,11 @@ My main job at Alipay+ is building its three payment products. Based on my under
 
 ![Online Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_1.png)
 
-Online Payment - from Alipay+ doc center
-
 ![Untitled](/assets/images/alipay/alipay-Untitled_2.png)
 
 ![Offline Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_3.png)
 
-Offline Payment - from Alipay+ doc center
-
 ![Auto Debit - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_4.png)
-
-Auto Debit - from Alipay+ doc center
 
 I created a UX self-evaluating chart to design a better user experience for payment product, see: [UX self-evaluate chart for payment product](/zh/writing/ux-self-evaluate-chart-for-payment-product)
 
@@ -64,16 +58,8 @@ Thus, I also define Alipay+ UX standards and guidance and manage part of the des
 
 ![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_5.png)
 
-Alipay+ product & UX guidelines - screenshot from the doc center
-
 ![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/images/alipay/alipay-Untitled.png)
-
-Alipay+’s acceptance mark generator - screenshot from the doc center
 
 ![Searching - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_1.png)
 
-Searching - screenshot from the doc center
-
 ![API explorer - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_2.png)
-
-API explorer - screenshot from the doc center
