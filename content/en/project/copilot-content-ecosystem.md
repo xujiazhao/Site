@@ -54,6 +54,8 @@ Compared with Copilot, the MSN interface features higher information density and
 
 Try Copilot at: [https://copilot.microsoft.com/](https://copilot.microsoft.com/)
 
+---
+
 ### Partner-facing Content Platform and Ecosystem: MSN Partner Hub
 
 On the content supply side, Microsoft provides a unified creation and data management platform — MSN Partner Hub — for global content partners such as CNN, BBC, and others.

@@ -50,6 +50,10 @@
   color: #cc7a1a;
 }
 
+.markdown hr {
+  @apply my-12 border-0 border-t border-neutral-200;
+}
+
 .markdown aside {
   @apply my-6 px-5 py-4 rounded-lg bg-neutral-50 border border-neutral-200 text-base leading-relaxed;
 }

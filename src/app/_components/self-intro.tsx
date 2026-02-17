@@ -1,18 +1,67 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { PiXBold } from "react-icons/pi";
+
 type Props = {
   lang: string;
 };
 
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
+  const [showQR, setShowQR] = useState(false);
+
+  // ✏️ Maintain your rotating titles here
+  const rotatingTitles: { en: string; zh: string }[] = [
+    { en: "UI Designer", zh: "UI 设计师" },
+    { en: "Vibe Coder", zh: "氛围程序员" },
+    { en: "PPT Expert", zh: "PPT 专家" },
+    { en: "Educator", zh: "教育者" },
+    { en: "Cat Lover", zh: "猫奴" },
+  ];
+
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
+      setAnimKey((prev) => prev + 1);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [rotatingTitles.length]);
+
+  const currentTitle = isEn ? rotatingTitles[titleIndex].en : rotatingTitles[titleIndex].zh;
+  const prefixText = isEn ? "Product Designer & " : "产品设计师 & ";
+
+  const handleWeChat = () => {
+    if (window.innerWidth < 768) {
+      alert(isEn ? "WeChat ID: xux-ai" : "微信号: xux-ai");
+    } else {
+      setShowQR(true);
+    }
+  };
 
   return (
     <section className="flex-col md:flex-row flex items-start md:justify-between mt-16 mb-16 md:mb-12">
       <div className="md:w-2/3">
-        <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 mb-8">
+        <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 mb-2">
           {isEn ? "Jiazhao Xu" : "许嘉昭"}
         </h1>
+        <p className="text-2xl md:text-3xl tracking-tight text-neutral-500 mb-8">
+          {prefixText}
+          <span className="inline-block" key={animKey}>
+            {currentTitle.split("").map((char, i) => (
+              <span
+                key={i}
+                className="inline-block animate-letter-bounce"
+                style={{ animationDelay: `${i * 40}ms` }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
+          </span>
+        </p>
         <div className="text-lg leading-relaxed mb-4">
           {isEn ? (
             <>
@@ -43,12 +92,41 @@ export function SelfIntro({ lang }: Props) {
           </a>
           <button
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors cursor-pointer"
-            onClick={() => { navigator.clipboard.writeText('xux-ai'); alert(isEn ? 'WeChat ID copied: xux-ai' : '微信号已复制: xux-ai'); }}
+            onClick={handleWeChat}
           >
             {isEn ? "WeChat" : "微信"}
           </button>
         </div>
       </div>
+
+      {/* WeChat QR Code Modal */}
+      {showQR && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={() => setShowQR(false)}
+        >
+          <div
+            className="bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">{isEn ? "Scan to add WeChat" : "扫码添加微信"}</h3>
+              <button
+                onClick={() => setShowQR(false)}
+                className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
+              >
+                <PiXBold />
+              </button>
+            </div>
+            <img
+              src="/assets/functional-images/wechat-qr.jpg"
+              alt="WeChat QR Code"
+              className="w-full rounded-lg"
+            />
+            <p className="text-center text-sm text-neutral-500 mt-3">WeChat ID: xux-ai</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

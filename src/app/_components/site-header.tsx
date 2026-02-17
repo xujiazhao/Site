@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { PiSunBold, PiMoonBold } from "react-icons/pi";
 
 type Props = {
   lang: string;
@@ -58,7 +59,7 @@ export function SiteHeader({ lang }: Props) {
             className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {isDark ? "☀️" : "🌙"}
+            {isDark ? <PiSunBold /> : <PiMoonBold />}
           </button>
         </div>
       </div>

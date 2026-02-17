@@ -2,6 +2,7 @@
 title: "PPT Expert"
 date: "2026-02-16"
 skill: ["PPT"]
+coverImage: "/assets/images/cover-image/PPT.webp"
 ---
 
 # PPT Expert

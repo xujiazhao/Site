@@ -4,6 +4,11 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  @apply text-base;
 }
 
 .dark body {
@@ -12,4 +17,29 @@ html {
 
 .dark a {
   @apply text-neutral-100;
+}
+
+@keyframes letter-bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  80% {
+    transform: translateY(-1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-letter-bounce {
+  animation: letter-bounce 0.5s ease-out both;
 }
