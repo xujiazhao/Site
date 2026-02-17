@@ -1,10 +1,10 @@
 ---
 title: "欧洲工商管理学院"
-date: "2020-01-01"
+dateRange: "2020.1 - 2023.5"
 intro: "在全球顶级商学院讲授设计思维"
 type: "兼职"
 area: ["商业+设计", "教学"]
-location: "新加坡  - 2023.5"
+location: "新加坡"
 coverImage: "/assets/images/cover-image/INSEAD.png"
 favicon: "/assets/images/favicon/insead.webp"
 sorting: 2

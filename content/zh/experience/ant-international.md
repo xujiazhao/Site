@@ -1,9 +1,10 @@
 ---
 title: "蚂蚁国际"
-date: "2020-04-01"
+dateRange: "2020.4 - 2022.12"
+intro: "略通支付"
 type: "全职"
-area: ["B端", "C端", "交互设计", "全球业务", "工具产品", "支付", "设计系统"]
-location: "上海  - 2022.12"
+area: ["*B端", "*C端", "支付", "交互设计", "全球业务", "工具产品", "设计系统"]
+location: "上海"
 coverImage: "/assets/images/cover-image/Ant.png"
 favicon: "/assets/images/favicon/anticon.png"
 sorting: 5

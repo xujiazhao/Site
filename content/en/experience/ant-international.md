@@ -1,10 +1,10 @@
 ---
 title: "Ant International"
-date: "2020-04-01"
+dateRange: "2020.4 - 2022.12"
 intro: "Master a little of the Payment"
 type: "Full-time"
-area: ["Payment", "To-developer", "UX Design"]
-location: "Shanghai  - 2022.12"
+area: ["UX Design", "Payment", "To-developer", "Design system", "Global Market"]
+location: "Shanghai"
 coverImage: "/assets/images/cover-image/Ant.png"
 favicon: "/assets/images/favicon/anticon.png"
 sorting: 5

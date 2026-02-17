@@ -1,10 +1,10 @@
 ---
 title: "Microsoft"
-date: "2023-01-01"
+dateRange: "2023.1 - Now"
 intro: "All in AI"
 type: "Full-time"
-area: ["AI", "Content Service", "Cross-border Collaboration", "Design for Global Market", "Product Design"]
-location: "Beijing  - Now"
+area: ["*AI", "Content Service", "Product Design",  "Cross-border Collaboration", "Global Market"]
+location: "Beijing"
 favicon: "/assets/images/favicon/msft.png"
 sorting: 6
 ---

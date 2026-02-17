@@ -1,10 +1,10 @@
 ---
 title: "北京模联BJMUN"
-date: "2013-01-01"
+dateRange: "2013 - 2024"
 intro: "10年公益教育之梦"
 type: "创业"
 area: ["公众教育", "青少年活动"]
-location: "北京  – 2024"
+location: "北京"
 coverImage: "/assets/images/cover-image/bjmun.png"
 favicon: "/assets/images/favicon/bjmun.webp"
 sorting: 1

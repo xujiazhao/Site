@@ -1,10 +1,10 @@
 ---
 title: "清华大学全球MBA"
-date: "2024-09-01"
+dateRange: "2024.9 - Now"
 intro: "经济管理学院"
 type: "硕士"
-area: ["多元化环境", "工商管理硕士"]
-location: "北京  - 现在"
+area: ["工商管理硕士","多元化环境"]
+location: "北京"
 coverImage: "/assets/images/cover-image/SEM.png"
 favicon: "/assets/images/favicon/THU.png"
 sorting: 4

@@ -12,11 +12,6 @@ content:
         label: Title
         type: string
         required: true
-      - name: date
-        label: Date (Sort)
-        type: date
-        required: true
-        hidden: true
       - name: dateRange
         label: Date Range
         type: string
@@ -55,11 +50,6 @@ content:
         label: Title
         type: string
         required: true
-      - name: date
-        label: Date (Sort)
-        type: date
-        required: true
-        hidden: true
       - name: dateRange
         label: Date Range
         type: string

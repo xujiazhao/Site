@@ -1,10 +1,10 @@
 ---
 title: "ArtCenter College of Design"
-date: "2016-09-01"
+dateRange: "2016.9 - 2021.4"
 intro: "4 years chasing the design dream"
 type: "Bachelor"
-area: ["Bachelor of Science", "Product Design"]
-location: "Los Angeles  - 2021.4"
+area: ["Product Design", "Bachelor of Science"]
+location: "Los Angeles"
 coverImage: "/assets/images/cover-image/ArtCenter.png"
 favicon: "/assets/images/favicon/artcentericon.png"
 sorting: 3

@@ -1,10 +1,10 @@
 ---
 title: "Tsinghua Global MBA"
-date: "2024-09-01"
+dateRange: "2024.9 - Now"
 intro: "School of Economics and Management"
 type: "Master"
-area: ["Diverse Environment", "MBA"]
-location: "Beijing  - Now"
+area: ["MBA", "Diverse Environment"]
+location: "Beijing"
 coverImage: "/assets/images/cover-image/SEM.png"
 favicon: "/assets/images/favicon/THU.png"
 sorting: 4

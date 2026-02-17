@@ -1,10 +1,10 @@
 ---
 title: "微软"
-date: "2023-01-01"
+dateRange: "2023.1 - Now"
 intro: "All in AI"
 type: "全职"
-area: ["AI", "B端", "C端", "UI设计", "产品设计", "全球业务", "设计系统"]
-location: "北京  - 现在"
+area: ["*AI", "*B端", "*C端", "产品设计", "UI设计", "全球业务", "设计系统"]
+location: "北京"
 favicon: "/assets/images/favicon/msft.png"
 sorting: 6
 ---
