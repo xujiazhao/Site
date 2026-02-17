@@ -4,10 +4,6 @@ date: "2020-02-12"
 type: "Thinking"
 ---
 
-Created: February 12, 2020
-Tags: Thinking
-Language: English
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> I created this toolkit for non-designers who wants to learn how to design.
 

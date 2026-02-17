@@ -158,7 +158,7 @@ export default function Index({ params }: { params: { lang: string } }) {
               return (
                 <Link key={post.slug} href={href} className="group block">
                   {(post.coverImage || post.firstImage) && (
-                    <div className="overflow-hidden rounded-lg">
+                    <div className="overflow-hidden rounded-lg border border-black/10 dark:border-white/10">
                       <img
                         src={post.coverImage || post.firstImage}
                         alt={post.title}
@@ -167,6 +167,18 @@ export default function Index({ params }: { params: { lang: string } }) {
                     </div>
                   )}
                   <h3 className="mt-2 text-base font-semibold group-hover:underline">{post.title}</h3>
+                  {post.skill && post.skill.length > 0 && (
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {post.skill.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-block text-xs font-medium px-1.5 py-0.5 rounded-md bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </Link>
               );
             })}

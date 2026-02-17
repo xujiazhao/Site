@@ -4,8 +4,6 @@ date: "2026-02-16"
 skill: ["KeyShot", "Rhino"]
 ---
 
-Tags: KeyShot, Rhino
-
 :::grid
 
 :::col-1

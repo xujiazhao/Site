@@ -4,8 +4,6 @@ date: "2026-02-16"
 skill: ["Adobe Illustrator", "Sketch"]
 ---
 
-Tags: Adobe Illustrator, Sketch
-
 ![](/assets/images/meyer-s-clean-day-illustration/meyer-s-clean-day-illustration-meyerscleanday_1.jpg)
 
 ![](/assets/images/meyer-s-clean-day-illustration/meyer-s-clean-day-illustration-meyerscleanday_2.jpg)

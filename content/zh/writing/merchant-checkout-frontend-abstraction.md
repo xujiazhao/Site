@@ -5,10 +5,6 @@ type: "思考"
 
 ---
 
-Created: August 12, 2022
-Tags: Thinking
-Language: 中文
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 此篇文章抽象出了行业中常见的商户收银台前端能力，支付方式在售卖及受理揽客时，应考虑针对不同类别的商户能力制定不同的露出策略，并相应调整自己的受理标识、品牌教育和营销信息。
 

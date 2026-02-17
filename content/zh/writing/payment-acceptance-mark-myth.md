@@ -5,10 +5,6 @@ type: "思考"
 
 ---
 
-Created: August 5, 2022
-Tags: Thinking
-Language: 中文
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 这篇文章是我关于支付受理标的思考。
 
@@ -27,13 +23,17 @@ Language: 中文
 ### **受理标与品牌**
 
 而在这之中，MasterCard可谓煞费苦心，2019年最新版本的品牌是其斥800万美元巨资委托全球知名设计事务所Pentagram设计的：[Master Card 品牌设计成果｜Pentagram](https://www.pentagram.com/work/mastercard)
-
+:::grid
+:::col-1
 ![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_2.png)
-
+:::
+:::col-2
 ![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_3.png)
-
+:::
+:::col-3
 ![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_4.png)
-
+:::
+:::end
 ### **银行电子化带来的困境**
 
 而随着支付电子化和电商行业的发展，支付受理标也要开始面对来自网页和手机页面的挑战，不同于有一整面玻璃和柜台的线下场景，线上页面寸土寸金，而如何在有效的页面容器里展示清楚自己的受理标识成为了一个难题，牺牲大的，像MasterCard最新版本的品牌直接拿掉了文字，还有如美国运通American Express一样牺牲自己品牌名称的操作，只为消费者可以一眼看出这是AMEX：
@@ -43,11 +43,14 @@ Language: 中文
 值得一提的是，AmericanExpress最新的品牌设计方也是Pentagram（注）：[AMEX 品牌设计成果｜Pentagram](https://www.pentagram.com/work/american-express-1)
 
 而在对比之下，可以看到新版的受理标识确实在线上的支付场景更加可读了：
-
+:::grid
+:::col-1
 ![老版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_5.png)
-
+:::
+:::col-2
 ![新版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_6.png)
-
+:::
+:::end
 （注：Pentagram几乎参与了北美所有大型金融企业的品牌设计项目，同时收费极高，[作品展示](https://www.pentagram.com/work/sector/banking-finance)）
 
 ### **电子时代群魔乱舞**

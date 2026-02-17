@@ -4,8 +4,6 @@ date: "2026-02-16"
 skill: ["Photoshop"]
 ---
 
-Tags: Photoshop
-
 ![](/assets/images/photobashing/photobashing-photomessup_1.jpg)
 
 ![](/assets/images/photobashing/photobashing-photomessup_2.jpg)

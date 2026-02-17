@@ -1,7 +1,7 @@
 ---
 title: "收银支付UX自查表"
 date: "2022-04-14"
-type: "Guidence"
+type: "规范"
 
 ---
 

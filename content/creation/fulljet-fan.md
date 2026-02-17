@@ -4,8 +4,6 @@ date: "2026-02-16"
 skill: ["KeyShot", "SolidWorks"]
 ---
 
-Tags: KeyShot, SolidWorks
-
 ![](/assets/images/fulljet-fan/fulljet-fan-fulljet_rendering4.jpg)
 
 ![](/assets/images/fulljet-fan/fulljet-fan-fulljet_rendering5.jpg)

@@ -5,10 +5,6 @@ type: "随记"
 
 ---
 
-Created: March 14, 2022
-Tags: Thinking
-Language: 中文
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 我是Figma的忠实用户和拥簇，我尝试在支付宝设计团队推动Figma的普及，但是（由于数安和合规的原因）困难重重，谨以此文纪念我做出的努力。
 
@@ -26,8 +22,16 @@ Language: 中文
 
 3月12日美国Figma公司，也就是UI/UX设计行业市场占有率第一的SaaS服务提供商邮件通知大疆创新，由于美国政府制裁及法律要求，Figma冻结了大疆的Figma账号，并不再允许大疆使用它的服务。（Figma的市场占有率已于2019年超过Sketch）
 
-![](/assets/images/thoughts-on-design-tools-after-figma-revoked-dji/写在figma收回dji账号之后-关于设计工具的思考-Untitled.png)
+:::grid
 
+:::col-1
+:::
+:::col-2
+![](/assets/images/thoughts-on-design-tools-after-figma-revoked-dji/写在figma收回dji账号之后-关于设计工具的思考-Untitled.png)
+:::
+:::col-3
+:::
+:::end
 而目前国内已经大量部署使用 Figma 的公司有字节跳动、腾讯、网易、平安保险等，各大公司也都第一时间对相关问题做出回应，比如字节要求所有设计师紧急备份设计文件以防不测。
 
 而在阿里&蚂蚁，我在过去半年都在尝试推动蚂蚁国际设计团队部署Figma并提高设计效能，好巧不巧的在大疆此事前的星期四正式拿到了第一批试点账号，也算是集团范围第一个完整地走完了业务需求论证、数据安全审查、外采合规审查、法务合同签署、和采购/财务审批等全部流程的团队。

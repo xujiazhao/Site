@@ -4,10 +4,6 @@ date: "2021-10-14"
 type: "Case Study"
 ---
 
-Created: October 14, 2021
-Tags: Case Study
-Language: 中+EN
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 这份调研是我为了了解文档产品所做的简单了解。I made this to learn some well-designed doc products in the industry.
 

@@ -60,6 +60,10 @@
   @apply w-full rounded-lg cursor-zoom-in;
 }
 
+.markdown img[style*="width"] {
+  width: auto;
+}
+
 .markdown figure {
   @apply my-6;
 }

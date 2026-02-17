@@ -4,8 +4,6 @@ date: "2026-02-16"
 skill: ["Procreate", "Sketch"]
 ---
 
-Tags: Procreate, Sketch
-
 :::grid
 
 :::col-1

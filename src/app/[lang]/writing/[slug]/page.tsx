@@ -31,6 +31,8 @@ export default async function Writing({ params }: Params) {
             title={post.title}
             date={post.date}
             favicon={post.favicon}
+            type={post.type}
+            showDate
           />
           <PostBody content={content} />
         </article>

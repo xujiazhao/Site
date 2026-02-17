@@ -5,10 +5,6 @@ type: "随记"
 
 ---
 
-Created: March 17, 2024
-Tags: Causerie
-Language: 中文
-
 拼多多买的桌子开裂之后，和商家争了很久排了一个大娘上门来修，我原本因为差劲的购物体验态度很不好，还逼着她赶在周末结束前上门来解决问题。
 
 大娘带着孩子来的，吓我一跳，后来大娘忙修桌子的时候我就和这个娃娃聊天，娃娃自己说自己有哥哥有姐姐但没见过爸爸，爸爸，死了。
@@ -31,6 +27,14 @@ Language: 中文
 
 这世界的参差，让人无力。
 
+:::grid
+
+:::col-1
+
 ![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
 
+:::
+:::col-2
 ![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)
+:::
+:::end

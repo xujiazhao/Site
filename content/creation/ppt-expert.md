@@ -5,8 +5,6 @@ skill: ["PPT"]
 coverImage: "/assets/images/cover-image/PPT.webp"
 ---
 
-Tags: PPT
-
 自小学以来我就特别喜欢玩PPT，工作以来我在多个场合专门负责大型发布会/专业汇报的演讲设计和PPT制作，我自认我可以被称为“PPT大师”。
 
 Since my childhood, I've been particularly passionate about making Presentations. Throughout my career, I've been specifically responsible for presentation design and deck production for major launch events and professional reports on multiple occasions. I consider myself worthy of being called a "PPT Master."

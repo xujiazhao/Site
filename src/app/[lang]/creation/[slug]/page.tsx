@@ -31,6 +31,7 @@ export default async function Creation({ params }: Params) {
             title={post.title}
             date={post.date}
             favicon={post.favicon}
+            skill={post.skill}
           />
           <PostBody content={content} />
         </article>

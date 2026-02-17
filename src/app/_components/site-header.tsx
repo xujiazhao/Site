@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { PiSunBold, PiMoonBold } from "react-icons/pi";
+import { PiSunBold, PiMoonBold, PiCaretLeftBold } from "react-icons/pi";
 
 type Props = {
   lang: string;
@@ -53,8 +53,17 @@ export function SiteHeader({ lang }: Props) {
           }}
           className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 transition-opacity font-[family-name:var(--font-barlow)] cursor-pointer"
         >
-          <img src="/favicon/favicon.svg" alt="" className="w-5 h-5" />
-          许嘉昭 Jiazhao Xu
+          {isDetailPage ? (
+            <>
+              <PiCaretLeftBold className="w-4 h-4" />
+              {isEn ? "Back" : "返回"}
+            </>
+          ) : (
+            <>
+              <img src="/favicon/favicon.svg" alt="" className="w-5 h-5" />
+              许嘉昭 Jiazhao Xu
+            </>
+          )}
         </button>
         <div className="flex items-center gap-3">
           {!isDetailPage && (
