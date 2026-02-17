@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/AppleAlipay.png"
 favicon: "/assets/images/favicon/appleicon.png"
 ---
 
-# Apple ✕ Alipay
-
 > **Build the best purchasing experience at AppStore**
 > 
 

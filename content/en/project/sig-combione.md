@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/SIG.png"
 favicon: "/assets/images/favicon/SIG_logo.svg"
 ---
 
-# SIG CombiONE
-
 <aside>
 <img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 作为我还曾是工业设计师的证明…
 

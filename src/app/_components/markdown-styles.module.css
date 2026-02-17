@@ -4,9 +4,16 @@
 
 .markdown p,
 .markdown ul,
-.markdown ol,
-.markdown blockquote {
+.markdown ol {
   @apply my-6;
+}
+
+.markdown blockquote {
+  @apply my-6 pl-5 border-l-4 border-neutral-800 font-semibold text-xl leading-relaxed;
+}
+
+.markdown blockquote p {
+  @apply my-0;
 }
 
 .markdown ul {

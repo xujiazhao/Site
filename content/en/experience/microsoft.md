@@ -9,9 +9,6 @@ favicon: "/assets/images/favicon/msft.png"
 sorting: 6
 ---
 
-# Microsoft
-
-
 I joined Microsoft Studio 8 design team in 2023, initially responsible for designing content products for [**Bing News**](/en/project/bing-news) and **MSN**, covering core experiences in news, finance, and video. As the AI era began in 2023, I participated in the design of several Microsoft AI products, including [**Copilot Content (News / Finance / Weather)**](/en/project/copilot-content-ecosystem), **Bing Chat**, and the intelligent financial assistant **Money Assistant**.
 
 Starting in 2024, I took full ownership of the [**MSN Partner Hub**](/en/project/copilot-content-ecosystem) product design — Microsoft’s global content ecosystem platform serving partners such as **CNN**, **BBC**, and various mid- to small-sized MCNs. I led the design system for partner management, optimized the growth experience across the ecosystem, and facilitated the integration between Copilot and Partner Hub.

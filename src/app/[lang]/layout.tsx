@@ -6,7 +6,7 @@ import { SiteHeader } from "@/app/_components/site-header";
 
 import "./globals.css";
 
-const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
+const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], variable: "--font-barlow" });
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
@@ -58,7 +58,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={params.lang === 'en' ? barlow.className : ''}>
+      <body className={`${barlow.variable} ${params.lang === 'en' ? barlow.className : ''}`}>
         <SiteHeader lang={params.lang} />
         <div className="min-h-screen pt-14">{children}</div>
         <Footer lang={params.lang} />

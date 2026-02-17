@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/Alipay+.png"
 favicon: "/assets/images/favicon/plusicon.png"
 ---
 
-# Alipay+
-
 > **Pay beyond borders**
 > 
 

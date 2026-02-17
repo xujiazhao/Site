@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/Bing News.png"
 favicon: "/assets/images/favicon/Bing icon.png"
 ---
 
-# Bing News
-
 > Help people break their information cocoons
 > 
 

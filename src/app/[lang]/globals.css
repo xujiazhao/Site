@@ -43,3 +43,18 @@ body {
 .animate-letter-bounce {
   animation: letter-bounce 0.5s ease-out both;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}

@@ -24,39 +24,39 @@ export default function Index({ params }: { params: { lang: string } }) {
             {isEn ? "Experience" : "经历"}
           </h2>
           <div className="overflow-x-auto">
-            <table className="table-auto w-full text-base border-separate border-spacing-y-0">
+            <table className="table-auto w-full text-base border-separate border-spacing-y-0 whitespace-nowrap">
               <thead>
                 <tr className="text-left text-neutral-500 font-normal border-b">
-                  <th className="pb-2 pr-3 pl-2">{isEn ? "Name" : "名称"}</th>
-                  <th className="pb-2 pr-3">{isEn ? "Date Range" : "时间"}</th>
-                  <th className="pb-2 pr-3">{isEn ? "Location" : "地点"}</th>
-                  <th className="pb-2 pr-3">{isEn ? "Type" : "类型"}</th>
+                  <th className="pb-2 pr-5 sticky left-0 bg-white z-10">{isEn ? "Name" : "名称"}</th>
+                  <th className="pb-2 pr-5">{isEn ? "Date Range" : "时间"}</th>
+                  <th className="pb-2 pr-5">{isEn ? "Location" : "地点"}</th>
+                  <th className="pb-2 pr-5">{isEn ? "Type" : "类型"}</th>
                   <th className="pb-2 pr-2">{isEn ? "Area" : "领域"}</th>
                 </tr>
               </thead>
               <tbody>
                 {experiences.map((exp) => (
-                  <tr key={exp.slug} className="group hover:bg-neutral-50 transition-colors rounded-lg">
-                    <td className="py-2 pr-3 pl-2 font-semibold align-top border-b border-neutral-100 group-hover:border-transparent">
-                      <Link href={`/${params.lang}/experience/${exp.slug}`} className="hover:underline flex items-center gap-1.5">
+                  <tr key={exp.slug} className="group hover:bg-neutral-50 transition-colors rounded-lg cursor-pointer" onClick={undefined}>
+                    <td className="py-2 pr-5 font-semibold align-top border-b border-neutral-100 group-hover:border-transparent sticky left-0 bg-white group-hover:bg-neutral-50 z-10 relative">
+                      <Link href={`/${params.lang}/experience/${exp.slug}`} className="hover:underline flex items-center gap-1.5 after:absolute after:inset-0 after:content-['']">
                         {exp.favicon && (
                           <img src={exp.favicon} alt="" className="w-4 h-4 inline-block flex-shrink-0" />
                         )}
                         {exp.title}
                       </Link>
                     </td>
-                    <td className="py-2 pr-3 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent whitespace-nowrap">
+                    <td className="py-2 pr-5 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
                       {exp.dateRange || exp.date}
                     </td>
-                    <td className="py-2 pr-3 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
+                    <td className="py-2 pr-5 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
                       {exp.location}
                     </td>
-                    <td className="py-2 pr-3 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
+                    <td className="py-2 pr-5 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
                       {exp.type}
                     </td>
                     <td className="py-2 pr-2 align-top border-b border-neutral-100 group-hover:border-transparent">
                       {exp.area && exp.area.length > 0 && (
-                        <div className="flex flex-wrap gap-1">
+                        <div className="flex gap-1">
                           {exp.area.map((tag) => {
                             const isHighlighted = tag.startsWith("*");
                             const label = isHighlighted ? tag.slice(1) : tag;
@@ -88,7 +88,7 @@ export default function Index({ params }: { params: { lang: string } }) {
           <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
              {isEn ? "Project" : "项目"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {projects.map((post) => {
               const href = `/${params.lang}/project/${post.slug}`;
               return (
@@ -128,12 +128,10 @@ export default function Index({ params }: { params: { lang: string } }) {
           </h2>
           <div className="flex flex-col">
             {writings.map((post) => (
-              <div key={post.slug} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-2 hover:bg-neutral-50 transition-colors px-2 rounded-lg">
+              <Link key={post.slug} href={`/${params.lang}/writing/${post.slug}`} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-2 hover:bg-neutral-50 transition-colors rounded-lg">
                 <div className="md:w-3/4">
-                  <h3 className="text-base font-semibold">
-                    <Link href={`/${params.lang}/writing/${post.slug}`} className="hover:underline">
-                      {post.title}
-                    </Link>
+                  <h3 className="text-base font-semibold group-hover:underline">
+                    {post.title}
                   </h3>
                 </div>
                 <div className="md:w-1/4 flex items-baseline gap-2 md:justify-end mt-1 md:mt-0">
@@ -144,7 +142,7 @@ export default function Index({ params }: { params: { lang: string } }) {
                     <DateFormatter dateString={post.date} />
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -154,7 +152,7 @@ export default function Index({ params }: { params: { lang: string } }) {
           <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
              {isEn ? "Creation" : "创作"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {creations.map((post) => {
               const href = `/${params.lang}/creation/${post.slug}`;
               return (

@@ -10,6 +10,8 @@ type Props = {
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
   const [showQR, setShowQR] = useState(false);
+  const [showMobileWeChat, setShowMobileWeChat] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   // ✏️ Maintain your rotating titles here
   const rotatingTitles: { en: string; zh: string }[] = [
@@ -36,15 +38,22 @@ export function SelfIntro({ lang }: Props) {
 
   const handleWeChat = () => {
     if (window.innerWidth < 768) {
-      alert(isEn ? "WeChat ID: xux-ai" : "微信号: xux-ai");
+      setShowMobileWeChat(true);
     } else {
       setShowQR(true);
     }
   };
 
+  const handleCopyWeChat = () => {
+    navigator.clipboard.writeText("xux-ai");
+    setShowMobileWeChat(false);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  };
+
   return (
     <section className="flex-col md:flex-row flex items-start md:justify-between mt-16 mb-16 md:mb-12">
-      <div className="md:w-2/3">
+      <div className="w-full">
         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 mb-2">
           {isEn ? "Jiazhao Xu" : "许嘉昭"}
         </h1>
@@ -99,7 +108,7 @@ export function SelfIntro({ lang }: Props) {
         </div>
       </div>
 
-      {/* WeChat QR Code Modal */}
+      {/* WeChat QR Code Modal (Desktop/Tablet) */}
       {showQR && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
@@ -125,6 +134,43 @@ export function SelfIntro({ lang }: Props) {
             />
             <p className="text-center text-sm text-neutral-500 mt-3">WeChat ID: xux-ai</p>
           </div>
+        </div>
+      )}
+
+      {/* WeChat ID Modal (Mobile) */}
+      {showMobileWeChat && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={() => setShowMobileWeChat(false)}
+        >
+          <div
+            className="bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">{isEn ? "WeChat" : "微信"}</h3>
+              <button
+                onClick={() => setShowMobileWeChat(false)}
+                className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
+              >
+                <PiXBold />
+              </button>
+            </div>
+            <p className="text-center text-base text-neutral-700 mb-4">WeChat ID: <span className="font-semibold">xux-ai</span></p>
+            <button
+              onClick={handleCopyWeChat}
+              className="w-full py-2.5 rounded-xl bg-neutral-800 text-white text-sm font-medium hover:bg-neutral-700 transition-colors"
+            >
+              {isEn ? "Copy WeChat ID" : "复制 WeChat ID 到剪贴板"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Toast */}
+      {showToast && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg animate-fade-in">
+          {isEn ? "Copied!" : "已复制!"}
         </div>
       )}
     </section>

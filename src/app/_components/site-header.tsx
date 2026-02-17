@@ -41,22 +41,22 @@ export function SiteHeader({ lang }: Props) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-700/50">
-      <div className="container mx-auto px-5 h-14 flex items-center justify-between">
-        <Link href={`/${lang}`} className="text-base font-medium tracking-tight hover:opacity-70 transition-opacity">
+      <div className="mx-auto px-5 max-w-[1024px] h-14 flex items-center justify-between">
+        <Link href={`/${lang}`} className="text-base font-medium tracking-tight hover:opacity-70 transition-opacity font-[family-name:var(--font-barlow)]">
           许嘉昭 Jiazhao Xu
         </Link>
         <div className="flex items-center gap-3">
           {!isDetailPage && (
             <Link
               href={targetPath}
-              className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+              className="w-12 h-9 flex items-center justify-center text-sm rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
             >
               {langLabel}
             </Link>
           )}
           <button
             onClick={toggleDark}
-            className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+            className="w-12 h-9 flex items-center justify-center text-sm rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {isDark ? <PiSunBold /> : <PiMoonBold />}

@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/insead.webp"
 sorting: 2
 ---
 
-# INSEAD Business School
-
-
 > **Teaching design at the best business school in the world.**
 > 
 

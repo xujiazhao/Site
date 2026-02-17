@@ -10,9 +10,6 @@ favicon: "/assets/images/favicon/THU.png"
 sorting: 4
 ---
 
-# Tsinghua Global MBA
-
-
 In September 2024, I began pursuing a Master of Business Administration at the School of Economics and Management, Tsinghua University.
 
 ![合影.png](/assets/images/tsinghua-global-mba/tsinghua-global-mba-合影.png)

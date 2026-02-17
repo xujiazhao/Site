@@ -7,8 +7,6 @@ coverImage: "/assets/images/cover-image/Copilot.png"
 favicon: "/assets/images/favicon/Copilot icon.png"
 ---
 
-# Copilot Content Ecosystem
-
 > **End to end content experience for AI**
 > 
 
