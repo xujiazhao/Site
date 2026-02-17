@@ -1,6 +1,8 @@
 ---
 title: "Thinking on Mi Home product"
 date: "2020-08-08"
+type: "Thinking"
+
 ---
 
 # Thinking on Mi Home product

@@ -4,6 +4,7 @@ date: "2026-02-16"
 intro: "SIG Combibloc's next-gen carton packaging solution"
 sorting: 1
 coverImage: "/assets/images/cover-image/SIG.png"
+favicon: "/assets/images/favicon/SIG_logo.svg"
 ---
 
 # SIG CombiONE

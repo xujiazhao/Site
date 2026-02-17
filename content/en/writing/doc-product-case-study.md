@@ -1,6 +1,7 @@
 ---
 title: "文档产品 · 案例分析 Doc Product · Case Study"
 date: "2021-10-14"
+type: "Case Study"
 ---
 
 # 文档产品 · 案例分析 Doc Product · Case Study

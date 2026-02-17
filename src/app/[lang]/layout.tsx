@@ -61,7 +61,7 @@ export default function RootLayout({
       <body className={params.lang === 'en' ? barlow.className : ''}>
         <SiteHeader lang={params.lang} />
         <div className="min-h-screen pt-14">{children}</div>
-        <Footer />
+        <Footer lang={params.lang} />
       </body>
     </html>
   );

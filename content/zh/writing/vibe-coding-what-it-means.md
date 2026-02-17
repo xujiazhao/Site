@@ -1,6 +1,8 @@
 ---
 title: "Vibe Coding 到底意味着什么？"
 date: "2025-09-13"
+type: "思考"
+
 ---
 
 # Vibe Coding 到底意味着什么？

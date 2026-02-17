@@ -1,6 +1,7 @@
 ---
 title: "3 i Design Toolkit"
 date: "2020-02-12"
+type: "Thinking"
 ---
 
 # 3 i Design Toolkit

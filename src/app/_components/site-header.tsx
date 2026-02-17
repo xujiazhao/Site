@@ -36,7 +36,7 @@ export function SiteHeader({ lang }: Props) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-700/50">
-      <div className="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between">
+      <div className="container mx-auto px-5 h-14 flex items-center justify-between">
         <Link href={`/${lang}`} className="text-base font-medium tracking-tight hover:opacity-70 transition-opacity">
           许嘉昭 Jiazhao Xu
         </Link>

@@ -130,17 +130,21 @@ export default function Index({ params }: { params: { lang: string } }) {
           </h2>
           <div className="flex flex-col">
             {writings.map((post) => (
-              <div key={post.slug} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-6 hover:bg-neutral-50 transition-colors px-2 rounded-lg">
+              <div key={post.slug} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-4 hover:bg-neutral-50 transition-colors px-2 rounded-lg">
                 <div className="md:w-3/4">
-                  <h3 className="text-2xl mb-2 font-medium">
+                  <h3 className="text-lg font-bold">
                     <Link href={`/${params.lang}/writing/${post.slug}`} className="hover:underline">
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-lg text-neutral-500">{post.excerpt}</p>
                 </div>
-                <div className="md:w-1/4 text-neutral-400 font-mono md:text-right mt-2 md:mt-0 text-sm">
-                  <DateFormatter dateString={post.date} />
+                <div className="md:w-1/4 flex items-baseline gap-3 md:justify-end mt-2 md:mt-0">
+                  {post.type && (
+                    <span className="text-sm text-neutral-500">{post.type}</span>
+                  )}
+                  <span className="text-neutral-400 text-sm">
+                    <DateFormatter dateString={post.date} />
+                  </span>
                 </div>
               </div>
             ))}
