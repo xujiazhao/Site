@@ -1,7 +1,6 @@
 import Container from "@/app/_components/container";
 import { getAllItems } from "@/lib/api";
 import { SelfIntro } from "@/app/_components/self-intro";
-import { PostPreview } from "@/app/_components/post-preview";
 import Link from "next/link";
 import DateFormatter from "@/app/_components/date-formatter";
 
