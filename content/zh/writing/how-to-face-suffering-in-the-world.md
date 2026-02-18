@@ -31,10 +31,10 @@ type: "随记"
 
 :::col-1
 
-![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.png)
+![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled.webp)
 
 :::
 :::col-2
-![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.png)
+![](/assets/images/how-to-face-suffering-in-the-world/我不知道我们应如何应对这世界上如此多的苦难-Untitled_1.webp)
 :::
 :::end

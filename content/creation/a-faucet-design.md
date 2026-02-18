@@ -8,20 +8,20 @@ skill: ["Procreate", "Sketch"]
 
 :::col-1
 
-![](/assets/images/a-faucet-design/a-faucet-design-fct_case1.jpg)
+![](/assets/images/a-faucet-design/a-faucet-design-fct_case1.webp)
 
-![](/assets/images/a-faucet-design/a-faucet-design-fct_case2.jpg)
+![](/assets/images/a-faucet-design/a-faucet-design-fct_case2.webp)
 
 :::
 
 :::col-2
 
-![](/assets/images/a-faucet-design/a-faucet-design-fct_case3.jpg)
+![](/assets/images/a-faucet-design/a-faucet-design-fct_case3.webp)
 
-![](/assets/images/a-faucet-design/a-faucet-design-fct_casea.jpg)
+![](/assets/images/a-faucet-design/a-faucet-design-fct_casea.webp)
 
 :::
 
 :::end
 
-![](/assets/images/a-faucet-design/a-faucet-design-uf_cover.jpg)
+![](/assets/images/a-faucet-design/a-faucet-design-uf_cover.webp)

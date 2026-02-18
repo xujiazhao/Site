@@ -52,7 +52,7 @@ export function SiteHeader({ lang }: Props) {
               window.scrollTo({ top: 0 });
             }
           }}
-          className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 font-[family-name:var(--font-barlow)] cursor-pointer"
+          className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 font-barlow cursor-pointer"
           style={{
             transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1), color 300ms cubic-bezier(0.4,0,0.2,1)",
             opacity: 1, // Always visible
@@ -81,7 +81,7 @@ export function SiteHeader({ lang }: Props) {
           <a
             href={targetPath}
             onClick={handleLangSwitch}
-            className="relative flex items-center h-9 w-[88px] rounded-xl bg-neutral-100 border border-neutral-200 cursor-pointer select-none font-[family-name:var(--font-barlow)]"
+            className="relative flex items-center h-9 w-[88px] rounded-xl bg-neutral-100 border border-neutral-200 cursor-pointer select-none font-barlow"
             role="switch"
             aria-checked={isEn}
           >

@@ -19,7 +19,7 @@ type: "思考"
 
 ### **小米的现有产品线**
 
-![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled.png)
+![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled.webp)
 
 目前，小米有一个主打智能家居品牌：米家，以及生态链下的其他附属品牌如智米、云米等。这个大家庭生产超过200种不同的产品，包括智能家电、消费电子、家具、配件和户外产品。
 
@@ -80,10 +80,10 @@ U Home产品无论在价格上还是购买途径上都应该让每个人都能�
 
 我认为微软在细节方面是U Home的榜样。其Surface系列的美学特征非常有力量。
 
-![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_1.png)
+![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_1.webp)
 
 **Steelcase——空间语言**
 
 我认为Steelcase在整体环境感觉方面是U Home的榜样。其色彩、造型和氛围配合得恰到好处。
 
-![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_2.png)
+![](/assets/images/thinking-on-mi-home-product/thinking-on-mi-home-product-Untitled_2.webp)

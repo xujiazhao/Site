@@ -5,7 +5,7 @@ intro: "All in AI"
 type: "全职"
 area: ["*AI", "*B端", "*C端", "产品设计", "UI设计", "全球业务", "设计系统"]
 location: "北京"
-favicon: "/assets/images/favicon/msft.png"
+favicon: "/assets/images/favicon/msft.webp"
 sorting: 6
 ---
 
@@ -31,8 +31,8 @@ sorting: 6
 
 在日常工作中，我积极使用 **Vibecoding 工具**，以提升设计师在 AI 时代的独立产出与落地实现能力，推动「设计即生产力」的转变。
 
-![我设计的年会KV](/assets/images/microsoft/microsoft-IMG_0350.png)
+![我设计的年会KV](/assets/images/microsoft/microsoft-IMG_0350.webp)
 
-![我与中央美院到访学生交流](/assets/images/microsoft/microsoft-IMG_9476.png)
+![我与中央美院到访学生交流](/assets/images/microsoft/microsoft-IMG_9476.webp)
 
-![团队合影](/assets/images/microsoft/microsoft-合影.png)
+![团队合影](/assets/images/microsoft/microsoft-合影.webp)

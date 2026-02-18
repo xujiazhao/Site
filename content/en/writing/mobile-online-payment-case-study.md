@@ -20,7 +20,7 @@ Both Apple Pay and Google Pay support adding bank cards, but since **neither all
 
 ### Uber Eats
 
-![Standard payment flow](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled.png)
+![Standard payment flow](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled.webp)
 
 - Card option is listed first;
 - Cards can be added via photo scanning;
@@ -32,11 +32,11 @@ Both Apple Pay and Google Pay support adding bank cards, but since **neither all
 - Tapping the question mark shows expiry date and CVV guidance, but users <span style="color: #d44c47;">must tap OK to dismiss it — tapping the gray area above doesn't work;</span>
 - Recently updated — now forces users to set a tip (last image).
 
-![Several branch/exception pages](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_1.png)
+![Several branch/exception pages](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_1.webp)
 
 ### Target (Supermarket)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_2.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_2.webp)
 
 - On the first screen, after tapping Select, if the user hasn't bound a card they can tap "Add payment card" (<span style="color: #d44c47;">redundant gray save button</span>). If cards exist, they can choose from multiple bound cards. Can new users directly Add payment card?
 - Payment methods only support cards, or users can <span style="color: #448361;">pay with Apple Pay</span> directly from the cart screen;
@@ -49,7 +49,7 @@ Both Apple Pay and Google Pay support adding bank cards, but since **neither all
 
 ### GrubHub (Food Delivery)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_3.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_3.webp)
 
 - <span style="color: #448361;">Card info is masked after input;</span>
 - <span style="color: #d44c47;">Date input using scroll wheels is very inconvenient;</span>
@@ -70,7 +70,7 @@ In Western markets, card binding shows no security environment indicators. I per
 
 ### PayPal on Walmart (New User)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_4.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_4.webp)
 
 - Walmart's <span style="color: #d44c47;">copy "Enter" is quite strange</span>;
 - PayPal is humbly placed in the "+More" section, likely because **Walmart's primary users are lower-middle income Americans** — having a credit card is already difficult, let alone wallet services;
@@ -82,7 +82,7 @@ In Western markets, card binding shows no security environment indicators. I per
 
 ### PayPal on Walmart (Returning User)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_5.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_5.webp)
 
 - <span style="color: #448361;">When the login environment is secure, PayPal payment is quite fast</span> — after entering credentials (if it's a repeat login, the email address can be remembered), it goes directly to the Pay with card/bank account list. At the bottom of this screen there's a Chase Credit Card promotion, and users can also add new payment methods;
 - The "Cancel and return to Walmart.com" button is gone;
@@ -91,15 +91,15 @@ In Western markets, card binding shows no security environment indicators. I per
 - After successful payment, PayPal App sends a payment success notification;
 - <span style="color: #d44c47;">When the account has two-factor authentication enabled, PayPal requires identity verification after login via SMS OTP or Authenticator. However, if the login environment is insecure (e.g., VPN, new IP), there's a chance of being unable to log in, getting stuck in a loop, <strong>ultimately failing payment with a terrible experience (see image below)</strong>.</span>
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_6.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_6.webp)
 
 ### VISA Checkout on Walmart (New User)
 
 VISA Checkout is an online payment channel provided by Visa. <strong style="color: #d44c47;">First, strangely, the VISA Checkout logo never appears throughout the process</strong>, contradicting their website copy: "Online buying is evolving. Now when you see this icon at any site that accepts Visa, you can enjoy an easy, smart and secure checkout experience."
 
-<img src="/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_7.png" style="display:inline; width:40px; vertical-align:middle;" /> 
+<img src="/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_7.webp" style="display:inline; width:40px; vertical-align:middle;" /> 
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_8.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_8.webp)
 
 - VISA Checkout is also placed in "+More";
 - <span style="color: #d44c47;">After tapping the button, the loading screen refreshes twice, causing user confusion. After loading completes, <strong>the bottom sheet transforms into Walmart's in-app browser, breaking continuity</strong>;</span>
@@ -111,7 +111,7 @@ VISA Checkout is an online payment channel provided by Visa. <strong style="colo
 
 ### VISA Checkout on Walmart (Returning User)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_9.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_9.webp)
 
 - After entering the login page, <span style="color: #448361;">VISA immediately sends an email OTP to the user **(without requiring user initiation)**</span>, with a notification at the top. This works well when email services are fast, but with services like NetEase or AOL there may be delays. The system also auto-checks "Remember me on this device";
 - After login, the user's bound cards are displayed directly. Tapping Continue at this point returns to Walmart to complete channel selection;
@@ -119,17 +119,17 @@ VISA Checkout is an online payment channel provided by Visa. <strong style="colo
 - After returning to Walmart, it only shows "Card ending in ####," <strong style="color: #d44c47;">not indicating the user is using "VISA Checkout" service</strong>, unless the user edits the payment method again, at which point the two are displayed together;
 - Note: VISA Checkout's web registration flow is quite streamlined: [https://secure.checkout.visa.com/](https://secure.checkout.visa.com/)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_10.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_10.webp)
 
 ### Amazon Pay on Shopify Site (New User)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_11.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_11.webp)
 
 • Using Amazon Pay as a new user for payment is **extremely complex** (bouncing back and forth). I don't think a user without any Amazon account would voluntarily choose Amazon Pay. No detailed analysis here.
 
 ### Amazon Pay on Shopify Site (Returning User)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_12.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_12.webp)
 
 - On the login screen, <strong style="color: #448361;">the experience with Apple Keychain is excellent</strong> — the cursor automatically focuses on the email input, and Keychain auto-suggests saved account info below. One tap for auto-fill;
 - Returning to the merchant page, <span style="color: #d44c47;">the embedded Amazon Wallet window is very large and doesn't resize based on content</span>. **Shipping address and payment channel confirmation are handled on the merchant interface**;
@@ -137,7 +137,7 @@ VISA Checkout is an online payment channel provided by Visa. <strong style="colo
 - Images below show additional security verification (triggered after login when the environment is insecure). Beyond SMS OTP, verification can be pushed to other mobile devices where the user has logged into the Amazon App (images 3 & 4) — this type of verification is uncommon. In image 2, Amazon App pushes a notification that users can tap to switch screens;
 - After login, Amazon App also sends a login security alert.
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_13.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_13.webp)
 
 ### Summary
 
@@ -151,7 +151,7 @@ Particularly noteworthy: in Western markets, such services almost (99%) have no 
 
 ### GrabPay on Zalora
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_14.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_14.webp)
 
 - Regardless of whether the user is new or returning, <span style="color: #d44c47;">the login screen includes terms of service confirmation</span>. Understandable if it's a legal requirement, <strong style="color: #d44c47;">but the extra tap feels redundant</strong> — can returning users skip it? "Next" presumably leads to new account registration for unrecognized phone numbers;
 - At the top of the page, there's a temporary insufficient balance warning <span style="color: #d44c47;">(but doesn't show the current account balance??)</span>, guiding users to top up. This screen also shows the payment amount and rewards;
@@ -164,7 +164,7 @@ Particularly noteworthy: in Western markets, such services almost (99%) have no 
 
 *Android prevents user screenshots*
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_15.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_15.webp)
 
 - Google Pay's <strong style="color: #448361;">branding is very prominent</strong>;
 - Google doesn't support payment for users without a Google account. In North America, e-commerce users likely all have a Google account, and the account ID is pulled from the Android system;
@@ -176,7 +176,7 @@ Particularly noteworthy: in Western markets, such services almost (99%) have no 
 
 ### Apple Pay on Doordash
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_16.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_16.webp)
 
 - <span style="color: #448361;">Apple Pay's mobile interaction flow is unified</span>, whether paying within Apple's ecosystem, outside of it, or offline;
 - If the user's Apple Pay is configured, they can invoke the authentication page with one tap and pay using Face ID or Passcode. The page shows <strong style="color: #448361;">clear billing information</strong> — this is also the **only payment flow I've used that invokes hardware**;
@@ -194,7 +194,7 @@ I've personally only seen redirect payments like GrabPay in mainland China and S
 
 ### Klarna
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_17.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_17.webp)
 
 - Klarna is a Buy Now Pay Later service targeting Western markets. It integrates wallet, installment, and online shopping — a quite innovative business model for an online shopping tool;
 - It has **no e-commerce platform of its own** — all content is scraped from the internet and served to users. Tapping a product in-app opens an embedded browser to the merchant's site, meaning users **cannot shop cross-site, and Klarna has no built-in checkout**;
@@ -203,7 +203,7 @@ I've personally only seen redirect payments like GrabPay in mainland China and S
 - Returning to the merchant page, Klarna also <span style="color: #448361;">auto-fills the virtual card info into the merchant's form</span>, allowing the user to complete checkout;
 - Each purchase gets its own dedicated virtual card. <span style="color: #448361;">Klarna's bank card addition interface is very simple (see image below).</span>
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_18.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_18.webp)
 
 - In the US, similar services like Affirm and Klarna are growing rapidly. Of course, spending ahead naturally fits Western consumer habits — **Klarna is essentially nesting dolls: a virtual credit card wrapping a real credit card**;
 - Such services would be difficult to promote in developing regions;

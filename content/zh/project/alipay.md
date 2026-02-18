@@ -3,8 +3,8 @@ title: "Alipay+"
 date: "2026-02-16"
 intro: "Pay beyond borders"
 sorting: 3
-coverImage: "/assets/images/cover-image/Alipay+.png"
-favicon: "/assets/images/favicon/plusicon.png"
+coverImage: "/assets/images/cover-image/Alipay+.webp"
+favicon: "/assets/images/favicon/plusicon.webp"
 ---
 
 > **Pay beyond borders**
@@ -54,10 +54,10 @@ Alipay+ 作为一个支付网络的服务者，它前接收单机构（Acquirer�
 
 因此，在这一侧，我同时负责 Alipay+ 的设计+体验规范的制定及蚂蚁国际文档平台的部分设计工作，以维护 Alipay+ 相关产品的呈现。
 
-![Alipay+ 产品及UX规范 - 取自文档中心](/assets/images/alipay/alipay-Untitled_5.png)
+![Alipay+ 产品及UX规范 - 取自文档中心](/assets/images/alipay/alipay-Untitled_5.webp)
 
-![Alipay+ 受理标生成器 - 取自文档中心](/assets/images/alipay/alipay-Untitled.png)
+![Alipay+ 受理标生成器 - 取自文档中心](/assets/images/alipay/alipay-Untitled.webp)
 
-![搜索 - 取自文档中心](/assets/images/alipay/alipay-Untitled_1.png)
+![搜索 - 取自文档中心](/assets/images/alipay/alipay-Untitled_1.webp)
 
-![API explorer - 取自文档中心](/assets/images/alipay/alipay-Untitled_2.png)
+![API explorer - 取自文档中心](/assets/images/alipay/alipay-Untitled_2.webp)

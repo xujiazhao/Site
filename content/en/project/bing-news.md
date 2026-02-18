@@ -3,8 +3,8 @@ title: "Bing News"
 date: "2026-02-16"
 intro: "Help people break their information cocoons"
 sorting: 4
-coverImage: "/assets/images/cover-image/Bing News.png"
-favicon: "/assets/images/favicon/Bing icon.png"
+coverImage: "/assets/images/cover-image/Bing News.webp"
+favicon: "/assets/images/favicon/Bing icon.webp"
 ---
 
 > Help people break their information cocoons
@@ -16,7 +16,7 @@ Although the search engine is a mature product, delivering quality news within i
 
 ### Business Growth
 
-![The iteration process of Bing News on mobile end](/assets/images/bing-news/bing-news-Untitled.png)
+![The iteration process of Bing News on mobile end](/assets/images/bing-news/bing-news-Untitled.webp)
 
 **Before - Mar 2023**
 
@@ -34,7 +34,7 @@ Due to business growth pressure, I changed the news title color from black to "B
 
 ![News landing page (triggered when user search for “news” related queries)](/assets/images/bing-news/bing-news-Category_news.gif)
 
-![Impactful event landing page (triggered when query match a big event)](/assets/images/bing-news/bing-news-Untitled_1.png)
+![Impactful event landing page (triggered when query match a big event)](/assets/images/bing-news/bing-news-Untitled_1.webp)
 
 The above are 2 standalone features maintained by News within Bing. The design occupies the entire top space of the search engine, aiming to provide users with a more immersive news reading experience. I have specially designed unique interaction patterns to ensure a smoother user experience.
 
@@ -44,17 +44,17 @@ While continuously iterating the news module, I also took charge of designing tw
 
 ### News in Bing Chat (now Copilot)
 
-![](/assets/images/bing-news/bing-news-Untitled_2.png)
+![](/assets/images/bing-news/bing-news-Untitled_2.webp)
 
 The AI boom in 2023 prompted Microsoft to launch Bing Chat and related capabilities promptly. Within 3 months, Microsoft rapidly rolled out hundreds of new features in Chat, among which the news module I was responsible for stood out as one of the WoW features.
 
 ### Trending on Bing
 
-![Trending on Bing in Bing homepage](/assets/images/bing-news/bing-news-Untitled_3.png)
+![Trending on Bing in Bing homepage](/assets/images/bing-news/bing-news-Untitled_3.webp)
 
 I noted that in the China, Japan, and Korea, users are more sensitive to text-based news, whereas in Western markets, users are more responsive to images. I believe this difference is due to the varying information density and text readability in different languages. Therefore, I designed different versions of the user interface accordingly.
 
-![Trending on Bing landing page](/assets/images/bing-news/bing-news-Untitled_4.png)
+![Trending on Bing landing page](/assets/images/bing-news/bing-news-Untitled_4.webp)
 
 <aside>
 😆 
@@ -71,7 +71,7 @@ All feature shipments of Bing require a flight test first. The test results must
 
 Fortunately, we can leverage the immense traffic of the search engine to conduct extensive A/B testing. Additionally, Microsoft provides numerous mature professional tools to help us evaluate the effectiveness of design solutions. This allows me to efficiently measure and optimize the user experience, ensuring that every feature released achieves the best possible outcome.
 
-![AB Test example](/assets/images/bing-news/bing-news-Untitled_5.png)
+![AB Test example](/assets/images/bing-news/bing-news-Untitled_5.webp)
 
 ---
 
@@ -81,7 +81,7 @@ Bing News has very strict requirements for information authority and search neut
 
 Over the past year of managing the news product, I have developed very healthy and beneficial information consumption habits. Perhaps you can do the same—turn off algorithmic personalized recommendations on all content platforms and explore a wider variety of information. As I mentioned at the beginning, I hope more people can break out of their information cocoons. For example, in the feature below, I designed a **"Related News"** function for all top stories, allowing users to access a dedicated page for comprehensive coverage.
 
-![](/assets/images/bing-news/bing-news-Untitled_6.png)
+![](/assets/images/bing-news/bing-news-Untitled_6.webp)
 
 ---
 

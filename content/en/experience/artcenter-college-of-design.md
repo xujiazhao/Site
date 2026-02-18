@@ -5,8 +5,8 @@ intro: "4 years chasing the design dream"
 type: "Bachelor"
 area: ["Product Design", "Bachelor of Science"]
 location: "Los Angeles"
-coverImage: "/assets/images/cover-image/ArtCenter.png"
-favicon: "/assets/images/favicon/artcentericon.png"
+coverImage: "/assets/images/cover-image/ArtCenter.webp"
+favicon: "/assets/images/favicon/artcentericon.webp"
 sorting: 3
 ---
 
@@ -30,12 +30,12 @@ Other experiences & awards:
 - Departmental Scholarship;
 - Computer Lab Assistant;
 
-![Me first time applying for a scholarship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
+![Me first time applying for a scholarship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled.webp)
 
-![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
+![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.webp)
 
 About the SIG sponsorship, see: [SIG CombiONE](/en/project/sig-combione)
 
-![Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires. ](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.jpeg)
+![Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires. ](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.webp)
 
 Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires.

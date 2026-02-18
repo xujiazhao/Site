@@ -5,11 +5,11 @@ intro: "经济管理学院"
 type: "硕士"
 area: ["工商管理硕士","多元化环境"]
 location: "北京"
-coverImage: "/assets/images/cover-image/SEM.png"
-favicon: "/assets/images/favicon/THU.png"
+coverImage: "/assets/images/cover-image/SEM.webp"
+favicon: "/assets/images/favicon/THU.webp"
 sorting: 4
 ---
 
 2024年9月，我开始在清华大学经济管理学院攻读工商管理硕士。
 
-![](/assets/images/tsinghua-global-mba/tsinghua-global-mba-合影.png)
+![](/assets/images/tsinghua-global-mba/tsinghua-global-mba-合影.webp)

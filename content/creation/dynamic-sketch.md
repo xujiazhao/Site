@@ -8,25 +8,25 @@ skill: ["Marker", "Sketch"]
 
 :::col-1
 
-![](/assets/images/sketch/sketch-dynamic_sketch_2.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_2.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_5.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_5.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_11.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_11.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_15.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_15.webp)
 
 :::
 
 :::col-2
 
-![](/assets/images/sketch/sketch-dynamic_sketch_3.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_3.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_7.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_7.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_12.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_12.webp)
 
-![](/assets/images/sketch/sketch-dynamic_sketch_17.jpg)
+![](/assets/images/sketch/sketch-dynamic_sketch_17.webp)
 
 :::
 

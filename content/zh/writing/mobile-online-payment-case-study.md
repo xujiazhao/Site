@@ -20,7 +20,7 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 
 ### Uber Eats
 
-![标准支付流程](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled.png)
+![标准支付流程](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled.webp)
 
 - 卡片选项在第一位；
 - 可以照片扫描添加卡；
@@ -32,11 +32,11 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 - 点击小问号是到期日和CVV的指引，但是用户<span style="color: #d44c47;">必须要点击OK才能关闭指引，点击屏幕上方灰色部分不可以；</span>
 - 刚刚更新的，现在强制要求用户设置小费（最后一图）。
 
-![几个分支/异常页面](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_1.png)
+![几个分支/异常页面](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_1.webp)
 
 ### Target （超级市场）
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_2.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_2.webp)
 
 - 第一个界面点开Select之后如果用户还没有绑定卡片则可以点击"Add payment card"（<span style="color: #d44c47;">多余的灰色save按钮</span>），如果有卡片则可以从绑定的多个卡片中选择。那么对于新用户来说可以不可以直接Add payment card？
 - 支付方式仅支持卡片，或者可以直接在购物车界面<span style="color: #448361;">使用Apple Pay支付</span>；
@@ -49,7 +49,7 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 
 ### GrabHub （外卖）
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_3.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_3.webp)
 
 - <span style="color: #448361;">卡信息输入后做脱敏；</span>
 - <span style="color: #d44c47;">日期输入使用用滚轮非常不方便；</span>
@@ -70,7 +70,7 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 
 ### Paypal on Walmart （新用户）
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_4.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_4.webp)
 
 - Walmart 的<span style="color: #d44c47;">文案“Enter”很奇怪</span>；
 - PayPal 被非常卑微的放在“+More”的section内，这可能是因为**Walmart的主要用户群都是美国中低产人口**，拥有信用卡都很难，更不要提钱包服务了；
@@ -82,7 +82,7 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 
 ### Paypal on Walmart （老用户）
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_5.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_5.webp)
 
 - <span style="color: #448361;">当登陆环境安全时，PayPal支付还是非常快捷的</span>，在输入账户密码后（如果是二次登陆则还可以记录邮箱地址），并直接进入Pay with卡/银行账户列表，在这一界面底端有Chase Credit Card 的推广，用户也可以添加新的支付方式；
 - Cancel and return to Walmart.com 按钮没有了；
@@ -91,15 +91,15 @@ Apple Pay和Google Pay均有添加银行卡的场景，但由于二者**都不�
 - 在支付成功后，PayPal App会推送支付成功提醒；
 - <span style="color: #d44c47;">当账户设置了二次验证时，PayPal会在输入账密后要求验证身份，可以通过短信OTP或Authorator进行二次验证，但若此时登陆环境不安全（如VPN环境、新IP环境）会有概率无法登陆并在这一流程内反复循环，<strong>最终支付失败，体验极差（如下图）</strong>。</span>
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_6.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_6.webp)
 
 ### VISA Checkout on Walmart（新用户）
 
 VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c47;">首先很奇怪的是它全程并没有出现VISA Checkout 的Logo</strong>，这和他官网文案"Online buying is evolving. Now when you see this icon at any site that accepts Visa, you can enjoy an easy, smart and secure checkout experience."相悖。
 
-<img src="/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_7.png" style="display:inline; width:40px; vertical-align:middle;" /> 
+<img src="/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_7.webp" style="display:inline; width:40px; vertical-align:middle;" /> 
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_8.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_8.webp)
 
 - VISA Checkout 也被放在“+More”内；
 - <span style="color: #d44c47;">点击按钮后Loading 界面会刷新两次，给用户造成了一定的困惑，且在Loading结束后，<strong>上划浮窗会转化为Walmart页面内置浏览器，延续性不好</strong>；</span>
@@ -111,7 +111,7 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 
 ### VISA Checkout on Walmart（老用户）
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_9.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_9.webp)
 
 - 老用户进入登陆页面后，<span style="color: #448361;">VISA会直接发送邮件OTP给用户**（无需用户发起请求）**</span>，并且在顶端会有提示，在邮件服务比较快捷的环境下还算方便，但如果是网易、AOL这种邮箱服务我觉得可能会有延迟，同时系统默认勾选“在此设备上记住我”；
 - 登陆后会直接显示用户已经绑定的卡片，此时如果直接点击继续会跳回Walmart完成渠道选择；
@@ -119,17 +119,17 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 - 返回Walmart后，只提示付款方式是Card ending in ####，<strong style="color: #d44c47;">并不显示用户在使用“VISA Checkout”服务</strong>，除非用户再次编辑支付方式，才会将两者关联显示；
 - 备注：VISA Checkout 的网页端注册流程还是非常简便的：[https://secure.checkout.visa.com/](https://secure.checkout.visa.com/)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_10.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_10.webp)
 
 ### Amazon Pay on Shopify Site (新用户)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_11.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_11.webp)
 
 • 新用户直接使用Amazon Pay支付可以说是**相当复杂**的（左右横跳），我不认为一个完全没有Amazon账号的用户会主动选择使用Amazon Pay，在此不作详细分析。
 
 ### Amazon Pay on Shopify Site (老用户)
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_12.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_12.webp)
 
 - 在登陆界面中，<strong style="color: #448361;">配合Apple Keychain整体体验非常好</strong>，光标会自动定位在邮箱输入框，且下方Keychain 自动跳出已储存账号信息，一次点击自动输入；
 - 回到商户页面，<span style="color: #d44c47;">嵌入Amazon Wallet的窗口尺寸非常大，并不会根据内容调节大小</span>、**邮寄地址和缴费渠道确认会在商户界面处理**；
@@ -137,7 +137,7 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 - 下方系列图为额外安全验证（若登陆环境不安全则会在登陆后弹出），安全验证过程除了短信OTP之外，还可以将验证渠道推送到用户登陆过Amazon App（图3图4）的其他移动设备（这类验证方式很不普遍），在图2 Amzon App会推提醒，用户点击就可以切屏；
 - 登陆后Amazon App还会推送登陆安全警报。
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_13.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_13.webp)
 
 ### 小结
 
@@ -151,7 +151,7 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 
 ### GrabPay on Zalora
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_14.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_14.webp)
 
 - 不论新老用户，<span style="color: #d44c47;">登陆界面都有使用条款确认</span>，如果是法务需求则可以理解，<strong style="color: #d44c47;">但感觉多一次点击有些多余</strong>，老用户是否可以跳过？Next应该是如果是陌生手机号则进入新账号注册流程；
 - 在页面顶端又一个临时的余额不足提醒<span style="color: #d44c47;">（但并不现实当前账户余额？？）</span>，并引导用户充值，并且在这一界面会显示本次支付的金额数和奖励；
@@ -164,7 +164,7 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 
 *安卓环境禁止用户截屏*
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_15.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_15.webp)
 
 - Google Pay的<strong style="color: #448361;">Branding非常醒目</strong>；
 - Google 并不支持无Google 账户使用者支付，在北美使用电商平台用户应该是人手一个Google账户，同时其账户ID是从安卓系统抓取的；
@@ -176,7 +176,7 @@ VISA Checkout 是 Visa 提供的线上支付渠道，<strong style="color: #d44c
 
 ### Apple Pay on Doordash
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_16.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_16.webp)
 
 - <span style="color: #448361;">Apple Pay在移动端的交互流程都是统一的</span>，不论是在Apple体系内进行支付还是在Apple体系外进行支付，再或者是线下支付；
 - 如果用户的Apple Pay是设定好的，则可以一键调出认证页面，并且使用face ID或者Passcode支付，在页面中有<strong style="color: #448361;">明确的账单信息</strong>，这也是我使用过的**唯一一个调用硬件设备的支付流程**；
@@ -194,7 +194,7 @@ GrabPay这类跳出支付我个人只在大陆和东南亚见到过。
 
 ### Klarna
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_17.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_17.webp)
 
 - Klarna是一个定位欧美的Buy now Pay later 服务，它集成钱包、分期、和网购于一身，是一个商业模式比较创新的网购工具；
 - 它自身**没有任何电商平台**，全部内容又系统从互联网抓去并投放给用户，在App内点击商品会弹出内置浏览器访问该商户网站进行操作，这意味着用户**不能跨站点购买，Klarna也没有自带收银台**；
@@ -203,7 +203,7 @@ GrabPay这类跳出支付我个人只在大陆和东南亚见到过。
 - 回到商户页面Klarna也会<span style="color: #448361;">自动将虚拟卡信息填充给商户</span>，允许用户进行结算；
 - 每一笔消费会有一张专门的虚拟卡、<span style="color: #448361;">Klarna添加银行卡的界面非常简单（如下图）。</span>
 
-![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_18.png)
+![](/assets/images/mobile-online-payment-case-study/移动在线支付-案例分析-Untitled_18.webp)
 
 - 在美国Affirm和Klarna等类似服务都在迅猛增长，当然超前消费本身就符合欧美消费者习惯，**甚至Klarna这是一个套娃，虚拟信用卡套真实信用卡**；
 - 类似业务恐怕很难在发展中地区推行；

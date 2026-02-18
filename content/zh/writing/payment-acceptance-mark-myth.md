@@ -14,26 +14,26 @@ type: "思考"
 
 支付受理标（Acceptance Mark），顾名思义，是在支付场景中向用户告知特定支付方式可以被受理的标识，这一概念伴随着银行卡行业的发展逐步成型，逐渐成为了各大银行、卡组展示品牌+拉动支付的重要媒介之一。对于他们来讲，用户需要被学习教育“见受理标即可付”。
 
-![现在随处可见的各式各样的支付受理标](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled.png)
+![现在随处可见的各式各样的支付受理标](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled.webp)
 
 ### **最初的受理标**
 
 支付受理标的概念和名称出现甚晚，甚至于到现在Acceptance Mark这一名词都不是非常通行的行业名词，但这一事物是早早就出现的，下图中我们可以看到，VISA还叫BankAmericard（1977年前）以及MasterCard还叫Master Charge（1979年前）的时候，就已经在线下门店的门口张贴LOGO揽客了
 
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_1.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_1.webp)
 
 ### **受理标与品牌**
 
 而在这之中，MasterCard可谓煞费苦心，2019年最新版本的品牌是其斥800万美元巨资委托全球知名设计事务所Pentagram设计的：[Master Card 品牌设计成果｜Pentagram](https://www.pentagram.com/work/mastercard)
 :::grid
 :::col-1
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_2.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_2.webp)
 :::
 :::col-2
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_3.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_3.webp)
 :::
 :::col-3
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_4.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_4.webp)
 :::
 :::end
 ### **银行电子化带来的困境**
@@ -47,10 +47,10 @@ type: "思考"
 而在对比之下，可以看到新版的受理标识确实在线上的支付场景更加可读了：
 :::grid
 :::col-1
-![老版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_5.png)
+![老版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_5.webp)
 :::
 :::col-2
-![新版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_6.png)
+![新版本](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_6.webp)
 :::
 :::end
 （注：Pentagram几乎参与了北美所有大型金融企业的品牌设计项目，同时收费极高，[作品展示](https://www.pentagram.com/work/sector/banking-finance)）
@@ -59,13 +59,13 @@ type: "思考"
 
 随着越来越多的电子钱包的推出，支付受理标识也越来越多，目前全世界能数得过名字的电子支付平台就有300余家，而他们的受理标识也各不相同，而这也给支付行业带来了很多困扰。在最早期，各种支付受理标识的维护都是人工的，而相应的素材也都是线下传递的，因此发卡方品牌更新并不能及时影响到最前线，就比如PayPal Logo Center现在维护的受理标识都还在使用最古早的Visa MasterCard受理标素材（给他们的售卖团队打零分！）：
 
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_7.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_7.webp)
 
 访问Logo Center：[PayPal Logo Center](https://www.paypal.com/us/webapps/mpp/logo-center)
 
 各大平台为了解决这类问题花样百出，以Shopify为例，他们在Github上维护了一个开源受理标库，以支持全球所有使用Shopify的商家渲染相应支付方式，他们安排专门的审核员对全球各式各样的“payment icon”进行审核，并严格要求了所有支付受理标的制图样式。（Alipay+也负责在上面维护我们的入网钱包），目前Shopify共开源维护支付受理标355个。
 
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_8.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_8.webp)
 
 查看该项目维护的所有标识：[Shopify Payment Icon 开源库](https://github.com/activemerchant/payment_icons/tree/master/app/assets/images/payment_icons)
 
@@ -77,10 +77,10 @@ type: "思考"
 
 **一些常见受理标识**
 
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_9.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_9.webp)
 
 所以，中国大陆常见的几种支付方式，受理标识的设计都尚可，支付宝的为最佳，“支”字的体现，和抓人眼球的蓝色都可以让用户快速识别到支付宝的元素，而微信支付的问题则在于其标识本身并不体现微信元素。PayPal目前的品牌规范要求必须露出PayPal字样，所以受理标在小容器中的可识别性较低。
 
-![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_10.png)
+![](/assets/images/payment-acceptance-mark-myth/支付受理标迷思-Untitled_10.webp)
 
 全球范围内一些并不理想的案例（从左至右分别是：Touch ‘n Go eWallet, Samsung Pay, DBS PayLah, Paytm, Rabbit LINE Pay, TrueMoney Wallet）

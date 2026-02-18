@@ -5,7 +5,7 @@ intro: "All in AI"
 type: "Full-time"
 area: ["*AI", "Content Service", "Product Design",  "Cross-border Collaboration", "Global Market"]
 location: "Beijing"
-favicon: "/assets/images/favicon/msft.png"
+favicon: "/assets/images/favicon/msft.webp"
 sorting: 6
 ---
 
@@ -28,8 +28,8 @@ I also contributed to the **Studio 8 × Peking University joint course**, explor
 
 In my daily work, I actively use the **Vibecoding tool** to empower designers with greater autonomy in implementation, enabling independent project execution and advancing the vision of **“Design as Productivity.”**
 
-![My Key Visual design for Microsoft 2024 Kickoff](/assets/images/microsoft/microsoft-IMG_0350.png)
+![My Key Visual design for Microsoft 2024 Kickoff](/assets/images/microsoft/microsoft-IMG_0350.webp)
 
-![Sharing with visiting students from the Central Academy of Fine Arts.](/assets/images/microsoft/microsoft-IMG_9476.png)
+![Sharing with visiting students from the Central Academy of Fine Arts.](/assets/images/microsoft/microsoft-IMG_9476.webp)
 
-![The team](/assets/images/microsoft/microsoft-合影.png)
+![The team](/assets/images/microsoft/microsoft-合影.webp)

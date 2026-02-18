@@ -29,7 +29,7 @@ type: "随记"
 :::col-1
 :::
 :::col-2
-![](/assets/images/thoughts-on-design-tools-after-figma-revoked-dji/写在figma收回dji账号之后-关于设计工具的思考-Untitled.png)
+![](/assets/images/thoughts-on-design-tools-after-figma-revoked-dji/写在figma收回dji账号之后-关于设计工具的思考-Untitled.webp)
 :::
 :::col-3
 :::

@@ -19,12 +19,12 @@ type: "随记"
 
 可惜人生没有如果，我也没有假期了，登机，回家。
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.webp)

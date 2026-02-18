@@ -3,7 +3,7 @@ title: "SIG CombiONE"
 date: "2026-02-16"
 intro: "SIG Combibloc's next-gen carton packaging solution"
 sorting: 1
-coverImage: "/assets/images/cover-image/SIG.png"
+coverImage: "/assets/images/cover-image/SIG.webp"
 favicon: "/assets/images/favicon/SIG_logo.svg"
 ---
 
@@ -17,7 +17,7 @@ As proof that I was once an industrial designer…
 > SIG Combibloc's next-generation carton packaging solution
 > 
 
-![](/assets/images/sig-combione/sig-combione-sig_cover1.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_cover1.webp)
 
 CombiONE is an aseptic carton packaging solution designed for [**SIG**](https://www.sig.biz/en). My team focused on designing new die-cut lines and packaging openings for them. The project involved user research, packaging design, graphic design, and product design.
 
@@ -41,7 +41,7 @@ We then researched and analyzed several key topics related to the packaging indu
 
 ## Design ##
 
-![](/assets/images/sig-combione/sig-combione-sig_mockup.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_mockup.webp)
 
 We brainstormed hundreds of concepts for different potential user groups. Through continuous paper folding and prototyping, we validated the production feasibility of each concept. This iterative process continued for 4 weeks until we arrived at satisfactory solutions.
 
@@ -59,16 +59,16 @@ CombiSlide features a slide-open spout with a nearly negligible height profile, 
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.webp)
 :::
 :::end
 
@@ -82,16 +82,16 @@ CombiPull works like a standard water bottle cap — twist to unlock, then pull 
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.webp)
 :::
 :::end
 
@@ -106,16 +106,16 @@ CombiAlways is compatible with both standard flip-top caps and CombiTime tethere
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.webp)
 :::
 :::end
 
@@ -130,16 +130,16 @@ This solution can be used for microwaveable ready meals or takeout products.
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.webp)
 :::
 :::end
 
@@ -154,16 +154,16 @@ Twist the CombiPaste spout to open the package, then twist it back to reseal.
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.webp)
 :::
 :::end
 
@@ -178,16 +178,16 @@ CombiTime uses an ultra-thin plastic tether to connect the cap to the body, sign
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.webp)
 :::
 :::end
 
@@ -198,25 +198,25 @@ We applied 365 Everyday Value® branding to the final prototypes and brought the
 :::grid
 :::col-1
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf1.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf1.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf3.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf3.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf7.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf7.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf4.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-sig_shelf2.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf2.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf6.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf6.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf5.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf5.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf8.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf8.webp)
 :::
 :::end
 
 ## Final Deliverables ##
 
-![](/assets/images/sig-combione/sig-combione-sig_posters.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_posters.webp)

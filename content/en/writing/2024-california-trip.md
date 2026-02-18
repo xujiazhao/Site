@@ -19,12 +19,12 @@ I met so many people. Many of their lifestyles were admirable and enviable. And 
 
 But life has no "what ifs," and I had no more vacation days left. Board the plane, go home.
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_1.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_2.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_3.webp)
 
-![](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.png)
+![](/assets/images/2024-california-trip/2024-加州之行-Untitled_4.webp)

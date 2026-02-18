@@ -3,8 +3,8 @@ title: "Alipay+"
 date: "2026-02-16"
 intro: "Pay beyond borders"
 sorting: 3
-coverImage: "/assets/images/cover-image/Alipay+.png"
-favicon: "/assets/images/favicon/plusicon.png"
+coverImage: "/assets/images/cover-image/Alipay+.webp"
+favicon: "/assets/images/favicon/plusicon.webp"
 ---
 
 > **Pay beyond borders**
@@ -51,10 +51,10 @@ As a payment network provider, it builds partnerships with Acquirers and Wallets
 
 Thus, I also define Alipay+ UX standards and guidance and manage part of the design work of Ant Intl Doc Platform to maintain Alipay+’s related product offerings.
 
-![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_5.png)
+![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_5.webp)
 
-![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/images/alipay/alipay-Untitled.png)
+![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/images/alipay/alipay-Untitled.webp)
 
-![Searching - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_1.png)
+![Searching - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_1.webp)
 
-![API explorer - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_2.png)
+![API explorer - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_2.webp)

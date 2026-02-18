@@ -5,8 +5,8 @@ intro: "略通支付"
 type: "全职"
 area: ["*B端", "*C端", "支付", "交互设计", "全球业务", "工具产品", "设计系统"]
 location: "上海"
-coverImage: "/assets/images/cover-image/Ant.png"
-favicon: "/assets/images/favicon/anticon.png"
+coverImage: "/assets/images/cover-image/Ant.webp"
+favicon: "/assets/images/favicon/anticon.webp"
 sorting: 5
 ---
 
@@ -29,4 +29,4 @@ sorting: 5
 
 我也参与过多期设计团队电台节目的录制，同行业分享自己的想法和见闻。我也志愿参与阿里巴巴U设计周的筹备工作，负责受邀嘉宾的内容翻译和出行接待工作。
 
-![我与师姐的合影](/assets/images/ant-international/ant-international-Untitled.jpeg)
+![我与师姐的合影](/assets/images/ant-international/ant-international-Untitled.webp)

@@ -5,8 +5,8 @@ intro: "Master a little of the Payment"
 type: "Full-time"
 area: ["UX Design", "Payment", "To-developer", "Design system", "Global Market"]
 location: "Shanghai"
-coverImage: "/assets/images/cover-image/Ant.png"
-favicon: "/assets/images/favicon/anticon.png"
+coverImage: "/assets/images/cover-image/Ant.webp"
+favicon: "/assets/images/favicon/anticon.webp"
 sorting: 5
 ---
 > **Master a little of the Payment**
@@ -30,4 +30,4 @@ Besides the work for business, I also put effort into other areas and worked as 
 
 I also participate in other activities such as commonweal and broadcasting. I am glad to share my ideas with the public. During the 2022 U Design Week, I volunteered as one of the organizers as well as a translator for VIPs.
 
-![A photo of my mentor and me](/assets/images/ant-international/ant-international-Untitled.jpeg)
+![A photo of my mentor and me](/assets/images/ant-international/ant-international-Untitled.webp)

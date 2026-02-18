@@ -1,6 +1,4 @@
-.markdown {
-  @apply text-lg leading-relaxed;
-}
+
 
 .markdown p,
 .markdown ul,
@@ -10,7 +8,6 @@
 }
 
 .markdown blockquote {
-  @apply my-6 pl-5 border-l-4 font-semibold text-xl leading-relaxed;
   border-left-color: var(--md-border-blockquote);
 }
 
@@ -18,89 +15,54 @@
   font-weight: 600;
 }
 
-.markdown blockquote p {
-  @apply my-0;
-}
 
-.markdown blockquote strong {
-  @apply font-semibold;
-}
 
-.markdown ul {
-  @apply list-disc pl-6;
-}
 
-.markdown ol {
-  @apply list-decimal pl-6;
-}
 
-.markdown li {
-  @apply my-1;
-}
 
-.markdown h1 {
-  @apply text-4xl mt-12 mb-4 leading-snug font-semibold;
-}
 
-.markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug font-semibold;
-}
 
-.markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug font-semibold;
-}
 
-.markdown h4 {
-  @apply text-xl mt-6 mb-3 leading-snug font-semibold;
-}
 
-.markdown h5 {
-  @apply text-lg mt-4 mb-2 leading-snug font-semibold;
-}
 
-.markdown h6 {
-  @apply text-base mt-4 mb-2 leading-snug font-semibold;
-}
 
-.markdown img {
-  @apply w-full rounded-lg cursor-zoom-in;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .markdown img[style*="width"] {
   width: auto;
 }
 
-.markdown figure {
-  @apply my-6;
-}
 
-.markdown figure figcaption {
-  @apply text-sm text-neutral-400 mt-2;
-}
+
+
 
 .markdown a {
   color: #EE9933;
-  @apply underline;
 }
 
 .markdown table {
-  @apply w-full my-6 border-collapse;
   border: 1px solid var(--md-border);
 }
 
-.markdown th:first-child,
-.markdown td:first-child {
-  @apply whitespace-nowrap w-0;
-}
+
 
 .markdown th,
 .markdown td {
-  @apply px-4 py-2 text-left;
   border: 1px solid var(--md-border);
 }
 
 .markdown th {
-  @apply font-semibold;
   background-color: var(--md-bg-th);
 }
 
@@ -109,12 +71,10 @@
 }
 
 .markdown hr {
-  @apply my-12 border-0 border-t;
   border-top-color: var(--md-border);
 }
 
 .markdown aside {
-  @apply my-6 px-5 py-4 rounded-lg text-lg leading-relaxed;
   background-color: var(--md-bg-aside);
   border: 1px solid var(--md-border);
   display: grid;
@@ -124,20 +84,13 @@
 }
 
 .markdown aside :global(.aside-icon) {
-  @apply text-lg leading-relaxed;
   display: flex;
   align-items: center;
   height: 1.8em;
 }
 
-.markdown aside :global(.aside-icon) img {
-  @apply inline w-5 h-5 rounded-none;
-}
 
-.markdown aside :global(.aside-content) {
-  @apply flex flex-col gap-3;
-}
 
-.markdown aside :global(.aside-content) p {
-  @apply my-0;
-}
+
+
+

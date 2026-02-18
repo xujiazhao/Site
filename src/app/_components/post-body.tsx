@@ -1,4 +1,4 @@
-import markdownStyles from "./markdown-styles.module.css";
+// 样式已迁移为全局类名 .markdown
 import { Lightbox } from "./lightbox";
 
 type Props = {
@@ -10,7 +10,7 @@ export function PostBody({ content }: Props) {
     <div className="max-w-[1024px] mx-auto">
       <Lightbox>
         <div
-          className={markdownStyles["markdown"]}
+          className="markdown"
           dangerouslySetInnerHTML={{ __html: content }}
           suppressHydrationWarning
         />

@@ -5,8 +5,8 @@ intro: "四年亦痛亦幻的设计追梦之路"
 type: "本科"
 area: ["产品设计", "理学学士"]
 location: "洛杉矶"
-coverImage: "/assets/images/cover-image/ArtCenter.png"
-favicon: "/assets/images/favicon/artcentericon.png"
+coverImage: "/assets/images/cover-image/ArtCenter.webp"
+favicon: "/assets/images/favicon/artcentericon.webp"
 sorting: 3
 ---
 
@@ -26,10 +26,10 @@ sorting: 3
 - 院系奖学金；
 - 计算机实验室助理；
 
-![我第一次申请奖学金](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled.jpeg)
+![我第一次申请奖学金](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled.webp)
 
-![为校企合作项目SIG CombiONE布置汇报墙 - 校企合作是ArtCenter一类常见的课程，我们将会作为专业设计咨询的身份为企业客户合作，并提供设计服务](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.jpeg)
+![为校企合作项目SIG CombiONE布置汇报墙 - 校企合作是ArtCenter一类常见的课程，我们将会作为专业设计咨询的身份为企业客户合作，并提供设计服务](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.webp)
 
 关于SIG CombiONE项目，详见：[SIG CombiONE](/zh/project/sig-combione)
 
-![在ArtCenter展厅布置FireSight项目 - FireSight是一个为预防山火而设计的消防用滑翔机](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.jpeg)
+![在ArtCenter展厅布置FireSight项目 - FireSight是一个为预防山火而设计的消防用滑翔机](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.webp)
