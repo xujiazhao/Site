@@ -32,6 +32,11 @@ export default async function Post({ params }: Params) {
             title={post.title}
             date={post.date}
             favicon={post.favicon}
+            type={post.type}
+            typeBadge={false}
+            area={post.area}
+            dateRange={post.dateRange}
+            location={post.location}
           />
           <PostBody content={content} />
         </article>
