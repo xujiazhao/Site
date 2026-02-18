@@ -8,7 +8,7 @@ type Props = {
 export function PostTitle({ children, favicon }: Props) {
   return (
     <div className="flex items-center justify-between mb-8">
-      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight text-left">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-left">
         {children}
       </h1>
       {favicon && (

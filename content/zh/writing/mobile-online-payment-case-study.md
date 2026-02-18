@@ -6,7 +6,9 @@ type: "案例分析"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 这份调研是我做的第一份支付行业相关研究。
+ℹ️
+
+这份调研是我做的第一份支付行业相关研究。
 
 </aside>
 

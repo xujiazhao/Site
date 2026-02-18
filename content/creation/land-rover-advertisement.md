@@ -1,6 +1,6 @@
 ---
 title: "Land Rover Advertisement"
-date: "2026-02-16"
+date: "2025-10-01"
 skill: ["AIGC", "Video"]
 coverImage: "/assets/images/cover-image/LandRover.webp"
 ---

@@ -6,7 +6,9 @@ type: "Thinking"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> This article was my thinking on Xiaomi’s smart home product. I had interned at Xiaomi’s eco-system department as an industrial designer back in 2018.
+ℹ️
+
+This article was my thinking on Xiaomi’s smart home product. I had interned at Xiaomi’s eco-system department as an industrial designer back in 2018.
 
 </aside>
 

@@ -6,7 +6,9 @@ type: "规范"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="info" width="40px" /> 这是我做支付产品体验自查的工具之一。
+ℹ️
+
+这是我做支付产品体验自查的工具之一。
 
 </aside>
 

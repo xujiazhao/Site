@@ -7,7 +7,8 @@ import DateFormatter from "@/app/_components/date-formatter";
 export default function Index({ params }: { params: { lang: string } }) {
   const experiences = getAllItems("experience", params.lang)
     .sort((a, b) => (b.sorting || 0) - (a.sorting || 0));
-  const projects = getAllItems("project", params.lang);
+  const projects = getAllItems("project", params.lang)
+    .sort((a, b) => (b.sorting || 0) - (a.sorting || 0));
   const writings = getAllItems("writing", params.lang);
   const creations = getAllItems("creation", params.lang);
 

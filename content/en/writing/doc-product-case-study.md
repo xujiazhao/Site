@@ -5,7 +5,9 @@ type: "Case Study"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 这份调研是我为了了解文档产品所做的简单了解。I made this to learn some well-designed doc products in the industry.
+ℹ️
+
+这份调研是我为了了解文档产品所做的简单了解。I made this to learn some well-designed doc products in the industry.
 
 </aside>
 
