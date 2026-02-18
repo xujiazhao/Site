@@ -7,7 +7,7 @@ coverImage: "/assets/images/cover-image/AppleAlipay.png"
 favicon: "/assets/images/favicon/appleicon.png"
 ---
 
-> **打造最好的 AppStore 支付体验**
+> 打造最好的 AppStore 支付体验
 > 
 
 苹果历来都是支付宝最为重要的客户，不仅仅在中国大陆，在整个亚太地区内都能见到支付宝同支付宝的合作，而其中最为基础的便是包括大陆支付宝、香港支付宝和东南亚的蚂蚁持股钱包入驻 AppStore，便于钱包用户在 AppStore 绑定后直接使用自己的钱包购买苹果服务（购买应用程序及苹果音乐服务等）。而在此之外，各钱包也在自己的平台内建立了苹果服务相关的产品，用以维系用户粘性。

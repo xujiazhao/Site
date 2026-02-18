@@ -33,6 +33,7 @@ export default async function Writing({ params }: Params) {
             favicon={post.favicon}
             type={post.type}
             showDate
+            lang={params.lang}
           />
           <PostBody content={content} />
         </article>

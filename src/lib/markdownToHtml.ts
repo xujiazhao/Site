@@ -65,6 +65,39 @@ export default async function markdownToHtml(markdown: string) {
     '</div>'
   );
 
+  // Pre-process <aside> blocks: structure into icon + content
+  processed = processed.replace(
+    /<aside>\s*([\s\S]*?)\s*<\/aside>/g,
+    (_, inner: string) => {
+      const trimmed = inner.trim();
+      // Split icon (first line) from body (rest)
+      const lines = trimmed.split(/\n/);
+      const firstLine = lines[0].trim();
+      const rest = lines.slice(1).join('\n').trim();
+
+      // Wrap each paragraph in the body with <p>
+      const paragraphs = rest
+        .split(/\n\n+/)
+        .filter(p => p.trim())
+        .map(p => `<p>${p.trim()}</p>`)
+        .join('\n');
+
+      // Check if icon is an <img> tag or emoji text
+      const iconHtml = firstLine.startsWith('<img')
+        ? `<span class="aside-icon">${firstLine}</span>`
+        : `<span class="aside-icon">${firstLine}</span>`;
+
+      return `<aside>${iconHtml}<div class="aside-content">${paragraphs}</div></aside>`;
+    }
+  );
+
+  // Fix CJK bold: **text** adjacent to CJK characters doesn't parse in CommonMark
+  // Convert **text** to <strong>text</strong> when adjacent to CJK chars or punctuation
+  processed = processed.replace(
+    /\*\*(.+?)\*\*/g,
+    '<strong>$1</strong>'
+  );
+
   const result = await remark().use(remarkGfm).use(html, { sanitize: false }).process(processed);
   let htmlStr = result.toString();
 

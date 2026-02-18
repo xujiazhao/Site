@@ -12,7 +12,7 @@ sorting: 6
 > All in AI
 > 
 
-我于 2023 年加入微软亚洲互联网工程院 Studio 8 设计团队，起初主要负责 [**Bing 新闻**](/zh/project/bing-news) 与 **MSN** 的内容产品设计，涵盖新闻、财经、视频等核心体验。2023年进入AI时代后，我参与设计了微软多款人工智能产品，包括 [**Copilot 内容（新闻 / 财经 / 天气）](/zh/project/copilot-content-ecosystem)、Bing Chat**以及智能理财助手**Money Assistant**等。
+我于 2023 年加入微软亚洲互联网工程院 Studio 8 设计团队，起初主要负责 [**Bing 新闻**](/zh/project/bing-news) 与 **MSN** 的内容产品设计，涵盖新闻、财经、视频等核心体验。2023年进入AI时代后，我参与设计了微软多款人工智能产品，包括 [**Copilot 内容（新闻 / 财经 / 天气）**](/zh/project/copilot-content-ecosystem)、Bing Chat以及智能理财助手 **Money Assistant**等。
 
 同时 2024 年起，我独立负责 [**MSN Partner Hub**](/zh/project/copilot-content-ecosystem) 的产品设计——这是微软全球最大的内容生态平台，服务对象涵盖 **CNN、BBC 等国际媒体集团** 与中小型 MCN。我主导了内容合作方后台的设计体系搭建、生态增长体验优化，并推动 Copilot 与 Partner Hub 的整合。
 

@@ -9,7 +9,6 @@ coverImage: "/assets/images/cover-image/Ant.png"
 favicon: "/assets/images/favicon/anticon.png"
 sorting: 5
 ---
-
 > **Master a little of the Payment**
 > 
 
@@ -20,8 +19,8 @@ Other than other Ant BGs or Alipay in Hangzhou, the Ant Intl BG in Shanghai work
 Projects I’ve been work on:
 
 - [Alipay+](/en/project/alipay)
-- [**Apple ✕ Alipay**](/en/project/apple-alipay)
-- [Ant Intl Doc Platform](https://www.notion.so/Ant-Intl-Doc-Platform-c236c15f690c4cbda5a5897ddb2e8db4?pvs=21)
+- [Apple ✕ Alipay](/en/project/apple-alipay)
+- Ant Intl Doc Platform
 - Taobao & Tmall’s payment in SEA, Taiwan, Hongkong, and Macao
 - Alipay for Global Business
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { PiXBold } from "react-icons/pi";
 
 type Props = {
@@ -57,7 +58,7 @@ export function SelfIntro({ lang }: Props) {
         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 mb-2">
           {isEn ? "Jiazhao Xu" : "许嘉昭"}
         </h1>
-        <p className="text-2xl md:text-3xl tracking-tight text-neutral-500 mb-8">
+        <p className="text-2xl md:text-3xl tracking-tight mb-8" style={{ color: '#EE9933' }}>
           {prefixText}
           <span className="inline-block" key={animKey}>
             {currentTitle.split("").map((char, i) => (
@@ -92,15 +93,15 @@ export function SelfIntro({ lang }: Props) {
             </>
           )}
         </div>
-        <div className="flex gap-3 text-sm">
-          <a href="mailto:hello@xujiazhao.com" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors">
-            Email
+        <div className="inline-grid grid-cols-3 gap-3 text-sm" style={{ minWidth: 0 }}>
+          <a href="mailto:hello@xujiazhao.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+            {isEn ? "Email" : "发邮件"}
           </a>
-          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors">
+          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
             LinkedIn
           </a>
           <button
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-300 hover:bg-neutral-100 transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 cursor-pointer transition-colors duration-300"
             onClick={handleWeChat}
           >
             {isEn ? "WeChat" : "微信"}
@@ -109,9 +110,9 @@ export function SelfIntro({ lang }: Props) {
       </div>
 
       {/* WeChat QR Code Modal (Desktop/Tablet) */}
-      {showQR && (
+      {showQR && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50"
           onClick={() => setShowQR(false)}
         >
           <div
@@ -134,13 +135,14 @@ export function SelfIntro({ lang }: Props) {
             />
             <p className="text-center text-sm text-neutral-500 mt-3">WeChat ID: xux-ai</p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* WeChat ID Modal (Mobile) */}
-      {showMobileWeChat && (
+      {showMobileWeChat && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50"
           onClick={() => setShowMobileWeChat(false)}
         >
           <div
@@ -164,14 +166,16 @@ export function SelfIntro({ lang }: Props) {
               {isEn ? "Copy WeChat ID" : "复制 WeChat ID 到剪贴板"}
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Toast */}
-      {showToast && (
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg animate-fade-in">
+      {showToast && createPortal(
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[60] bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg animate-fade-in">
           {isEn ? "Copied!" : "已复制!"}
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

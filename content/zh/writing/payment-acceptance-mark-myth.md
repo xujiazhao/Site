@@ -6,7 +6,9 @@ type: "思考"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 这篇文章是我关于支付受理标的思考。
+ℹ️
+
+这篇文章是我关于支付受理标的思考。
 
 </aside>
 

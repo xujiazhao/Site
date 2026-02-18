@@ -5,11 +5,17 @@
 .markdown p,
 .markdown ul,
 .markdown ol {
-  @apply my-6;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .markdown blockquote {
-  @apply my-6 pl-5 border-l-4 border-neutral-800 font-semibold text-xl leading-relaxed;
+  @apply my-6 pl-5 border-l-4 font-semibold text-xl leading-relaxed;
+  border-left-color: var(--md-border-blockquote);
+}
+
+.markdown strong {
+  font-weight: 600;
 }
 
 .markdown blockquote p {
@@ -78,7 +84,8 @@
 }
 
 .markdown table {
-  @apply w-full my-6 border-collapse border border-neutral-200;
+  @apply w-full my-6 border-collapse;
+  border: 1px solid var(--md-border);
 }
 
 .markdown th:first-child,
@@ -88,11 +95,13 @@
 
 .markdown th,
 .markdown td {
-  @apply px-4 py-2 border border-neutral-200 text-left;
+  @apply px-4 py-2 text-left;
+  border: 1px solid var(--md-border);
 }
 
 .markdown th {
-  @apply bg-neutral-50 font-semibold;
+  @apply font-semibold;
+  background-color: var(--md-bg-th);
 }
 
 .markdown a:hover {
@@ -100,17 +109,35 @@
 }
 
 .markdown hr {
-  @apply my-12 border-0 border-t border-neutral-200;
+  @apply my-12 border-0 border-t;
+  border-top-color: var(--md-border);
 }
 
 .markdown aside {
-  @apply my-6 px-5 py-4 rounded-lg bg-neutral-50 border border-neutral-200 text-lg leading-relaxed flex items-start gap-3;
+  @apply my-6 px-5 py-4 rounded-lg text-lg leading-relaxed;
+  background-color: var(--md-bg-aside);
+  border: 1px solid var(--md-border);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  align-items: start;
 }
 
-.markdown aside img {
-  @apply inline w-5 h-5 mt-1 rounded-none flex-shrink-0;
+.markdown aside :global(.aside-icon) {
+  @apply text-lg leading-relaxed;
+  display: flex;
+  align-items: center;
+  height: 1.8em;
 }
 
-.markdown aside p {
+.markdown aside :global(.aside-icon) img {
+  @apply inline w-5 h-5 rounded-none;
+}
+
+.markdown aside :global(.aside-content) {
+  @apply flex flex-col gap-3;
+}
+
+.markdown aside :global(.aside-content) p {
   @apply my-0;
 }

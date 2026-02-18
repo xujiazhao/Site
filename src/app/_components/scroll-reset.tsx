@@ -38,7 +38,10 @@ export function ScrollReset() {
 
     if (isDetailPage) {
       // Force scroll to top for detail pages on new navigation
-      window.scrollTo(0, 0);
+      // Use requestAnimationFrame to ensure DOM is ready after template remount
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
     }
   }, [pathname]);
 

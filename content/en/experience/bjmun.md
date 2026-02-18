@@ -10,7 +10,7 @@ favicon: "/assets/images/favicon/bjmun.webp"
 sorting: 1
 ---
 
-> **A 11-year dream of educational social activities.**
+> A 11-year dream of educational social activities.
 > 
 
 BJMUN is a non-profit organization that holds educational activities like Model United Nations conferences for high school and college students in Beijing. Started in 2010, BJMUN has already held over 200 activities, speeches, and discussions that benefited over 10 thousand participants (person-time). It is one of the largest and oldest organizers of [Model United Nations](https://www.un.org/en/mun) in China.

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import { SiteHeader } from "@/app/_components/site-header";
 import { ScrollReset } from "@/app/_components/scroll-reset";
+
 import "./globals.css";
 
 const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], variable: "--font-barlow" });
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <head>
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -58,11 +60,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={`${barlow.variable} ${params.lang === 'en' ? barlow.className : ''}`}>
-        <SiteHeader lang={params.lang} />
-        <ScrollReset />
-        <div className="min-h-screen pt-14">{children}</div>
-        <Footer lang={params.lang} />
+      <body className={`${barlow.variable} ${params.lang === 'en' ? barlow.className : ''} bg-white text-neutral-900`}>
+          <SiteHeader lang={params.lang} />
+          <ScrollReset />
+          {children}
+          <Footer lang={params.lang} />
       </body>
     </html>
   );

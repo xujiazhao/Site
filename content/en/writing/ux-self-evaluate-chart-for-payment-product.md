@@ -6,7 +6,9 @@ type: "Guidence"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="info" width="40px" /> This is one of my self-evaluate tools when designing payment-related products.
+ℹ️
+
+This is one of my self-evaluate tools when designing payment-related products.
 
 </aside>
 

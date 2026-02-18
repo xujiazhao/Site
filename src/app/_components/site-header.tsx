@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { PiSunBold, PiMoonBold, PiCaretLeftBold } from "react-icons/pi";
+import { useState } from "react";
+import { PiCaretLeftBold } from "react-icons/pi";
 
 type Props = {
   lang: string;
@@ -16,23 +15,6 @@ export function SiteHeader({ lang }: Props) {
   const targetLang = isEn ? "zh" : "en";
   const langLabel = isEn ? "中文" : "EN";
 
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleDark = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-  };
-
   // Build the target path for language toggle
   const targetPath = pathname.replace(`/${lang}`, `/${targetLang}`) || `/${targetLang}`;
 
@@ -40,8 +22,27 @@ export function SiteHeader({ lang }: Props) {
   const segments = pathname.split('/').filter(Boolean);
   const isDetailPage = segments.length > 2;
 
+  const [headerFade, setHeaderFade] = useState(true);
+  const [slideTo, setSlideTo] = useState<string | null>(null);
+
+  const handleLangSwitch = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setSlideTo(targetLang);
+    // Fade out page content in sync with slider animation
+    const main = document.querySelector("main");
+    if (main) {
+      main.style.transition = "opacity 250ms ease-in-out";
+      main.style.opacity = "0";
+    }
+    setTimeout(() => {
+      router.push(targetPath);
+    }, 250);
+  };
+
+  const sliderIsEn = slideTo ? slideTo === "en" : isEn;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-700/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md border-b border-neutral-200/50">
       <div className="mx-auto px-5 max-w-[1024px] h-14 flex items-center justify-between">
         <button
           onClick={() => {
@@ -51,7 +52,11 @@ export function SiteHeader({ lang }: Props) {
               window.scrollTo({ top: 0 });
             }
           }}
-          className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 transition-opacity font-[family-name:var(--font-barlow)] cursor-pointer"
+          className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 font-[family-name:var(--font-barlow)] cursor-pointer"
+          style={{
+            transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1), color 300ms cubic-bezier(0.4,0,0.2,1)",
+            opacity: 1, // Always visible
+          }}
         >
           {isDetailPage ? (
             <>
@@ -65,22 +70,32 @@ export function SiteHeader({ lang }: Props) {
             </>
           )}
         </button>
-        <div className="flex items-center gap-3">
-          {!isDetailPage && (
-            <Link
-              href={targetPath}
-              className="w-12 h-9 flex items-center justify-center text-sm rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            >
-              {langLabel}
-            </Link>
-          )}
-          <button
-            onClick={toggleDark}
-            className="w-12 h-9 flex items-center justify-center text-sm rounded-full border border-neutral-300 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label="Toggle dark mode"
+        <div
+          className="flex items-center"
+          style={{
+            transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1)",
+            opacity: isDetailPage ? 0 : (headerFade ? 1 : 0),
+            pointerEvents: isDetailPage ? "none" : "auto",
+          }}
+        >
+          <a
+            href={targetPath}
+            onClick={handleLangSwitch}
+            className="relative flex items-center h-9 w-[88px] rounded-xl bg-neutral-100 border border-neutral-200 cursor-pointer select-none font-[family-name:var(--font-barlow)]"
+            role="switch"
+            aria-checked={isEn}
           >
-            {isDark ? <PiSunBold /> : <PiMoonBold />}
-          </button>
+            <span
+              className="absolute top-[3px] left-[3px] h-[28px] w-[40px] rounded-[10px] bg-white transition-transform duration-250 ease-in-out"
+              style={{ transform: sliderIsEn ? "translateX(0)" : "translateX(40px)" }}
+            />
+            <span className={`relative z-10 flex-1 text-center text-sm font-medium transition-colors duration-250 ${sliderIsEn ? "text-neutral-900" : "text-neutral-400"}`}>
+              EN
+            </span>
+            <span className={`relative z-10 flex-1 text-center text-sm font-medium transition-colors duration-250 ${!sliderIsEn ? "text-neutral-900" : "text-neutral-400"}`}>
+              中
+            </span>
+          </a>
         </div>
       </div>
     </header>

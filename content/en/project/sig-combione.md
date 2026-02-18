@@ -8,7 +8,9 @@ favicon: "/assets/images/favicon/SIG_logo.svg"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> As proof that I was once an industrial designer…
+ℹ️
+
+As proof that I was once an industrial designer…
 
 </aside>
 

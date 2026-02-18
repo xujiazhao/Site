@@ -1,13 +1,13 @@
 ---
-title: "Documentation Product · Case Study"
+title: "文档产品 · 案例分析"
 date: "2021-10-14"
-type: "Case Study"
+type: "案例分析"
 ---
 
 <aside>
 ℹ️
 
-这份调研是我为了了解文档产品所做的简单了解。I made this to learn some well-designed doc products in the industry.
+这份调研是我为了了解文档产品所做的简单了解。
 
 </aside>
 

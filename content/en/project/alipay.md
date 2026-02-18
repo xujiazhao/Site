@@ -18,15 +18,15 @@ My main job at Alipay+ is building its three payment products. Based on my under
 - Offline Payment
 - Auto Debit
 
-![](/assets/images/alipay/alipay-Untitled.png)
+![](/assets/images/alipay/onlinecheckout.webp)
 
-![Online Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_1.png)
+![Online Payment - from Alipay+ doc center](/assets/images/alipay/mobilecheckout.webp)
 
-![](/assets/images/alipay/alipay-Untitled_2.png)
+![](/assets/images/alipay/beenscan.webp)
 
-![Offline Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_3.png)
+![Offline Payment - from Alipay+ doc center](/assets/images/alipay/scan.webp)
 
-![Auto Debit - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_4.png)
+![Auto Debit - from Alipay+ doc center](/assets/images/alipay/autodebit.webp)
 
 I created a UX self-evaluating chart to design a better user experience for payment product, see: [UX self-evaluate chart for payment product](/en/writing/ux-self-evaluate-chart-for-payment-product)
 
@@ -34,17 +34,14 @@ In addition, I designed the Product Intro part of the official [Alipay+](https:/
 
 Payment Product:
 
-[Alipay+ | Cashier Payment](https://www.alipayplus.com/cashier-payment)
-
-[Alipay+ | Auto Debit](https://www.alipayplus.com/auto-debit)
-
-[Alipay+ | In-store payment](https://www.alipayplus.com/in-store-payment)
+- [Alipay+ | Cashier Payment](https://www.alipayplus.com/cashier-payment)
+- [Alipay+ | Auto Debit](https://www.alipayplus.com/auto-debit)
+- [Alipay+ | In-store payment](https://www.alipayplus.com/in-store-payment)
 
 Marketing Product:
 
-[Alipay+ | Rewards platform](https://www.alipayplus.com/rewards-platform)
-
-[Alipay+ | Payment marketing](https://www.alipayplus.com/payment-marketing)
+- [Alipay+ | Rewards platform](https://www.alipayplus.com/rewards-platform)
+- [Alipay+ | Payment marketing](https://www.alipayplus.com/payment-marketing)
 
 Credits to all my colleagues! And please check out the Easter Egg I made for them: [https://www.alipayplus.com/thecrew](https://www.alipayplus.com/thecrew)
 
@@ -52,7 +49,7 @@ Credits to all my colleagues! And please check out the Easter Egg I made for the
 
 As a payment network provider, it builds partnerships with Acquirers and Wallets. It rarely has direct connections to end users (including Customers and Merchants). So if Alipay+ wants to reach the end users and maintain its consistent experience, Alipay+ uses doc to host its product, design & integration guidance. And provide related backend services to its partners. So Alipay+ provides not only an easy-to-use Customer end product but also provides efficient and productive Business/Developer end product. Designing an okay checkout page is simple, but helping dozens of acquiring partners and hundreds of merchant build payment experiences that meet Alipay+’s consistency & standardization is extremely difficult.
 
-Thus, I also define Alipay+ UX standards and guidance and manage part of the design work of **[Ant Intl Doc Platform](notion://www.notion.so/c236c15f690c4cbda5a5897ddb2e8db4)** to maintain Alipay+’s related product offerings.
+Thus, I also define Alipay+ UX standards and guidance and manage part of the design work of Ant Intl Doc Platform to maintain Alipay+’s related product offerings.
 
 ![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_5.png)
 

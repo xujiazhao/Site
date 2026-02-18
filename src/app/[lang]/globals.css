@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --md-border: theme('colors.neutral.200');
+    --md-border-blockquote: theme('colors.neutral.800');
+    --md-bg-th: theme('colors.neutral.50');
+    --md-bg-aside: theme('colors.neutral.50');
+  }
+}
+
 html {
   font-size: 16px;
 }
@@ -10,12 +19,13 @@ body {
   @apply text-base;
 }
 
-.dark body {
-  @apply bg-neutral-900 text-neutral-100;
+main {
+  animation: main-fade-in 250ms ease-in-out both;
 }
 
-.dark a {
-  @apply text-neutral-100;
+@keyframes main-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes letter-bounce {
@@ -86,6 +96,19 @@ body {
   animation: lightbox-img 0.25s ease-out both;
 }
 
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-page-fade-in {
+  animation: page-fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 /* Markdown grid layout */
 .md-grid {
   display: grid;
@@ -103,12 +126,8 @@ body {
   min-width: 0;
 }
 
-.md-grid-col > p:first-child {
-  margin-top: 0;
-}
-
-.md-grid-col > p:last-child {
-  margin-bottom: 0;
+.md-grid-col > p {
+  margin: 0;
 }
 
 .md-grid-col figure {

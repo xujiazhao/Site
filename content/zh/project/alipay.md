@@ -10,54 +10,54 @@ favicon: "/assets/images/favicon/plusicon.png"
 > **Pay beyond borders**
 > 
 
-Alipay+ is a global payment network by Ant Group. It connects merchants and customers all over the world, lets users pay with any partnered wallets at any partnered merchants. In a simple way, compared to Visa or MasterCard, Alipay+ is a smarter and much more digitized “Wallet Group”. Alipay+ is now the most important international product at Ant Group.
+Alipay+ 是蚂蚁集团的一个国际支付结算网络，它的愿景是连接全球商户和消费者，让用户可以使用任意一个 Alipay+ 网络中的电子钱包在网络中的线上、线下商户进行消费。简单理解，Alipay+ 是一个更智能、更富科技感的类 Visa 或 MasterCard 的"钱包组"产品。Alipay+ 目前是蚂蚁最重要的出海产品之一。
 
-My main job at Alipay+ is building its three payment products. Based on my understanding of payment and Ant Group’s experience, added with monitoring of data like PSR and frequent product usability testing, I continuously build and improve the payment experience of Alipay+.
+在 Alipay+ 中，我最核心的工作是建设它的三类基础支付能力，基于对行业的了解和对蚂蚁多年支付能力的积淀，配合对如支付转化率等数据监控，以及周期性的各类产品可用性测试，通过用户体验的专业视角不断打磨迭代 Alipay+ 的支付能力。
 
-- Online Payment
-- Offline Payment
-- Auto Debit
+- 线上支付
+- 线下支付
+- 代扣付款
 
-![](/assets/images/alipay/alipay-Untitled.png)
+![](/assets/images/alipay/onlinecheckout.webp)
 
-![Online Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_1.png)
+![线上支付产品 - 取自Alipay+文档中心](/assets/images/alipay/mobilecheckout.webp)
 
-![](/assets/images/alipay/alipay-Untitled_2.png)
+![](/assets/images/alipay/beenscan.webp)
 
-![Offline Payment - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_3.png)
+![线下支付产品 - 取自Alipay+文档中心](/assets/images/alipay/scan.webp)
 
-![Auto Debit - from Alipay+ doc center](/assets/images/alipay/alipay-Untitled_4.png)
+![代扣产品 - 取自Alipay+文档中心](/assets/images/alipay/autodebit.webp)
 
-I created a UX self-evaluating chart to design a better user experience for payment product, see: [UX self-evaluate chart for payment product](/zh/writing/ux-self-evaluate-chart-for-payment-product)
+我为了保障支付产品的用户体验而整理了一份UX自查表，请查看：[收银支付UX自查表](/zh/writing/ux-self-evaluate-chart-for-payment-product)
 
-In addition, I designed the Product Intro part of the official [Alipay+](https://www.alipayplus.com/) site. 
+此外，我还设计了 [Alipay+](https://www.alipayplus.com/) 官网的产品介绍部分。
 
-Payment Product:
+支付产品：
 
-[Alipay+ | Cashier Payment](https://www.alipayplus.com/cashier-payment)
+- [Alipay+ | Cashier Payment](https://www.alipayplus.com/cashier-payment)
 
-[Alipay+ | Auto Debit](https://www.alipayplus.com/auto-debit)
+- [Alipay+ | Auto Debit](https://www.alipayplus.com/auto-debit)
 
-[Alipay+ | In-store payment](https://www.alipayplus.com/in-store-payment)
+- [Alipay+ | In-store payment](https://www.alipayplus.com/in-store-payment)
 
-Marketing Product:
+营销产品：
 
-[Alipay+ | Rewards platform](https://www.alipayplus.com/rewards-platform)
+- [Alipay+ | Rewards platform](https://www.alipayplus.com/rewards-platform)
 
-[Alipay+ | Payment marketing](https://www.alipayplus.com/payment-marketing)
+- [Alipay+ | Payment marketing](https://www.alipayplus.com/payment-marketing)
 
-Credits to all my colleagues! And please check out the Easter Egg I made for them: [https://www.alipayplus.com/thecrew](https://www.alipayplus.com/thecrew)
+感谢与我一同合作的设计师、产品经理和开发人员（快看看我留在官网上的彩蛋）：[https://www.alipayplus.com/thecrew](https://www.alipayplus.com/thecrew)
 
 ---
 
-As a payment network provider, it builds partnerships with Acquirers and Wallets. It rarely has direct connections to end users (including Customers and Merchants). So if Alipay+ wants to reach the end users and maintain its consistent experience, Alipay+ uses doc to host its product, design & integration guidance. And provide related backend services to its partners. So Alipay+ provides not only an easy-to-use Customer end product but also provides efficient and productive Business/Developer end product. Designing an okay checkout page is simple, but helping dozens of acquiring partners and hundreds of merchant build payment experiences that meet Alipay+’s consistency & standardization is extremely difficult.
+Alipay+ 作为一个支付网络的服务者，它前接收单机构（Acquirer），后接发卡机构（Wallets），多数时候是无法直接接触 C 端消费者和 B 端商户的，因此为了能够让产品影响到终端用户，保障体验一致性，Alipay+ 需要根据自身产品能力和所提供的服务制定相应的集成+设计规范，并通过文档等形式呈现给客户，同时提供便捷的中后台产品。因此在 Alipay+ 业务中，如果说C端产品需要的是最直白可见的美和便捷的话，它背后的B端产品则依赖于极富逻辑和工作效能的设计。设计一个好的收银页并不难，但帮助数十家收单机构给成百上千家商户建设标准、流畅的 Alipay+ 支付体验则不是一件容易的事情了。
 
-Thus, I also define Alipay+ UX standards and guidance and manage part of the design work of **[Ant Intl Doc Platform](notion://www.notion.so/c236c15f690c4cbda5a5897ddb2e8db4)** to maintain Alipay+’s related product offerings.
+因此，在这一侧，我同时负责 Alipay+ 的设计+体验规范的制定及蚂蚁国际文档平台的部分设计工作，以维护 Alipay+ 相关产品的呈现。
 
-![Alipay+ product & UX guidelines - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_5.png)
+![Alipay+ 产品及UX规范 - 取自文档中心](/assets/images/alipay/alipay-Untitled_5.png)
 
-![Alipay+’s acceptance mark generator - screenshot from the doc center](/assets/images/alipay/alipay-Untitled.png)
+![Alipay+ 受理标生成器 - 取自文档中心](/assets/images/alipay/alipay-Untitled.png)
 
-![Searching - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_1.png)
+![搜索 - 取自文档中心](/assets/images/alipay/alipay-Untitled_1.png)
 
-![API explorer - screenshot from the doc center](/assets/images/alipay/alipay-Untitled_2.png)
+![API explorer - 取自文档中心](/assets/images/alipay/alipay-Untitled_2.png)

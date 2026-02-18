@@ -2,13 +2,18 @@ import { parseISO, format } from "date-fns";
 
 type Props = {
   dateString: string;
+  lang?: string;
 };
 
-const DateFormatter = ({ dateString }: Props) => {
+const DateFormatter = ({ dateString, lang }: Props) => {
   try {
     const date = parseISO(dateString);
     if (isNaN(date.getTime())) return <span>{dateString}</span>;
-    return <time dateTime={dateString} suppressHydrationWarning>{format(date, "LLLL\td, yyyy")}</time>;
+    
+    if (lang === "zh") {
+      return <time dateTime={dateString} suppressHydrationWarning>{format(date, "yyyy.MM.dd")}</time>;
+    }
+    return <time dateTime={dateString} suppressHydrationWarning>{format(date, "MMM\td, yyyy")}</time>;
   } catch {
     return <span>{dateString}</span>;
   }

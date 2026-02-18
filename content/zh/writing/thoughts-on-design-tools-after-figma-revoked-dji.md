@@ -6,7 +6,9 @@ type: "随记"
 ---
 
 <aside>
-<img src="https://www.notion.so/icons/info-alternate_yellow.svg" alt="https://www.notion.so/icons/info-alternate_yellow.svg" width="40px" /> 我是Figma的忠实用户和拥簇，我尝试在支付宝设计团队推动Figma的普及，但是（由于数安和合规的原因）困难重重，谨以此文纪念我做出的努力。
+ℹ️
+
+我是Figma的忠实用户和拥簇，我尝试在支付宝设计团队推动Figma的普及，但是（由于数安和合规的原因）困难重重，谨以此文纪念我做出的努力。
 
 </aside>
 
