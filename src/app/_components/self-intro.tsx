@@ -94,7 +94,7 @@ export function SelfIntro({ lang }: Props) {
           )}
         </div>
         <div className="inline-grid grid-cols-3 gap-3 text-sm" style={{ minWidth: 0 }}>
-          <a href="mailto:hello@xujiazhao.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <a href="mailto:hello@xujiazhao.com" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
             {isEn ? "Email" : "发邮件"}
           </a>
           <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
