@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { PiXBold } from "react-icons/pi";
@@ -17,7 +18,7 @@ export function SelfIntro({ lang }: Props) {
   // ✏️ Maintain your rotating titles here
   const rotatingTitles: { en: string; zh: string }[] = [
     { en: "UI Designer", zh: "UI 设计师" },
-    { en: "Vibe Coder", zh: "氛围程序员" },
+    { en: "Vibe Coder", zh: "Vibe Coder" },
     { en: "PPT Expert", zh: "PPT 专家" },
     { en: "Educator", zh: "教育者" },
     { en: "Cat Lover", zh: "猫奴" },
@@ -79,7 +80,7 @@ export function SelfIntro({ lang }: Props) {
                 I focus on integrating AI with software and hardware experiences to create intelligent and human-centered products. I’m driven by a results-oriented approach to design—turning creative insight into tangible business value and lasting impact.
               </p>
               <p className="mb-4">
-                I graduated from ArtCenter College of Design, currently working at Microsoft. I am also an entrepreneur, educator, and PPT expert.
+                I graduated from <Link href="/en/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">ArtCenter College of Design</Link>, currently working at <Link href="/en/experience/microsoft" className="underline hover:opacity-70 transition-opacity">Microsoft</Link>. I am also an entrepreneur, <Link href="/en/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">educator</Link>, and <Link href="/en/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT expert</Link>.
               </p>
             </>
           ) : (
@@ -88,7 +89,7 @@ export function SelfIntro({ lang }: Props) {
                 我专注于融合AI与软硬件体验，打造智能且有温度的产品。以商业成果为导向，我致力于让设计在企业中创造真实价值与可衡量的影响力。
               </p>
               <p className="mb-4">
-                我本科毕业于艺术中心设计学院，目前在微软工作。我同时也是一名创业者、教育者和PPT专家。
+                我本科毕业于<Link href="/zh/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">艺术中心设计学院</Link>，目前在<Link href="/zh/experience/microsoft" className="underline hover:opacity-70 transition-opacity">微软</Link>工作。我同时也是一名创业者、<Link href="/zh/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">教育者</Link>和<Link href="/zh/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT专家</Link>。
               </p>
             </>
           )}
