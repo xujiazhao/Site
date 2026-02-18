@@ -47,13 +47,16 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | ${CMS_NAME}`;
+  const title = post.title;
+  const description = post.intro || post.excerpt || `${post.title} – Experience by ${CMS_NAME}`;
 
   return {
     title,
+    description,
     openGraph: {
-      title,
-      images: [post.ogImage.url],
+      title: `${title} | ${CMS_NAME}`,
+      description,
+      images: post.ogImage.url ? [post.ogImage.url] : [],
     },
   };
 }

@@ -1,5 +1,5 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { CMS_NAME, SITE_URL, SITE_DESCRIPTION_EN, SITE_DESCRIPTION_ZH, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import { SiteHeader } from "@/app/_components/site-header";
@@ -10,10 +10,40 @@ import "./globals.css";
 const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], variable: "--font-barlow" });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${CMS_NAME} – Product Designer`,
+    template: `%s | ${CMS_NAME}`,
+  },
+  description: SITE_DESCRIPTION_EN,
+  keywords: ["Product Designer", "UX Designer", "UI Designer", "Jiazhao Xu", "许嘉昭", "Microsoft", "Ant International", "ArtCenter"],
+  authors: [{ name: CMS_NAME, url: SITE_URL }],
+  creator: CMS_NAME,
   openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+    type: "website",
+    locale: "en_US",
+    alternateLocale: "zh_CN",
+    url: SITE_URL,
+    siteName: CMS_NAME,
+    title: `${CMS_NAME} – Product Designer`,
+    description: SITE_DESCRIPTION_EN,
+    images: HOME_OG_IMAGE_URL ? [HOME_OG_IMAGE_URL] : [],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${CMS_NAME} – Product Designer`,
+    description: SITE_DESCRIPTION_EN,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "en": `${SITE_URL}/en`,
+      "zh": `${SITE_URL}/zh`,
+    },
   },
 };
 
