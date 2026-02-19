@@ -12,10 +12,13 @@ export function middleware(request: NextRequest) {
   )
 
   if (pathnameIsMissingLocale) {
-    const locale = defaultLocale
+    // Detect preferred language from Accept-Language header
+    const acceptLanguage = request.headers.get('accept-language') || ''
+    const prefersChinese = /zh/i.test(acceptLanguage.split(',')[0])
+    const locale = prefersChinese ? 'zh' : defaultLocale
 
     // e.g. incoming request is /products
-    // The new URL is now /en/products
+    // The new URL is now /en/products or /zh/products
     return NextResponse.redirect(
       new URL(`/${locale}${pathname}`, request.url)
     )
