@@ -60,29 +60,12 @@ export default function RootLayout({
       <head>
 
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.webp"
-        />
-        <link
           rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.webp"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.webp"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/favicon/safari-pinned-tab.svg"
-          color="#000000"
+          type="image/svg+xml"
+          href="/favicon/favicon.svg"
         />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="msapplication-config"

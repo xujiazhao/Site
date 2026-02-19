@@ -268,7 +268,7 @@ export function ChatWidget({ lang }: Props) {
                           : "bg-neutral-200/60 text-neutral-800 rounded-bl-md"
                       }`}
                       dangerouslySetInnerHTML={{
-                        __html: msg.content.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                        __html: (msg.content || '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
                       }}
                     />
                   </div>
