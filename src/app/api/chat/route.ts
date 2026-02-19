@@ -78,12 +78,52 @@ I care deeply about inequality and human suffering, even when I feel powerless. 
 
 I believe design thinking should be accessible to everyone — not gatekept by professionals. I created the 3i Design Toolkit (Insight, Ideate, Iterate) specifically for non-designers, because the ability to observe, imagine, and refine should belong to all.`;
 
+// Simple in-memory rate limiter: 15 messages per IP per hour
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT = 15;
+const RATE_WINDOW = 60 * 60 * 1000; // 1 hour
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_WINDOW });
+    return true;
+  }
+  if (entry.count >= RATE_LIMIT) {
+    return false;
+  }
+  entry.count++;
+  return true;
+}
+
+// Clean up expired entries periodically
+setInterval(() => {
+  const now = Date.now();
+  rateLimitMap.forEach((val, key) => {
+    if (now > val.resetAt) rateLimitMap.delete(key);
+  });
+}, 5 * 60 * 1000);
+
+const RATE_LIMIT_MSG_EN = "Looks like we've been chatting quite a bit! 😄 If you'd like to continue the conversation, feel free to add me on WeChat (xux-ai) or drop me an email at hello@xujiazhao.com — I'll personally get back to you!";
+const RATE_LIMIT_MSG_ZH = "我们聊了不少啦！😄 如果你还想继续交流，欢迎加我微信（xux-ai）或者发邮件到 hello@xujiazhao.com，我会亲自回复你的！";
+
 export async function POST(req: NextRequest) {
   try {
     const { messages, lang } = await req.json();
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: "Messages are required" }, { status: 400 });
+    }
+
+    // Rate limit check
+    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
+      || req.headers.get("x-real-ip")
+      || "unknown";
+
+    if (!checkRateLimit(ip)) {
+      const reply = lang === "zh" ? RATE_LIMIT_MSG_ZH : RATE_LIMIT_MSG_EN;
+      return NextResponse.json({ reply });
     }
 
     // Limit conversation history to last 20 messages to control token usage
