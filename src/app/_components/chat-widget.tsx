@@ -241,8 +241,8 @@ export function ChatWidget({ lang }: Props) {
                   <div className="text-center mt-4">
                     <div className="flex flex-wrap justify-center gap-2">
                       {(isEn
-                        ? ["What do you do?", "Tell me about your projects", "What makes a good AI experience?"]
-                        : ["你是做什么的？", "介绍一下你的项目", "你觉得什么是好的AI体验？"]
+                        ? ["What are your core competencies?", "What's your skill set like?", "What makes a good AI experience?"]
+                        : ["你的核心竞争力是什么？", "你的技能图谱如何？", "你觉得什么是好的AI体验？"]
                       ).map((q) => (
                         <button
                           key={q}
