@@ -46,6 +46,27 @@ export function ChatWidget({ lang }: Props) {
     }
   }, [isOpen]);
 
+  // Lock body scroll on mobile when chat is open
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isOpen && isMobile) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${window.scrollY}px`;
+    }
+    return () => {
+      if (isMobile) {
+        const scrollY = document.body.style.top;
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      }
+    };
+  }, [isOpen]);
+
   // Prevent wheel events inside chat panel from scrolling the page
   useEffect(() => {
     const panel = chatPanelRef.current;
