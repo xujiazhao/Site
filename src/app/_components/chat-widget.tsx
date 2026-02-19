@@ -178,7 +178,7 @@ export function ChatWidget({ lang }: Props) {
       {createPortal(
         <button
           onClick={() => setIsOpen(true)}
-          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-800 text-white shadow-lg hover:bg-neutral-700 hover:shadow-xl transition-all duration-300 ${
+          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-6 py-3 rounded-full bg-neutral-800 text-white shadow-lg hover:bg-neutral-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap ${
             isVisible || !buttonReady
               ? "opacity-0 pointer-events-none"
               : "opacity-100"
@@ -186,7 +186,7 @@ export function ChatWidget({ lang }: Props) {
           aria-label="Open chat"
         >
           <PiChatCircleDots className="w-5 h-5" />
-          <span className="text-sm font-medium">
+          <span className="text-base font-medium">
             {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
           </span>
         </button>,
@@ -196,9 +196,9 @@ export function ChatWidget({ lang }: Props) {
       {/* Chat panel — floating overlay */}
       {isVisible && createPortal(
         <div className="fixed inset-0 z-50 pointer-events-none">
-          {/* Backdrop overlay — scroll passes through to page */}
+          {/* Backdrop overlay — scroll passes through to page (hidden on mobile) */}
           <div
-            className="absolute inset-0 pointer-events-auto transition-colors duration-300"
+            className="absolute inset-0 pointer-events-auto transition-colors duration-300 hidden md:block"
             style={{
               backgroundColor: animState === "open" ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)",
             }}
@@ -206,24 +206,21 @@ export function ChatWidget({ lang }: Props) {
             onWheel={handleBackdropWheel}
           />
 
-          {/* Chat container — centered, same width as content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none pb-6 px-5">
+          {/* Chat container — full screen on mobile, floating on desktop */}
+          <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none md:pb-6 md:px-5">
             <div
               ref={chatPanelRef}
-              className="w-full max-w-[1024px] flex flex-col rounded-2xl overflow-hidden border border-neutral-200/50 shadow-2xl pointer-events-auto transition-all duration-300 ease-out"
+              className="w-full h-full md:h-auto md:max-h-[70vh] md:max-w-[1024px] flex flex-col md:rounded-2xl overflow-hidden md:border md:border-neutral-200/50 md:shadow-2xl pointer-events-auto transition-all duration-300 ease-out"
               style={{
                 background: "rgba(255, 255, 255, 1)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
                 transform: animState === "open" ? "translateY(0)" : "translateY(100%)",
-                maxHeight: "70vh",
               }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-5 py-3.5 flex-shrink-0">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
+                <div className="flex items-center gap-2 pl-1">
                   <PiChatCircleDots className="w-5 h-5 text-neutral-800" />
-                  <span className="font-semibold text-sm text-neutral-800">
+                  <span className="font-semibold text-base text-neutral-800">
                     {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
                   </span>
                 </div>
@@ -236,9 +233,10 @@ export function ChatWidget({ lang }: Props) {
               </div>
 
               {/* Messages */}
-              <div ref={messagesAreaRef} className="min-h-0 flex-1 overflow-y-auto px-5 py-3 space-y-3">
+              <div ref={messagesAreaRef} className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
+                <div className="flex flex-col min-h-full space-y-3">
                 {messages.length === 0 && (
-                  <div className="text-center mt-4">
+                  <div className="flex flex-col justify-end flex-1 pb-2">
                     <div className="flex flex-wrap justify-center gap-2">
                       {(isEn
                         ? ["What are your core competencies?", "What's your skill set like?", "What makes a good AI experience?"]
@@ -288,10 +286,11 @@ export function ChatWidget({ lang }: Props) {
                 )}
 
                 <div ref={messagesEndRef} />
+                </div>
               </div>
 
               {/* Input */}
-              <div className="px-5 py-3 flex-shrink-0">
+              <div className="px-3 py-3 flex-shrink-0">
                 <div className="flex items-stretch gap-2">
                   <textarea
                     ref={inputRef}
@@ -300,12 +299,12 @@ export function ChatWidget({ lang }: Props) {
                     onKeyDown={handleKeyDown}
                     placeholder={isEn ? "Type a message..." : "输入消息..."}
                     rows={1}
-                    className="flex-1 resize-none rounded-xl border border-neutral-300/60 bg-white/60 px-3.5 py-2.5 text-sm focus:outline-none focus:border-neutral-400 max-h-24"
+                    className="flex-1 resize-none rounded-xl border border-neutral-300/60 bg-white/60 px-3.5 py-2.5 text-base focus:outline-none focus:border-neutral-400 max-h-24"
                   />
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="w-10 aspect-square flex items-center justify-center rounded-xl bg-neutral-800 text-white disabled:opacity-30 hover:bg-neutral-700 transition-colors flex-shrink-0"
+                    className="w-11 h-11 flex items-center justify-center rounded-xl bg-neutral-800 text-white disabled:opacity-30 hover:bg-neutral-700 transition-colors flex-shrink-0"
                   >
                     <PiPaperPlaneRightFill className="w-4 h-4" />
                   </button>
