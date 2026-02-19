@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import { SiteHeader } from "@/app/_components/site-header";
 import { ScrollReset } from "@/app/_components/scroll-reset";
+import { ChatWidget } from "@/app/_components/chat-widget";
 
 import "./globals.css";
 
@@ -95,6 +96,7 @@ export default function RootLayout({
           <ScrollReset />
           {children}
           <Footer lang={params.lang} />
+          <ChatWidget lang={params.lang} />
       </body>
     </html>
   );

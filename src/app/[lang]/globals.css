@@ -282,3 +282,23 @@ main {
 .md-columns-4 figure {
   @apply my-0;
 }
+
+/* Typing dots animation for chat */
+@keyframes typing-dots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+.animate-typing-dots {
+  display: inline-block;
+  font-size: inherit;
+  line-height: 1;
+}
+
+.animate-typing-dots::after {
+  content: '';
+  animation: typing-dots 1.2s infinite steps(1);
+}
