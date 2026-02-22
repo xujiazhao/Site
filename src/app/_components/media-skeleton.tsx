@@ -47,6 +47,17 @@ export function MediaSkeleton({ children }: { children: React.ReactNode }) {
 
       el.addEventListener("load", handleLoad, { once: true });
       el.addEventListener("error", handleError, { once: true });
+
+      // Re-check after attaching listeners: the image may have finished
+      // loading between the initial check and addEventListener (race condition
+      // common with cached / 304 responses).
+      if (el instanceof HTMLImageElement && el.complete) {
+        if (el.naturalHeight > 0) {
+          handleLoad();
+        } else {
+          handleError();
+        }
+      }
     };
 
     // Process existing media elements

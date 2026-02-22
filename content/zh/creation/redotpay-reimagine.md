@@ -7,10 +7,10 @@ coverImage: "/assets/cover-image/redotpay.webp"
 
 <div class="side-by-side">
   <div class="side-preview">
-    <div class="mobile-preview" style="height: 80vh; max-height: 844px; aspect-ratio: 390 / 844; border-radius: 40px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); position: relative;">
+    <div style="height: 80vh; max-height: 844px; aspect-ratio: 390 / 844; border-radius: 40px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); position: relative;">
       <iframe
         src="https://xujiazhao.github.io/redotpay/#/"
-        style="border: none;"
+        style="border: none; width: 100%; height: 100%;"
         title="RedotPay"
       ></iframe>
     </div>
