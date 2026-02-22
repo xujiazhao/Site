@@ -27,20 +27,20 @@ export function WritingSection({ writings, lang, isEn }: Props) {
   }, [extra.length]);
 
   const renderItem = (post: Post) => (
-    <Link key={post.slug} href={`/${lang}/writing/${post.slug}`} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-2 hover:bg-neutral-100 transition-colors duration-300">
-      <div className="md:w-3/4">
+    <Link key={post.slug} href={`/${lang}/writing/${post.slug}`} className="group grid grid-cols-subgrid col-span-3 items-baseline border-b border-neutral-100 py-2 hover:bg-neutral-100 transition-colors duration-300">
+      <div className="min-w-0 mr-3">
         <h3 className="text-base font-semibold group-hover:underline">
           {post.title}
         </h3>
       </div>
-      <div className="md:w-1/4 flex items-baseline gap-2 md:justify-end mt-1 md:mt-0">
+      <div className="flex items-baseline justify-end">
         {post.type && (
           <span className="inline-block text-sm font-medium px-2 py-0.5 rounded-lg bg-neutral-200 text-neutral-600">{post.type}</span>
         )}
-        <span className="text-neutral-600 text-base whitespace-nowrap" style={{ minWidth: '6em', textAlign: 'right' }}>
-          <DateFormatter dateString={post.date} lang={lang} />
-        </span>
       </div>
+      <span className="text-neutral-600 text-base whitespace-nowrap text-right">
+        <DateFormatter dateString={post.date} lang={lang} />
+      </span>
     </Link>
   );
 
@@ -49,13 +49,12 @@ export function WritingSection({ writings, lang, isEn }: Props) {
       <h2 className="mb-6 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
         {isEn ? "Writing" : "写作"}
       </h2>
-      <div className="flex flex-col">
+      <div className="grid" style={{ gridTemplateColumns: '1fr auto auto', columnGap: '0.5rem' }}>
         {visible.map(renderItem)}
-      </div>
-      {extra.length > 0 && (
-        <>
+        {extra.length > 0 && (
           <div
             ref={extraRef}
+            className="grid grid-cols-subgrid col-span-3"
             style={{
               maxHeight: expanded ? extraHeight + 10 : 0,
               opacity: expanded ? 1 : 0,
@@ -63,10 +62,12 @@ export function WritingSection({ writings, lang, isEn }: Props) {
               transition: "max-height 400ms ease-in-out, opacity 300ms ease-in-out",
             }}
           >
-            <div className="flex flex-col">
-              {extra.map(renderItem)}
-            </div>
+            {extra.map(renderItem)}
           </div>
+        )}
+      </div>
+      {extra.length > 0 && (
+        <>
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setExpanded(!expanded)}
