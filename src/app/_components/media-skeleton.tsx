@@ -13,7 +13,7 @@ export function MediaSkeleton({ children }: { children: React.ReactNode }) {
     const container = containerRef.current;
     if (!container) return;
 
-    const processMedia = (el: HTMLImageElement | HTMLIFrameElement) => {
+    const processMedia = (el: HTMLImageElement) => {
       // Skip already loaded images
       if (el instanceof HTMLImageElement && el.complete && el.naturalHeight > 0) {
         return;
@@ -28,11 +28,6 @@ export function MediaSkeleton({ children }: { children: React.ReactNode }) {
       // Create wrapper
       const wrapper = document.createElement("div");
       wrapper.className = "media-skeleton-wrapper";
-
-      // For iframes, preserve their aspect ratio if set
-      if (el instanceof HTMLIFrameElement) {
-        wrapper.classList.add("media-skeleton-iframe");
-      }
 
       el.parentNode?.insertBefore(wrapper, el);
       wrapper.appendChild(el);
@@ -56,10 +51,7 @@ export function MediaSkeleton({ children }: { children: React.ReactNode }) {
 
     // Process existing media elements
     const images = container.querySelectorAll<HTMLImageElement>("img");
-    const iframes = container.querySelectorAll<HTMLIFrameElement>("iframe");
-
     images.forEach(processMedia);
-    iframes.forEach(processMedia);
   }, []);
 
   return <div ref={containerRef}>{children}</div>;

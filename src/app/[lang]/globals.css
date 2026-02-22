@@ -357,10 +357,6 @@ main {
   min-height: auto;
 }
 
-.media-skeleton-wrapper.media-skeleton-iframe {
-  min-height: 200px;
-}
-
 /* Cover image skeleton for cards */
 .cover-skeleton {
   background: linear-gradient(
