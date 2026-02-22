@@ -321,6 +321,63 @@ main {
   animation: fade-out 250ms ease-in both;
 }
 
+/* Media skeleton loading state */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.media-skeleton-wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  min-height: 120px;
+  background: linear-gradient(
+    90deg,
+    theme('colors.neutral.200') 25%,
+    theme('colors.neutral.100') 50%,
+    theme('colors.neutral.200') 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.5s infinite linear;
+}
+
+.media-skeleton-wrapper img,
+.media-skeleton-wrapper iframe {
+  transition: opacity 0.3s ease;
+}
+
+.media-skeleton-wrapper.media-skeleton-loaded {
+  background: none;
+  animation: none;
+  min-height: auto;
+}
+
+.media-skeleton-wrapper.media-skeleton-iframe {
+  min-height: 200px;
+}
+
+/* Cover image skeleton for cards */
+.cover-skeleton {
+  background: linear-gradient(
+    90deg,
+    theme('colors.neutral.200') 25%,
+    theme('colors.neutral.100') 50%,
+    theme('colors.neutral.200') 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.5s infinite linear;
+}
+
+.cover-skeleton.cover-loaded {
+  background: none;
+  animation: none;
+}
+
 /* Side-by-side layout: sticky preview + scrollable text (desktop only) */
 .side-by-side {
   display: flex;

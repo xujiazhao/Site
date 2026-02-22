@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Post } from "@/interfaces/post";
 import { PiCaretDownBold, PiCaretUpBold } from "react-icons/pi";
+import { CoverImage } from "./cover-image";
 
 type Props = {
   creations: Post[];
@@ -39,13 +40,10 @@ export function CreationSection({ creations, lang, isEn }: Props) {
     return (
       <Link key={post.slug} href={href} className="group block">
         {(post.coverImage || post.firstImage) && (
-          <div className="overflow-hidden rounded-lg border border-black/10">
-            <img
-              src={post.coverImage || post.firstImage}
-              alt={post.title}
-              className="w-full aspect-[2/1] md:aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+          <CoverImage
+            src={post.coverImage || post.firstImage || ""}
+            alt={post.title}
+          />
         )}
         <h3 className="mt-2 text-base font-semibold group-hover:underline">{post.title}</h3>
         {post.skill && post.skill.length > 0 && (

@@ -6,6 +6,7 @@ import DateFormatter from "@/app/_components/date-formatter";
 import { ClickableRow } from "@/app/_components/clickable-row";
 import { CreationSection } from "@/app/_components/creation-section";
 import { WritingSection } from "@/app/_components/writing-section";
+import { CoverImage } from "@/app/_components/cover-image";
 import { PiBriefcaseBold } from "react-icons/pi";
 
 export default function Index({ params }: { params: { lang: string } }) {
@@ -113,17 +114,13 @@ export default function Index({ params }: { params: { lang: string } }) {
               const href = `/${params.lang}/project/${post.slug}`;
               return (
                 <Link key={post.slug} href={href} className="group block">
-                  <div className="overflow-hidden rounded-lg">
-                    {post.coverImage ? (
-                      <img
-                        src={post.coverImage}
-                        alt={post.title}
-                        className="w-full aspect-[2/1] md:aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    ) : (
+                  {post.coverImage ? (
+                    <CoverImage src={post.coverImage} alt={post.title} />
+                  ) : (
+                    <div className="overflow-hidden rounded-lg">
                       <div className="w-full aspect-[2/1] md:aspect-[3/2] bg-neutral-100" />
-                    )}
-                  </div>
+                    </div>
+                  )}
                   <div className="mt-2">
                     <div className="flex items-center gap-1.5">
                       {post.favicon && (

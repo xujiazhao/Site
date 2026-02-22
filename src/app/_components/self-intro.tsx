@@ -60,7 +60,7 @@ export function SelfIntro({ lang }: Props) {
     const interval = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
       setAnimKey((prev) => prev + 1);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [rotatingTitles.length]);
 
