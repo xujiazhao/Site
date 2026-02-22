@@ -17,8 +17,11 @@ export function CoverImage({ src, alt }: Props) {
       <img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.3s ease" }}
+        className="w-full h-full object-cover group-hover:scale-105"
+        style={{
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 0.3s ease, transform 0.3s ease",
+        }}
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(true)}
       />
