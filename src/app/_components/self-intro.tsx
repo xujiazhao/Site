@@ -163,7 +163,7 @@ export function SelfIntro({ lang }: Props) {
               </button>
             </div>
             <img
-              src="/assets/functional-images/wechat-qr.jpg"
+              src="/assets/functional-images/wechat-qr.webp"
               alt="WeChat QR Code"
               className="w-full rounded-lg"
             />

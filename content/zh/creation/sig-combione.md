@@ -16,7 +16,7 @@ favicon: "/assets/favicon/SIG_logo.svg"
 > SIG Combibloc 康美包新一代纸包装方案
 > 
 
-![](/assets/images/sig-combione/sig-combione-sig_cover1.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_cover1.webp)
 
 CombiONE 是为 [**SIG**](https://www.sig.biz/en) 设计的一套无菌纸包装解决方案。我的团队专注于为他们设计新的压模线和包装开口。项目过程中涉及用户研究，包装设计，平面设计和产品设计等内容。
 
@@ -40,7 +40,7 @@ SIG 是全球领先的食品和饮料纸包灌装领域方的案提供商之一�
 
 ## 设计 ##
 
-![](/assets/images/sig-combione/sig-combione-sig_mockup.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_mockup.webp)
 
 我们为不同的潜在用户群头脑风暴了数百个概念。 通过不断地折纸和尝试，我们验证了各个概念的生产可能性。此过程循环进行了 4 周，直到最终我们寻找出满意的解决方案为止。
 
@@ -58,16 +58,16 @@ CombiSlide 是一个高度几乎可以忽略不计的滑开式瓶口，可以大
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_1.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_3.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiGrip_4.webp)
 :::
 :::end
 
@@ -81,16 +81,16 @@ CombiPull 与常规的纯净水瓶口相同，使用时先扭开再拉开以打�
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPull_3.webp)
 :::
 :::end
 
@@ -105,16 +105,16 @@ CombiAlways 可以同时配装普通的翻盖式瓶盖或者CombiTime 连体式�
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiPack_3.webp)
 :::
 :::end
 
@@ -129,16 +129,16 @@ CombiMeal + CombiZip 是一组小型的便携式食品包装方案。
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_3.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_1.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiMeal_2.webp)
 :::
 :::end
 
@@ -153,16 +153,16 @@ CombiSqueeze 可以同时存储两钟不同的果冻，用户可以同时享用�
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_3.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_2.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiSqueeze_4.webp)
 :::
 :::end
 
@@ -177,16 +177,16 @@ CombiTime 使用一根极细的塑料来连接瓶身与瓶盖，节省了大量�
 
 :::grid
 :::col-1
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_2.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_1.webp)
 :::
 :::col-3
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_3.webp)
 :::
 :::col-4
-![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.png)
+![](/assets/images/sig-combione/sig-combione-SIG_CombiStack_4.webp)
 :::
 :::end
 
@@ -197,25 +197,25 @@ CombiTime 使用一根极细的塑料来连接瓶身与瓶盖，节省了大量�
 :::grid
 :::col-1
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf1.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf1.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf3.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf3.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf7.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf7.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf4.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf4.webp)
 :::
 :::col-2
-![](/assets/images/sig-combione/sig-combione-sig_shelf2.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf2.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf6.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf6.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf5.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf5.webp)
 
-![](/assets/images/sig-combione/sig-combione-sig_shelf8.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_shelf8.webp)
 :::
 :::end
 
 ## 最终交付成果 ##
 
-![](/assets/images/sig-combione/sig-combione-sig_posters.jpg)
+![](/assets/images/sig-combione/sig-combione-sig_posters.webp)

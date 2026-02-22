@@ -14,11 +14,11 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 
 微软内容生态每天与超过 **20,000 家全球媒体与机构**合作，提供多语种、多领域的新闻、财经、体育与生活资讯。这些内容通过微软的全球分发体系，整合至 **Windows、Copilot、Bing、MSN 与 Edge 新标签页**等用户端产品中,为数亿用户提供个性化的信息体验。我同时负责用户端和媒体机构端的设计工作，涵盖内容供给和分发两个环节。
 
-![微软内容的供给和分发路径](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image.png)
+![微软内容的供给和分发路径](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image.webp)
 
 若想尝试体验微软的内容服务，你可以打开 Edge浏览器的新Tab页面（下方左图为Copilot Discover灰度版，您可能需要被灰到才能看到此版本），或者直接打开[msn.com](http://msn.com)
 
-![Edge新标签页与MSN](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_1.png)
+![Edge新标签页与MSN](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_1.webp)
 
 ### C端内容分发与体验体系
 
@@ -32,7 +32,7 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 - **AI 对话与内容融合**：针对用户在 Copilot 中的对话与生成任务，探索 AI 如何辅助内容阅读、总结与延展。
 - **设计系统延展**：作为业务设计师，频繁地和总部沟通，对齐最新的用户体验，并在必要时凝练自身业务的产出来反哺Copilot基础体验和设计系统。
 
-![天气、新闻、财经等内容设计](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_2.png)
+![天气、新闻、财经等内容设计](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_2.webp)
 
 <aside>
 🎨
@@ -41,11 +41,11 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 
 </aside>
 
-![独立股票信息页面](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_3.png)
+![独立股票信息页面](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_3.webp)
 
 我同时负责 MSN 财经产品的设计。相比 Copilot，MSN 页面的信息密度更高，布局也更紧凑。这种差异源于两个产品的用户心理：Copilot 用户多为随意浏览内容、偶尔查看股票；MSN 财经则面向准专业用户，信息完整性优先于舒适的阅读体验。
 
-![Copilot 与 MSN 对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_4.png)
+![Copilot 与 MSN 对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_4.webp)
 
 欢迎体验Copilot：[https://copilot.microsoft.com/](https://copilot.microsoft.com/)
 
@@ -62,7 +62,7 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 - 粉丝增长与收益监控
 - 账户与品牌管理
 
-![MSN Partner Hub 首页](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_5.png)
+![MSN Partner Hub 首页](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_5.webp)
 
 <aside>
 🔒
@@ -73,7 +73,7 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 
 同时我还在尝试引入 AI 辅助创作功能（如 AI 助手与内容优化工具），帮助合作伙伴提升内容生产与表现质量。
 
-![保密项目](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_6.png)
+![保密项目](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_6.webp)
 
 <aside>
 💡
@@ -84,4 +84,4 @@ Copilot 内容生态是我对微软获取内容并分发这一流程所涉及的
 
 我负责维护该平台的设计系统，与前端团队协作，确保设计还原度和视觉一致性。近期，我主导了平台的视觉系统升级：
 
-![平台视觉系统优化前后对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_7.png)
+![平台视觉系统优化前后对比](/assets/images/copilot-content-ecosystem/copilot-content-ecosystem-image_7.webp)
