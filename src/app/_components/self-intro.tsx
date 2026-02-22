@@ -210,8 +210,10 @@ export function SelfIntro({ lang }: Props) {
 
       {/* Toast */}
       {showToast && createPortal(
-        <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-[60] bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg animate-fade-in">
-          {isEn ? "Copied!" : "已复制!"}
+        <div className="fixed bottom-20 left-0 right-0 z-[60] flex justify-center animate-fade-in">
+          <div className="bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg">
+            {isEn ? "Copied!" : "已复制!"}
+          </div>
         </div>,
         document.body
       )}
