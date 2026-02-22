@@ -5,8 +5,8 @@ intro: "School of Economics and Management"
 type: "Master"
 area: ["MBA", "Diverse Environment"]
 location: "Beijing"
-coverImage: "/assets/images/cover-image/SEM.webp"
-favicon: "/assets/images/favicon/THU.webp"
+coverImage: "/assets/cover-image/SEM.webp"
+favicon: "/assets/favicon/THU.webp"
 sorting: 4
 ---
 

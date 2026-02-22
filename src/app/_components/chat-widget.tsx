@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import { PiXBold, PiPaperPlaneRightFill, PiChatCircleDots, PiArrowDownBold } from "react-icons/pi";
 
 type Message = {
@@ -15,6 +16,9 @@ type Props = {
 
 export function ChatWidget({ lang }: Props) {
   const isEn = lang === "en";
+  const pathname = usePathname();
+  // Only show on homepage (e.g. /en or /zh)
+  const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`;
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -192,6 +196,7 @@ export function ChatWidget({ lang }: Props) {
   const isVisible = animState !== "closed";
 
   if (!mounted) return null;
+  if (!isHomePage) return null;
 
   return (
     <>

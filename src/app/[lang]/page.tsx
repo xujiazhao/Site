@@ -4,6 +4,9 @@ import { SelfIntro } from "@/app/_components/self-intro";
 import Link from "next/link";
 import DateFormatter from "@/app/_components/date-formatter";
 import { ClickableRow } from "@/app/_components/clickable-row";
+import { CreationSection } from "@/app/_components/creation-section";
+import { WritingSection } from "@/app/_components/writing-section";
+import { PiBriefcaseBold } from "react-icons/pi";
 
 export default function Index({ params }: { params: { lang: string } }) {
   const experiences = getAllItems("experience", params.lang)
@@ -29,7 +32,16 @@ export default function Index({ params }: { params: { lang: string } }) {
             <table className="table-auto w-full text-base border-separate border-spacing-y-0 whitespace-nowrap">
               <thead>
                 <tr className="text-left text-neutral-500 border-b">
-                  <th className="pb-2 pr-5 sticky left-0 z-10 bg-white font-semibold">{isEn ? "Name" : "名称"}</th>
+                  <th className="pb-2 pr-1 sticky left-0 z-10 bg-white font-semibold md:hidden w-6 align-middle">
+                    <PiBriefcaseBold className="w-4 h-4 inline-block align-middle" style={{ position: 'relative', top: '-1px' }} />
+                  </th>
+                  <th className="pb-2 pr-5 font-semibold md:sticky md:left-0 md:z-10 md:bg-white align-middle">
+                    <span className="hidden md:flex items-center gap-1.5">
+                      <PiBriefcaseBold className="w-4 h-4" />
+                      {isEn ? "Name" : "名称"}
+                    </span>
+                    <span className="md:hidden">{isEn ? "Name" : "名称"}</span>
+                  </th>
                   <th className="pb-2 pr-5 font-semibold">{isEn ? "Time Range" : "时间"}</th>
                   <th className="pb-2 pr-5 font-semibold">{isEn ? "Location" : "地点"}</th>
                   <th className="pb-2 pr-5 font-semibold">{isEn ? "Type" : "类型"}</th>
@@ -39,13 +51,19 @@ export default function Index({ params }: { params: { lang: string } }) {
               <tbody>
                 {experiences.map((exp) => (
                   <ClickableRow key={exp.slug} href={`/${params.lang}/experience/${exp.slug}`} className="group hover:bg-neutral-100 rounded-lg cursor-pointer transition-colors duration-300">
-                    <td className="py-2 pr-5 font-semibold align-top border-b border-neutral-100 group-hover:border-transparent sticky left-0 bg-white group-hover:!bg-neutral-100 z-10 transition-colors duration-300">
-                      <span className="flex items-center gap-1.5">
+                    <td className="py-2 pr-1 align-middle border-b border-neutral-100 group-hover:border-transparent sticky left-0 bg-white group-hover:!bg-neutral-100 z-10 transition-colors duration-300 md:hidden w-6">
+                      {exp.favicon && (
+                        <img src={exp.favicon} alt="" className="w-4 h-4 flex-shrink-0" />
+                      )}
+                    </td>
+                    <td className="py-2 pr-5 font-semibold align-middle border-b border-neutral-100 group-hover:border-transparent md:sticky md:left-0 md:bg-white md:group-hover:!bg-neutral-100 md:z-10 transition-colors duration-300">
+                      <span className="hidden md:flex items-center gap-1.5">
                         {exp.favicon && (
-                          <img src={exp.favicon} alt="" className="w-4 h-4 inline-block flex-shrink-0" />
+                          <img src={exp.favicon} alt="" className="w-4 h-4 flex-shrink-0" />
                         )}
                         {exp.title}
                       </span>
+                      <span className="md:hidden">{exp.title}</span>
                     </td>
                     <td className="py-2 pr-5 align-top text-neutral-600 border-b border-neutral-100 group-hover:border-transparent">
                       {exp.dateRange || exp.date}
@@ -100,10 +118,10 @@ export default function Index({ params }: { params: { lang: string } }) {
                       <img
                         src={post.coverImage}
                         alt={post.title}
-                        className="w-full aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full aspect-[2/1] md:aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
-                      <div className="w-full aspect-[3/2] bg-neutral-100" />
+                      <div className="w-full aspect-[2/1] md:aspect-[3/2] bg-neutral-100" />
                     )}
                   </div>
                   <div className="mt-2">
@@ -124,68 +142,10 @@ export default function Index({ params }: { params: { lang: string } }) {
         </section>
 
         {/* Writing Section - List */}
-        <section className="mb-20">
-          <h2 className="mb-6 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
-             {isEn ? "Writing" : "写作"}
-          </h2>
-          <div className="flex flex-col">
-            {writings.map((post) => (
-              <Link key={post.slug} href={`/${params.lang}/writing/${post.slug}`} className="group flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 py-2 hover:bg-neutral-100 transition-colors duration-300">
-                <div className="md:w-3/4">
-                  <h3 className="text-base font-semibold group-hover:underline">
-                    {post.title}
-                  </h3>
-                </div>
-                <div className="md:w-1/4 flex items-baseline gap-2 md:justify-end mt-1 md:mt-0">
-                  {post.type && (
-                    <span className="inline-block text-sm font-medium px-2 py-0.5 rounded-lg bg-neutral-200 text-neutral-600">{post.type}</span>
-                  )}
-                  <span className="text-neutral-600 text-base whitespace-nowrap" style={{ minWidth: '6em', textAlign: 'right' }}>
-                    <DateFormatter dateString={post.date} lang={params.lang} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <WritingSection writings={writings} lang={params.lang} isEn={isEn} />
 
         {/* Creation Section */}
-        <section className="mb-32">
-          <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
-             {isEn ? "Creation" : "创作"}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {creations.map((post) => {
-              const href = `/${params.lang}/creation/${post.slug}`;
-              return (
-                <Link key={post.slug} href={href} className="group block">
-                  {(post.coverImage || post.firstImage) && (
-                    <div className="overflow-hidden rounded-lg border border-black/10">
-                      <img
-                        src={post.coverImage || post.firstImage}
-                        alt={post.title}
-                        className="w-full aspect-[3/2] object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
-                  <h3 className="mt-2 text-base font-semibold group-hover:underline">{post.title}</h3>
-                  {post.skill && post.skill.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {post.skill.map((tag) => (
-                        <span
-                          key={tag}
-                          className="inline-block text-xs font-medium px-1.5 py-0.5 rounded-md bg-neutral-200 text-neutral-600"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+        <CreationSection creations={creations} lang={params.lang} isEn={isEn} />
       </Container>
     </main>
   );

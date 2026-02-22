@@ -5,8 +5,8 @@ intro: "经济管理学院"
 type: "硕士"
 area: ["工商管理硕士","多元化环境"]
 location: "北京"
-coverImage: "/assets/images/cover-image/SEM.webp"
-favicon: "/assets/images/favicon/THU.webp"
+coverImage: "/assets/cover-image/SEM.webp"
+favicon: "/assets/favicon/THU.webp"
 sorting: 4
 ---
 

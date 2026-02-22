@@ -1,7 +1,7 @@
 ---
 title: "Meyer’s Clean Day Illustration"
 date: "2020-01-01"
-skill: ["Adobe Illustrator", "Sketch"]
+skill: ["Adobe Illustrator", "Sketch", "Archive"]
 ---
 
 ![](/assets/images/meyer-s-clean-day-illustration/meyer-s-clean-day-illustration-meyerscleanday_1.webp)

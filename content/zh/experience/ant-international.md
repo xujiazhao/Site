@@ -5,8 +5,8 @@ intro: "略通支付"
 type: "全职"
 area: ["*B端", "*C端", "支付", "交互设计", "全球业务", "工具产品", "设计系统"]
 location: "上海"
-coverImage: "/assets/images/cover-image/Ant.webp"
-favicon: "/assets/images/favicon/anticon.webp"
+coverImage: "/assets/cover-image/Ant.webp"
+favicon: "/assets/favicon/anticon.webp"
 sorting: 5
 ---
 

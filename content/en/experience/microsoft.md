@@ -3,9 +3,9 @@ title: "Microsoft"
 dateRange: "2023.1 - Now"
 intro: "All in AI"
 type: "Full-time"
-area: ["*AI", "Content Service", "Product Design",  "Cross-border Collaboration", "Global Market"]
+area: ["*AI", "*Team Management", "Content Service", "Product Design", "Cross-border Collaboration", "Global Market"]
 location: "Beijing"
-favicon: "/assets/images/favicon/msft.webp"
+favicon: "/assets/favicon/msft.webp"
 sorting: 6
 ---
 
@@ -13,10 +13,9 @@ I joined Microsoft Studio 8 design team in 2023, initially responsible for desig
 
 Starting in 2024, I took full ownership of the [**MSN Partner Hub**](/en/project/copilot-content-ecosystem) product design — Microsoft’s global content ecosystem platform serving partners such as **CNN**, **BBC**, and various mid- to small-sized MCNs. I led the design system for partner management, optimized the growth experience across the ecosystem, and facilitated the integration between Copilot and Partner Hub.
 
-Within the team, I play two key roles:
+In the second half of 2025, building on my deep experience across both the B2B and consumer sides of Microsoft's content ecosystem, I initiated and drove the [**Copilot Podcast**](/en/creation/copilot-podcast) project — bringing podcast capabilities into Copilot. As the **DRI (Directly Responsible Individual)**, I led a cross-functional team of 1 PM, 3 engineers, and several external contributors, reporting directly to the **Copilot CVP**. This role sharpened my skills in cross-team coordination, roadmap ownership, and end-to-end product leadership.
 
-- **Firefighter**: Rapidly responding to high-pressure projects and driving complex issues to execution.
-- **Creative Contributor**: Actively participating in brainstorms and generating innovative design concepts across diverse initiatives.
+Beyond project leadership, I also serve as a responsive firefighter on high-pressure initiatives and an active creative contributor across the team's brainstorms and design explorations.
 
 In addition, I’m a core member of the **Studio 8 MarCom (Marketing Communications)** team, responsible for:
 

@@ -2,7 +2,7 @@
 title: "PPT Expert"
 date: "2026-01-01"
 skill: ["PPT"]
-coverImage: "/assets/images/cover-image/PPT.webp"
+coverImage: "/assets/cover-image/PPT.webp"
 ---
 
 自小学以来我就特别喜欢玩PPT，工作以来我在多个场合专门负责大型发布会/专业汇报的演讲设计和PPT制作，我自认我可以被称为“PPT大师”。

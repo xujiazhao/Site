@@ -2,9 +2,9 @@
 title: "Copilot 内容生态"
 date: "2026-02-16"
 intro: "为AI设计端到端内容体验"
-sorting: 5
-coverImage: "/assets/images/cover-image/Copilot.webp"
-favicon: "/assets/images/favicon/Copilot icon.webp"
+sorting: 6
+coverImage: "/assets/cover-image/Copilot.webp"
+favicon: "/assets/favicon/Copilot icon.webp"
 ---
 
 > 为AI设计端到端内容体验

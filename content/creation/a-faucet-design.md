@@ -1,7 +1,7 @@
 ---
 title: "A Faucet Design"
 date: "2021-01-01"
-skill: ["Procreate", "Sketch"]
+skill: ["Procreate", "Sketch", "Archive"]
 ---
 
 :::grid

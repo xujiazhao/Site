@@ -5,8 +5,8 @@ intro: "Teaching design at the best business school in the world."
 type: "Part-time"
 area: ["Design+Business", "Teaching"]
 location: "Singapore"
-coverImage: "/assets/images/cover-image/INSEAD.webp"
-favicon: "/assets/images/favicon/insead.webp"
+coverImage: "/assets/cover-image/INSEAD.webp"
+favicon: "/assets/favicon/insead.webp"
 sorting: 2
 ---
 

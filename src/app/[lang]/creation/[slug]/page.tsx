@@ -26,7 +26,7 @@ export default async function Creation({ params }: Params) {
   return (
     <main>
       <Container>
-        <article className="mb-32">
+        <article className="mb-12">
           <PostHeader
             title={post.title}
             date={post.date}

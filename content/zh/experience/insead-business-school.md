@@ -5,8 +5,8 @@ intro: "在全球顶级商学院讲授设计思维"
 type: "兼职"
 area: ["商业+设计", "教学"]
 location: "新加坡"
-coverImage: "/assets/images/cover-image/INSEAD.webp"
-favicon: "/assets/images/favicon/insead.webp"
+coverImage: "/assets/cover-image/INSEAD.webp"
+favicon: "/assets/favicon/insead.webp"
 sorting: 2
 ---
 

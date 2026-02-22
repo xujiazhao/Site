@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { PiXBold } from "react-icons/pi";
 
@@ -9,11 +9,40 @@ type Props = {
   lang: string;
 };
 
+const ANIM_DURATION = 200; // ms, keep in sync with CSS duration-200
+
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
-  const [showQR, setShowQR] = useState(false);
-  const [showMobileWeChat, setShowMobileWeChat] = useState(false);
+
+  // Desktop QR modal
+  const [qrMounted, setQrMounted] = useState(false);
+  const [qrVisible, setQrVisible] = useState(false);
+
+  // Mobile WeChat modal
+  const [mobileMounted, setMobileMounted] = useState(false);
+  const [mobileVisible, setMobileVisible] = useState(false);
+
   const [showToast, setShowToast] = useState(false);
+
+  const openQR = useCallback(() => {
+    setQrMounted(true);
+    requestAnimationFrame(() => requestAnimationFrame(() => setQrVisible(true)));
+  }, []);
+
+  const closeQR = useCallback(() => {
+    setQrVisible(false);
+    setTimeout(() => setQrMounted(false), ANIM_DURATION);
+  }, []);
+
+  const openMobile = useCallback(() => {
+    setMobileMounted(true);
+    requestAnimationFrame(() => requestAnimationFrame(() => setMobileVisible(true)));
+  }, []);
+
+  const closeMobile = useCallback(() => {
+    setMobileVisible(false);
+    setTimeout(() => setMobileMounted(false), ANIM_DURATION);
+  }, []);
 
   // ✏️ Maintain your rotating titles here
   const rotatingTitles: { en: string; zh: string }[] = [
@@ -40,15 +69,15 @@ export function SelfIntro({ lang }: Props) {
 
   const handleWeChat = () => {
     if (window.innerWidth < 768) {
-      setShowMobileWeChat(true);
+      openMobile();
     } else {
-      setShowQR(true);
+      openQR();
     }
   };
 
   const handleCopyWeChat = () => {
     navigator.clipboard.writeText("xux-ai");
-    setShowMobileWeChat(false);
+    closeMobile();
     setShowToast(true);
     setTimeout(() => setShowToast(false), 2000);
   };
@@ -111,19 +140,23 @@ export function SelfIntro({ lang }: Props) {
       </div>
 
       {/* WeChat QR Code Modal (Desktop/Tablet) */}
-      {showQR && createPortal(
+      {qrMounted && createPortal(
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50"
-          onClick={() => setShowQR(false)}
+          className={`fixed inset-0 z-[60] flex items-center justify-center transition-colors duration-200 ${
+            qrVisible ? 'bg-black/50' : 'bg-black/0'
+          }`}
+          onClick={closeQR}
         >
           <div
-            className="bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl"
+            className={`bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl transition-all duration-200 ${
+              qrVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">{isEn ? "Scan to add WeChat" : "扫码添加微信"}</h3>
               <button
-                onClick={() => setShowQR(false)}
+                onClick={closeQR}
                 className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
               >
                 <PiXBold />
@@ -141,19 +174,23 @@ export function SelfIntro({ lang }: Props) {
       )}
 
       {/* WeChat ID Modal (Mobile) */}
-      {showMobileWeChat && createPortal(
+      {mobileMounted && createPortal(
         <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50"
-          onClick={() => setShowMobileWeChat(false)}
+          className={`fixed inset-0 z-[60] flex items-center justify-center transition-colors duration-200 ${
+            mobileVisible ? 'bg-black/50' : 'bg-black/0'
+          }`}
+          onClick={closeMobile}
         >
           <div
-            className="bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl"
+            className={`bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl transition-all duration-200 ${
+              mobileVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">{isEn ? "WeChat" : "微信"}</h3>
               <button
-                onClick={() => setShowMobileWeChat(false)}
+                onClick={closeMobile}
                 className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
               >
                 <PiXBold />

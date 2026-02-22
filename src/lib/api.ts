@@ -5,22 +5,38 @@ import { join } from "path";
 
 const contentDirectory = join(process.cwd(), "content");
 
-// Collections that are not language-specific
-const sharedCollections = ['creation'];
+// Collections that support both shared (content/{collection}/) and language-specific (content/{lang}/{collection}/) files
+const hybridCollections = ['creation'];
 
 export function getSlugs(collection: string, lang: string) {
-  const dir = sharedCollections.includes(collection)
-    ? join(contentDirectory, collection)
-    : join(contentDirectory, lang, collection);
+  const langDir = join(contentDirectory, lang, collection);
+  const sharedDir = join(contentDirectory, collection);
+
+  if (hybridCollections.includes(collection)) {
+    const langSlugs = fs.existsSync(langDir) ? fs.readdirSync(langDir) : [];
+    const sharedSlugs = fs.existsSync(sharedDir) ? fs.readdirSync(sharedDir) : [];
+    // Lang-specific files take priority over shared ones with the same slug
+    const langSet = new Set(langSlugs);
+    const mergedSlugs = [...langSlugs, ...sharedSlugs.filter(s => !langSet.has(s))];
+    return mergedSlugs;
+  }
+
+  const dir = join(contentDirectory, lang, collection);
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir);
 }
 
 export function getItemBySlug(collection: string, slug: string, lang: string) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = sharedCollections.includes(collection)
-    ? join(contentDirectory, collection, `${realSlug}.md`)
-    : join(contentDirectory, lang, collection, `${realSlug}.md`);
+
+  let fullPath: string;
+  if (hybridCollections.includes(collection)) {
+    const langPath = join(contentDirectory, lang, collection, `${realSlug}.md`);
+    const sharedPath = join(contentDirectory, collection, `${realSlug}.md`);
+    fullPath = fs.existsSync(langPath) ? langPath : sharedPath;
+  } else {
+    fullPath = join(contentDirectory, lang, collection, `${realSlug}.md`);
+  }
   
   if (!fs.existsSync(fullPath)) return null;
 

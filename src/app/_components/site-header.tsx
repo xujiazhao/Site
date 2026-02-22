@@ -47,7 +47,7 @@ export function SiteHeader({ lang }: Props) {
         <button
           onClick={() => {
             if (isDetailPage) {
-              router.back();
+              router.push(`/${lang}`, { scroll: false });
             } else {
               window.scrollTo({ top: 0 });
             }

@@ -5,8 +5,8 @@ intro: "四年亦痛亦幻的设计追梦之路"
 type: "本科"
 area: ["产品设计", "理学学士"]
 location: "洛杉矶"
-coverImage: "/assets/images/cover-image/ArtCenter.webp"
-favicon: "/assets/images/favicon/artcentericon.webp"
+coverImage: "/assets/cover-image/ArtCenter.webp"
+favicon: "/assets/favicon/artcentericon.webp"
 sorting: 3
 ---
 

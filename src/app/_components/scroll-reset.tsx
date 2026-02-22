@@ -1,47 +1,73 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export function ScrollReset() {
   const pathname = usePathname();
-  // Store the popstate status in a ref so it persists across renders but not reload
-  const isPopState = useRef(false);
 
+  // Disable browser's native scroll restoration to prevent conflicts
   useEffect(() => {
-    // Handler for popstate event (triggered by Back/Forward buttons)
-    const handlePopState = () => {
-      isPopState.current = true;
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => {
-      window.removeEventListener("popstate", handlePopState);
-    };
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
   }, []);
 
+  // Flag back/forward navigations so template.tsx can skip fade-in animation
+  // (prevents flash on iOS Safari swipe-back gesture)
   useEffect(() => {
-    // If navigation was triggered by popstate (Back/Forward), do nothing.
-    // This allows the browser's native scroll restoration to work.
-    if (isPopState.current) {
-      isPopState.current = false; // Reset for next navigation
-      return;
-    }
+    const onPopState = () => {
+      (window as any).__isBackNavigation = true;
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
 
-    // Checking if we are on a detail page or just any page?
-    // User requirement: "Entering a secondary page always starts from the top"
-    // This implies any NEW navigation (pushState) should scroll to top.
-    
-    // Check if the pathname looks like a post page (has > 2 segments like /en/project/slug)
+  // On homepage: continuously persist scroll position to sessionStorage (debounced)
+  useEffect(() => {
+    const segments = pathname.split('/').filter(Boolean);
+    const isHomePage = segments.length <= 1;
+
+    if (!isHomePage) return;
+
+    let timer: ReturnType<typeof setTimeout>;
+    const handleScroll = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        sessionStorage.setItem('homeScrollY', String(window.scrollY));
+      }, 100);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [pathname]);
+
+  // On detail page: scroll to top. On homepage: restore saved position.
+  useEffect(() => {
     const segments = pathname.split('/').filter(Boolean);
     const isDetailPage = segments.length > 2;
+    const isHomePage = segments.length <= 1;
 
     if (isDetailPage) {
-      // Force scroll to top for detail pages on new navigation
-      // Use requestAnimationFrame to ensure DOM is ready after template remount
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
+      window.scrollTo(0, 0);
+    } else if (isHomePage) {
+      const savedY = sessionStorage.getItem('homeScrollY');
+      if (savedY) {
+        const y = parseInt(savedY, 10);
+        // Retry until page content is tall enough to scroll to the saved position
+        let attempts = 0;
+        const tryRestore = () => {
+          window.scrollTo(0, y);
+          attempts++;
+          if (window.scrollY !== y && attempts < 10) {
+            requestAnimationFrame(tryRestore);
+          }
+        };
+        requestAnimationFrame(tryRestore);
+      }
     }
   }, [pathname]);
 

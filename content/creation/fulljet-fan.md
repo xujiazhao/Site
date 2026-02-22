@@ -1,7 +1,7 @@
 ---
 title: "Fulljet Fan"
 date: "2021-01-01"
-skill: ["KeyShot", "SolidWorks"]
+skill: ["KeyShot", "SolidWorks", "Archive"]
 ---
 
 ![](/assets/images/fulljet-fan/fulljet-fan-fulljet_rendering4.webp)

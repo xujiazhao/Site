@@ -1,7 +1,7 @@
 ---
 title: "Photobashing"
 date: "2020-01-01"
-skill: ["Photoshop"]
+skill: ["Photoshop", "Archive"]
 ---
 
 ![](/assets/images/photobashing/photobashing-photomessup_1.webp)

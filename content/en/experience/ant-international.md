@@ -5,8 +5,8 @@ intro: "Master a little of the Payment"
 type: "Full-time"
 area: ["UX Design", "Payment", "To-developer", "Design system", "Global Market"]
 location: "Shanghai"
-coverImage: "/assets/images/cover-image/Ant.webp"
-favicon: "/assets/images/favicon/anticon.webp"
+coverImage: "/assets/cover-image/Ant.webp"
+favicon: "/assets/favicon/anticon.webp"
 sorting: 5
 ---
 > **Master a little of the Payment**

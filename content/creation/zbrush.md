@@ -1,7 +1,7 @@
 ---
 title: "ZBrush"
 date: "2021-01-01"
-skill: ["ZBrush"]
+skill: ["ZBrush", "Archive"]
 ---
 
 ![](/assets/images/zbrush/zbrush-zbrush_13.webp)

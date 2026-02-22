@@ -3,8 +3,8 @@ title: "Alipay+"
 date: "2026-02-16"
 intro: "Pay beyond borders"
 sorting: 3
-coverImage: "/assets/images/cover-image/Alipay+.webp"
-favicon: "/assets/images/favicon/plusicon.webp"
+coverImage: "/assets/cover-image/Alipay+.webp"
+favicon: "/assets/favicon/plusicon.webp"
 ---
 
 > **Pay beyond borders**

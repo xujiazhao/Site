@@ -1,10 +1,9 @@
 ---
 title: "SIG CombiONE"
-date: "2026-02-16"
-intro: "SIG Combibloc's next-gen carton packaging solution"
-sorting: 1
-coverImage: "/assets/images/cover-image/SIG.webp"
-favicon: "/assets/images/favicon/SIG_logo.svg"
+date: "2025-09-01"
+skill: ["Industrial Design", "Packaging"]
+coverImage: "/assets/cover-image/SIG.webp"
+favicon: "/assets/favicon/SIG_logo.svg"
 ---
 
 <aside>

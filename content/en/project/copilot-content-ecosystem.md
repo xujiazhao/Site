@@ -2,9 +2,9 @@
 title: "Copilot Content Ecosystem"
 date: "2026-02-16"
 intro: "End to end content experience for AI"
-sorting: 5
-coverImage: "/assets/images/cover-image/Copilot.webp"
-favicon: "/assets/images/favicon/Copilot icon.webp"
+sorting: 6
+coverImage: "/assets/cover-image/Copilot.webp"
+favicon: "/assets/favicon/Copilot icon.webp"
 ---
 
 > **End to end content experience for AI**

@@ -1,16 +1,9 @@
 ---
-title: "Land Rover Advertisement"
+title: "Land Rover Creative Ad Film"
 date: "2025-10-01"
-skill: ["AIGC", "Video"]
-coverImage: "/assets/images/cover-image/LandRover.webp"
+skill: ["AIGC", "Short Film", "Premiere Pro"]
+coverImage: "/assets/cover-image/LandRover.webp"
 ---
-
-以下是我为路虎创作的广告宣传片，全部素材使用AI创作，并使用 Adobe Premiere Pro 剪辑拼接。AI 使用具体情况如下：
-
-- 关键帧提示词：ChatGPT
-- 关键帧：Google Gemini
-- 关键帧生成视频：MiniMax 海螺
-- 独白：ElevenLabs
 
 These are promotional videos I created for Land Rover. All assets were created using AI and edited together with Adobe Premiere Pro. AI usage:
 

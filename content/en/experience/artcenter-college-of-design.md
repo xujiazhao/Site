@@ -5,8 +5,8 @@ intro: "4 years chasing the design dream"
 type: "Bachelor"
 area: ["Product Design", "Bachelor of Science"]
 location: "Los Angeles"
-coverImage: "/assets/images/cover-image/ArtCenter.webp"
-favicon: "/assets/images/favicon/artcentericon.webp"
+coverImage: "/assets/cover-image/ArtCenter.webp"
+favicon: "/assets/favicon/artcentericon.webp"
 sorting: 3
 ---
 

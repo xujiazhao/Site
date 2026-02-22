@@ -3,10 +3,10 @@ title: "BJMUN"
 dateRange: "2013 - 2024"
 intro: "A 10-year dream of educational social activities."
 type: "Start-up"
-area: ["Public Education", "Teenager"]
+area: ["*Founder", "Public Education", "Teenager"]
 location: "Beijing"
-coverImage: "/assets/images/cover-image/bjmun.webp"
-favicon: "/assets/images/favicon/bjmun.webp"
+coverImage: "/assets/cover-image/bjmun.webp"
+favicon: "/assets/favicon/bjmun.webp"
 sorting: 1
 ---
 

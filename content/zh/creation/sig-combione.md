@@ -1,10 +1,9 @@
 ---
 title: "SIG CombiONE"
-date: "2026-02-16"
-intro: "SIG Combibloc 康美包新一代纸包装方案"
-sorting: 1
-coverImage: "/assets/images/cover-image/SIG.webp"
-favicon: "/assets/images/favicon/SIG_logo.svg"
+date: "2025-09-01"
+skill: ["工业设计", "包装设计"]
+coverImage: "/assets/cover-image/SIG.webp"
+favicon: "/assets/favicon/SIG_logo.svg"
 ---
 
 <aside>
@@ -19,7 +18,7 @@ favicon: "/assets/images/favicon/SIG_logo.svg"
 
 ![](/assets/images/sig-combione/sig-combione-sig_cover1.jpg)
 
-CombiONE 是为 [**SIG**](https://www.sig.biz/en) 设计的一套无菌纸包装解决方案。我的团队专注于为他们设计新的压模线和包装开口。项目过程中涉及用户研究，包装设计，平面设计和产品设计等内容。
+CombiONE 是为 [**SIG**](https://www.sig.biz/en) 设计的一套无菌纸包装解决方案。我的团队专注于为他们设计新的压模线和包装开口。项目过程中涉及用户研究，包装设计，平面设计和产品设计等内容。
 
 SIG 是全球领先的食品和饮料纸包灌装领域方的案提供商之一。在2019年春天，SIG 来到艺术中心设计学院赞助我们完成了这一项目。项目的所有内容都先交付给他们进行验收，并在保密期之后被允许我对外用于作品集展示。
 

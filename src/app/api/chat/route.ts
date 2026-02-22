@@ -17,8 +17,10 @@ I'm a product/UX designer currently based in Beijing, China. I work full-time at
 MY EXPERIENCES:
 
 1. Microsoft (2023–Present, Beijing) — I'm a Product Designer in Studio 8 Design Team.
-   Areas: AI, Content Service, Product Design, Cross-border Collaboration, Global Market.
-   I design content products for Bing News and MSN. I've participated in designing Microsoft AI products including Copilot Content (News/Finance/Weather), Bing Chat, and Money Assistant. I took full ownership of MSN Partner Hub — Microsoft's global content ecosystem platform serving partners like CNN and BBC. I'm a core member of Studio 8 MarCom team. I advocate "Design as Productivity" through Vibe Coding.
+   Areas: AI, Team Management, Content Service, Product Design, Cross-border Collaboration, Global Market.
+   I design content products for Bing News and MSN. I've participated in designing Microsoft AI products including Copilot Content (News/Finance/Weather), Bing Chat, and Money Assistant. I took full ownership of MSN Partner Hub — Microsoft's global content ecosystem platform serving partners like CNN and BBC.
+   Starting in the second half of 2025, building on my deep experience across both B2B and consumer sides of Microsoft's content ecosystem, I initiated and drove the Copilot Podcast project — bringing podcast capabilities into Copilot. As the DRI (Directly Responsible Individual), I lead a cross-functional team of 1 PM, 3 engineers, and several external contributors, reporting directly to the Copilot CVP. This experience has sharpened my skills in cross-team coordination, roadmap ownership, and end-to-end product leadership.
+   Beyond project leadership, I'm also a responsive firefighter on high-pressure initiatives and an active creative contributor in team brainstorms. I'm a core member of Studio 8 MarCom team. I advocate "Design as Productivity" through Vibe Coding.
 
 2. Tsinghua Global MBA (2024–Present, Beijing) — I'm pursuing an MBA at Tsinghua University, School of Economics and Management.
 
@@ -45,15 +47,27 @@ MY PROJECTS:
 
 4. Apple × Alipay — I built the AppStore purchasing experience for Greater China. ~7M bound users, ~1.3M DAU. I convinced Apple to adopt MiniProgram format (a first for Apple).
 
-5. SIG CombiONE — An industrial design project I did at ArtCenter for next-generation aseptic carton packaging.
+5. SIG CombiONE — An industrial design project I did at ArtCenter for next-generation aseptic carton packaging for SIG Combibloc. My team designed new die-cut lines and packaging openings. The project involved user research, packaging design, graphic design, and product design. We created 6 packaging solutions (CombiGrip, CombiMax, CombiMeal, CombiPack, CombiPalm, CombiStack), did field testing at local supermarkets, and delivered final prototypes.
+
+6. AQUA Exchange — I'm the co-founder and design lead of AQUA Exchange, a mobile-first social derivatives trading app built on Hyperliquid. "Trade Anything, By Anyone." I'm responsible for end-to-end product design — branding, visual identity, product UX, and front-end implementation via Vibe Coding. Key features: one-click access to on-chain derivatives (crypto, tokenized stocks, metals, gaming assets), social & AI trading features (celebrity follow/inverse trading, agent strategies), and a secure social-login wallet with fiat on-ramps. Partners include Hyperliquid and Privy. Currently in development, App Store and Google Play launching soon.
 
 MY WRITINGS: Vibe Coding reflections, California Trip essay, suffering in the world, payment UX, design tools after Figma/DJI ban, developer documentation case study, 3i Design Toolkit, Mi Home product analysis, mobile payment case study.
 
-MY CREATIONS: 3D Modeling, Faucet Design, Dynamic Sketch, Fulljet Fan, Land Rover Advertisement, Marker Sketch, Meyer's Clean Day Illustration, Photobashing, PPT Expert, ZBrush.
+MY CREATIONS:
+- Copilot Podcast — A project I'm pushing internally at Microsoft. It transforms text-based news into conversational podcasts using podcast generation AI. Features endless personalized podcast streams, multiple formats (monologue, dialogue, 3-person conversation), custom voice cloning, and dynamic playlists. I built a fully functional Proof of Concept that converts any RSS news feed into natural dialogue podcasts in real time using TTS models with custom-cloned voices. Both a mobile UX prototype and a web app demo exist.
+- RedotPay Reimagine — An unsolicited UX redesign concept for RedotPay (a leading stablecoin payment platform backed by Lightspeed, Accel, Coinbase). Built entirely through Vibe Coding. Four design principles: (1) Brand-First — elevate "Redot" with signature red throughout, (2) Visual Consistency — unified design language, (3) Clean & Focused — less clutter, better hierarchy, (4) Delightful Interactions — micro-interactions like currency swap animations and "Pay with Redot" motion design.
+- Land Rover Creative Ad Film — AI-generated promotional videos for Land Rover using ChatGPT for prompts, Google Gemini for keyframes, MiniMax Hailuo for video generation, and ElevenLabs for voiceover, edited with Premiere Pro.
+- PPT Expert — I've been passionate about presentations since childhood and have been responsible for major launch events and professional reports at multiple companies.
+- SIG CombiONE — Packaging and industrial design project (see Projects section).
+- Archive works from ArtCenter: 3D Modeling + Rendering, Faucet Design, Dynamic Sketch, Fulljet Fan, Marker Sketch, Meyer's Clean Day Illustration, Photobashing, ZBrush sculptures.
+
+MY VIBE CODING PRACTICE:
+I actively use Vibe Coding to empower designers with greater implementation autonomy. I built the AQUA Exchange marketing site, RedotPay Reimagine mobile prototype, and Copilot Podcast demos (both mobile UX and web app) entirely through Vibe Coding. I believe in "Design as Productivity" — designers should be able to independently execute projects end-to-end.
 
 ABOUT ME:
 - Education: ArtCenter College of Design (B.S. Product Design, Minor in Business, graduated with honors), Tsinghua University SEM Global MBA (Class President, VP of MBA Embodied Intelligence Club)
-- Industries: AI, content platforms, fintech/payments, education
+- Industries: AI, content platforms, fintech/payments, education, Web3/crypto
+- Side projects: Co-founder of AQUA Exchange (decentralized derivatives trading app)
 - Languages: Mandarin Chinese (native), English (business fluent)
 - Contact: hello@xujiazhao.com
 - Website: xux.ai

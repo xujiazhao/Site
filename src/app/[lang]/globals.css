@@ -302,3 +302,47 @@ main {
   content: '';
   animation: typing-dots 1.2s infinite steps(1);
 }
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(8px); }
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms ease-out both;
+}
+
+.animate-fade-out {
+  animation: fade-out 250ms ease-in both;
+}
+
+/* Side-by-side layout: sticky preview + scrollable text (desktop only) */
+.side-by-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .side-by-side {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+  .side-by-side .side-preview {
+    position: sticky;
+    top: 5rem;
+    flex-shrink: 0;
+  }
+  .side-by-side .side-content {
+    flex: 1;
+    min-width: 0;
+  }
+}
