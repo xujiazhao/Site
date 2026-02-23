@@ -120,6 +120,9 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
           </div>
 
           <div className="resume-toolbar-actions">
+            <span className="resume-download-hint">
+              {isEn ? "PDF is rendered on-the-fly, may take ~10s" : "PDF 实时渲染，可能需要约 10 秒"}
+            </span>
             {/* Download Button */}
             <button onClick={handleDownloadPDF} className="resume-download-btn" disabled={downloading}>
               {downloading ? (

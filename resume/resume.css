@@ -74,6 +74,12 @@ body:has(.resume-page) > footer {
   gap: 12px;
 }
 
+.resume-download-hint {
+  font-size: 12px;
+  color: #a3a3a3;
+  white-space: nowrap;
+}
+
 /* Download button */
 .resume-download-btn {
   display: flex;
