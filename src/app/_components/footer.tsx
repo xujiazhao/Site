@@ -20,7 +20,7 @@ export function Footer({ lang }: Props) {
         <div className="h-14 flex flex-row justify-between items-center text-base text-neutral-500">
           <div>{isEn ? "Jiazhao Xu, All rights reserved." : "许嘉昭保留所有权利"}</div>
           <div className={isResume ? "" : "hidden md:block"}>
-            {isResume ? `Resume Ver. ${version}` : `Ver. ${version}`}
+            {isResume ? `Resume. ${version}` : `Ver. ${version}`}
           </div>
         </div>
       </Container>
