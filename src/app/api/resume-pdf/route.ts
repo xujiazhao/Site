@@ -3,8 +3,61 @@ import { getResumeByVariant } from "@resume/lib/resume-api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
+import { createHash } from "crypto";
+import fs from "fs";
+import { join } from "path";
 
 const isDev = process.env.NODE_ENV === "development";
+
+// --- PDF Cache ---
+const cacheDir = join(process.cwd(), "resume", "cache");
+const mdDir = join(process.cwd(), "resume", "content");
+
+function getMdHash(lang: string, variant: string): string | null {
+  const mdPath = join(mdDir, lang, `${variant}.md`);
+  if (!fs.existsSync(mdPath)) return null;
+  const content = fs.readFileSync(mdPath, "utf8");
+  return createHash("sha256").update(content).digest("hex").slice(0, 12);
+}
+
+function getCachedPdf(lang: string, variant: string, hash: string): Buffer | null {
+  const cached = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
+  if (fs.existsSync(cached)) {
+    console.log(`[resume-pdf] Cache hit: ${cached}`);
+    return fs.readFileSync(cached);
+  }
+  return null;
+}
+
+function savePdfToCache(lang: string, variant: string, hash: string, buffer: Buffer | Uint8Array) {
+  if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
+  // Remove old cached versions for this lang-variant
+  const prefix = `${lang}-${variant}-`;
+  for (const f of fs.readdirSync(cacheDir)) {
+    if (f.startsWith(prefix) && f.endsWith(".pdf")) {
+      fs.unlinkSync(join(cacheDir, f));
+    }
+  }
+  const cachePath = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
+  fs.writeFileSync(cachePath, buffer);
+  console.log(`[resume-pdf] Cached: ${cachePath}`);
+}
+
+function buildDownloadFilename(lang: string, variant: string) {
+  const isEn = lang === "en";
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}`;
+  const name = isEn ? "JiazhaoXu" : "许嘉昭";
+  const roleMap: Record<string, string> = {
+    'product-designer': isEn ? 'ProductDesigner' : '产品设计师',
+    'product-manager': isEn ? 'ProductManager' : '产品经理',
+  };
+  const role = roleMap[variant] || variant;
+  const filename = `${name}_${role}_${dateStr}.pdf`;
+  const asciiFilename = filename.replace(/[^\x20-\x7E]/g, '_');
+  const encodedFilename = encodeURIComponent(filename);
+  return { asciiFilename, encodedFilename };
+}
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -16,8 +69,25 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Resume not found" }, { status: 404 });
   }
 
-  const htmlContent = await markdownToHtml(resume.content);
   const isEn = lang === "en";
+
+  // --- Check cache ---
+  const hash = getMdHash(lang, variant);
+  if (hash) {
+    const cached = getCachedPdf(lang, variant, hash);
+    if (cached) {
+      const { asciiFilename, encodedFilename } = buildDownloadFilename(lang, variant);
+      return new NextResponse(cached, {
+        headers: {
+          "Content-Type": "application/pdf",
+          "Content-Disposition": `attachment; filename="${asciiFilename}"; filename*=UTF-8''${encodedFilename}`,
+        },
+      });
+    }
+  }
+
+  // --- Generate PDF ---
+  const htmlContent = await markdownToHtml(resume.content);
 
   // Convert relative image paths to absolute URLs so Puppeteer can fetch them
   const origin = new URL(request.url).origin;
@@ -149,19 +219,13 @@ export async function GET(request: NextRequest) {
 
     await browser.close();
 
-    // Generate filename: 许嘉昭_产品设计师_2026.02.pdf / Jiazhao_Xu_Product_Designer_2026.02.pdf
-    const now = new Date();
-    const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}`;
-    const name = isEn ? "JiazhaoXu" : "许嘉昭";
-    const roleMap: Record<string, string> = {
-      'product-designer': isEn ? 'ProductDesigner' : '产品设计师',
-      'product-manager': isEn ? 'ProductManager' : '产品经理',
-    };
-    const role = roleMap[resume.variant] || resume.label;
-    const filename = `${name}_${role}_${dateStr}.pdf`;
-    const asciiFilename = `${name}_${role}_${dateStr}.pdf`.replace(/[^\x20-\x7E]/g, '_');
-    const encodedFilename = encodeURIComponent(filename);
-    console.log(`[resume-pdf] Done: ${filename}, ${pdfBuffer.length} bytes`);
+    // Save to cache
+    if (hash) {
+      savePdfToCache(lang, variant, hash, pdfBuffer);
+    }
+
+    const { asciiFilename, encodedFilename } = buildDownloadFilename(lang, variant);
+    console.log(`[resume-pdf] Done: ${asciiFilename}, ${pdfBuffer.length} bytes`);
 
     return new NextResponse(pdfBuffer, {
       headers: {

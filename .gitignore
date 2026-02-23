@@ -38,3 +38,6 @@ next-env.d.ts
 # Notion Export Data
 Notion Version/
 
+# Resume PDF cache
+resume/cache/
+
