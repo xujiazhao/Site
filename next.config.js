@@ -3,6 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  experimental: {
+    serverComponentsExternalPackages: ["puppeteer-core", "@sparticuz/chromium"],
+  },
 };
 
 module.exports = nextConfig;

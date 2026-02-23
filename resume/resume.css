@@ -1,0 +1,216 @@
+/* ===== Resume Page Styles ===== */
+
+/* When resume page is active — fixed frame layout */
+body:has(.resume-page) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body:has(.resume-page) > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+body:has(.resume-page) > footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.resume-page {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resume-viewer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Toolbar — fixed within the resume frame */
+.resume-toolbar {
+  flex-shrink: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.resume-toolbar-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resume-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Download button */
+.resume-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  font-size: 0;
+  color: white;
+  background: #171717;
+  border: 1px solid #171717;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+
+.resume-download-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resume-download-btn:hover:not(:disabled) {
+  background: #404040;
+}
+
+@keyframes resume-spin {
+  to { transform: rotate(360deg); }
+}
+
+.resume-spinner {
+  animation: resume-spin 0.8s linear infinite;
+}
+
+/* Paper wrapper — scrollable area */
+.resume-paper-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  gap: 40px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.resume-paper {
+  background: white;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Letter size: 8.5 x 11 inches */
+.resume-paper-letter {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.55in 0.55in;
+}
+
+/* A4 size: 210 x 297 mm */
+.resume-paper-a4 {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 15mm 15mm;
+}
+
+/* Content container */
+.resume-content {
+  width: 100%;
+}
+
+/* Resume content typography — scoped via PostCSS nesting */
+.resume-content {
+  & h1 { font-size: 22pt; font-weight: 700; margin-bottom: 2pt; line-height: 1.2; color: #171717; display: flex; align-items: center; }
+  & h1::after { content: ''; margin-left: auto; width: 22pt; height: 22pt; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M44.7119 61.3301L26.6653 99.9947H3.99979C1.78826 99.9947 0 98.0371 0 95.8309V3.83578C0 1.62425 1.78826 0 3.99979 0H44.7119L30.4005 30.665H44.7119L30.4005 61.3301H44.7119ZM95.9949 0H57.2033L48.1721 19.3482H62.4835L48.1721 50.0132H99.9947V3.83578C99.9947 1.62425 98.2064 0 95.9949 0ZM39.1567 99.9947H95.9949C98.2064 99.9947 99.9947 98.0371 99.9947 95.8309V61.3354H57.2033L39.1567 100V99.9947Z' fill='%23ee9933'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; }
+  & h2 { font-size: 10.5pt; font-weight: 500; margin-top: 10pt; margin-bottom: 4pt; padding-bottom: 0pt; border-bottom: none; color: #ee9933; text-transform: uppercase; }
+  & h3 { font-size: 10.5pt; font-weight: 600; margin-top: 8pt; margin-bottom: 2pt; color: #171717; display: flex; align-items: center; gap: 4pt; }
+  & h3 img { width: 14pt; height: 14pt; border-radius: 0; object-fit: cover; flex-shrink: 0; }
+  & .resume-meta { margin-left: auto; font-size: 10.5pt; font-weight: 600; color: #737373; white-space: nowrap; flex-shrink: 0; }
+  & .resume-contact { float: right; font-size: 9pt; font-weight: 400; color: #737373; }
+  & .resume-contact a { color: #2563eb; text-decoration: underline; }
+  & p { font-size: 9.5pt; line-height: 1.3; margin-top: 0; margin-bottom: 4pt; color: #171717; }
+  & h1 + p { font-size: 10.5pt; }
+  & strong { font-weight: 600; }
+  & hr { display: none; }
+  & ul { padding-left: 18pt; margin-top: 0pt; margin-bottom: 0pt; list-style-type: disc; }
+  & li { font-size: 9.5pt; line-height: 1.2; margin-bottom: 3pt; color: #171717; margin-left: -4pt; padding-left: 4pt; }
+  & li::marker { font-size: 7pt; }
+  & ul ul { padding-left: 10pt; margin-top: 3pt; margin-bottom: 1pt; list-style-type: none; }
+  & ul ul li::before { content: '\2013'; position: absolute; left: -8pt; color: #171717; }
+  & ul ul li { position: relative; margin-left: 0; padding-left: 0; }
+  & ul ul li::marker { content: none; }
+  & a { color: #b09494; text-decoration: none; }
+}
+
+/* Responsive — scale paper to fit viewport */
+@media (max-width: 900px) {
+  .resume-paper-wrapper {
+    padding: 20px;
+  }
+  .resume-paper {
+    transform-origin: top center;
+    transform: scale(var(--resume-scale, 1));
+  }
+  .resume-toolbar-inner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-toolbar-inner {
+    height: 48px;
+    padding: 0 20px;
+    gap: 8px;
+  }
+  .resume-toolbar {
+    top: 56px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .resume-toolbar,
+  .resume-download-btn {
+    display: none !important;
+  }
+  .resume-page {
+    background: white;
+  }
+  .resume-paper-wrapper {
+    padding: 0;
+  }
+  .resume-paper {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

@@ -404,3 +404,7 @@ main {
     min-width: 0;
   }
 }
+
+/* Resume styles imported from resume/ folder */
+@import "../../../resume/resume.css";
+
