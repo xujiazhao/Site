@@ -222,7 +222,8 @@ export async function GET(request: NextRequest) {
     const paperWidthIn = isEn ? 8.5 : 210 / 25.4;
     const minHeightIn = isEn ? 11 : 297 / 25.4;
     const actualHeightIn = paperHeight / 96;
-    const finalHeightIn = Math.max(actualHeightIn, minHeightIn);
+    // Add a small buffer (0.1in) to prevent rounding-induced page breaks
+    const finalHeightIn = Math.max(actualHeightIn + 0.1, minHeightIn);
 
     console.log(`[resume-pdf] Paper: ${paperWidthIn}in x ${finalHeightIn}in (actual: ${actualHeightIn}in, min: ${minHeightIn}in)`);
 
