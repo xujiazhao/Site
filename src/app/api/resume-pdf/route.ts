@@ -10,37 +10,53 @@ import { join } from "path";
 const isDev = process.env.NODE_ENV === "development";
 
 // --- PDF Cache ---
-const cacheDir = join(process.cwd(), "resume", "cache");
+// Vercel has a read-only filesystem; use /tmp for cache in production
+const cacheDir = isDev
+  ? join(process.cwd(), "resume", "cache")
+  : join("/tmp", "resume-cache");
 const mdDir = join(process.cwd(), "resume", "content");
 
 function getMdHash(lang: string, variant: string): string | null {
-  const mdPath = join(mdDir, lang, `${variant}.md`);
-  if (!fs.existsSync(mdPath)) return null;
-  const content = fs.readFileSync(mdPath, "utf8");
-  return createHash("sha256").update(content).digest("hex").slice(0, 12);
+  try {
+    const mdPath = join(mdDir, lang, `${variant}.md`);
+    if (!fs.existsSync(mdPath)) return null;
+    const content = fs.readFileSync(mdPath, "utf8");
+    return createHash("sha256").update(content).digest("hex").slice(0, 12);
+  } catch (e) {
+    console.warn("[resume-pdf] Failed to hash MD:", e);
+    return null;
+  }
 }
 
 function getCachedPdf(lang: string, variant: string, hash: string): Buffer | null {
-  const cached = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
-  if (fs.existsSync(cached)) {
-    console.log(`[resume-pdf] Cache hit: ${cached}`);
-    return fs.readFileSync(cached);
+  try {
+    const cached = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
+    if (fs.existsSync(cached)) {
+      console.log(`[resume-pdf] Cache hit: ${cached}`);
+      return fs.readFileSync(cached);
+    }
+  } catch (e) {
+    console.warn("[resume-pdf] Cache read failed:", e);
   }
   return null;
 }
 
 function savePdfToCache(lang: string, variant: string, hash: string, buffer: Buffer | Uint8Array) {
-  if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
-  // Remove old cached versions for this lang-variant
-  const prefix = `${lang}-${variant}-`;
-  for (const f of fs.readdirSync(cacheDir)) {
-    if (f.startsWith(prefix) && f.endsWith(".pdf")) {
-      fs.unlinkSync(join(cacheDir, f));
+  try {
+    if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
+    // Remove old cached versions for this lang-variant
+    const prefix = `${lang}-${variant}-`;
+    for (const f of fs.readdirSync(cacheDir)) {
+      if (f.startsWith(prefix) && f.endsWith(".pdf")) {
+        fs.unlinkSync(join(cacheDir, f));
+      }
     }
+    const cachePath = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
+    fs.writeFileSync(cachePath, buffer);
+    console.log(`[resume-pdf] Cached: ${cachePath}`);
+  } catch (e) {
+    console.warn("[resume-pdf] Cache write failed:", e);
   }
-  const cachePath = join(cacheDir, `${lang}-${variant}-${hash}.pdf`);
-  fs.writeFileSync(cachePath, buffer);
-  console.log(`[resume-pdf] Cached: ${cachePath}`);
 }
 
 function buildDownloadFilename(lang: string, variant: string) {
