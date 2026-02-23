@@ -32,18 +32,30 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
 
   // Calculate scale for mobile to fit paper in viewport
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const paperRef = useRef<HTMLDivElement>(null);
   const updateScale = useCallback(() => {
     if (!wrapperRef.current) return;
     const paperWidthPx = isEn ? 8.5 * 96 : 210 * 96 / 25.4;
     const wrapperWidth = wrapperRef.current.clientWidth;
-    // Account for wrapper padding (16px each side on mobile, 24px on desktop)
+    // Account for wrapper padding (20px each side on mobile, 24px on desktop)
     const padding = wrapperWidth < 900 ? 40 : 48;
     const availableWidth = wrapperWidth - padding;
     if (availableWidth < paperWidthPx) {
       const scale = availableWidth / paperWidthPx;
       wrapperRef.current.style.setProperty('--resume-scale', String(scale));
+      // Set paper height for margin-bottom compensation
+      if (paperRef.current) {
+        const paperHeight = paperRef.current.scrollHeight;
+        paperRef.current.style.setProperty('--resume-paper-height', `${paperHeight}px`);
+        // Also set width to match scaled width for centering
+        paperRef.current.style.marginLeft = `${(availableWidth - paperWidthPx * scale) / 2}px`;
+      }
     } else {
       wrapperRef.current.style.setProperty('--resume-scale', '1');
+      if (paperRef.current) {
+        paperRef.current.style.removeProperty('--resume-paper-height');
+        paperRef.current.style.removeProperty('margin-left');
+      }
     }
   }, [isEn]);
 
@@ -121,7 +133,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
 
           <div className="resume-toolbar-actions">
             <span className="resume-download-hint">
-              {isEn ? "PDF is rendered on-the-fly, may take ~10s" : "PDF 实时渲染，可能需要约 10 秒"}
+              {isEn ? "PDF generation may take ~10s" : "PDF生成约需10秒"}
             </span>
             {/* Download Button */}
             <button onClick={handleDownloadPDF} className="resume-download-btn" disabled={downloading}>
@@ -143,7 +155,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
 
       {/* Paper */}
       <div ref={wrapperRef} className="resume-paper-wrapper">
-        <div className={`resume-paper ${paperClass}`}>
+        <div ref={paperRef} className={`resume-paper ${paperClass}`}>
           <div
             ref={resumeRef}
             className="resume-content"

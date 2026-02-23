@@ -124,6 +124,7 @@ body:has(.resume-page) > footer {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -183,10 +184,13 @@ body:has(.resume-page) > footer {
 @media (max-width: 900px) {
   .resume-paper-wrapper {
     padding: 20px;
+    overflow-x: hidden;
   }
   .resume-paper {
-    transform-origin: top center;
+    transform-origin: top left;
     transform: scale(var(--resume-scale, 1));
+    /* Collapse the extra space caused by transform not affecting layout */
+    margin-bottom: calc((var(--resume-scale, 1) - 1) * var(--resume-paper-height, 0px));
   }
   .resume-toolbar-inner {
     padding: 0 20px;
