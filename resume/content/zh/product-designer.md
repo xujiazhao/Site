@@ -1,7 +1,7 @@
 ---
 title: "许嘉昭 – 产品设计师"
 variant: "product-designer"
-label: "设计"
+label: "产品设计"
 ---
 
 # 许嘉昭

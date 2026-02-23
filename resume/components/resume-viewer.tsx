@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 
 interface ResumeVariant {
   variant: string;
@@ -20,9 +20,24 @@ interface ResumeViewerProps {
 
 export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps) {
   const [currentLang, setCurrentLang] = useState(lang);
-  const [activeVariant, setActiveVariant] = useState(0);
+
+  // Restore variant selection from localStorage
+  const initialVariantIndex = useMemo(() => {
+    if (typeof window === 'undefined') return 0;
+    const saved = localStorage.getItem('resume-variant');
+    if (saved) {
+      const currentVars = lang === 'en' ? allVariants.en : allVariants.zh;
+      const idx = currentVars.findIndex(v => v.variant === saved);
+      if (idx >= 0) return idx;
+    }
+    return 0;
+  }, []);
+
+  const [activeVariant, setActiveVariant] = useState(initialVariantIndex);
   const [downloading, setDownloading] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const resumeRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const currentVariants = currentLang === "en" ? allVariants.en : allVariants.zh;
   const current = currentVariants[activeVariant] || currentVariants[0];
@@ -56,6 +71,19 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
     window.addEventListener('resize', updateScale);
     return () => window.removeEventListener('resize', updateScale);
   }, [updateScale]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    if (dropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropdownOpen]);
 
   const handleDownloadPDF = async () => {
     if (downloading) return;
@@ -102,25 +130,66 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
       {/* Toolbar */}
       <div className="resume-toolbar">
         <div className="resume-toolbar-inner">
-          {/* Variant Tabs — slider pill toggle */}
-          <div
-            className="relative flex items-center h-9 w-[88px] p-[3px] rounded-xl bg-neutral-100 border border-neutral-200 cursor-pointer select-none"
-            role="radiogroup"
-          >
-            <span
-              className="absolute left-[3px] h-[28px] w-[40px] rounded-[8px] bg-white shadow-sm"
-              style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: activeVariant === 0 ? 'translateX(0)' : 'translateX(40px)' }}
-            />
-            {currentVariants.map((v, i) => (
-              <button
-                key={v.variant}
-                onClick={() => setActiveVariant(i)}
-                className={`relative z-10 flex-1 text-center text-sm font-medium bg-transparent border-none cursor-pointer ${i === activeVariant ? "text-neutral-900" : "text-neutral-400"}`}
-                style={{ transition: 'color 200ms ease-in-out' }}
+          {/* Variant Dropdown */}
+          <div ref={dropdownRef} className="relative">
+            <button
+              onClick={() => setDropdownOpen((o) => !o)}
+              className="flex items-center gap-1.5 h-9 px-3 rounded-xl border border-neutral-300 cursor-pointer select-none text-sm font-medium text-neutral-900 hover:bg-neutral-100 whitespace-nowrap"
+              style={{ transition: "background 150ms ease" }}
+              aria-haspopup="listbox"
+              aria-expanded={dropdownOpen}
+            >
+              {current.label}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-400"
+                style={{ transition: "transform 200ms ease", transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
               >
-                {v.label}
-              </button>
-            ))}
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            {dropdownOpen && (
+              <ul
+                role="listbox"
+                className="absolute left-0 top-[calc(100%+4px)] min-w-[140px] py-1 rounded-xl bg-white border border-neutral-200 shadow-lg z-50 hover:border-neutral-300"
+                style={{ transition: "border-color 150ms ease" }}
+              >
+                {currentVariants.map((v, i) => (
+                  <li
+                    key={v.variant}
+                    role="option"
+                    aria-selected={i === activeVariant}
+                    onClick={() => {
+                      setActiveVariant(i);
+                      setDropdownOpen(false);
+                      localStorage.setItem('resume-variant', v.variant);
+                    }}
+                    className={`flex items-center gap-2 mx-1 px-2 py-1.5 rounded-lg text-sm cursor-pointer select-none whitespace-nowrap ${
+                      i === activeVariant
+                        ? "text-neutral-900 font-medium bg-neutral-100"
+                        : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
+                    }`}
+                    style={{ transition: "background 120ms ease, color 120ms ease" }}
+                  >
+                    {i === activeVariant && (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    )}
+                    {i !== activeVariant && <span className="inline-block w-[14px]" />}
+                    {v.label}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
 
           <div className="resume-toolbar-actions">

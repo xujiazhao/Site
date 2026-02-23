@@ -1,7 +1,7 @@
 ---
 title: "Jiazhao Xu – Product Designer"
 variant: "product-designer"
-label: "PD"
+label: "Product Designer"
 ---
 
 # Jiazhao Xu
@@ -43,12 +43,12 @@ label: "PD"
 
 ## Education
 
-### <img src="/assets/favicon/thu.svg" alt=""> Tsinghua University School of Economics and Management — Global MBA <span class="resume-meta">Beijing, Sep 2024 – Present</span>
+### <img src="/assets/favicon/thu.svg" alt=""> Tsinghua University School of Economics and Management – Global MBA <span class="resume-meta">Beijing, Sep 2024 – Present</span>
 
 - Class president and year-level liaison. Actively promote university-enterprise collaboration and resource integration, organizing multiple industry visits, alumni roundtables, and closed-door corporate sharing events, broadly connecting Tsinghua SEM alumni networks and corporate mentor resources.
 - Director of the MBA Embodied Intelligence Club Design Division, liaising with embodied AI, robotics, and AI startups, organizing visits and roundtable discussions.
 
-### <img src="/assets/favicon/accd.svg" alt=""> ArtCenter College of Design — BS in Product Design <span class="resume-meta">Los Angeles, Sep 2016 – Apr 2021</span>
+### <img src="/assets/favicon/accd.svg" alt=""> ArtCenter College of Design – B.S. in Product Design <span class="resume-meta">Los Angeles, Sep 2016 – Apr 2021</span>
 
 - Minor in Business, graduated with honors; exchange at INSEAD Business School; interned at Xiaomi and Kohler.
 
