@@ -146,6 +146,7 @@ body:has(.resume-page) > footer {
 /* Content container */
 .resume-content {
   width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Hiragino Sans GB', sans-serif;
 }
 
 /* Resume content typography — scoped via PostCSS nesting */

@@ -38,6 +38,7 @@ export async function GET(request: NextRequest) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  ${!isEn ? '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">' : ''}
   <style>
     /* Tailwind preflight subset */
     *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; }
@@ -50,7 +51,7 @@ export async function GET(request: NextRequest) {
     body {
       font-family: ${isEn
         ? "'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
-        : "-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif"};
+        : "'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"};
       color: #171717;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
@@ -122,7 +123,7 @@ export async function GET(request: NextRequest) {
     console.log("[resume-pdf] Content set, waiting for render...");
     
     // Give time for fonts to load and CSS to render
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise(resolve => setTimeout(resolve, isEn ? 1500 : 3000));
 
     console.log("[resume-pdf] Measuring paper height...");
 
