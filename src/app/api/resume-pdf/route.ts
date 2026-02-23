@@ -124,6 +124,7 @@ export async function GET(request: NextRequest) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   ${!isEn ? '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">' : ''}
   <style>
     /* Tailwind preflight subset */
@@ -136,7 +137,7 @@ export async function GET(request: NextRequest) {
     a { color: inherit; text-decoration: inherit; }
     body {
       font-family: ${isEn
-        ? "'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        ? "'Barlow', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         : "'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"};
       color: #171717;
       -webkit-print-color-adjust: exact;
