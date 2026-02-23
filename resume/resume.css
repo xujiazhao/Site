@@ -187,10 +187,8 @@ body:has(.resume-page) > footer {
     overflow-x: hidden;
   }
   .resume-paper {
-    transform-origin: top left;
+    transform-origin: top center;
     transform: scale(var(--resume-scale, 1));
-    /* Collapse the extra space caused by transform not affecting layout */
-    margin-bottom: calc((var(--resume-scale, 1) - 1) * var(--resume-paper-height, 0px));
   }
   .resume-toolbar-inner {
     padding: 0 20px;

@@ -34,28 +34,20 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
   const wrapperRef = useRef<HTMLDivElement>(null);
   const paperRef = useRef<HTMLDivElement>(null);
   const updateScale = useCallback(() => {
-    if (!wrapperRef.current) return;
+    if (!wrapperRef.current || !paperRef.current) return;
     const paperWidthPx = isEn ? 8.5 * 96 : 210 * 96 / 25.4;
     const wrapperWidth = wrapperRef.current.clientWidth;
-    // Account for wrapper padding (20px each side on mobile, 24px on desktop)
     const padding = wrapperWidth < 900 ? 40 : 48;
     const availableWidth = wrapperWidth - padding;
     if (availableWidth < paperWidthPx) {
       const scale = availableWidth / paperWidthPx;
       wrapperRef.current.style.setProperty('--resume-scale', String(scale));
-      // Set paper height for margin-bottom compensation
-      if (paperRef.current) {
-        const paperHeight = paperRef.current.scrollHeight;
-        paperRef.current.style.setProperty('--resume-paper-height', `${paperHeight}px`);
-        // Also set width to match scaled width for centering
-        paperRef.current.style.marginLeft = `${(availableWidth - paperWidthPx * scale) / 2}px`;
-      }
+      // Compensate: set explicit height on paper to its scaled height so scroll area is correct
+      const paperHeight = paperRef.current.scrollHeight;
+      paperRef.current.style.marginBottom = `${-(paperHeight * (1 - scale))}px`;
     } else {
       wrapperRef.current.style.setProperty('--resume-scale', '1');
-      if (paperRef.current) {
-        paperRef.current.style.removeProperty('--resume-paper-height');
-        paperRef.current.style.removeProperty('margin-left');
-      }
+      paperRef.current.style.removeProperty('margin-bottom');
     }
   }, [isEn]);
 
