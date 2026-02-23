@@ -23,7 +23,7 @@ label: "Product Manager"
 
 ## Professional Experience
 
-### <img src="/assets/favicon/msft.svg" alt=""> Microsoft – Product Designer → Product Lead (DRI) <span class="resume-meta">Beijing, Jan 2023 – Present</span>
+### <img src="/assets/favicon/msft.svg" alt=""> Microsoft – Product Designer > Product Lead (DRI) <span class="resume-meta">Beijing, Jan 2023 – Present</span>
 
 - Initiated and led AI-driven product concepts from ideation to launch, translating user pain points and market trends into actionable requirements; collaborated across PM, engineering, and content teams in China, US, and India.
 - Combined human-centered design with strategic product thinking to create scalable AI features that improved user engagement and partner revenue.
@@ -32,7 +32,7 @@ label: "Product Manager"
 
 **Key AI Projects:**
 
-- **Copilot Podcast** (DRI, 0→1): Conceived and drove podcast capabilities into Microsoft Copilot — transforming partner text content into personalized, AI-generated audio streams. Led a cross-functional team of 1 PM, 3 engineers, and external contributors; reported directly to Copilot CVP. Owned roadmap, feature prioritization, and sprint planning; built a working proof-of-concept and shipped MVP.
+- **Copilot Podcast** (DRI, 0 to 1): Conceived and drove podcast capabilities into Microsoft Copilot — transforming partner text content into personalized, AI-generated audio streams. Led a cross-functional team of 1 PM, 3 engineers, and external contributors; reported directly to Copilot CVP. Owned roadmap, feature prioritization, and sprint planning; built a working proof-of-concept and shipped MVP.
 - **News in Bing Chat / Copilot & News Digest**: Integrated News into Bing Chat (now Copilot) and designed an AI-powered event analysis page (News Digest), shaping early product direction, delivering MVPs that informed roadmap priorities, and driving key growth for the Bing News user journey.
 - **MSN Content Creator**: Built AI-assisted content remixing tools for the MSN Partner Hub platform, enabling 3,000+ global media partners to increase audience reach and engagement.
 - **MSN Money Assistant**: Proposed and scoped an AI investment assistant concept, defining user flows and interaction models to support personalized financial insights.
