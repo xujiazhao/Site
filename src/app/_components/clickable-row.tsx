@@ -12,11 +12,11 @@ export function ClickableRow({ href, children, className }: Props) {
   const router = useRouter();
 
   return (
-    <tr
+    <div
       className={className}
-      onClick={() => router.push(href)}
       role="link"
       tabIndex={0}
+      onClick={() => router.push(href)}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
@@ -25,6 +25,6 @@ export function ClickableRow({ href, children, className }: Props) {
       }}
     >
       {children}
-    </tr>
+    </div>
   );
 }

@@ -408,3 +408,18 @@ main {
 /* Resume styles imported from resume/ folder */
 @import "../../../resume/resume.css";
 
+/* Experience scroll grid: 5 cols on mobile (Name visible), 4 cols on desktop (Name in pinned column) */
+.exp-scroll-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto 1fr;
+}
+
+@media (min-width: 768px) {
+  .exp-scroll-grid {
+    grid-template-columns: auto auto auto 1fr;
+  }
+  .exp-scroll-grid > .md\:hidden {
+    display: none;
+  }
+}
+
