@@ -22,8 +22,9 @@ label: "产品设计"
 
 ## 工作经历
 
-### <img src="/assets/favicon/msft.svg" alt=""> 微软 - 高级产品设计师 <span class="resume-meta">北京, 2023.01 – 至今</span>
+### <img src="/assets/favicon/msft.svg" alt=""> 微软 - 高级产品设计师 / Copilot 播客产品负责人 <span class="resume-meta">北京, 2023.01 – 至今</span>
 
+- **Copilot 播客产品：**从 0 到 1 发起并主导该项目，将播客能力引入微软 Copilot。管理由 1 名 PM、3 名工程师及外部贡献者组成的跨职能团队，全权负责产品路线图、功能优先级与迭代计划，直接向 Copilot CVP 汇报。
 - 负责微软内容生态的全链路产品设计工作，覆盖 B 端到 C 端、从内容入驻到内容分发的完整闭环，通过设计驱动用户体验与平台营收的双重提升：
     - ** Copilot 内容体验设计：**主导微软 AI 产品 Copilot 中的内容设计，涵盖新闻、财经、体育等场景。探索 AI 如何提升内容的粘性与满意度，同时丰富 Copilot 的整体用户体验。
     - ** Bing & MSN 新闻产品设计：**负责 Bing News 与 MSN Feeds 的核心功能，包括必应热搜、重大新闻事件等；推出 AI 驱动的 News Digest（事件解读）等创新功能，显著提升用户体验与平台营收，并与团队共同推动产品在全球范围内超越竞争对手。

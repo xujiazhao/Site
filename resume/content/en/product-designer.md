@@ -22,8 +22,9 @@ label: "Product Designer"
 
 ## Professional Experience
 
-### <img src="/assets/favicon/msft.svg" alt=""> Microsoft — Senior Product Designer <span class="resume-meta">Beijing, Jan 2023 – Present</span>
+### <img src="/assets/favicon/msft.svg" alt=""> Microsoft — Senior Product Designer / Product Lead of Copilot Podcast <span class="resume-meta">Beijing, Jan 2023 – Present</span>
 
+- **Copilot Podcast:** Initiated and led the project from 0→1, bringing podcast capabilities into Microsoft Copilot. Managed a cross-functional team of 1 PM, 3 engineers, and external contributors, owning product roadmap, feature prioritization, and sprint planning, reporting directly to Copilot CVP.
 - Lead full-cycle product design for Microsoft's content ecosystem, spanning B2B and B2C from content onboarding to distribution, driving both user experience and platform revenue through design:
     - **Copilot Content Experience Design:** Lead content design within Microsoft's AI product Copilot, covering news, finance, sports, and more. Explore how AI can improve content engagement and satisfaction while enriching the user experience.
     - **Bing & MSN News Product Design:** Own core features of Bing News and MSN Feeds, including trending searches and breaking news; launched AI-driven innovations such as News Digest, significantly boosting user experience and platform revenue, helping the product surpass competitors globally.
