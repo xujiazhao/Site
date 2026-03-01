@@ -1,6 +1,6 @@
 ---
 title: "SIG CombiONE"
-date: "2025-09-01"
+date: "2023-09-01"
 skill: ["工业设计", "包装设计"]
 coverImage: "/assets/cover-image/SIG.webp"
 favicon: "/assets/favicon/SIG_logo.svg"

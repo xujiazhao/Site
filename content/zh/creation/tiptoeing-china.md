@@ -1,7 +1,7 @@
 ---
 title: "神州散闻品牌设计"
 date: "2025-04-10"
-skill: ["Branding", "Graphic Design"]
+skill: ["品牌设计", "平面设计"]
 coverImage: "/assets/cover-image/tiptoeingchina.webp"
 ---
 

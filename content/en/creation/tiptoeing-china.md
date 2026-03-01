@@ -1,5 +1,5 @@
 ---
-title: "Tiptoeing China Branding Design"
+title: "Tiptoeing China"
 date: "2025-04-10"
 skill: ["Branding", "Graphic Design"]
 coverImage: "/assets/cover-image/tiptoeingchina.webp"
