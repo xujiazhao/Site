@@ -2,7 +2,7 @@
 title: "Tiptoeing China Branding Design"
 date: "2025-04-10"
 skill: ["Branding", "Graphic Design"]
-coverImage: "/assets/cover-image/tiptoeing-china.webp"
+coverImage: "/assets/cover-image/tiptoeingchina.webp"
 ---
 
 > Translating complexity into clarity — a brand identity for understanding China.

@@ -2,7 +2,7 @@
 title: "神州散闻品牌设计"
 date: "2025-04-10"
 skill: ["Branding", "Graphic Design"]
-coverImage: "/assets/cover-image/tiptoeing-china.webp"
+coverImage: "/assets/cover-image/tiptoeingchina.webp"
 ---
 
 > 将复杂化为清晰——一个理解中国的品牌形象。
