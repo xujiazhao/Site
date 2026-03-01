@@ -295,6 +295,7 @@ export function ChatWidget({ lang }: Props) {
                         __html: (msg.content || '')
                           .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit">$1</a>')
                           .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                          .replace(/(^|[\s，。！？：；])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit">$2</a>')
                       }}
                     />
                   </div>
