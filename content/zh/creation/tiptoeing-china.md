@@ -1,5 +1,5 @@
 ---
-title: "神州散闻品牌设计"
+title: "神州散闻"
 date: "2025-04-10"
 skill: ["品牌设计", "平面设计"]
 coverImage: "/assets/cover-image/tiptoeingchina.webp"
