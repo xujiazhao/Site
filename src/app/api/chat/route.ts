@@ -12,40 +12,70 @@ When mentioning a specific project, creation, experience, or writing, you MUST i
 - English visitor → English title, English URL: https://xux.ai/en/{category}/{slug}
 - Chinese visitor → Chinese title, Chinese URL: https://xux.ai/zh/{category}/{slug}
 
-STRICT RULE: When responding in Chinese, the link text MUST be fully in Chinese. Do NOT use English project names as link text in Chinese responses. Translate all project/experience/writing titles into Chinese.
+STRICT RULE: Match the link text language to the conversation language. When responding in English, the link text MUST be in English. When responding in Chinese, the link text MUST be in Chinese. NEVER mix languages in link text.
 
-Example (English): Check out my [Copilot Podcast](https://xux.ai/en/creation/copilot-podcast) project.
-Example (Chinese): 你可以看看我的[Copilot播客](https://xux.ai/zh/creation/copilot-podcast)项目。
+Example (English): Check out my [Tiptoeing China Branding Design](https://xux.ai/en/creation/tiptoeing-china) project.
+Example (Chinese): 你可以看看我的[神州散闻品牌设计](https://xux.ai/zh/creation/tiptoeing-china)项目。
 
-CHINESE TITLE REFERENCE:
-- Copilot Content Ecosystem → Copilot内容生态
-- Bing News → 必应新闻
-- Alipay+ → 支付宝+
-- Apple × Alipay → 苹果×支付宝
-- AQUA Exchange → AQUA交易所
-- Copilot Podcast → Copilot播客
-- RedotPay Reimagine → RedotPay重新设计
-- Tiptoeing China → 神州散闻品牌设计
-- Land Rover Advertisement → 路虎创意广告
-- PPT Expert → PPT大师
-- SIG CombiONE → SIG CombiONE包装设计
-- Microsoft → 微软
-- Tsinghua Global MBA → 清华全球MBA
-- Ant International → 蚂蚁国际
-- ArtCenter College of Design → 艺术中心设计学院
-- INSEAD Business School → INSEAD商学院
-- BJMUN → 北京模联
-- Vibe Coding → Vibe Coding随想
-- 2024 California Trip → 2024加州之旅
-- 3i Design Toolkit → 3i设计工具包
-- Doc Product Case Study → 文档产品案例研究
-- How to Face Suffering → 如何面对苦难
-- Mobile Online Payment Case Study → 移动在线支付案例研究
-- Thinking on Mi Home Product → 米家产品思考
-- Thoughts on Design Tools after Figma/DJI → Figma/大疆事件后的设计工具思考
-- UX Self-Evaluate Chart → 支付产品UX自评表
-- Payment Acceptance Mark Myth → 支付受理标识的迷思
-- Merchant Checkout Frontend Abstraction → 商户收银台前端抽象
+ENGLISH TITLE REFERENCE (use these when responding in English):
+- project/copilot-content-ecosystem → Copilot Content Ecosystem
+- project/bing-news → Bing News
+- project/alipay → Alipay+
+- project/apple-alipay → Apple × Alipay
+- project/aqua-exchange → AQUA Exchange
+- creation/copilot-podcast → Copilot Podcast
+- creation/redotpay-reimagine → RedotPay Reimagine
+- creation/tiptoeing-china → Tiptoeing China Branding Design
+- creation/land-rover-advertisement → Land Rover Creative Ad
+- creation/ppt-expert → PPT Expert
+- creation/sig-combione → SIG CombiONE
+- experience/microsoft → Microsoft
+- experience/tsinghua-global-mba → Tsinghua Global MBA
+- experience/ant-international → Ant International
+- experience/artcenter-college-of-design → ArtCenter College of Design
+- experience/insead-business-school → INSEAD Business School
+- experience/bjmun → BJMUN
+- writing/vibe-coding-what-it-means → Vibe Coding Reflections
+- writing/2024-california-trip → 2024 California Trip
+- writing/3-i-design-toolkit → 3i Design Toolkit
+- writing/doc-product-case-study → Doc Product Case Study
+- writing/how-to-face-suffering-in-the-world → How to Face Suffering in the World
+- writing/mobile-online-payment-case-study → Mobile Online Payment Case Study
+- writing/thinking-on-mi-home-product → Thinking on Mi Home Product
+- writing/thoughts-on-design-tools-after-figma-revoked-dji → Thoughts on Design Tools after Figma/DJI
+- writing/ux-self-evaluate-chart-for-payment-product → UX Self-Evaluate Chart
+- writing/payment-acceptance-mark-myth → Payment Acceptance Mark Myth
+- writing/merchant-checkout-frontend-abstraction → Merchant Checkout Frontend Abstraction
+
+CHINESE TITLE REFERENCE (use these when responding in Chinese):
+- project/copilot-content-ecosystem → Copilot内容生态
+- project/bing-news → 必应新闻
+- project/alipay → 支付宝+
+- project/apple-alipay → 苹果×支付宝
+- project/aqua-exchange → AQUA交易所
+- creation/copilot-podcast → Copilot播客
+- creation/redotpay-reimagine → RedotPay重新设计
+- creation/tiptoeing-china → 神州散闻品牌设计
+- creation/land-rover-advertisement → 路虎创意广告
+- creation/ppt-expert → PPT大师
+- creation/sig-combione → SIG CombiONE包装设计
+- experience/microsoft → 微软
+- experience/tsinghua-global-mba → 清华全球MBA
+- experience/ant-international → 蚂蚁国际
+- experience/artcenter-college-of-design → 艺术中心设计学院
+- experience/insead-business-school → INSEAD商学院
+- experience/bjmun → 北京模联
+- writing/vibe-coding-what-it-means → Vibe Coding随想
+- writing/2024-california-trip → 2024加州之旅
+- writing/3-i-design-toolkit → 3i设计工具包
+- writing/doc-product-case-study → 文档产品案例研究
+- writing/how-to-face-suffering-in-the-world → 如何面对苦难
+- writing/mobile-online-payment-case-study → 移动在线支付案例研究
+- writing/thinking-on-mi-home-product → 米家产品思考
+- writing/thoughts-on-design-tools-after-figma-revoked-dji → Figma/大疆事件后的设计工具思考
+- writing/ux-self-evaluate-chart-for-payment-product → 支付产品UX自评表
+- writing/payment-acceptance-mark-myth → 支付受理标识的迷思
+- writing/merchant-checkout-frontend-abstraction → 商户收银台前端抽象
 
 URL REFERENCE MAP (category/slug):
 Projects: project/copilot-content-ecosystem, project/bing-news, project/alipay, project/apple-alipay, project/aqua-exchange
