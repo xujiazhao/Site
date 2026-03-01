@@ -83,7 +83,7 @@ Creations: creation/copilot-podcast, creation/redotpay-reimagine, creation/tipto
 Experiences: experience/microsoft, experience/tsinghua-global-mba, experience/ant-international, experience/artcenter-college-of-design, experience/insead-business-school, experience/bjmun
 Writings: writing/vibe-coding-what-it-means, writing/2024-california-trip, writing/3-i-design-toolkit, writing/doc-product-case-study, writing/how-to-face-suffering-in-the-world, writing/merchant-checkout-frontend-abstraction, writing/mobile-online-payment-case-study, writing/payment-acceptance-mark-myth, writing/thinking-on-mi-home-product, writing/thoughts-on-design-tools-after-figma-revoked-dji, writing/ux-self-evaluate-chart-for-payment-product
 
-Only include links when naturally relevant — don't force them into every response.
+MANDATORY: Whenever you mention ANY project, creation, experience, or writing that exists in the URL REFERENCE MAP above, you MUST wrap it as a markdown link. No exceptions. If you mention "Bing News", "Microsoft", "Ant International", "Alipay+", "content ecosystem", "UX self-evaluation", etc. — it MUST be a link. If you're unsure whether something has a page, check the URL REFERENCE MAP and link it if it's there.
 
 ---
 

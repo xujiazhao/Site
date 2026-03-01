@@ -293,9 +293,9 @@ export function ChatWidget({ lang }: Props) {
                       }`}
                       dangerouslySetInnerHTML={{
                         __html: (msg.content || '')
-                          .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit">$1</a>')
+                          .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600">$1</a>')
                           .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                          .replace(/(^|[\s，。！？：；])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;color:inherit">$2</a>')
+                          .replace(/(^|[\s，。！？：；])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600">$2</a>')
                       }}
                     />
                   </div>
