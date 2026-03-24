@@ -45,10 +45,12 @@ label: "产品设计"
 
 ## 教育背景
 
+<!-- HIDDEN
 ### <img src="/assets/favicon/thu.svg" alt=""> 清华大学经济管理学院 - 全球工商管理硕士 <span class="resume-meta">北京, 2024.09 – 至今</span>
 
 - 班长，年级联络人。积极推动校企合作与资源整合，组织多场行业参访、校友座谈和企业闭门分享活动，广泛链接清华经管校友网络与企业导师资源；
 - 任MBA具身智能俱乐部设计部部长，对接具身智能、机器人、AI初创等企业，组织参访、圆桌对话等。
+HIDDEN -->
 
 ### <img src="/assets/favicon/accd.svg" alt=""> 艺术中心设计学院 - 产品设计专业理学学士 <span class="resume-meta">洛杉矶, 2016.09 – 2021.04</span>
 
