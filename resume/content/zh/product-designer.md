@@ -6,7 +6,7 @@ label: "产品设计"
 
 # 许嘉昭
 
-**产品设计师** <span class="resume-contact">E-mail: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · WeChat: xux-ai · Portfolio: <a href="https://xux.ai">xux.ai</a></span>
+**产品设计师** <span class="resume-contact">邮箱: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · 微信: xux-ai · 作品集: <a href="https://xux.ai">www.xux.ai</a></span>
 
 ---
 
