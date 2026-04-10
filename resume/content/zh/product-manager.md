@@ -6,7 +6,7 @@ label: "产品经理"
 
 # 许嘉昭
 
-**产品经理** <span class="resume-contact">邮箱: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · 微信: xux-ai · 作品集: <a href="https://xux.ai">www.xux.ai</a></span>
+**产品经理** <span class="resume-contact">邮箱: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · 手机: 189-1016-3319 · 微信: xux-ai · 作品集: <a href="https://www.xux.ai">www.xux.ai</a></span>
 
 ---
 

@@ -6,7 +6,7 @@ label: "Product Designer"
 
 # Jiazhao Xu
 
-**Product Designer** <span class="resume-contact">E-mail: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · WeChat: xux-ai · Portfolio: <a href="https://xux.ai">xux.ai</a></span>
+**Product Designer** <span class="resume-contact">E-mail: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · Phone: 189-1016-3319 · WeChat: xux-ai · Portfolio: <a href="https://www.xux.ai">www.xux.ai</a></span>
 
 ---
 
