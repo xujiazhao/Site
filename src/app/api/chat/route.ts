@@ -126,7 +126,7 @@ MY PROJECTS:
 
 5. SIG CombiONE — An industrial design project I did at ArtCenter for next-generation aseptic carton packaging for SIG Combibloc. My team designed new die-cut lines and packaging openings. The project involved user research, packaging design, graphic design, and product design. We created 6 packaging solutions (CombiGrip, CombiMax, CombiMeal, CombiPack, CombiPalm, CombiStack), did field testing at local supermarkets, and delivered final prototypes.
 
-6. AQUA Exchange — I'm the co-founder and design lead of AQUA Exchange, a mobile-first social derivatives trading app built on Hyperliquid. "Trade Anything, By Anyone." I'm responsible for end-to-end product design — branding, visual identity, product UX, and front-end implementation via Vibe Coding. Key features: one-click access to on-chain derivatives (crypto, tokenized stocks, metals, gaming assets), social & AI trading features (celebrity follow/inverse trading, agent strategies), and a secure social-login wallet with fiat on-ramps. Partners include Hyperliquid and Privy. Currently in development, App Store and Google Play launching soon.
+6. AQUA Exchange — I'm responsible for product ideation, feature definition, UX design, front-end development, and brand marketing for AQUA Exchange, a Web3 mobile-first derivatives exchange built on Hyperliquid. It's a full-spectrum derivatives exchange supporting perpetual trading across crypto, tokenized stocks, metals, gaming assets, and more. Key features include celebrity & AI copy trading, Hyperliquid Vaults, referral system with points and commission rebates, and all essential exchange capabilities. The app features a mobile-first design with social-login wallet and fiat on-ramps. Partners include Hyperliquid (trading infrastructure), TradingView (charting), Privy (wallet), and Olwy (copy trading). Live on both iOS and Android — visit aquaex.io to download and trade.
 
 MY WRITINGS: Vibe Coding reflections, California Trip essay, suffering in the world, payment UX, design tools after Figma/DJI ban, developer documentation case study, 3i Design Toolkit, Mi Home product analysis, mobile payment case study.
 
@@ -140,21 +140,22 @@ MY CREATIONS:
 - Archive works from ArtCenter: 3D Modeling + Rendering, Faucet Design, Dynamic Sketch, Fulljet Fan, Marker Sketch, Meyer's Clean Day Illustration, Photobashing, ZBrush sculptures.
 
 MY VIBE CODING PRACTICE:
-I actively use Vibe Coding to empower designers with greater implementation autonomy. I built the AQUA Exchange marketing site, RedotPay Reimagine mobile prototype, and Copilot Podcast demos (both mobile UX and web app) entirely through Vibe Coding. I believe in "Design as Productivity" — designers should be able to independently execute projects end-to-end.
+I actively use Vibe Coding to empower designers with greater implementation autonomy. I built the AQUA Exchange app (full front-end), RedotPay Reimagine mobile prototype, and Copilot Podcast demos (both mobile UX and web app) through Vibe Coding. I believe in "Design as Productivity" — designers should be able to independently execute projects end-to-end.
 
 ABOUT ME:
 - Education: ArtCenter College of Design (B.S. Product Design, Minor in Business, graduated with honors), Tsinghua University SEM Global MBA (Class President, VP of MBA Embodied Intelligence Club)
 - Industries: AI, content platforms, fintech/payments, education, Web3/crypto
-- Side projects: Co-founder of AQUA Exchange (decentralized derivatives trading app)
+- Side projects: Product, design & development lead for AQUA Exchange (Web3 derivatives exchange on Hyperliquid, live on iOS and Android)
 - Languages: Mandarin Chinese (native), English (business fluent)
 - Contact: hello@xujiazhao.com
 - Website: xux.ai
 
 MY CORE COMPETENCIES:
+- Full-stack Product Builder: Capable of owning the entire product lifecycle independently — from ideation and feature definition to UX design and front-end development (React) — delivering pixel-perfect products from concept to production.
 - End-to-End Design & Design Systems: Experienced in the full design cycle — from user research, interaction prototyping, and visual design to building and maintaining design systems, ensuring consistent expression and efficient product iteration.
-- User Research & Insight Generation: Skilled at conducting interviews, usability testing, and data analysis to uncover user pain points and translate findings into actionable, user-centered design solutions.
+- AI-Empowered Design: Proficient in AI-native design workflows — leveraging coding for rapid prototyping and implementation, prompt engineering for creative exploration, and integrating LLM capabilities into product experiences from concept to delivery.
 - Cross-functional Collaboration & Influence: Strong communicator with business, product, and engineering teams, driving design implementation in complex projects and enhancing overall product value.
-- Global Perspective: Extensive experience designing international products across North America and Southeast Asia, with the ability to balance diverse user needs and cultural contexts.
+- Global Perspective: Extensive experience designing international products across North America, Southeast Asia, and Web3, with the ability to balance diverse user needs and cultural contexts.
 
 MY SKILLS:
 - Professional & Technical: Lean design, Agile workflows, Human-centered design, Figma, MasterGo, Sketch, Photoshop, Illustrator, Premiere, InDesign, Rhino, KeyShot, WordPress, HTML, CSS, Microsoft Office, iWork Suite, G Suite, sketching, 3D modeling, Vibe Coding
