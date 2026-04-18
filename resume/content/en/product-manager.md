@@ -12,12 +12,11 @@ label: "Product Manager"
 
 ## Core Competencies
 
-- **User & Market Insight** – Skilled at uncovering user needs through research, interviews, and behavioral analysis; adept at identifying innovation opportunities from real-world usage patterns
+- **Full-stack Product Builder** – Capable of owning the entire product lifecycle independently — from ideation and feature definition to UX design and front-end development (React) — bridging strategy, design, and engineering into one cohesive delivery
 - **AI Product Expertise** – Deeply involved in Microsoft's AI product development (LLM-based consumer products and content ecosystems), with strong understanding of industry trends, market dynamics, and human-centered AI applications
+- **User & Market Insight** – Skilled at uncovering user needs through research, interviews, and behavioral analysis; adept at identifying innovation opportunities from real-world usage patterns
 - **Cross-functional Collaboration** – Experienced in coordinating across BD, product, design, engineering, and data teams globally to drive rapid, agile iteration and successful product delivery
 - **Full-cycle Product Management** – End-to-end ownership from ideation and roadmap planning to launch and post-launch iteration, with data-driven decision-making cultivated through MBA and industry experience
-- **Product Communication & Storytelling** – Proficient in crafting and presenting compelling product narratives and professional materials to clearly convey value and increase adoption
-- **Design-driven Execution** – Deep design background enabling high-quality UX standards, efficient collaboration with design teams, and a unique ability to bridge strategy and craft
 
 ---
 
@@ -37,19 +36,23 @@ label: "Product Manager"
 - **MSN Content Creator**: Built AI-assisted content remixing tools for the MSN Partner Hub platform, enabling 3,000+ global media partners to increase audience reach and engagement.
 - **MSN Money Assistant**: Proposed and scoped an AI investment assistant concept, defining user flows and interaction models to support personalized financial insights.
 
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">Dec 2025 – Present</span>
+
+- A Web3 mobile-first derivatives exchange built on Hyperliquid, supporting full perpetual trading, celebrity & AI copy trading, Hyperliquid Vaults, and referral rewards. Live on iOS and Android.
+- Sole product and design owner — drove product ideation, feature definition, UX design, and front-end development (React), delivering a pixel-perfect trading app from concept to production.
+- Built every screen end-to-end: defined all product features, designed the full user experience, and implemented the entire front end — demonstrating full-stack product-design-engineering capability.
+
 ### <img src="/assets/favicon/ant.svg" alt=""> Ant International – UX Designer (Product-Oriented) <span class="resume-meta">Shanghai, Apr 2020 – Dec 2022</span>
 
 - Led end-to-end design and product definition for Alipay+ global unified payment solution, covering the full payment journey from onboarding to settlement for over 800M e-wallet users worldwide; localized experiences through in-depth market research in Southeast Asia, South Korea, and Eastern Europe.
-- Designed and improved both consumer-facing payment flows and B2B merchant tools, ensuring usability, regulatory compliance, and scalability across multiple markets.
-- Tracked post-launch user feedback and performance data to drive continuous enhancements, adapting features to evolving market and user needs.
+- Designed and improved both consumer-facing payment flows and B2B merchant tools, ensuring usability, regulatory compliance, and scalability across multiple markets; tracked post-launch feedback and performance data to drive continuous enhancements.
 - Partnered with BD teams on field visits to 7 cross-border e-commerce and payment companies in Shenzhen, gathering firsthand insights to shape feature priorities and support successful deal closures.
 
 
 ### <img src="/assets/favicon/bjmun.svg" alt=""> Entrepreneurial Experience – BJMUN – Founder / Chairman <span class="resume-meta">Beijing, 2013 – 2024</span>
 
 - Founded and scaled a Model United Nations (MUN) youth education platform, delivering large-scale simulation events to 3,000+ annual students and generating RMB 5M+ yearly revenue over 10 years. 
-- Built a stable B2B client network with top schools and agencies; managed end-to-end operations from event planning to commercial partnerships.
-- Maintained business continuity during the pandemic and successfully exited in 2024 through a full brand and company sale and personal exit.
+- Built a stable B2B client network with top schools and agencies; managed end-to-end operations from event planning to commercial partnerships. Maintained business continuity during the pandemic and successfully exited in 2024 through a full brand and company sale and personal exit.
 
 
 ---

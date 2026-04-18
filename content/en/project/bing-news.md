@@ -2,7 +2,7 @@
 title: "Bing News"
 date: "2026-02-16"
 intro: "Help people break their information cocoons"
-sorting: 5
+sorting: 4
 coverImage: "/assets/cover-image/Bing News.webp"
 favicon: "/assets/favicon/Bing icon.webp"
 ---

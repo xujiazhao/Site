@@ -1,18 +1,45 @@
 ---
 title: "AQUA Exchange"
 date: "2026-02-21"
-intro: "交易一切，尽在 Aqua"
-sorting: 4
+intro: "Web3 全衍生品交易所"
+sorting: 5
 coverImage: "/assets/cover-image/Aqua.webp"
 favicon: "/assets/favicon/aqua-icon.webp"
 ---
 
-> 交易一切，尽在 Aqua
+> Web3 全衍生品交易所
 >
 
-AQUA Exchange 是一款基于 [**Hyperliquid**](https://hyperliquid.xyz/) 构建的移动优先社交衍生品交易应用，将复杂的链上交易简化为一键式操作。作为联合创始人兼设计负责人，我负责端到端的产品设计——从品牌与视觉识别到交互设计，再到通过 Vibe Coding 进行前端实现。
+AQUA Exchange 是一款基于 [**Hyperliquid**](https://hyperliquid.xyz/) 构建的移动优先社交衍生品交易应用，将复杂的链上交易简化为一键式操作。作为联合创始人，我负责产品创意、UX 设计、前端开发和品牌营销。
 
-![](/assets/images/aquaex/aqua-hero.webp)
+<style>
+.aqua-iframe-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+.aqua-iframe-container iframe {
+  width: 133.33%;
+  height: 133.33%;
+  transform: scale(0.75);
+  transform-origin: top left;
+  border: none;
+}
+@media (max-width: 768px) {
+  .aqua-iframe-container {
+    aspect-ratio: 1/1;
+  }
+}
+</style>
+
+<div class="aqua-iframe-container">
+<iframe src="https://www.aquaex.io/"></iframe>
+</div>
+
+<a href="https://www.aquaex.io/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 6px 14px; background: #000; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 14px;">访问 AQUA Exchange <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
 
 ## 愿景
 
@@ -20,34 +47,27 @@ AQUA Exchange 是一款基于 [**Hyperliquid**](https://hyperliquid.xyz/) 构建
 
 ## 核心优势
 
-### 全市场覆盖
-
-一键接入 Hyperliquid/HIP-3 上的链上衍生品——涵盖加密货币、代币化股票、金属、游戏资产等。AQUA 将多元市场整合到一个统一的交易体验中。
-
-### 决策简化
-
-原生社交与 AI 功能——包括名人跟单/反向交易和 AI 代理策略——降低决策阻力，将发现直接转化为行动。用户无需成为专家，即可借助顶级交易者的智慧和 AI 驱动的策略。
-
-### 安全便捷
-
-移动优先设计，支持法币入金和社交登录的免助记词钱包，实现安全、低摩擦的交易体验。用户无需处理种子短语或复杂的钱包设置即可快速上手。
+AQUA 支持 Hyperliquid/HIP-3 上的全部链上衍生品交易——涵盖加密货币、代币化股票、金属、游戏资产等——具备交易所所有基础能力，包括实时图表、订单管理、持仓追踪和行情数据。用户可以一键跟单名人交易员或 AI 代理策略，接入 Hyperliquid Vaults 参与托管交易策略，并通过内置的推荐系统获取积分和返佣奖励。移动优先设计，支持法币入金和社交登录的免助记词钱包，实现安全、低摩擦的交易体验。
 
 ![](/assets/images/aquaex/aqua-ui.webp)
 
 ## 我的角色
 
-作为设计负责人和联合创始人，我的职责涵盖：
+作为联合创始人，我负责：
 
-- **品牌与视觉识别** — 创建 AQUA 品牌体系，包括标志、色彩体系、字体排印和视觉语言
-- **产品设计** — 设计从注册到交易的完整用户旅程，专注于简化复杂的衍生品交易流程
-- **移动优先体验** — 打造直观的移动端交易体验，在信息密度与易用性之间取得平衡
-- **社交交易功能** — 设计跟单/反向交易系统及社交发现流程
-- **Vibe Coding** — 通过 Vibe Coding 方式实现关键前端组件和营销页面
+- **产品创意** — 定义产品愿景，探索链上交易体验的创新方向
+- **功能定义** — 规划和确定交易、社交、注册等核心功能的范围与优先级
+- **UX 设计** — 设计端到端的用户体验，从信息架构到交互细节
+- **前端开发** — 构建关键前端组件和页面
+- **品牌营销** — 创建 AQUA 品牌体系并推动营销策略
 
 ## 合作伙伴
 
-AQUA 基于 Hyperliquid 构建，并集成 Privy 提供无缝的社交登录钱包基础设施。
+- [**Hyperliquid**](https://hyperliquid.xyz/) — 链上永续合约交易基础设施
+- [**TradingView**](https://www.tradingview.com/) — 专业 K 线图表与行情数据
+- [**Privy**](https://www.privy.io/) — 隐私保护的社交登录钱包基础设施
+- [**Olwy**](https://olwy.co/) — 跟单与跟投功能
 
 ## 状态
 
-AQUA 目前正在开发中，App Store 和 Google Play 即将上线。
+AQUA 已在 iOS 和 Android 上线。前往 [aquaex.io](https://www.aquaex.io/) 下载并开始交易吧。

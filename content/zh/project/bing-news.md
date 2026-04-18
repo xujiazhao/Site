@@ -2,7 +2,7 @@
 title: "必应新闻"
 date: "2026-02-16"
 intro: "帮人们打破信息茧房"
-sorting: 5
+sorting: 4
 coverImage: "/assets/cover-image/Bing News.webp"
 favicon: "/assets/favicon/Bing icon.webp"
 ---

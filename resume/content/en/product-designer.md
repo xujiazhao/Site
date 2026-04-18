@@ -12,11 +12,11 @@ label: "Product Designer"
 
 ## Core Competencies
 
-- **End-to-End Design & Design Systems:** Experienced in the full design cycle — from user research, interaction prototyping, and visual design to building and maintaining design systems — ensuring consistent expression and efficient product iteration.
-- **AI-Empowered Design:** Proficient in AI-native design workflows — leveraging Vibecoding for rapid prototyping and implementation, prompt engineering for creative exploration, and integrating LLM capabilities into product experiences from concept to delivery.
-- **User Research & Insight Generation:** Skilled at conducting interviews, usability testing, and data analysis to uncover user pain points and translate findings into actionable design solutions.
-- **Cross-Functional Team Management:** Proven ability to lead cross-functional teams of PM, engineers, and designers, driving design implementation in complex projects and enhancing overall value.
-- **Global Perspective:** Extensive experience designing international products across North America and Southeast Asia, with the ability to balance diverse user needs and cultural contexts.
+- **Full-stack Product Builder:** Capable of owning the entire product lifecycle independently — from ideation and feature definition to UX design and front-end development (React) — delivering pixel-perfect products from concept to production
+- **End-to-End Design & Design Systems:** Experienced in the full design cycle — from user research, interaction prototyping, and visual design to building and maintaining design systems — ensuring consistent expression and efficient product iteration
+- **AI-Empowered Design:** Proficient in AI-native design workflows — leveraging coding for rapid prototyping and implementation, prompt engineering for creative exploration, and integrating LLM capabilities into product experiences from concept to delivery
+- **Cross-Functional Team Leadership:** Proven ability to lead cross-functional teams of PM, engineers, and designers, driving design implementation in complex projects and enhancing overall value
+- **Global Perspective:** Extensive experience designing international products across North America, Southeast Asia, and Web3, with the ability to balance diverse user needs and cultural contexts
 
 ---
 
@@ -33,11 +33,16 @@ label: "Product Designer"
 - Contribute to Microsoft China design team Studio 8's communications, leading team brand building, internal/external outreach; including Peking University course collaboration and Microsoft Asia R&D Group annual event key visual design.
 - Drive Vibe Coding and various AI tools adoption within the design team, exploring new AI + Design workflows to boost design efficiency. Encourage designers to take on more PM responsibilities, expanding design's influence within the team. Simultaneously drive team tool and process optimization to holistically improve productivity and team well-being.
 
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">Dec 2025 – Present</span>
+
+- A Web3 mobile-first derivatives exchange built on Hyperliquid, supporting full perpetual trading, celebrity & AI copy trading, Hyperliquid Vaults, and referral rewards. Live on iOS and Android.
+- Sole product and design owner — drove product ideation, feature definition, UX design, and front-end development (React), delivering a pixel-perfect trading app from concept to production.
+- Built every screen end-to-end: defined all product features, designed the full user experience, and implemented the entire front end — demonstrating full-stack product-design-engineering capability.
+
 ### <img src="/assets/favicon/ant.svg" alt=""> Ant International — UX Designer <span class="resume-meta">Shanghai, Apr 2020 – Dec 2022</span>
 
 - Participated in Alipay+ global payment network design, covering user-side (mobile and desktop payment experience) and institutional-side (merchant onboarding website, help platform, developer integration flow, documentation center, and developer portal) full-cycle experience design.
 - Led payment experience design for Alipay users on Apple App Store, including payment method enrollment flow and the Alipay "Apple Zone" experience. Apple Zone provides Apple users with membership benefits, billing management, and other features to enhance brand affinity and user retention.
-- Designed payment experiences for Taobao Global and Tmall International in Southeast Asia, Taiwan, Hong Kong, and Macao, optimizing payment flows to improve convenience and success rates.
 - Led Ant Group's first Figma procurement and adoption plan, driving compliance, data security, and procurement process improvements for overseas SaaS tools, and managing Figma account and usage standards at the group level.
 
 ---
