@@ -124,18 +124,18 @@ export function SelfIntro({ lang }: Props) {
             </>
           )}
         </div>
-        <div className="inline-grid grid-cols-4 gap-3 text-sm" style={{ minWidth: 0 }}>
-          <Link href={`/${lang}/resume`} className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+        <div className="grid grid-cols-4 md:inline-flex md:flex-nowrap gap-3 text-sm">
+          <Link href={`/${lang}/resume`} className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
             {isEn ? "Resume" : "简历"}
           </Link>
-          <a href="mailto:hello@xujiazhao.com" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <a href="mailto:hello@xujiazhao.com" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
             {isEn ? "Email" : "发邮件"}
           </a>
-          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
             LinkedIn
           </a>
           <button
-            className="inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 cursor-pointer transition-colors duration-300"
+            className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 cursor-pointer transition-colors duration-300"
             onClick={handleWeChat}
           >
             {isEn ? "WeChat" : "微信"}
