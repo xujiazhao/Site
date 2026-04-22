@@ -1,12 +1,12 @@
 ---
-title: "许嘉昭 – 产品设计师"
+title: "许嘉昭 – 全栈设计师"
 variant: "product-designer"
-label: "产品设计"
+label: "全栈设计"
 ---
 
 # 许嘉昭
 
-**产品设计师** <span class="resume-contact">邮箱: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · 手机: 189-1016-3319 · 微信: xux-ai · 作品集: <a href="https://www.xux.ai">www.xux.ai</a></span>
+**全栈设计师** <span class="resume-contact">邮箱: <a href="mailto:hello@xujiazhao.com">hello@xujiazhao.com</a> · 手机: 189-1016-3319 · 微信: xux-ai · 作品集: <a href="https://www.xux.ai">www.xux.ai</a></span>
 
 ---
 
