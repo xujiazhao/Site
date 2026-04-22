@@ -47,7 +47,8 @@ export function SelfIntro({ lang }: Props) {
   // ✏️ Maintain your rotating titles here
   const rotatingTitles: { en: string; zh: string }[] = [
     { en: "UI Designer", zh: "UI 设计师" },
-    { en: "Vibe Coder", zh: "Vibe Coder" },
+    { en: "Marketing Expert", zh: "市场专家" },
+    { en: "AI-native Coder", zh: "AI 原生开发者" },
     { en: "PPT Expert", zh: "PPT 专家" },
     { en: "Educator", zh: "教育者" },
     { en: "Cat Lover", zh: "猫奴" },
@@ -65,7 +66,7 @@ export function SelfIntro({ lang }: Props) {
   }, [rotatingTitles.length]);
 
   const currentTitle = isEn ? rotatingTitles[titleIndex].en : rotatingTitles[titleIndex].zh;
-  const prefixText = isEn ? "Product Designer & " : "产品设计师 & ";
+  const prefixText = isEn ? "Full-stack Designer & " : "全栈设计师 & ";
 
   const handleWeChat = () => {
     if (window.innerWidth < 768) {
