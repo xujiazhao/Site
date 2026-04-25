@@ -1,7 +1,7 @@
 ---
 title: "许嘉昭 – 全栈设计师"
 variant: "product-designer"
-label: "全栈设计"
+label: "全栈设计师"
 ---
 
 # 许嘉昭

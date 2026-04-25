@@ -108,7 +108,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
       const dateStr = `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, '0')}`;
       const name = isEn ? "JiazhaoXu" : "许嘉昭";
       const roleMap: Record<string, string> = {
-        'product-designer': isEn ? 'ProductDesigner' : '产品设计师',
+        'product-designer': isEn ? 'FullStackDesigner' : '全栈设计师',
         'product-manager': isEn ? 'ProductManager' : '产品经理',
       };
       const role = roleMap[current.variant] || current.label;
