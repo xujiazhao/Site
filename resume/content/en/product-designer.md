@@ -33,7 +33,7 @@ label: "Full-Stack Designer"
 - Contribute to Microsoft China design team Studio 8's communications, leading team brand building, internal/external outreach; including Peking University course collaboration and Microsoft Asia R&D Group annual event key visual design.
 - Drive Vibe Coding and various AI tools adoption within the design team, exploring new AI + Design workflows to boost design efficiency. Encourage designers to take on more PM responsibilities, expanding design's influence within the team. Simultaneously drive team tool and process optimization to holistically improve productivity and team well-being.
 
-### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">Dec 2025 – Present</span>
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">[Parttime] Dec 2025 – Present</span>
 
 - A Web3 mobile-first derivatives exchange built on Hyperliquid, supporting full perpetual trading, celebrity & AI copy trading, Hyperliquid Vaults, and referral rewards. Live on iOS and Android.
 - Sole product and design owner — drove product ideation, feature definition, UX design, and front-end development (React), delivering a pixel-perfect trading app from concept to production.

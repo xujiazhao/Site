@@ -36,7 +36,7 @@ label: "产品经理"
 - **MSN 内容创作者工具**：为 3000+ 全球媒体伙伴打造 AI 辅助内容再创作工具，显著提升受众覆盖与用户参与度。
 - **MSN 投资助手**：提出并规划 AI 投资助手概念，定义用户流程与交互模型以支持个性化金融洞察。
 
-### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – 产品、设计与开发 <span class="resume-meta">2025.12 – 至今</span>
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – 产品、设计与开发 <span class="resume-meta">[兼职] 2025.12 – 至今</span>
 
 - 一款基于 Hyperliquid 构建的 Web3 移动优先衍生品交易所，支持全品类永续合约交易、名人与 AI 跟单、Hyperliquid Vaults 金库及推荐返佣。已上线 iOS 和 Android。
 - 独立负责产品与设计全流程——从产品构思、功能定义、UX 设计到前端开发（React），将像素级完美的交易应用从概念推进到上线。

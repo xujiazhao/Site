@@ -34,7 +34,7 @@ label: "全栈设计师"
 - 推动 Vibe Coding 与各类 AI 工具在设计团队的落地，探索 AI + 设计 的新工作模式，提升设计效率。鼓励设计师承担更多产品经理职能，扩大设计在团队中的影响力。同时推动团队工具与流程优化，全面提升产能与团队幸福感。
 
 
-### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – 产品、设计与开发 <span class="resume-meta">2025.12 – 至今</span>
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – 产品、设计与开发 <span class="resume-meta">[兼职] 2025.12 – 至今</span>
 
 - 一款基于 Hyperliquid 构建的 Web3 移动优先衍生品交易所，支持全品类永续合约交易、名人与 AI 跟单、Hyperliquid Vaults 金库及推荐返佣。已上线 iOS 和 Android。
 - 独立负责产品与设计全流程——从产品构思、功能定义、UX 设计到前端开发（React），将像素级完美的交易应用从概念推进到上线。

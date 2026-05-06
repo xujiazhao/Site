@@ -36,7 +36,7 @@ label: "Product Manager"
 - **MSN Content Creator**: Built AI-assisted content remixing tools for the MSN Partner Hub platform, enabling 3,000+ global media partners to increase audience reach and engagement.
 - **MSN Money Assistant**: Proposed and scoped an AI investment assistant concept, defining user flows and interaction models to support personalized financial insights.
 
-### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">Dec 2025 – Present</span>
+### <img src="/assets/favicon/aqua-icon.webp" alt=""> AQUA Exchange – Product, Design & Development <span class="resume-meta">[Parttime] Dec 2025 – Present</span>
 
 - A Web3 mobile-first derivatives exchange built on Hyperliquid, supporting full perpetual trading, celebrity & AI copy trading, Hyperliquid Vaults, and referral rewards. Live on iOS and Android.
 - Sole product and design owner — drove product ideation, feature definition, UX design, and front-end development (React), delivering a pixel-perfect trading app from concept to production.
