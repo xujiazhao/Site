@@ -129,10 +129,10 @@ export function SelfIntro({ lang }: Props) {
             {isEn ? "Resume" : "简历"}
           </Link>
           <a href="mailto:hello@xujiazhao.com" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
-            {isEn ? "Email" : "发邮件"}
+            {isEn ? "Email" : "邮件"}
           </a>
           <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
-            LinkedIn
+            {isEn ? "LinkedIn" : "领英"}
           </a>
           <button
             className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 cursor-pointer transition-colors duration-300"
