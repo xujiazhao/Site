@@ -31,12 +31,12 @@ export function MediaSkeleton({ children }: { children: React.ReactNode }) {
       const src = iframe.src || iframe.getAttribute("data-src") || "";
       if (!isBlockedSrc(src)) return;
 
-      // Set a timeout: if the iframe hasn't loaded within 8s, show fallback
+      // Set a timeout: if the iframe hasn't loaded within 15s, show fallback
       const timer = setTimeout(() => {
         if (!iframe.dataset.loaded) {
           showBlockedOverlay(iframe);
         }
-      }, 8000);
+      }, 15000);
 
       iframe.addEventListener("load", () => {
         iframe.dataset.loaded = "1";
