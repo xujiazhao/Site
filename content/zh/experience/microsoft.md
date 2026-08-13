@@ -1,6 +1,6 @@
 ---
 title: "微软"
-dateRange: "2023.1 - Now"
+dateRange: "2023.1 - 2026.6"
 intro: "All in AI"
 type: "全职"
 area: ["*AI", "*团队管理", "*B端", "*C端", "产品设计", "UI设计", "全球业务", "设计系统"]

@@ -6,7 +6,7 @@ type: "创业"
 area: ["*创始人", "公众教育", "青少年活动"]
 location: "北京"
 coverImage: "/assets/cover-image/bjmun.webp"
-favicon: "/assets/favicon/bjmun.webp"
+favicon: "/assets/favicon/bjmun.svg"
 sorting: 1
 ---
 

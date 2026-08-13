@@ -22,7 +22,11 @@ label: "全栈设计师"
 
 ## 工作经历
 
-### <img src="/assets/favicon/msft.svg" alt=""> 微软 - 高级产品设计师 / Copilot 播客产品负责人 <span class="resume-meta">北京, 2023.01 – 至今</span>
+### <img src="/assets/favicon/netease.webp" alt=""> 网易互娱 - 高级 AI 体验设计架构师 <span class="resume-meta">广东, 2026.06 – 至今</span>
+
+- 推动设计工作流的 AI 原生转型，并构建 AI 驱动的游戏体验系统，涵盖智能体交互、内容生成流水线与下一代玩家体验设计。
+
+### <img src="/assets/favicon/msft.svg" alt=""> 微软 - 高级产品设计师 / Copilot 播客产品负责人 <span class="resume-meta">北京, 2023.01 – 2026.06</span>
 
 - **Copilot 播客产品：**从 0 到 1 发起并主导该项目，将播客能力引入微软 Copilot。管理由 1 名 PM、3 名工程师及外部贡献者组成的跨职能团队，全权负责产品路线图、功能优先级与迭代计划，直接向 Copilot CVP 汇报。
 - 负责微软内容生态的全链路产品设计工作，覆盖 B 端到 C 端、从内容入驻到内容分发的完整闭环，通过设计驱动用户体验与平台营收的双重提升：

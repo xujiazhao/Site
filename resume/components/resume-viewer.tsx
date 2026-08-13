@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback, useMemo } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 interface ResumeVariant {
   variant: string;
@@ -12,38 +12,25 @@ interface ResumeVariant {
 interface ResumeViewerProps {
   variants: ResumeVariant[];
   lang: string;
-  allVariants: {
-    en: ResumeVariant[];
-    zh: ResumeVariant[];
-  };
 }
 
-export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps) {
-  const [currentLang, setCurrentLang] = useState(lang);
-
-  // Restore variant selection from localStorage
-  const initialVariantIndex = useMemo(() => {
-    if (typeof window === 'undefined') return 0;
-    const saved = localStorage.getItem('resume-variant');
-    if (saved) {
-      const currentVars = lang === 'en' ? allVariants.en : allVariants.zh;
-      const idx = currentVars.findIndex(v => v.variant === saved);
-      if (idx >= 0) return idx;
-    }
-    return 0;
-  }, []);
-
-  const [activeVariant, setActiveVariant] = useState(initialVariantIndex);
+export function ResumeViewer({ variants, lang }: ResumeViewerProps) {
+  const [activeVariant, setActiveVariant] = useState(0);
   const [downloading, setDownloading] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const resumeRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentVariants = currentLang === "en" ? allVariants.en : allVariants.zh;
-  const current = currentVariants[activeVariant] || currentVariants[0];
+  const current = variants[activeVariant] || variants[0];
 
-  const isEn = currentLang === "en";
+  const isEn = lang === "en";
   const paperClass = isEn ? "resume-paper-letter" : "resume-paper-a4";
+
+  useEffect(() => {
+    const saved = localStorage.getItem("resume-variant");
+    const savedIndex = variants.findIndex((variant) => variant.variant === saved);
+    if (savedIndex >= 0) setActiveVariant(savedIndex);
+  }, [variants]);
 
   // Calculate scale for mobile to fit paper in viewport
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -89,7 +76,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
     if (downloading) return;
     setDownloading(true);
     const variant = current.variant;
-    const url = `/api/resume-pdf?lang=${currentLang}&variant=${variant}`;
+    const url = `/api/resume-pdf?lang=${lang}&variant=${variant}`;
     
     try {
       const controller = new AbortController();
@@ -134,7 +121,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className="flex items-center gap-1.5 h-9 px-3 rounded-xl border border-neutral-300 cursor-pointer select-none text-sm font-medium text-neutral-900 hover:bg-neutral-100 whitespace-nowrap"
+              className="flex h-9 cursor-pointer select-none items-center gap-1.5 whitespace-nowrap rounded-xl border border-neutral-300 px-3 text-sm font-medium text-neutral-900 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"
               style={{ transition: "background 150ms ease" }}
               aria-haspopup="listbox"
               aria-expanded={dropdownOpen}
@@ -150,7 +137,7 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-neutral-400"
+                className="text-neutral-400 dark:text-neutral-500"
                 style={{ transition: "transform 200ms ease", transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
               >
                 <polyline points="6 9 12 15 18 9" />
@@ -159,10 +146,10 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
             {dropdownOpen && (
               <ul
                 role="listbox"
-                className="absolute left-0 top-[calc(100%+4px)] min-w-[140px] py-1 rounded-xl bg-white border border-neutral-200 shadow-lg z-50 hover:border-neutral-300"
+                className="absolute left-0 top-[calc(100%+4px)] z-50 min-w-[140px] rounded-xl border border-neutral-200 bg-white py-1 shadow-lg hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600"
                 style={{ transition: "border-color 150ms ease" }}
               >
-                {currentVariants.map((v, i) => (
+                {variants.map((v, i) => (
                   <li
                     key={v.variant}
                     role="option"
@@ -174,8 +161,8 @@ export function ResumeViewer({ variants, lang, allVariants }: ResumeViewerProps)
                     }}
                     className={`flex items-center gap-2 mx-1 px-2 py-1.5 rounded-lg text-sm cursor-pointer select-none whitespace-nowrap ${
                       i === activeVariant
-                        ? "text-neutral-900 font-medium bg-neutral-100"
-                        : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
+                        ? "bg-neutral-100 font-medium text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100"
+                        : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                     }`}
                     style={{ transition: "background 120ms ease, color 120ms ease" }}
                   >

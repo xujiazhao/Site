@@ -1,81 +1,20 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getAllItems, getItemBySlug } from "@/lib/api";
-import { CMS_NAME } from "@/lib/constants";
-import markdownToHtml from "@/lib/markdownToHtml";
-import Container from "@/app/_components/container";
-import { PostBody } from "@/app/_components/post-body";
-import { PostHeader } from "@/app/_components/post-header";
+import { ContentDetailPage } from "@/app/_components/content-detail-page";
+import { getContentMetadata, getContentStaticParams } from "@/lib/content-page";
 
-// Separate type since params are passed by Next.js
-type Params = {
-  params: {
-    slug: string;
-    lang: string;
-  };
+type Props = {
+  params: Promise<{ lang: string; slug: string }>;
 };
 
-export default async function Post({ params }: Params) {
-  const post = getItemBySlug("experience", params.slug, params.lang);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const content = await markdownToHtml(post.content || "");
-
-  return (
-    <main>
-      <Container>
-        <article className="mb-12">
-          <PostHeader
-            title={post.title}
-            date={post.date}
-            favicon={post.favicon}
-            type={post.type}
-            typeBadge={false}
-            area={post.area}
-            dateRange={post.dateRange}
-            location={post.location}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container>
-    </main>
-  );
+export default async function ExperiencePage({ params }: Props) {
+  const { lang, slug } = await params;
+  return <ContentDetailPage collection="experience" lang={lang} slug={slug} />;
 }
 
-export function generateMetadata({ params }: Params): Metadata {
-  const post = getItemBySlug("experience", params.slug, params.lang);
-
-  if (!post) {
-    return notFound();
-  }
-
-  const title = post.title;
-  const description = post.intro || post.excerpt || `${post.title} – Experience by ${CMS_NAME}`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title: `${title} | ${CMS_NAME}`,
-      description,
-      images: post.ogImage.url ? [post.ogImage.url] : [],
-    },
-  };
+export async function generateMetadata({ params }: Props) {
+  const { lang, slug } = await params;
+  return getContentMetadata("experience", slug, lang);
 }
 
-export async function generateStaticParams() {
-  const langs = ['en', 'zh'];
-  const params: { lang: string; slug: string }[] = [];
-  
-  for (const lang of langs) {
-    const posts = getAllItems("experience", lang); 
-    posts.forEach((post) => {
-       params.push({ lang, slug: post.slug });
-    });
-  }
-
-  return params;
+export function generateStaticParams() {
+  return getContentStaticParams("experience");
 }

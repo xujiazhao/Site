@@ -6,7 +6,7 @@ type: "Start-up"
 area: ["*Founder", "Public Education", "Teenager"]
 location: "Beijing"
 coverImage: "/assets/cover-image/bjmun.webp"
-favicon: "/assets/favicon/bjmun.webp"
+favicon: "/assets/favicon/bjmun.svg"
 sorting: 1
 ---
 

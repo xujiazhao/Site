@@ -1,16 +1,16 @@
 # xujiazhao.com
 
-Personal portfolio site for Jiazhao Xu (许嘉昭) — designer at Microsoft.
+Personal portfolio site for Jiazhao Xu (许嘉昭) — Senior AI Experience Design Architect at NetEase Games.
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 15 (App Router)
 - **Styling**: Tailwind CSS
 - **Content**: Markdown with gray-matter frontmatter
 - **CMS**: [Pages CMS](https://pagescms.org) for content management
 - **Fonts**: Barlow (English), system default (Chinese)
 - **i18n**: English (`/en`) and Chinese (`/zh`)
-- **Chat**: OpenAI-powered chatbot (`/api/chat`)
+- **Chat**: DeepSeek-powered chatbot (`/api/chat`)
 - **Resume PDF**: Server-side PDF generation via Puppeteer (`/api/resume-pdf`)
 
 ## Structure
@@ -50,7 +50,11 @@ npm run build   # Production build
 npm run start   # Start production server
 ```
 
-Requires a `.env.local` file with API keys (e.g., OpenAI key for the chat feature).
+The chat feature requires `DEEPSEEK_API_KEY` in `.env.local`. It uses
+`deepseek-v4-flash` by default; set `DEEPSEEK_MODEL` only when you need to
+override the model. The API keeps the latest 10 conversation rounds as context
+and allows 10 model-backed rounds per conversation and per IP per hour before
+returning the WeChat and email contact prompt.
 
 ## Content Management
 
@@ -61,7 +65,7 @@ Content is managed via Markdown files with frontmatter. Use [Pages CMS](https://
 1. **Projects, Writings, Experiences, Creations** — Edit or create `.md` files in `content/en/` and `content/zh/`. Each file needs frontmatter with `title`, `date`, `intro`, `coverImage`, `favicon`, and optionally `sorting` (higher = displayed first for projects/experiences).
 2. **Resumes** — Edit `resume/content/en/*.md` and `resume/content/zh/*.md`. Resumes use HTML within markdown for precise layout control (icons, meta spans, etc.).
 3. **Images** — Place images in `public/assets/images/{project-name}/`. Use `.webp` format for optimized loading. Convert from PNG if needed: `cwebp input.png -o output.webp -q 85`.
-4. **Chatbot prompt** — Update the `SYSTEM_PROMPT` in `src/app/api/chat/route.ts` when project info changes.
+4. **Chatbot prompt** — Update the `SYSTEM_PROMPT` in `src/app/api/chat/route.ts` when project or experience information changes.
 
 ### Content Ordering
 

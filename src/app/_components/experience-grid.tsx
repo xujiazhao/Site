@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import Link from "next/link";
+import { useState } from "react";
 
 type Experience = {
   slug: string;
@@ -25,58 +25,41 @@ const ROW_H = "h-10"; // fixed row height to sync pinned & scrollable columns
 const HEADER_H = "h-8";
 
 export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
-  const router = useRouter();
-
-  const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const cell = (e.target as HTMLElement).closest<HTMLElement>("[data-href]");
-    if (cell) router.push(cell.dataset.href!);
-  }, [router]);
-
-  const handleMouseOver = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const cell = (e.target as HTMLElement).closest<HTMLElement>("[data-row]");
-    if (cell) {
-      document.querySelectorAll(`[data-row="${cell.dataset.row}"]`).forEach(el => {
-        el.classList.add("!bg-neutral-100");
-      });
-    }
-  }, []);
-
-  const handleMouseOut = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    const cell = (e.target as HTMLElement).closest<HTMLElement>("[data-row]");
-    if (cell) {
-      document.querySelectorAll(`[data-row="${cell.dataset.row}"]`).forEach(el => {
-        el.classList.remove("!bg-neutral-100");
-      });
-    }
-  }, []);
+  const [hoveredRow, setHoveredRow] = useState<string | null>(null);
 
   return (
     <div
-      className="flex text-base whitespace-nowrap"
-      onClick={handleClick}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      className="flex bg-white text-base whitespace-nowrap dark:bg-neutral-950"
+      onMouseOver={(event) => {
+        const cell = (event.target as HTMLElement).closest<HTMLElement>("[data-row]");
+        if (cell?.dataset.row) setHoveredRow(cell.dataset.row);
+      }}
+      onMouseLeave={() => setHoveredRow(null)}
     >
       {/* ===== Pinned left column (outside scroll container) ===== */}
-      <div className="flex-shrink-0 bg-white z-10">
+      <div className="z-10 flex-shrink-0 bg-white dark:bg-neutral-950">
         {/* Header */}
-        <div className={`${HEADER_H} flex items-center pr-2 font-semibold text-neutral-500 border-b`}>
+        <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-2 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
           {icon}
           <span className="hidden md:inline ml-1.5">{isEn ? "Name" : "名称"}</span>
         </div>
         {/* Rows */}
         {experiences.map((exp) => (
-          <div
+          <Link
             key={exp.slug}
-            data-href={`/${lang}/experience/${exp.slug}`}
+            href={`/${lang}/experience/${exp.slug}`}
             data-row={exp.slug}
-            className={`${ROW_H} flex items-center pr-2 font-semibold border-b border-neutral-100 bg-white cursor-pointer transition-colors duration-300`}
+            className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-2 font-semibold transition-[background-color] duration-300 dark:border-neutral-800 ${
+              hoveredRow === exp.slug
+                ? "bg-neutral-100 dark:bg-neutral-800"
+                : "bg-white dark:bg-neutral-950"
+            }`}
           >
             {exp.favicon && (
               <img src={exp.favicon} alt="" className="w-4 h-4 flex-shrink-0" />
             )}
             <span className="hidden md:inline ml-1.5">{exp.title}</span>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -84,19 +67,19 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
       <div className="overflow-x-auto flex-1 min-w-0">
         <div className="exp-scroll-grid">
           {/* Header */}
-          <div className={`${HEADER_H} flex items-center pr-5 font-semibold text-neutral-500 border-b md:hidden`}>
+          <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-5 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400 md:hidden`}>
             {isEn ? "Name" : "名称"}
           </div>
-          <div className={`${HEADER_H} flex items-center pr-5 font-semibold text-neutral-500 border-b`}>
+          <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-5 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
             {isEn ? "Time Range" : "时间"}
           </div>
-          <div className={`${HEADER_H} flex items-center pr-5 font-semibold text-neutral-500 border-b`}>
+          <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-5 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
             {isEn ? "Location" : "地点"}
           </div>
-          <div className={`${HEADER_H} flex items-center pr-5 font-semibold text-neutral-500 border-b`}>
+          <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-5 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
             {isEn ? "Type" : "类型"}
           </div>
-          <div className={`${HEADER_H} flex items-center pr-2 font-semibold text-neutral-500 border-b`}>
+          <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-2 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
             {isEn ? "Area" : "领域"}
           </div>
 
@@ -104,43 +87,43 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
           {experiences.map((exp) => {
             const href = `/${lang}/experience/${exp.slug}`;
             return [
-              <div
+              <Link
                 key={`${exp.slug}-name`}
-                data-href={href}
+                href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex items-center pr-5 font-semibold border-b border-neutral-100 cursor-pointer transition-colors duration-300 md:hidden`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 font-semibold transition-[background-color] duration-300 dark:border-neutral-800 md:hidden ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
               >
                 {exp.title}
-              </div>,
-              <div
+              </Link>,
+              <Link
                 key={`${exp.slug}-date`}
-                data-href={href}
+                href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex items-center pr-5 text-neutral-600 border-b border-neutral-100 cursor-pointer transition-colors duration-300`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
               >
                 {exp.dateRange || exp.date}
-              </div>,
-              <div
+              </Link>,
+              <Link
                 key={`${exp.slug}-loc`}
-                data-href={href}
+                href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex items-center pr-5 text-neutral-600 border-b border-neutral-100 cursor-pointer transition-colors duration-300`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
               >
                 {exp.location}
-              </div>,
-              <div
+              </Link>,
+              <Link
                 key={`${exp.slug}-type`}
-                data-href={href}
+                href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex items-center pr-5 text-neutral-600 border-b border-neutral-100 cursor-pointer transition-colors duration-300`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
               >
                 {exp.type}
-              </div>,
-              <div
+              </Link>,
+              <Link
                 key={`${exp.slug}-area`}
-                data-href={href}
+                href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex items-center pr-2 border-b border-neutral-100 cursor-pointer transition-colors duration-300`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-2 transition-[background-color] duration-300 dark:border-neutral-800 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
               >
                 {exp.area && exp.area.length > 0 && (
                   <div className="flex gap-1">
@@ -152,8 +135,8 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                           key={tag}
                           className={`inline-block text-sm font-medium px-2 py-0.5 rounded-lg ${
                             isHighlighted
-                              ? "bg-neutral-800 text-white"
-                              : "bg-neutral-200 text-neutral-600"
+                              ? "bg-neutral-800 text-white dark:bg-neutral-100 dark:text-neutral-900"
+                              : "bg-neutral-200 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
                           }`}
                         >
                           {label}
@@ -162,7 +145,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                     })}
                   </div>
                 )}
-              </div>,
+              </Link>,
             ];
           })}
         </div>

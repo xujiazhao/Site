@@ -27,7 +27,7 @@ export function WritingSection({ writings, lang, isEn }: Props) {
   }, [extra.length]);
 
   const renderItem = (post: Post) => (
-    <Link key={post.slug} href={`/${lang}/writing/${post.slug}`} className="group grid grid-cols-subgrid col-span-3 items-baseline border-b border-neutral-100 py-2 hover:bg-neutral-100 transition-colors duration-300">
+    <Link key={post.slug} href={`/${lang}/writing/${post.slug}`} className="group col-span-3 grid grid-cols-subgrid items-baseline border-b border-neutral-100 py-2 transition-colors duration-300 hover:bg-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900">
       <div className="min-w-0 mr-3">
         <h3 className="text-base font-semibold group-hover:underline">
           {post.title}
@@ -35,10 +35,10 @@ export function WritingSection({ writings, lang, isEn }: Props) {
       </div>
       <div className="flex items-baseline justify-end">
         {post.type && (
-          <span className="inline-block text-sm font-medium px-2 py-0.5 rounded-lg bg-neutral-200 text-neutral-600">{post.type}</span>
+          <span className="inline-block rounded-lg bg-neutral-200 px-2 py-0.5 text-sm font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">{post.type}</span>
         )}
       </div>
-      <span className="text-neutral-600 text-base whitespace-nowrap text-right">
+      <span className="whitespace-nowrap text-right text-base text-neutral-600 dark:text-neutral-400">
         <DateFormatter dateString={post.date} lang={lang} />
       </span>
     </Link>
@@ -71,7 +71,7 @@ export function WritingSection({ writings, lang, isEn }: Props) {
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setExpanded(!expanded)}
-              className="flex items-center gap-1.5 text-base text-neutral-500 hover:text-neutral-800 transition-colors duration-300"
+              className="flex items-center gap-1.5 text-base text-neutral-500 transition-colors duration-300 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
             >
               {expanded
                 ? (isEn ? "Show less" : "收起")

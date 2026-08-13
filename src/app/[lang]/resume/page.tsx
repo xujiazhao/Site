@@ -3,10 +3,21 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import { ResumeViewer } from "@resume/components/resume-viewer";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Resume",
-  description: "Jiazhao Xu's Resume – Product Designer & Product Manager",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const isEn = lang === "en";
+
+  return {
+    title: isEn ? "Resume" : "简历",
+    description: isEn
+      ? "Jiazhao Xu's resume – AI Experience Designer, Product Designer, and Product Manager"
+      : "许嘉昭的简历 – AI 体验设计师、产品设计师与产品经理",
+  };
+}
 
 async function getProcessedResumes(lang: string) {
   const resumes = getAllResumes(lang);
@@ -21,21 +32,16 @@ async function getProcessedResumes(lang: string) {
 export default async function ResumePage({
   params,
 }: {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }) {
-  const [enResumes, zhResumes] = await Promise.all([
-    getProcessedResumes("en"),
-    getProcessedResumes("zh"),
-  ]);
-
-  const currentResumes = params.lang === "en" ? enResumes : zhResumes;
+  const { lang } = await params;
+  const currentResumes = await getProcessedResumes(lang);
 
   return (
-    <main className="resume-page">
+    <main className="resume-page" data-page-language={lang}>
       <ResumeViewer
         variants={currentResumes}
-        lang={params.lang}
-        allVariants={{ en: enResumes, zh: zhResumes }}
+        lang={lang}
       />
     </main>
   );

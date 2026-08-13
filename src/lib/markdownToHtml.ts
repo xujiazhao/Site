@@ -14,7 +14,6 @@ export default async function markdownToHtml(markdown: string) {
       const colRegex = /:::col-(\d+)\s*\n([\s\S]*?):::/g;
       const columns: { start: number; end: number; content: string }[] = [];
       let match;
-      let lastEnd = 0;
 
       while ((match = colRegex.exec(innerBlock)) !== null) {
         const colNum = parseInt(match[1]);
@@ -30,7 +29,6 @@ export default async function markdownToHtml(markdown: string) {
         }
 
         columns.push({ start: colNum, end: 0, content });
-        lastEnd = colNum;
       }
 
       // Set the last column's end to its start (span 1) if not set
@@ -82,10 +80,7 @@ export default async function markdownToHtml(markdown: string) {
         .map(p => `<p>${p.trim()}</p>`)
         .join('\n');
 
-      // Check if icon is an <img> tag or emoji text
-      const iconHtml = firstLine.startsWith('<img')
-        ? `<span class="aside-icon">${firstLine}</span>`
-        : `<span class="aside-icon">${firstLine}</span>`;
+      const iconHtml = `<span class="aside-icon">${firstLine}</span>`;
 
       return `<aside>${iconHtml}<div class="aside-content">${paragraphs}</div></aside>`;
     }

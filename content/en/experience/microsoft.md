@@ -1,6 +1,6 @@
 ---
 title: "Microsoft"
-dateRange: "2023.1 - Now"
+dateRange: "2023.1 - 2026.6"
 intro: "All in AI"
 type: "Full-time"
 area: ["*AI", "*Team Management", "Content Service", "Product Design", "Cross-border Collaboration", "Global Market"]

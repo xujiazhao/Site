@@ -1,8 +1,10 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { isLanguage } from "@/lib/i18n";
 
 const resumeContentDir = join(process.cwd(), "resume", "content");
+const SAFE_VARIANT = /^[a-z0-9][a-z0-9-]*$/;
 
 export interface ResumeData {
   variant: string;
@@ -13,6 +15,8 @@ export interface ResumeData {
 }
 
 export function getResumeVariants(lang: string): string[] {
+  if (!isLanguage(lang)) return [];
+
   const dir = join(resumeContentDir, lang);
   if (!fs.existsSync(dir)) return [];
   return fs
@@ -25,6 +29,8 @@ export function getResumeByVariant(
   lang: string,
   variant: string
 ): ResumeData | null {
+  if (!isLanguage(lang) || !SAFE_VARIANT.test(variant)) return null;
+
   const fullPath = join(resumeContentDir, lang, `${variant}.md`);
   if (!fs.existsSync(fullPath)) return null;
 

@@ -20,4 +20,5 @@ export type Post = {
   skill?: string[];
   favicon?: string;
   firstImage?: string;
+  lastModified: string;
 };

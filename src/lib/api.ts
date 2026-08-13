@@ -1,36 +1,84 @@
 import { Post } from "@/interfaces/post";
+import { isLanguage } from "@/lib/i18n";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
 const contentDirectory = join(process.cwd(), "content");
+const SAFE_SLUG = /^[a-z0-9][a-z0-9-]*$/;
 
-// Collections that support both shared (content/{collection}/) and language-specific (content/{lang}/{collection}/) files
-const hybridCollections = ['creation'];
+export const CONTENT_COLLECTIONS = [
+  "creation",
+  "experience",
+  "project",
+  "writing",
+] as const;
 
-export function getSlugs(collection: string, lang: string) {
+export type ContentCollection = (typeof CONTENT_COLLECTIONS)[number];
+
+// Collections that support both shared (content/{collection}/) and
+// language-specific (content/{lang}/{collection}/) files.
+const HYBRID_COLLECTIONS = new Set<ContentCollection>(["creation"]);
+
+function getMarkdownSlugs(directory: string): string[] {
+  if (!fs.existsSync(directory)) return [];
+
+  return fs
+    .readdirSync(directory, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+    .map((entry) => entry.name.replace(/\.md$/, ""))
+    .filter((slug) => SAFE_SLUG.test(slug))
+    .sort();
+}
+
+function normalizeDate(value: unknown, fallback: Date): string {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString();
+  }
+
+  if (typeof value === "string" && !Number.isNaN(Date.parse(value))) {
+    return value;
+  }
+
+  return fallback.toISOString();
+}
+
+function asString(value: unknown, fallback = ""): string {
+  return typeof value === "string" ? value : fallback;
+}
+
+function asStringArray(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === "string")
+    : [];
+}
+
+export function getSlugs(collection: ContentCollection, lang: string): string[] {
+  if (!isLanguage(lang)) return [];
+
   const langDir = join(contentDirectory, lang, collection);
   const sharedDir = join(contentDirectory, collection);
 
-  if (hybridCollections.includes(collection)) {
-    const langSlugs = fs.existsSync(langDir) ? fs.readdirSync(langDir) : [];
-    const sharedSlugs = fs.existsSync(sharedDir) ? fs.readdirSync(sharedDir) : [];
-    // Lang-specific files take priority over shared ones with the same slug
+  if (HYBRID_COLLECTIONS.has(collection)) {
+    const langSlugs = getMarkdownSlugs(langDir);
+    const sharedSlugs = getMarkdownSlugs(sharedDir);
     const langSet = new Set(langSlugs);
-    const mergedSlugs = [...langSlugs, ...sharedSlugs.filter(s => !langSet.has(s))];
-    return mergedSlugs;
+    return [...langSlugs, ...sharedSlugs.filter((slug) => !langSet.has(slug))];
   }
 
-  const dir = join(contentDirectory, lang, collection);
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir);
+  return getMarkdownSlugs(langDir);
 }
 
-export function getItemBySlug(collection: string, slug: string, lang: string) {
+export function getItemBySlug(
+  collection: ContentCollection,
+  slug: string,
+  lang: string,
+): Post | null {
   const realSlug = slug.replace(/\.md$/, "");
+  if (!isLanguage(lang) || !SAFE_SLUG.test(realSlug)) return null;
 
   let fullPath: string;
-  if (hybridCollections.includes(collection)) {
+  if (HYBRID_COLLECTIONS.has(collection)) {
     const langPath = join(contentDirectory, lang, collection, `${realSlug}.md`);
     const sharedPath = join(contentDirectory, collection, `${realSlug}.md`);
     fullPath = fs.existsSync(langPath) ? langPath : sharedPath;
@@ -42,39 +90,45 @@ export function getItemBySlug(collection: string, slug: string, lang: string) {
 
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+  const lastModified = fs.statSync(fullPath).mtime;
+  const coverImage = asString(data.coverImage);
+  const ogImageUrl =
+    typeof data.ogImage?.url === "string" ? data.ogImage.url : coverImage;
 
   const post: Post = {
     slug: realSlug,
-    title: data.title || 'Untitled',
-    date: data.date || new Date().toISOString(),
-    coverImage: data.coverImage || '',
-    excerpt: data.excerpt || '',
-    ogImage: data.ogImage || { url: data.coverImage || '' },
+    title: asString(data.title, "Untitled"),
+    date: normalizeDate(data.date, lastModified),
+    coverImage,
+    excerpt: asString(data.excerpt),
+    ogImage: { url: ogImageUrl },
     content,
-    preview: data.preview || false,
-    intro: data.intro || '',
-    location: data.location || '',
-    dateRange: data.dateRange || '',
-    type: data.type || '',
-    sorting: data.sorting || 0,
-    area: data.area || [],
-    skill: data.skill || [],
-    favicon: data.favicon || '',
+    preview: data.preview === true,
+    intro: asString(data.intro),
+    location: asString(data.location),
+    dateRange: asString(data.dateRange),
+    type: asString(data.type),
+    sorting: typeof data.sorting === "number" ? data.sorting : 0,
+    area: asStringArray(data.area),
+    skill: asStringArray(data.skill),
+    favicon: asString(data.favicon),
     firstImage: (() => {
       const match = content.match(/!\[.*?\]\((.*?)\)/);
-      return data.coverImage || (match ? match[1] : '');
+      return coverImage || match?.[1] || "";
     })(),
+    lastModified: lastModified.toISOString(),
   };
 
   return post;
 }
 
-export function getAllItems(collection: string, lang: string): Post[] {
+export function getAllItems(collection: ContentCollection, lang: string): Post[] {
   const slugs = getSlugs(collection, lang);
-  const posts = slugs
+  return slugs
     .map((slug) => getItemBySlug(collection, slug, lang))
     .filter((post): post is Post => post !== null)
-    // Sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+    .sort((a, b) => {
+      const dateDifference = Date.parse(b.date) - Date.parse(a.date);
+      return dateDifference || a.slug.localeCompare(b.slug);
+    });
 }

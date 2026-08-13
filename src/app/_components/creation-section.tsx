@@ -51,7 +51,7 @@ export function CreationSection({ creations, lang, isEn }: Props) {
             {post.skill.map((tag) => (
               <span
                 key={tag}
-                className="inline-block text-xs font-medium px-1.5 py-0.5 rounded-md bg-neutral-200 text-neutral-600"
+                className="inline-block rounded-md bg-neutral-200 px-1.5 py-0.5 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
               >
                 {tag}
               </span>
@@ -79,7 +79,7 @@ export function CreationSection({ creations, lang, isEn }: Props) {
         <div className="flex justify-center mt-6">
           <button
             onClick={handleToggle}
-            className="flex items-center gap-1.5 text-base text-neutral-500 hover:text-neutral-800 transition-colors duration-300"
+            className="flex items-center gap-1.5 text-base text-neutral-500 transition-colors duration-300 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
           >
             {showArchive
               ? (isEn ? "Hide earlier works" : "收起早期作品")

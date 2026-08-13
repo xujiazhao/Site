@@ -45,29 +45,14 @@ export function MobilePreviewScaler() {
 
         // Create play overlay
         const overlay = document.createElement("div");
-        overlay.style.cssText = `
-          position: absolute; inset: 0; display: flex; align-items: center;
-          justify-content: center; cursor: pointer; background: rgba(0,0,0,0.03);
-          border-radius: inherit; z-index: 5; transition: background 0.2s;
-        `;
+        overlay.className = "mobile-preview-overlay";
         overlay.innerHTML = `
-          <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(0,0,0,0.7);
-            display: flex; align-items: center; justify-content: center; transition: transform 0.2s;">
+          <div class="mobile-preview-play">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
               <path d="M8 5v14l11-7z"/>
             </svg>
           </div>
         `;
-        overlay.addEventListener("mouseenter", () => {
-          overlay.style.background = "rgba(0,0,0,0.06)";
-          const btn = overlay.querySelector("div") as HTMLElement;
-          if (btn) btn.style.transform = "scale(1.1)";
-        });
-        overlay.addEventListener("mouseleave", () => {
-          overlay.style.background = "rgba(0,0,0,0.03)";
-          const btn = overlay.querySelector("div") as HTMLElement;
-          if (btn) btn.style.transform = "scale(1)";
-        });
 
         container.appendChild(overlay);
 

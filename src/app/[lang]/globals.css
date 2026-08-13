@@ -64,6 +64,10 @@
 .markdown figure figcaption {
   @apply text-sm text-neutral-400 mt-2;
 }
+
+.dark .markdown figure figcaption {
+  @apply text-neutral-500;
+}
 .markdown a {
   color: #EE9933;
   @apply underline;
@@ -122,10 +126,30 @@
 
 @layer base {
   :root {
+    --font-barlow: "Barlow";
     --md-border: theme('colors.neutral.200');
     --md-border-blockquote: theme('colors.neutral.800');
     --md-bg-th: theme('colors.neutral.50');
     --md-bg-aside: theme('colors.neutral.50');
+    --skeleton-base: theme('colors.neutral.200');
+    --skeleton-highlight: theme('colors.neutral.100');
+    --media-overlay-bg: rgba(245, 245, 245, 0.95);
+    --media-overlay-fg: theme('colors.neutral.500');
+    --preview-overlay-bg: rgba(0, 0, 0, 0.03);
+    --preview-overlay-hover: rgba(0, 0, 0, 0.06);
+  }
+
+  .dark {
+    --md-border: theme('colors.neutral.800');
+    --md-border-blockquote: theme('colors.neutral.200');
+    --md-bg-th: theme('colors.neutral.900');
+    --md-bg-aside: theme('colors.neutral.900');
+    --skeleton-base: theme('colors.neutral.800');
+    --skeleton-highlight: theme('colors.neutral.700');
+    --media-overlay-bg: rgba(23, 23, 23, 0.95);
+    --media-overlay-fg: theme('colors.neutral.400');
+    --preview-overlay-bg: rgba(255, 255, 255, 0.06);
+    --preview-overlay-hover: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -137,13 +161,79 @@ body {
   @apply text-base;
 }
 
-main {
-  animation: main-fade-in 250ms ease-in-out both;
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes main-fade-in {
+html.page-route-transitioning a,
+html.page-route-transitioning button {
+  pointer-events: none;
+}
+
+/* Theme changes are animated as one page-level layer. Prevent nested hover and
+   component transitions from producing mismatched intermediate colors. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
+@keyframes language-content-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* A language route can commit its layout before its page payload. Keep only
+   the incoming language hidden until the page confirms that its translated
+   content is mounted, so stale copy can never participate in the fade-in. */
+html[data-language-transition-target="en"] [data-language-transition-layer][data-language="en"],
+html[data-language-transition-target="en"] [data-language-transition-floating][data-language="en"],
+html[data-language-transition-target="zh"] [data-language-transition-layer][data-language="zh"],
+html[data-language-transition-target="zh"] [data-language-transition-floating][data-language="zh"] {
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+.animate-language-content-in,
+.animate-chat-trigger-in {
+  animation: language-content-in 300ms cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+/* After the first client-side language switch, opacity progress lives on the
+   document. `filter` composes with each component's own opacity state, and a
+   streamed React node replacement inherits the same progress without a flash. */
+html[data-language-transition-language="en"] [data-language-transition-layer][data-language="en"],
+html[data-language-transition-language="en"] [data-language-transition-floating][data-language="en"],
+html[data-language-transition-language="zh"] [data-language-transition-layer][data-language="zh"],
+html[data-language-transition-language="zh"] [data-language-transition-floating][data-language="zh"] {
+  filter: opacity(var(--language-transition-opacity, 1));
+  animation: none !important;
+}
+
+/* Floating controls already use transition-all for their own interaction
+   states. Disable that interpolation only while the shared language timeline
+   is running, otherwise their filter trails behind the page content. */
+html[data-language-transition-running] [data-language-transition-floating] {
+  transition: none !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 280ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-language-content-in,
+  .animate-chat-trigger-in {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0ms;
+  }
 }
 
 @keyframes letter-bounce {
@@ -168,22 +258,13 @@ main {
 }
 
 .animate-letter-bounce {
-  animation: letter-bounce 0.5s ease-out both;
+  animation: letter-bounce 500ms ease-out both;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 10px);
+@media (prefers-reduced-motion: reduce) {
+  .animate-letter-bounce {
+    animation: none;
   }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.3s ease-out both;
 }
 
 @keyframes lightbox-in {
@@ -212,19 +293,6 @@ main {
 
 .animate-lightbox-img {
   animation: lightbox-img 0.25s ease-out both;
-}
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-page-fade-in {
-  animation: page-fade-in 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 /* Markdown grid layout */
@@ -336,39 +404,13 @@ main {
   }
 }
 
-.media-skeleton-wrapper {
-  position: relative;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  min-height: 120px;
-  background: linear-gradient(
-    90deg,
-    theme('colors.neutral.200') 25%,
-    theme('colors.neutral.100') 50%,
-    theme('colors.neutral.200') 75%
-  );
-  background-size: 800px 100%;
-  animation: skeleton-shimmer 1.5s infinite linear;
-}
-
-.media-skeleton-wrapper img,
-.media-skeleton-wrapper iframe {
-  transition: opacity 0.3s ease;
-}
-
-.media-skeleton-wrapper.media-skeleton-loaded {
-  background: none;
-  animation: none;
-  min-height: auto;
-}
-
 /* Cover image skeleton for cards */
 .cover-skeleton {
   background: linear-gradient(
     90deg,
-    theme('colors.neutral.200') 25%,
-    theme('colors.neutral.100') 50%,
-    theme('colors.neutral.200') 75%
+    var(--skeleton-base) 25%,
+    var(--skeleton-highlight) 50%,
+    var(--skeleton-base) 75%
   );
   background-size: 800px 100%;
   animation: skeleton-shimmer 1.5s infinite linear;
@@ -377,6 +419,140 @@ main {
 .cover-skeleton.cover-loaded {
   background: none;
   animation: none;
+}
+
+/* Page loading transition. A stable background hides route replacement while
+   the centered indicator fades in; the completed page is revealed on exit. */
+.page-loader-overlay,
+.page-loader-route {
+  display: grid;
+  min-height: calc(100vh - 3.5rem);
+  place-items: center;
+  overflow: hidden;
+  background: theme('colors.white');
+}
+
+.dark .page-loader-overlay,
+.dark .page-loader-route {
+  background: theme('colors.neutral.950');
+}
+
+.page-loader-overlay {
+  position: fixed;
+  inset: 3.5rem 0 0;
+  z-index: 60;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-loader-overlay[data-page-loader-phase="entering"] {
+  opacity: 1;
+}
+
+.page-loader-overlay[data-page-loader-phase="exiting"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes page-loader-route-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes page-loader-spin {
+  to { transform: rotate(360deg); }
+}
+
+.page-loader-route {
+  animation: page-loader-route-in 180ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.page-loader-spinner {
+  width: 2rem;
+  height: 2rem;
+  opacity: 1;
+  border: 2px solid theme('colors.neutral.200');
+  border-top-color: #ee9933;
+  border-radius: 9999px;
+  animation: page-loader-spin 700ms linear infinite;
+  transition: opacity 160ms ease-out;
+}
+
+.page-loader-overlay[data-page-loader-phase="entering"] .page-loader-spinner {
+  opacity: 0;
+}
+
+.dark .page-loader-spinner {
+  border-color: theme('colors.neutral.800');
+  border-top-color: #ee9933;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader-overlay {
+    transition: none;
+  }
+
+  .page-loader-spinner {
+    transition: none;
+  }
+
+  .page-loader-route,
+  .page-loader-spinner {
+    animation: none;
+  }
+}
+
+.blocked-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--media-overlay-bg);
+}
+
+.blocked-overlay p {
+  max-width: 240px;
+  color: var(--media-overlay-fg);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.mobile-preview-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: inherit;
+  background: var(--preview-overlay-bg);
+  transition: background-color 200ms ease;
+}
+
+.mobile-preview-overlay:hover {
+  background: var(--preview-overlay-hover);
+}
+
+.mobile-preview-play {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: transform 200ms ease;
+}
+
+.mobile-preview-overlay:hover .mobile-preview-play {
+  transform: scale(1.1);
 }
 
 /* Side-by-side layout: sticky preview + scrollable text (desktop only) */
@@ -422,4 +598,3 @@ main {
     display: none;
   }
 }
-

@@ -10,6 +10,17 @@ type Props = {
 };
 
 const ANIM_DURATION = 200; // ms, keep in sync with CSS duration-200
+const ROTATING_TITLES = [
+  { en: "UI Designer", zh: "UI 设计师" },
+  { en: "Marketing Expert", zh: "市场专家" },
+  { en: "AI-native Coder", zh: "AI 原生开发者" },
+  { en: "PPT Expert", zh: "PPT 专家" },
+  { en: "Educator", zh: "教育者" },
+  { en: "Cat Lover", zh: "猫奴" },
+] as const;
+
+const CONTACT_ACTION_CLASS =
+  "inline-flex h-10 w-full appearance-none select-none items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-neutral-300 bg-transparent px-5 text-sm font-normal text-neutral-900 transition-[color,background-color,border-color,transform] duration-200 hover:bg-neutral-100 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-900 dark:focus-visible:ring-offset-neutral-950 md:w-auto";
 
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
@@ -44,28 +55,19 @@ export function SelfIntro({ lang }: Props) {
     setTimeout(() => setMobileMounted(false), ANIM_DURATION);
   }, []);
 
-  // ✏️ Maintain your rotating titles here
-  const rotatingTitles: { en: string; zh: string }[] = [
-    { en: "UI Designer", zh: "UI 设计师" },
-    { en: "Marketing Expert", zh: "市场专家" },
-    { en: "AI-native Coder", zh: "AI 原生开发者" },
-    { en: "PPT Expert", zh: "PPT 专家" },
-    { en: "Educator", zh: "教育者" },
-    { en: "Cat Lover", zh: "猫奴" },
-  ];
-
   const [titleIndex, setTitleIndex] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
+  const [titleAnimationKey, setTitleAnimationKey] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
-      setAnimKey((prev) => prev + 1);
-    }, 2000);
+      if (document.documentElement.classList.contains("theme-switching")) return;
+      setTitleIndex((prev) => (prev + 1) % ROTATING_TITLES.length);
+      setTitleAnimationKey((prev) => prev + 1);
+    }, 2600);
     return () => clearInterval(interval);
-  }, [rotatingTitles.length]);
+  }, []);
 
-  const currentTitle = isEn ? rotatingTitles[titleIndex].en : rotatingTitles[titleIndex].zh;
+  const currentTitle = isEn ? ROTATING_TITLES[titleIndex].en : ROTATING_TITLES[titleIndex].zh;
   const prefixText = isEn ? "Full-stack Designer & " : "全栈设计师 & ";
 
   const handleWeChat = () => {
@@ -91,12 +93,13 @@ export function SelfIntro({ lang }: Props) {
         </h1>
         <p className="text-2xl md:text-3xl tracking-tight mb-8" style={{ color: '#EE9933' }}>
           {prefixText}
-          <span className="inline-block" key={animKey}>
-            {currentTitle.split("").map((char, i) => (
+          <span className="inline-block" key={titleAnimationKey}>
+            {currentTitle.split("").map((char, index) => (
               <span
-                key={i}
+                key={`${char}-${index}`}
+                data-rotating-title-letter
                 className="inline-block animate-letter-bounce"
-                style={{ animationDelay: `${i * 40}ms` }}
+                style={{ animationDelay: `${index * 40}ms` }}
               >
                 {char === " " ? "\u00A0" : char}
               </span>
@@ -110,7 +113,7 @@ export function SelfIntro({ lang }: Props) {
                 I focus on integrating AI with software and hardware experiences to create intelligent and human-centered products. I’m driven by a results-oriented approach to design—turning creative insight into tangible business value and lasting impact.
               </p>
               <p className="mb-4">
-                I graduated from <Link href="/en/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">ArtCenter College of Design</Link>, currently working at <Link href="/en/experience/microsoft" className="underline hover:opacity-70 transition-opacity">Microsoft</Link>. I am also an entrepreneur, <Link href="/en/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">educator</Link>, and <Link href="/en/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT expert</Link>.
+                I graduated from <Link href="/en/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">ArtCenter College of Design</Link> and currently work at <Link href="/en/experience/netease-games" className="underline hover:opacity-70 transition-opacity">NetEase Games</Link>. I am also an entrepreneur, <Link href="/en/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">educator</Link>, and <Link href="/en/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT expert</Link>.
               </p>
             </>
           ) : (
@@ -119,23 +122,24 @@ export function SelfIntro({ lang }: Props) {
                 我专注于融合AI与软硬件体验，打造智能且有温度的产品。以商业成果为导向，我致力于让设计在企业中创造真实价值与可衡量的影响力。
               </p>
               <p className="mb-4">
-                我本科毕业于<Link href="/zh/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">艺术中心设计学院</Link>，目前在<Link href="/zh/experience/microsoft" className="underline hover:opacity-70 transition-opacity">微软</Link>工作。我同时也是一名创业者、<Link href="/zh/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">教育者</Link>和<Link href="/zh/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT专家</Link>。
+                我本科毕业于<Link href="/zh/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">艺术中心设计学院</Link>，目前在<Link href="/zh/experience/netease-games" className="underline hover:opacity-70 transition-opacity">网易互娱</Link>工作。我同时也是一名创业者、<Link href="/zh/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">教育者</Link>和<Link href="/zh/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT专家</Link>。
               </p>
             </>
           )}
         </div>
         <div className="grid grid-cols-4 md:inline-flex md:flex-nowrap gap-3 text-sm">
-          <Link href={`/${lang}/resume`} className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <Link href={`/${lang}/resume`} className={CONTACT_ACTION_CLASS}>
             {isEn ? "Resume" : "简历"}
           </Link>
-          <a href="mailto:hello@xujiazhao.com" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <a href="mailto:hello@xujiazhao.com" className={CONTACT_ACTION_CLASS}>
             {isEn ? "Email" : "邮件"}
           </a>
-          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className={CONTACT_ACTION_CLASS}>
             {isEn ? "LinkedIn" : "领英"}
           </a>
           <button
-            className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-5 py-2 rounded-xl border border-neutral-300 hover:bg-neutral-100 text-neutral-900 cursor-pointer transition-colors duration-300"
+            type="button"
+            className={`${CONTACT_ACTION_CLASS} cursor-pointer`}
             onClick={handleWeChat}
           >
             {isEn ? "WeChat" : "微信"}
@@ -152,7 +156,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeQR}
         >
           <div
-            className={`bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl transition-all duration-200 ${
+            className={`mx-4 w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
               qrVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -161,7 +165,7 @@ export function SelfIntro({ lang }: Props) {
               <h3 className="text-lg font-semibold">{isEn ? "Scan to add WeChat" : "扫码添加微信"}</h3>
               <button
                 onClick={closeQR}
-                className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
+                className="text-xl leading-none text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-200"
               >
                 <PiXBold />
               </button>
@@ -171,7 +175,7 @@ export function SelfIntro({ lang }: Props) {
               alt="WeChat QR Code"
               className="w-full rounded-lg"
             />
-            <p className="text-center text-sm text-neutral-500 mt-3">WeChat ID: xux-ai</p>
+            <p className="mt-3 text-center text-sm text-neutral-500 dark:text-neutral-400">WeChat ID: xux-ai</p>
           </div>
         </div>,
         document.body
@@ -186,7 +190,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeMobile}
         >
           <div
-            className={`bg-white rounded-2xl p-6 max-w-xs w-full mx-4 shadow-xl transition-all duration-200 ${
+            className={`mx-4 w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
               mobileVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -195,15 +199,15 @@ export function SelfIntro({ lang }: Props) {
               <h3 className="text-lg font-semibold">{isEn ? "WeChat" : "微信"}</h3>
               <button
                 onClick={closeMobile}
-                className="text-neutral-400 hover:text-neutral-600 transition-colors text-xl leading-none"
+                className="text-xl leading-none text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-200"
               >
                 <PiXBold />
               </button>
             </div>
-            <p className="text-center text-base text-neutral-700 mb-4">WeChat ID: <span className="font-semibold">xux-ai</span></p>
+            <p className="mb-4 text-center text-base text-neutral-700 dark:text-neutral-300">WeChat ID: <span className="font-semibold">xux-ai</span></p>
             <button
               onClick={handleCopyWeChat}
-              className="w-full py-2.5 rounded-xl bg-neutral-800 text-white text-sm font-medium hover:bg-neutral-700 transition-colors"
+              className="w-full rounded-xl bg-neutral-800 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
             >
               {isEn ? "Copy WeChat ID" : "复制 WeChat ID 到剪贴板"}
             </button>
@@ -215,7 +219,7 @@ export function SelfIntro({ lang }: Props) {
       {/* Toast */}
       {showToast && createPortal(
         <div className="fixed bottom-20 left-0 right-0 z-[60] flex justify-center animate-fade-in">
-          <div className="bg-neutral-800 text-white text-sm px-4 py-2 rounded-full shadow-lg">
+          <div className="rounded-full bg-neutral-800 px-4 py-2 text-sm text-white shadow-lg dark:bg-neutral-100 dark:text-neutral-900">
             {isEn ? "Copied!" : "已复制!"}
           </div>
         </div>,

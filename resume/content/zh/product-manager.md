@@ -22,7 +22,11 @@ label: "产品经理"
 
 ## 工作经历
 
-### <img src="/assets/favicon/msft.svg" alt=""> 微软 – 产品设计师 > 产品负责人（DRI） <span class="resume-meta">北京, 2023.01 – 至今</span>
+### <img src="/assets/favicon/netease.webp" alt=""> 网易互娱 – 高级 AI 体验设计架构师 <span class="resume-meta">广东, 2026.06 – 至今</span>
+
+- 推动设计工作流的 AI 原生转型，并构建 AI 驱动的游戏体验系统，涵盖智能体交互、内容生成流水线与下一代玩家体验设计。
+
+### <img src="/assets/favicon/msft.svg" alt=""> 微软 – 产品设计师 > 产品负责人（DRI） <span class="resume-meta">北京, 2023.01 – 2026.06</span>
 
 - 从构思到上线发起并主导 AI 驱动的产品方案，将用户痛点和市场趋势转化为可执行的需求；与中国、美国、印度的 PM、工程和内容团队跨区域协作。
 - 将以人为中心的设计与战略性产品思维相结合，打造可扩展的 AI 功能，提升用户参与度和合作伙伴收入。

@@ -22,7 +22,11 @@ label: "Product Manager"
 
 ## Professional Experience
 
-### <img src="/assets/favicon/msft.svg" alt=""> Microsoft – Product Designer > Product Lead (DRI) <span class="resume-meta">Beijing, Jan 2023 – Present</span>
+### <img src="/assets/favicon/netease.webp" alt=""> NetEase Games — Senior AI Experience Design Architect <span class="resume-meta">Guangdong, Jun 2026 – Present</span>
+
+- Driving AI-native transformation of design workflows and building AI-powered game experience systems, including agent-based interactions, content generation pipelines, and next-generation player experience design.
+
+### <img src="/assets/favicon/msft.svg" alt=""> Microsoft – Product Designer > Product Lead (DRI) <span class="resume-meta">Beijing, Jan 2023 – Jun 2026</span>
 
 - Initiated and led AI-driven product concepts from ideation to launch, translating user pain points and market trends into actionable requirements; collaborated across PM, engineering, and content teams in China, US, and India.
 - Combined human-centered design with strategic product thinking to create scalable AI features that improved user engagement and partner revenue.

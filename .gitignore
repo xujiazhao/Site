@@ -11,6 +11,7 @@
 
 # next.js
 /.next/
+/.next-dev/
 /out/
 
 # production
@@ -40,4 +41,3 @@ Notion Version/
 
 # Resume PDF cache
 resume/cache/
-

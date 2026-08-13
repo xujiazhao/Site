@@ -1,6 +1,6 @@
 // 样式已迁移为全局类名 .markdown
 import { Lightbox } from "./lightbox";
-import { MediaSkeleton } from "./media-skeleton";
+import { EmbeddedMediaGuard } from "./embedded-media-guard";
 import { MobilePreviewScaler } from "./mobile-preview-scaler";
 
 type Props = {
@@ -12,13 +12,13 @@ export function PostBody({ content }: Props) {
     <div className="max-w-[1024px] mx-auto">
       <MobilePreviewScaler />
       <Lightbox>
-        <MediaSkeleton>
+        <EmbeddedMediaGuard>
           <div
             className="markdown"
             dangerouslySetInnerHTML={{ __html: content }}
             suppressHydrationWarning
           />
-        </MediaSkeleton>
+        </EmbeddedMediaGuard>
       </Lightbox>
     </div>
   );

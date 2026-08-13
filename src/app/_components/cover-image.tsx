@@ -23,7 +23,7 @@ export function CoverImage({ src, alt }: Props) {
 
   return (
     <div
-      className={`overflow-hidden rounded-lg border border-black/10 aspect-[2/1] md:aspect-[3/2] cover-skeleton${loaded ? " cover-loaded" : ""}`}
+      className={`cover-skeleton aspect-[2/1] overflow-hidden rounded-lg border border-black/10 dark:border-white/10 md:aspect-[3/2]${loaded ? " cover-loaded" : ""}`}
     >
       <img
         ref={imgRef}
@@ -31,8 +31,7 @@ export function CoverImage({ src, alt }: Props) {
         alt={alt}
         className="w-full h-full object-cover group-hover:scale-105"
         style={{
-          opacity: loaded ? 1 : 0,
-          transition: "opacity 0.3s ease, transform 0.3s ease",
+          transition: "transform 0.3s ease",
         }}
         onLoad={handleLoaded}
         onError={handleLoaded}

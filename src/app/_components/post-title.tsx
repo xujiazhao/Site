@@ -12,7 +12,13 @@ export function PostTitle({ children, favicon }: Props) {
         {children}
       </h1>
       {favicon && (
-        <img src={favicon} alt="" className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 flex-shrink-0 ml-4" />
+        <img
+          src={favicon}
+          alt=""
+          className={`ml-4 h-8 w-8 flex-shrink-0 md:h-10 md:w-10 lg:h-12 lg:w-12 ${
+            favicon.includes("/appleicon.") ? "dark:invert" : ""
+          }`}
+        />
       )}
     </div>
   );

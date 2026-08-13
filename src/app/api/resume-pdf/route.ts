@@ -6,6 +6,7 @@ import puppeteer from "puppeteer-core";
 import { createHash } from "crypto";
 import fs from "fs";
 import { join } from "path";
+import { isLanguage } from "@/lib/i18n";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -15,6 +16,34 @@ const cacheDir = isDev
   ? join(process.cwd(), "resume", "cache")
   : join("/tmp", "resume-cache");
 const mdDir = join(process.cwd(), "resume", "content");
+const SAFE_VARIANT = /^[a-z0-9][a-z0-9-]*$/;
+
+async function getBrowserExecutablePath(): Promise<string> {
+  if (!isDev) return chromium.executablePath();
+
+  const configuredPath = process.env.CHROME_EXECUTABLE_PATH;
+  if (configuredPath && fs.existsSync(configuredPath)) return configuredPath;
+
+  const candidatesByPlatform: Partial<Record<NodeJS.Platform, string[]>> = {
+    darwin: [
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    ],
+    linux: ["/usr/bin/google-chrome", "/usr/bin/chromium"],
+    win32: ["C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"],
+  };
+  const executablePath = candidatesByPlatform[process.platform]?.find((path) =>
+    fs.existsSync(path),
+  );
+
+  if (!executablePath) {
+    throw new Error(
+      "Chrome was not found. Set CHROME_EXECUTABLE_PATH to enable local PDF generation.",
+    );
+  }
+
+  return executablePath;
+}
 
 function getMdHash(lang: string, variant: string): string | null {
   try {
@@ -79,6 +108,10 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const lang = searchParams.get("lang") || "en";
   const variant = searchParams.get("variant") || "product-designer";
+
+  if (!isLanguage(lang) || !SAFE_VARIANT.test(variant)) {
+    return NextResponse.json({ error: "Invalid resume request" }, { status: 400 });
+  }
 
   const resume = getResumeByVariant(lang, variant);
   if (!resume) {
@@ -191,11 +224,7 @@ export async function GET(request: NextRequest) {
   const browser = await puppeteer.launch({
     args: isDev ? [] : chromium.args,
     defaultViewport: { width: 1920, height: 1080 },
-    executablePath: isDev
-      ? (process.platform === "win32"
-        ? "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-        : "/usr/bin/google-chrome")
-      : await chromium.executablePath(),
+    executablePath: await getBrowserExecutablePath(),
     headless: true,
   });
 
@@ -204,7 +233,8 @@ export async function GET(request: NextRequest) {
     
     console.log(`[resume-pdf] Generating PDF for lang=${lang}, variant=${variant}`);
     
-    await page.setContent(fullHtml, { waitUntil: "networkidle2", timeout: 15000 });
+    await page.setContent(fullHtml, { waitUntil: "domcontentloaded", timeout: 15000 });
+    await page.waitForNetworkIdle({ idleTime: 500, timeout: 15000 });
     
     console.log("[resume-pdf] Content set, waiting for render...");
     
@@ -234,8 +264,6 @@ export async function GET(request: NextRequest) {
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
 
-    await browser.close();
-
     // Save to cache
     if (hash) {
       savePdfToCache(lang, variant, hash, pdfBuffer);
@@ -251,11 +279,14 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    await browser.close();
     console.error("PDF generation error:", error);
     return NextResponse.json(
       { error: "Failed to generate PDF" },
       { status: 500 }
     );
+  } finally {
+    await browser.close().catch((error) => {
+      console.warn("[resume-pdf] Failed to close browser:", error);
+    });
   }
 }

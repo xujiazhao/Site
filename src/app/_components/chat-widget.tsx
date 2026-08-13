@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
-import { PiXBold, PiPaperPlaneRightFill, PiChatCircleDots, PiArrowDownBold } from "react-icons/pi";
+import { PiXBold, PiPaperPlaneRightFill, PiChatCircleDots } from "react-icons/pi";
+import { ChatMessageContent } from "./chat-message-content";
 
 type Message = {
   role: "user" | "assistant";
@@ -13,6 +14,28 @@ type Message = {
 type Props = {
   lang: string;
 };
+
+async function requestChatReply(messages: Message[], lang: string): Promise<string> {
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ messages, lang }),
+  });
+
+  if (!response.ok) throw new Error("Chat request failed");
+
+  const data: unknown = await response.json();
+  if (
+    !data ||
+    typeof data !== "object" ||
+    !("reply" in data) ||
+    typeof data.reply !== "string"
+  ) {
+    throw new Error("Invalid chat response");
+  }
+
+  return data.reply;
+}
 
 export function ChatWidget({ lang }: Props) {
   const isEn = lang === "en";
@@ -28,16 +51,11 @@ export function ChatWidget({ lang }: Props) {
   const chatPanelRef = useRef<HTMLDivElement>(null);
   const messagesAreaRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
-  const [buttonReady, setButtonReady] = useState(false);
+  const [animState, setAnimState] = useState<"closed" | "opening" | "open" | "closing">("closed");
+  const isVisible = animState !== "closed";
 
   useEffect(() => {
     setMounted(true);
-    // Delay button appearance to trigger fade-in on first load
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setButtonReady(true);
-      });
-    });
   }, []);
 
   useEffect(() => {
@@ -100,37 +118,25 @@ export function ChatWidget({ lang }: Props) {
     };
     panel.addEventListener('wheel', handler, { passive: false });
     return () => panel.removeEventListener('wheel', handler);
-  });
+  }, [isVisible]);
 
   // Forward wheel events on backdrop to scroll the page behind
   const handleBackdropWheel = (e: React.WheelEvent) => {
     window.scrollBy(0, e.deltaY);
   };
 
-  const sendMessage = async () => {
-    const text = input.trim();
-    if (!text || isLoading) return;
+  const submitMessages = async (nextMessages: Message[]) => {
+    if (isLoading) return;
 
-    const userMessage: Message = { role: "user", content: text };
-    const newMessages = [...messages, userMessage];
-    setMessages(newMessages);
-    setInput("");
+    setMessages(nextMessages);
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: newMessages, lang }),
-      });
-
-      if (!res.ok) throw new Error("Failed to fetch");
-
-      const data = await res.json();
-      setMessages([...newMessages, { role: "assistant", content: data.reply }]);
+      const reply = await requestChatReply(nextMessages, lang);
+      setMessages([...nextMessages, { role: "assistant", content: reply }]);
     } catch {
       setMessages([
-        ...newMessages,
+        ...nextMessages,
         {
           role: "assistant",
           content: isEn
@@ -143,6 +149,15 @@ export function ChatWidget({ lang }: Props) {
     }
   };
 
+  const sendMessage = () => {
+    const text = input.trim();
+    if (!text || isLoading) return;
+
+    const nextMessages: Message[] = [...messages, { role: "user", content: text }];
+    setInput("");
+    void submitMessages(nextMessages);
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -151,49 +166,33 @@ export function ChatWidget({ lang }: Props) {
   };
 
   const handleQuickQuestion = (q: string) => {
-    const userMsg: Message = { role: "user", content: q };
-    setMessages([userMsg]);
-    setIsLoading(true);
-    fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: [userMsg], lang }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setMessages([userMsg, { role: "assistant", content: data.reply }]);
-      })
-      .catch(() => {
-        setMessages([
-          userMsg,
-          {
-            role: "assistant",
-            content: isEn ? "Sorry, something went wrong." : "抱歉，出了点问题。",
-          },
-        ]);
-      })
-      .finally(() => setIsLoading(false));
+    if (isLoading) return;
+    void submitMessages([{ role: "user", content: q }]);
   };
 
-  // Animation state: "closed" | "opening" | "open" | "closing"
-  const [animState, setAnimState] = useState<"closed" | "opening" | "open" | "closing">("closed");
-
   useEffect(() => {
+    let firstFrame = 0;
+    let secondFrame = 0;
+    let closeTimer: ReturnType<typeof setTimeout> | undefined;
+
     if (isOpen) {
       setAnimState("opening");
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+      firstFrame = requestAnimationFrame(() => {
+        secondFrame = requestAnimationFrame(() => {
           setAnimState("open");
         });
       });
-    } else if (animState === "open" || animState === "opening") {
-      setAnimState("closing");
-      const timer = setTimeout(() => setAnimState("closed"), 300);
-      return () => clearTimeout(timer);
+    } else {
+      setAnimState((current) => current === "closed" ? current : "closing");
+      closeTimer = setTimeout(() => setAnimState("closed"), 300);
     }
-  }, [isOpen]);
 
-  const isVisible = animState !== "closed";
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+      if (closeTimer) clearTimeout(closeTimer);
+    };
+  }, [isOpen]);
 
   if (!mounted) return null;
   if (!isHomePage) return null;
@@ -203,12 +202,15 @@ export function ChatWidget({ lang }: Props) {
       {/* Bottom-center trigger button */}
       {createPortal(
         <button
+          data-language-transition-floating
+          data-language={lang}
           onClick={() => setIsOpen(true)}
-          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-6 py-3 rounded-full bg-neutral-800 text-white shadow-lg hover:bg-neutral-700 hover:shadow-xl transition-all duration-300 whitespace-nowrap ${
-            isVisible || !buttonReady
+          className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 animate-chat-trigger-in items-center gap-2.5 whitespace-nowrap rounded-full bg-neutral-800 px-6 py-3 text-white shadow-lg transition-all hover:bg-neutral-700 hover:shadow-xl dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white ${
+            isVisible
               ? "opacity-0 pointer-events-none"
               : "opacity-100"
           }`}
+          style={{ transitionDuration: "300ms" }}
           aria-label="Open chat"
         >
           <PiChatCircleDots className="w-5 h-5" />
@@ -221,7 +223,11 @@ export function ChatWidget({ lang }: Props) {
 
       {/* Chat panel — floating overlay */}
       {isVisible && createPortal(
-        <div className="fixed inset-0 z-50 pointer-events-none">
+        <div
+          data-language-transition-floating
+          data-language={lang}
+          className="fixed inset-0 z-50 pointer-events-none"
+        >
           {/* Backdrop overlay — scroll passes through to page (hidden on mobile) */}
           <div
             className="absolute inset-0 pointer-events-auto transition-colors duration-300 hidden md:block"
@@ -236,23 +242,22 @@ export function ChatWidget({ lang }: Props) {
           <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none md:pb-6 md:px-5">
             <div
               ref={chatPanelRef}
-              className="w-full h-full md:h-auto md:max-h-[70vh] md:max-w-[1024px] flex flex-col md:rounded-2xl overflow-hidden md:border md:border-neutral-200/50 md:shadow-2xl pointer-events-auto transition-all duration-300 ease-out"
+              className="pointer-events-auto flex h-full w-full flex-col overflow-hidden bg-white transition-all duration-300 ease-out dark:bg-neutral-900 md:h-auto md:max-h-[70vh] md:max-w-[1024px] md:rounded-2xl md:border md:border-neutral-200/50 md:shadow-2xl md:dark:border-neutral-700"
               style={{
-                background: "rgba(255, 255, 255, 1)",
                 transform: animState === "open" ? "translateY(0)" : "translateY(100%)",
               }}
             >
               {/* Header */}
               <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
                 <div className="flex items-center gap-2 pl-1">
-                  <PiChatCircleDots className="w-5 h-5 text-neutral-800" />
-                  <span className="font-semibold text-base text-neutral-800">
+                  <PiChatCircleDots className="h-5 w-5 text-neutral-800 dark:text-neutral-100" />
+                  <span className="text-base font-semibold text-neutral-800 dark:text-neutral-100">
                     {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
                   </span>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg text-neutral-400 hover:text-neutral-600 hover:bg-neutral-200/50 transition-colors"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-400 transition-colors hover:bg-neutral-200/50 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                 >
                   <PiXBold className="w-4 h-4" />
                 </button>
@@ -271,7 +276,7 @@ export function ChatWidget({ lang }: Props) {
                         <button
                           key={q}
                           onClick={() => handleQuickQuestion(q)}
-                          className="text-sm px-3.5 py-2.5 rounded-2xl border border-neutral-300/60 hover:bg-neutral-200/40 transition-colors text-neutral-600"
+                          className="rounded-2xl border border-neutral-300/60 px-3.5 py-2.5 text-sm text-neutral-600 transition-colors hover:bg-neutral-200/40 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
                         >
                           {q}
                         </button>
@@ -288,22 +293,18 @@ export function ChatWidget({ lang }: Props) {
                     <div
                       className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                         msg.role === "user"
-                          ? "bg-neutral-800 text-white rounded-br-md"
-                          : "bg-neutral-200/60 text-neutral-800 rounded-bl-md"
+                          ? "rounded-br-md bg-neutral-800 text-white dark:bg-neutral-100 dark:text-neutral-900"
+                          : "rounded-bl-md bg-neutral-200/60 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100"
                       }`}
-                      dangerouslySetInnerHTML={{
-                        __html: (msg.content || '')
-                          .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600">$1</a>')
-                          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-                          .replace(/(^|[\s，。！？：；])(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600">$2</a>')
-                      }}
-                    />
+                    >
+                      <ChatMessageContent content={msg.content || ""} />
+                    </div>
                   </div>
                 ))}
 
                 {isLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-neutral-200/60 text-neutral-500 px-3.5 py-2.5 rounded-2xl rounded-bl-md text-sm">
+                    <div className="rounded-2xl rounded-bl-md bg-neutral-200/60 px-3.5 py-2.5 text-sm text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
                       <span className="inline-flex items-center gap-0.5">
                         {isEn ? "Jiazhao is typing" : "嘉昭正在编辑"}
                         <span className="inline-flex w-4">
@@ -328,12 +329,12 @@ export function ChatWidget({ lang }: Props) {
                     onKeyDown={handleKeyDown}
                     placeholder={isEn ? "Type a message..." : "输入消息..."}
                     rows={1}
-                    className="flex-1 resize-none rounded-xl border border-neutral-300/60 bg-white/60 px-3.5 py-2.5 text-base focus:outline-none focus:border-neutral-400 max-h-24"
+                    className="max-h-24 flex-1 resize-none rounded-xl border border-neutral-300/60 bg-white/60 px-3.5 py-2.5 text-base placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none dark:border-neutral-700 dark:bg-neutral-950/60 dark:placeholder:text-neutral-600 dark:focus:border-neutral-500"
                   />
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="w-11 h-11 flex items-center justify-center rounded-xl bg-neutral-800 text-white disabled:opacity-30 hover:bg-neutral-700 transition-colors flex-shrink-0"
+                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-neutral-800 text-white transition-colors hover:bg-neutral-700 disabled:opacity-30 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
                   >
                     <PiPaperPlaneRightFill className="w-4 h-4" />
                   </button>
