@@ -37,7 +37,8 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body className="font-barlow bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-        {children}
+        <div className="ambient-backdrop" aria-hidden="true" />
+        <div className="site-content-layer">{children}</div>
       </body>
     </html>
   );

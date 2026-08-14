@@ -29,7 +29,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
 
   return (
     <div
-      className="flex bg-white text-base whitespace-nowrap dark:bg-neutral-950"
+      className="flex bg-white/40 text-base whitespace-nowrap dark:bg-neutral-950/40"
       onMouseOver={(event) => {
         const cell = (event.target as HTMLElement).closest<HTMLElement>("[data-row]");
         if (cell?.dataset.row) setHoveredRow(cell.dataset.row);
@@ -37,7 +37,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
       onMouseLeave={() => setHoveredRow(null)}
     >
       {/* ===== Pinned left column (outside scroll container) ===== */}
-      <div className="z-10 flex-shrink-0 bg-white dark:bg-neutral-950">
+      <div className="z-10 flex-shrink-0">
         {/* Header */}
         <div className={`${HEADER_H} flex items-center border-b border-neutral-200 pr-2 font-semibold text-neutral-500 dark:border-neutral-800 dark:text-neutral-400`}>
           {icon}
@@ -51,8 +51,8 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
             data-row={exp.slug}
             className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-2 font-semibold transition-[background-color] duration-300 dark:border-neutral-800 ${
               hoveredRow === exp.slug
-                ? "bg-neutral-100 dark:bg-neutral-800"
-                : "bg-white dark:bg-neutral-950"
+                ? "bg-neutral-100/75 dark:bg-neutral-800/70"
+                : "bg-transparent"
             }`}
           >
             {exp.favicon && (
@@ -91,7 +91,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                 key={`${exp.slug}-name`}
                 href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 font-semibold transition-[background-color] duration-300 dark:border-neutral-800 md:hidden ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 font-semibold transition-[background-color] duration-300 dark:border-neutral-800 md:hidden ${hoveredRow === exp.slug ? "bg-neutral-100/75 dark:bg-neutral-800/70" : ""}`}
               >
                 {exp.title}
               </Link>,
@@ -99,7 +99,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                 key={`${exp.slug}-date`}
                 href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100/75 dark:bg-neutral-800/70" : ""}`}
               >
                 {exp.dateRange || exp.date}
               </Link>,
@@ -107,7 +107,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                 key={`${exp.slug}-loc`}
                 href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100/75 dark:bg-neutral-800/70" : ""}`}
               >
                 {exp.location}
               </Link>,
@@ -115,7 +115,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                 key={`${exp.slug}-type`}
                 href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-5 text-neutral-600 transition-[background-color] duration-300 dark:border-neutral-800 dark:text-neutral-400 ${hoveredRow === exp.slug ? "bg-neutral-100/75 dark:bg-neutral-800/70" : ""}`}
               >
                 {exp.type}
               </Link>,
@@ -123,7 +123,7 @@ export function ExperienceGrid({ experiences, lang, isEn, icon }: Props) {
                 key={`${exp.slug}-area`}
                 href={href}
                 data-row={exp.slug}
-                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-2 transition-[background-color] duration-300 dark:border-neutral-800 ${hoveredRow === exp.slug ? "bg-neutral-100 dark:bg-neutral-800" : ""}`}
+                className={`${ROW_H} flex cursor-pointer items-center border-b border-neutral-100 pr-2 transition-[background-color] duration-300 dark:border-neutral-800 ${hoveredRow === exp.slug ? "bg-neutral-100/75 dark:bg-neutral-800/70" : ""}`}
               >
                 {exp.area && exp.area.length > 0 && (
                   <div className="flex gap-1">
