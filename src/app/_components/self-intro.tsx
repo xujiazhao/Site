@@ -131,8 +131,19 @@ export function SelfIntro({ lang }: Props) {
           <Link href={`/${lang}/resume`} className={CONTACT_ACTION_CLASS}>
             {isEn ? "Resume" : "简历"}
           </Link>
-          <a href="mailto:hello@xujiazhao.com" className={CONTACT_ACTION_CLASS}>
+          <a
+            href="mailto:hello@xujiazhao.com"
+            className={`${CONTACT_ACTION_CLASS} group relative`}
+            aria-describedby="email-tooltip"
+          >
             {isEn ? "Email" : "邮件"}
+            <span
+              id="email-tooltip"
+              role="tooltip"
+              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs font-normal text-white opacity-0 shadow-lg transition-[opacity,transform] duration-150 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 dark:bg-neutral-100 dark:text-neutral-900"
+            >
+              hello@xujiazhao.com
+            </span>
           </a>
           <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className={CONTACT_ACTION_CLASS}>
             {isEn ? "LinkedIn" : "领英"}
