@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { PiCaretLeftBold } from "react-icons/pi";
 import {
   cancelLanguageTransition,
   fadeOutLanguageContent,
@@ -24,10 +23,6 @@ export function SiteHeader({ lang }: Props) {
   // Build the target path for language toggle
   const targetPath = pathname.replace(`/${lang}`, `/${targetLang}`) || `/${targetLang}`;
 
-  // Hide language toggle on detail pages (e.g. /en/experience/slug)
-  const segments = pathname.split('/').filter(Boolean);
-  const isDetailPage = segments.length > 2;
-  const isResumePage = segments.includes('resume');
   const languageSwitchingRef = useRef(false);
   const [sliderLanguage, setSliderLanguage] = useState(lang);
 
@@ -80,50 +75,46 @@ export function SiteHeader({ lang }: Props) {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
       <div className="mx-auto flex h-full max-w-[1024px] items-center justify-between px-5">
-        <button
-          onClick={() => {
-            if (isResumePage) {
-              navigateWithPageLoader({
-                targetPathname: `/${lang}`,
-                navigate: () => router.push(`/${lang}`),
-              });
-            } else if (isDetailPage) {
-              navigateWithPageLoader({ navigate: () => router.back() });
-            } else {
-              window.scrollTo({ top: 0 });
+        <Link
+          href={`/${lang}`}
+          onClick={(event) => {
+            if (
+              event.button !== 0 ||
+              event.metaKey ||
+              event.ctrlKey ||
+              event.shiftKey ||
+              event.altKey
+            ) {
+              return;
             }
+
+            event.preventDefault();
+            if (pathname === `/${lang}` || pathname === `/${lang}/`) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              return;
+            }
+
+            navigateWithPageLoader({
+              targetPathname: `/${lang}`,
+              navigate: () => router.push(`/${lang}`),
+            });
           }}
           className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 font-barlow cursor-pointer"
+          aria-label={isEn ? "Go to homepage" : "返回首页"}
           style={{
             transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1), color 300ms cubic-bezier(0.4,0,0.2,1)",
             opacity: 1, // Always visible
           }}
         >
-          {isDetailPage ? (
-            <>
-              <PiCaretLeftBold className="w-4 h-4" />
-              {isEn ? "Back" : "返回"}
-            </>
-          ) : (
-            <>
-              <img
-                src="/favicon/favicon.svg"
-                alt=""
-                className="h-5 w-5 transition-[filter] duration-300 ease-out dark:invert"
-              />
-              许嘉昭 Jiazhao Xu
-            </>
-          )}
-        </button>
+          <img
+            src="/favicon/favicon.svg"
+            alt=""
+            className="h-5 w-5 transition-[filter] duration-300 ease-out dark:invert"
+          />
+          许嘉昭 Jiazhao Xu
+        </Link>
         <div className="flex items-center gap-2">
-          <div
-            className="flex items-center"
-            style={{
-              transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1)",
-              opacity: isDetailPage ? 0 : 1,
-              pointerEvents: isDetailPage ? "none" : "auto",
-            }}
-          >
+          <div className="flex items-center">
             <Link
               href={targetPath}
               onClick={handleLanguageSwitch}

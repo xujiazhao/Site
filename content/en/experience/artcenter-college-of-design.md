@@ -34,6 +34,6 @@ Other experiences & awards:
 
 ![Preparing the final presentation for SIG Combibloc’s sponsorship.](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_1.webp)
 
-About the SIG sponsorship, see: [SIG CombiONE](/en/project/sig-combione)
+About the SIG sponsorship, see: [SIG CombiONE](/en/creation/sig-combione)
 
 ![Setting up FireSight at the ArtCenter student gallery, FireSight is a fire-watch drone for wild fires. ](/assets/images/artcenter-college-of-design/artcenter-college-of-design-Untitled_2.webp)

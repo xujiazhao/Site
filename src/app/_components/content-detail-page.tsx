@@ -22,7 +22,7 @@ export async function ContentDetailPage({ collection, lang, slug }: Props) {
   const isCreation = collection === "creation";
 
   return (
-    <main>
+    <main data-page-language={lang}>
       <Container>
         <article className="mb-12">
           <PostHeader
