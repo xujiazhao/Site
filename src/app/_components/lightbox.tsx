@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { PiXBold } from "react-icons/pi";
 
 export function Lightbox({ children }: { children: React.ReactNode }) {
@@ -49,10 +50,13 @@ export function Lightbox({ children }: { children: React.ReactNode }) {
     <>
       <div data-lightbox>{children}</div>
 
-      {src && (
+      {src && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 animate-lightbox-in cursor-zoom-out"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-[5vh] animate-lightbox-in cursor-zoom-out"
           onClick={() => setSrc(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
         >
           <button
             onClick={() => setSrc(null)}
@@ -64,10 +68,11 @@ export function Lightbox({ children }: { children: React.ReactNode }) {
           <img
             src={src}
             alt=""
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl animate-lightbox-img"
+            className="block max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-lightbox-img"
             onClick={(e) => e.stopPropagation()}
           />
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );
