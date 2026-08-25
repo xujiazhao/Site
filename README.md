@@ -8,7 +8,7 @@ Personal portfolio site for Jiazhao Xu (许嘉昭) — Senior AI Experience Desi
 - **Styling**: Tailwind CSS
 - **Content**: Markdown with gray-matter frontmatter
 - **CMS**: [Pages CMS](https://pagescms.org) for content management
-- **Fonts**: Barlow (English), system default (Chinese)
+- **Fonts**: Geist Sans Variable (Latin), system default (Chinese)
 - **i18n**: English (`/en`) and Chinese (`/zh`)
 - **Chat**: DeepSeek-powered chatbot (`/api/chat`)
 - **Resume PDF**: Server-side PDF generation via Puppeteer (`/api/resume-pdf`)

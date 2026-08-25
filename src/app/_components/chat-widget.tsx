@@ -242,14 +242,14 @@ export function ChatWidget({ lang }: Props) {
           <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none md:pb-6 md:px-5">
             <div
               ref={chatPanelRef}
-              className="pointer-events-auto flex h-full w-full flex-col overflow-hidden bg-white transition-all duration-300 ease-out dark:bg-neutral-900 md:h-auto md:max-h-[70vh] md:max-w-[1024px] md:rounded-2xl md:border md:border-neutral-200/50 md:shadow-2xl md:dark:border-neutral-700"
+              className="pointer-events-auto flex h-full w-full flex-col overflow-hidden bg-white transition-all duration-300 ease-out dark:bg-neutral-900 md:h-auto md:max-h-[70vh] md:max-w-[1024px] md:rounded-[32px] md:border md:border-neutral-200/50 md:shadow-2xl md:dark:border-neutral-700"
               style={{
                 transform: animState === "open" ? "translateY(0)" : "translateY(100%)",
               }}
             >
               {/* Header */}
-              <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
-                <div className="flex items-center gap-2 pl-1">
+              <div className="flex flex-shrink-0 items-center justify-between p-4">
+                <div className="flex items-center gap-2">
                   <PiChatCircleDots className="h-5 w-5 text-neutral-800 dark:text-neutral-100" />
                   <span className="text-base font-semibold text-neutral-800 dark:text-neutral-100">
                     {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
@@ -264,7 +264,7 @@ export function ChatWidget({ lang }: Props) {
               </div>
 
               {/* Messages */}
-              <div ref={messagesAreaRef} className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
+              <div ref={messagesAreaRef} className="min-h-0 flex-1 overflow-y-auto p-4">
                 <div className="flex flex-col min-h-full space-y-3">
                 {messages.length === 0 && (
                   <div className="flex flex-col justify-end flex-1 pb-2">
@@ -320,7 +320,7 @@ export function ChatWidget({ lang }: Props) {
               </div>
 
               {/* Input */}
-              <div className="px-3 py-3 flex-shrink-0">
+              <div className="flex-shrink-0 p-4">
                 <div className="flex items-stretch gap-2">
                   <textarea
                     ref={inputRef}

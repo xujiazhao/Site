@@ -6,6 +6,7 @@ import { ExperienceGrid } from "@/app/_components/experience-grid";
 import { CreationSection } from "@/app/_components/creation-section";
 import { WritingSection } from "@/app/_components/writing-section";
 import { CoverImage } from "@/app/_components/cover-image";
+import { HomeViewStateRestorer } from "@/app/_components/home-view-state-restorer";
 import { PiBriefcaseBold } from "react-icons/pi";
 
 export default async function Index({ params }: { params: Promise<{ lang: string }> }) {
@@ -21,6 +22,7 @@ export default async function Index({ params }: { params: Promise<{ lang: string
 
   return (
     <main data-page-language={lang}>
+      <HomeViewStateRestorer homePathname={`/${lang}`} />
       <Container>
         <SelfIntro lang={lang} />
 
@@ -42,7 +44,7 @@ export default async function Index({ params }: { params: Promise<{ lang: string
           <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
              {isEn ? "Project" : "项目"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="homepage-media-breakout homepage-project-grid grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3">
             {projects.map((post) => {
               const href = `/${lang}/project/${post.slug}`;
               return (
@@ -50,11 +52,11 @@ export default async function Index({ params }: { params: Promise<{ lang: string
                   {post.coverImage ? (
                     <CoverImage src={post.coverImage} alt={post.title} />
                   ) : (
-                    <div className="overflow-hidden rounded-lg">
-                      <div className="w-full aspect-[2/1] bg-neutral-100 dark:bg-neutral-900 md:aspect-[3/2]" />
+                    <div className="overflow-hidden rounded-[48px]">
+                      <div className="aspect-video w-full bg-neutral-100 dark:bg-neutral-900" />
                     </div>
                   )}
-                  <div className="mt-2">
+                  <div className="homepage-media-caption mt-2">
                     <div className="flex items-center gap-1.5">
                       {post.favicon && (
                         <img

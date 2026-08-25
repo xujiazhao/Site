@@ -1,4 +1,4 @@
-import "@fontsource/barlow/latin.css";
+import { GeistSans } from "geist/font/sans";
 import "./[lang]/globals.css";
 
 const THEME_INIT_SCRIPT = `
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={GeistSans.variable} suppressHydrationWarning>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -36,7 +36,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
-      <body className="font-barlow bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <body className="bg-white font-sans text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
         <div className="ambient-backdrop" aria-hidden="true" />
         <div className="site-content-layer">{children}</div>
       </body>

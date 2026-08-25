@@ -12,7 +12,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        barlow: ['var(--font-barlow)', 'Barlow', 'sans-serif'],
+        sans: [
+          'var(--font-geist-sans)',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"PingFang SC"',
+          '"Microsoft YaHei"',
+          '"Segoe UI"',
+          'sans-serif',
+        ],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

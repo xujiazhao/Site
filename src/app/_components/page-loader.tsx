@@ -7,6 +7,11 @@ import {
   NAVIGATION_EVENT,
   type NavigationRequest,
 } from "./navigation-transition";
+import {
+  clearPendingHomeDeparture,
+  getHomePathname,
+  markHomeDeparture,
+} from "./home-return-history";
 
 type LoaderPhase = "entering" | "visible" | "exiting";
 
@@ -15,9 +20,9 @@ type PageLoaderProps = {
   phase?: LoaderPhase;
 };
 
-const MIN_VISIBLE_DURATION = 180;
-const EXIT_DURATION = 280;
-const PAGE_EXIT_DURATION = 180;
+const MIN_VISIBLE_DURATION = 100;
+const EXIT_DURATION = 100;
+const PAGE_EXIT_DURATION = 100;
 const ROUTE_TIMEOUT = 6000;
 const HYDRATED_ATTRIBUTE = "data-site-hydrated";
 const TRANSITIONING_CLASS = "page-route-transitioning";
@@ -52,16 +57,21 @@ export function InitialPageLoader() {
   const targetPathnameRef = useRef<string | null>(null);
   const shownAtRef = useRef(0);
   const animationFrameRef = useRef<number | undefined>(undefined);
+  const routeReadyFrameRef = useRef<number | undefined>(undefined);
   const exitTimerRef = useRef<number | undefined>(undefined);
   const removeTimerRef = useRef<number | undefined>(undefined);
   const fallbackTimerRef = useRef<number | undefined>(undefined);
   const isTransitioningRef = useRef(false);
   const isMountedRef = useRef(false);
   const outgoingAnimationRef = useRef<Animation | null>(null);
+  const transitionIdRef = useRef(0);
 
   const clearTransitionTimers = useCallback(() => {
     if (animationFrameRef.current !== undefined) {
       window.cancelAnimationFrame(animationFrameRef.current);
+    }
+    if (routeReadyFrameRef.current !== undefined) {
+      window.cancelAnimationFrame(routeReadyFrameRef.current);
     }
     if (exitTimerRef.current !== undefined) {
       window.clearTimeout(exitTimerRef.current);
@@ -74,6 +84,7 @@ export function InitialPageLoader() {
     }
 
     animationFrameRef.current = undefined;
+    routeReadyFrameRef.current = undefined;
     exitTimerRef.current = undefined;
     removeTimerRef.current = undefined;
     fallbackTimerRef.current = undefined;
@@ -82,6 +93,9 @@ export function InitialPageLoader() {
   const restorePageContent = useCallback(() => {
     outgoingAnimationRef.current?.cancel();
     outgoingAnimationRef.current = null;
+    document
+      .querySelector<HTMLElement>("[data-language-transition-layer]")
+      ?.style.removeProperty("opacity");
   }, []);
 
   const fadeOutCurrentPage = useCallback(async () => {
@@ -111,7 +125,38 @@ export function InitialPageLoader() {
     }
   }, [restorePageContent]);
 
-  const hideLoader = useCallback(() => {
+  const fadeInCurrentPage = useCallback(() => {
+    const layer = document.querySelector<HTMLElement>(
+      "[data-language-transition-layer]",
+    );
+    if (!layer) {
+      restorePageContent();
+      return;
+    }
+
+    restorePageContent();
+    layer.style.opacity = "0";
+    const animation = layer.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: PAGE_EXIT_DURATION,
+      easing: "linear",
+      fill: "forwards",
+    });
+    outgoingAnimationRef.current = animation;
+
+    void animation.finished.then(
+      () => {
+        if (outgoingAnimationRef.current !== animation) return;
+        outgoingAnimationRef.current = null;
+        animation.cancel();
+        layer.style.removeProperty("opacity");
+      },
+      () => undefined,
+    );
+  }, [restorePageContent]);
+
+  const hideLoader = useCallback((transitionId = transitionIdRef.current) => {
+    if (transitionId !== transitionIdRef.current) return;
+
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -119,10 +164,6 @@ export function InitialPageLoader() {
     const delay = reduceMotion
       ? 0
       : Math.max(0, MIN_VISIBLE_DURATION - elapsed);
-
-    // The loader is still fully opaque here, so the new page can safely be
-    // restored before the overlay starts revealing it.
-    restorePageContent();
 
     if (fallbackTimerRef.current !== undefined) {
       window.clearTimeout(fallbackTimerRef.current);
@@ -133,7 +174,10 @@ export function InitialPageLoader() {
     }
 
     exitTimerRef.current = window.setTimeout(() => {
+      if (transitionId !== transitionIdRef.current) return;
+
       if (reduceMotion) {
+        restorePageContent();
         setPhase(null);
         targetPathnameRef.current = null;
         isTransitioningRef.current = false;
@@ -141,20 +185,30 @@ export function InitialPageLoader() {
         return;
       }
 
+      fadeInCurrentPage();
       setPhase((current) => (current ? "exiting" : current));
       removeTimerRef.current = window.setTimeout(() => {
+        if (transitionId !== transitionIdRef.current) return;
         setPhase(null);
         targetPathnameRef.current = null;
         isTransitioningRef.current = false;
         document.documentElement.classList.remove(TRANSITIONING_CLASS);
       }, EXIT_DURATION);
     }, delay);
-  }, [restorePageContent]);
+  }, [fadeInCurrentPage, restorePageContent]);
 
-  const hideWhenRouteIsReady = useCallback(() => {
+  const hideWhenRouteIsReady = useCallback((
+    transitionId = transitionIdRef.current,
+  ) => {
+    if (routeReadyFrameRef.current !== undefined) {
+      window.cancelAnimationFrame(routeReadyFrameRef.current);
+    }
+
     let stableFrames = 0;
 
     const checkRoute = () => {
+      if (transitionId !== transitionIdRef.current) return;
+
       if (document.querySelector(".page-loader-route")) {
         stableFrames = 0;
       } else {
@@ -162,20 +216,22 @@ export function InitialPageLoader() {
       }
 
       if (stableFrames >= 2) {
-        hideLoader();
+        routeReadyFrameRef.current = undefined;
+        hideLoader(transitionId);
         return;
       }
 
-      animationFrameRef.current = window.requestAnimationFrame(checkRoute);
+      routeReadyFrameRef.current = window.requestAnimationFrame(checkRoute);
     };
 
-    animationFrameRef.current = window.requestAnimationFrame(checkRoute);
+    routeReadyFrameRef.current = window.requestAnimationFrame(checkRoute);
   }, [hideLoader]);
 
   const beginTransition = useCallback(
     (targetPathname: string | null, navigate?: () => void) => {
       if (isTransitioningRef.current) return false;
       isTransitioningRef.current = true;
+      const transitionId = ++transitionIdRef.current;
 
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         navigate?.();
@@ -187,27 +243,44 @@ export function InitialPageLoader() {
       document.documentElement.classList.add(TRANSITIONING_CLASS);
       targetPathnameRef.current = targetPathname;
       void fadeOutCurrentPage().then(() => {
-        if (!isMountedRef.current || !isTransitioningRef.current) return;
+        if (
+          !isMountedRef.current ||
+          !isTransitioningRef.current ||
+          transitionId !== transitionIdRef.current
+        ) {
+          return;
+        }
 
         shownAtRef.current = performance.now();
         flushSync(() => setPhase("entering"));
 
         animationFrameRef.current = window.requestAnimationFrame(() => {
+          if (transitionId !== transitionIdRef.current) return;
           setPhase("visible");
           animationFrameRef.current = window.requestAnimationFrame(() => {
+            if (transitionId !== transitionIdRef.current) return;
             navigate?.();
           });
         });
 
-        fallbackTimerRef.current = window.setTimeout(
-          hideLoader,
-          ROUTE_TIMEOUT,
-        );
+        fallbackTimerRef.current = window.setTimeout(() => {
+          hideLoader(transitionId);
+        }, ROUTE_TIMEOUT);
       });
       return true;
     },
     [clearTransitionTimers, fadeOutCurrentPage, hideLoader],
   );
+
+  const cancelTransition = useCallback(() => {
+    transitionIdRef.current += 1;
+    clearTransitionTimers();
+    restorePageContent();
+    targetPathnameRef.current = null;
+    isTransitioningRef.current = false;
+    flushSync(() => setPhase(null));
+    document.documentElement.classList.remove(TRANSITIONING_CLASS);
+  }, [clearTransitionTimers, restorePageContent]);
 
   useEffect(() => {
     isMountedRef.current = true;
@@ -227,6 +300,7 @@ export function InitialPageLoader() {
     return () => {
       isMountedRef.current = false;
       isTransitioningRef.current = false;
+      transitionIdRef.current += 1;
       clearTransitionTimers();
       restorePageContent();
       document.documentElement.classList.remove(TRANSITIONING_CLASS);
@@ -252,6 +326,7 @@ export function InitialPageLoader() {
         !anchor ||
         anchor.target === "_blank" ||
         anchor.hasAttribute("download") ||
+        anchor.hasAttribute("data-navigation-controlled") ||
         anchor.getAttribute("role") === "switch"
       ) {
         return;
@@ -269,11 +344,29 @@ export function InitialPageLoader() {
       event.stopPropagation();
 
       const href = `${url.pathname}${url.search}${url.hash}`;
-      beginTransition(url.pathname, () => router.push(href));
+      const transitionStarted = beginTransition(url.pathname, () => {
+        router.push(href);
+      });
+      if (transitionStarted) {
+        const homePathname = getHomePathname(window.location.pathname);
+        if (homePathname) {
+          markHomeDeparture(homePathname, url.pathname);
+        } else {
+          clearPendingHomeDeparture();
+        }
+      }
     };
 
     const handleHistoryNavigation = () => {
-      if (!isTransitioningRef.current) beginTransition(null);
+      // History traversal already restores the cached route and its scroll
+      // position. A site loader here would briefly cover content that the
+      // browser has already painted, so always cancel any in-flight overlay.
+      cancelTransition();
+    };
+
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (!event.persisted) return;
+      cancelTransition();
     };
 
     const handleRequestedNavigation = (event: Event) => {
@@ -287,17 +380,24 @@ export function InitialPageLoader() {
     // first, then invoke the router ourselves on the following painted frame.
     document.addEventListener("click", handleDocumentClick, true);
     window.addEventListener("popstate", handleHistoryNavigation);
+    window.addEventListener("pageshow", handlePageShow);
     window.addEventListener(NAVIGATION_EVENT, handleRequestedNavigation);
     return () => {
       document.removeEventListener("click", handleDocumentClick, true);
       window.removeEventListener("popstate", handleHistoryNavigation);
+      window.removeEventListener("pageshow", handlePageShow);
       window.removeEventListener(NAVIGATION_EVENT, handleRequestedNavigation);
     };
-  }, [beginTransition, router]);
+  }, [
+    beginTransition,
+    cancelTransition,
+    router,
+  ]);
 
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return;
     previousPathnameRef.current = pathname;
+    if (!isTransitioningRef.current) return;
 
     if (
       targetPathnameRef.current === null ||

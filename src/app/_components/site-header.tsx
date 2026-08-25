@@ -7,7 +7,11 @@ import {
   cancelLanguageTransition,
   fadeOutLanguageContent,
 } from "./language-transition";
-import { navigateWithPageLoader } from "./navigation-transition";
+import {
+  canReturnToHomeHistory,
+  syncHomeReturnHistoryState,
+} from "./home-return-history";
+import { fadeOutForHomeReturn } from "./home-return-transition";
 import { ThemeToggle } from "./theme-toggle";
 
 type Props = {
@@ -19,6 +23,7 @@ export function SiteHeader({ lang }: Props) {
   const router = useRouter();
   const isEn = lang === "en";
   const targetLang = isEn ? "zh" : "en";
+  const homePath = `/${lang}`;
 
   // Build the target path for language toggle
   const targetPath = pathname.replace(`/${lang}`, `/${targetLang}`) || `/${targetLang}`;
@@ -34,6 +39,10 @@ export function SiteHeader({ lang }: Props) {
     languageSwitchingRef.current = false;
     setSliderLanguage(lang);
   }, [lang]);
+
+  useEffect(() => {
+    syncHomeReturnHistoryState(pathname);
+  }, [pathname]);
 
   const handleLanguageSwitch = async (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -74,9 +83,10 @@ export function SiteHeader({ lang }: Props) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
-      <div className="mx-auto flex h-full max-w-[1024px] items-center justify-between px-5">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-5">
         <Link
-          href={`/${lang}`}
+          href={homePath}
+          data-navigation-controlled="true"
           onClick={(event) => {
             if (
               event.button !== 0 ||
@@ -89,17 +99,25 @@ export function SiteHeader({ lang }: Props) {
             }
 
             event.preventDefault();
-            if (pathname === `/${lang}` || pathname === `/${lang}/`) {
+            if (pathname === homePath || pathname === `${homePath}/`) {
               window.scrollTo({ top: 0, behavior: "smooth" });
               return;
             }
 
-            navigateWithPageLoader({
-              targetPathname: `/${lang}`,
-              navigate: () => router.push(`/${lang}`),
+            const returnThroughHistory = canReturnToHomeHistory(
+              pathname,
+              homePath,
+            );
+            void fadeOutForHomeReturn().then((shouldReturn) => {
+              if (!shouldReturn) return;
+              if (returnThroughHistory) {
+                window.history.back();
+              } else {
+                router.push(homePath);
+              }
             });
           }}
-          className="flex items-center gap-2 text-base font-medium tracking-tight hover:opacity-70 font-barlow cursor-pointer"
+          className="flex cursor-pointer items-center gap-2 text-base font-medium tracking-tight hover:opacity-70"
           aria-label={isEn ? "Go to homepage" : "返回首页"}
           style={{
             transition: "opacity 300ms cubic-bezier(0.4,0,0.2,1), color 300ms cubic-bezier(0.4,0,0.2,1)",
@@ -118,7 +136,7 @@ export function SiteHeader({ lang }: Props) {
             <Link
               href={targetPath}
               onClick={handleLanguageSwitch}
-              className="relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl border border-neutral-200 bg-neutral-100 p-[3px] font-barlow dark:border-neutral-700 dark:bg-neutral-900"
+              className="relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl border border-neutral-200 bg-neutral-100 p-[3px] dark:border-neutral-700 dark:bg-neutral-900"
               role="switch"
               aria-checked={isEn}
               aria-label={isEn ? "切换到中文" : "Switch to English"}

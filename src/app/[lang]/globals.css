@@ -1,7 +1,3 @@
-/* Barlow font utility for Tailwind font-barlow */
-.font-barlow {
-  font-family: var(--font-barlow), Barlow, sans-serif;
-}
 /* Markdown global styles migrated from markdown-styles.module.css */
 .markdown {
   @apply text-lg leading-relaxed;
@@ -72,6 +68,29 @@
   color: #EE9933;
   @apply underline;
 }
+
+.animated-weight-link,
+.markdown a {
+  font-weight: 400;
+  transition:
+    font-weight 220ms cubic-bezier(0.2, 0, 0, 1),
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.animated-weight-link:hover,
+.animated-weight-link:focus-visible,
+.markdown a:hover,
+.markdown a:focus-visible {
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-weight-link,
+  .markdown a {
+    transition: none;
+  }
+}
 .markdown table {
   @apply w-full my-6 border-collapse;
   border: 1px solid var(--md-border);
@@ -126,7 +145,6 @@
 
 @layer base {
   :root {
-    --font-barlow: "Barlow";
     --md-border: theme('colors.neutral.200');
     --md-border-blockquote: theme('colors.neutral.800');
     --md-bg-th: theme('colors.neutral.50');
@@ -159,6 +177,21 @@ html {
 
 body {
   @apply text-base;
+}
+
+/* Let the visual grids breathe beyond the reading column while keeping every
+   text-led section on the same vertical axis. The overhang collapses as the
+   viewport narrows, so it never creates horizontal scrolling. */
+.homepage-media-breakout {
+  --homepage-media-overhang: clamp(0px, calc((100vw - 1160px) / 2), 48px);
+  margin-inline: calc(0px - var(--homepage-media-overhang));
+}
+
+/* Match each caption's inset to the card's 48px corner radius. On narrower
+   screens the inset follows the available overhang so captions stay usable. */
+.homepage-project-grid .homepage-media-caption,
+.homepage-creation-grid .homepage-media-caption {
+  padding-inline: var(--homepage-media-overhang);
 }
 
 /* A pair of oversized, low-contrast color fields keeps the neutral page
@@ -500,20 +533,20 @@ html[data-language-transition-running] [data-language-transition-floating] {
   animation: none;
 }
 
-/* Page loading transition. A stable background hides route replacement while
-   the centered indicator fades in; the completed page is revealed on exit. */
+/* Page loading transition. The site's fixed ambient background remains visible
+   throughout; only page content and the centered indicator cross-fade. */
 .page-loader-overlay,
 .page-loader-route {
   display: grid;
   min-height: calc(100vh - 3.5rem);
   place-items: center;
   overflow: hidden;
-  background: theme('colors.white');
+  background: transparent;
 }
 
 .dark .page-loader-overlay,
 .dark .page-loader-route {
-  background: theme('colors.neutral.950');
+  background: transparent;
 }
 
 .page-loader-overlay {
@@ -522,7 +555,7 @@ html[data-language-transition-running] [data-language-transition-floating] {
   z-index: 60;
   opacity: 1;
   will-change: opacity;
-  transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 100ms linear;
 }
 
 .page-loader-overlay[data-page-loader-phase="entering"] {
@@ -555,7 +588,7 @@ html[data-language-transition-running] [data-language-transition-floating] {
   border-top-color: #ee9933;
   border-radius: 9999px;
   animation: page-loader-spin 700ms linear infinite;
-  transition: opacity 160ms ease-out;
+  transition: opacity 100ms linear;
 }
 
 .page-loader-overlay[data-page-loader-phase="entering"] .page-loader-spinner {

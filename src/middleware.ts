@@ -4,6 +4,7 @@ import type { NextRequest } from "next/server";
 
 const CHROME_DEVTOOLS_CONFIG_PATH =
   "/.well-known/appspecific/com.chrome.devtools.json";
+const SITE_LANGUAGE_HEADER = "x-site-language";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -28,6 +29,19 @@ export function middleware(request: NextRequest) {
 
     return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
   }
+
+  const locale = LANGUAGES.find(
+    (language) =>
+      pathname === `/${language}` || pathname.startsWith(`/${language}/`)
+  );
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set(SITE_LANGUAGE_HEADER, locale || DEFAULT_LANGUAGE);
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
 }
 
 export const config = {

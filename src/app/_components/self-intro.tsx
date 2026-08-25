@@ -113,7 +113,7 @@ export function SelfIntro({ lang }: Props) {
                 I focus on integrating AI with software and hardware experiences to create intelligent and human-centered products. I’m driven by a results-oriented approach to design—turning creative insight into tangible business value and lasting impact.
               </p>
               <p className="mb-4">
-                I graduated from <Link href="/en/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">ArtCenter College of Design</Link> and currently work at <Link href="/en/experience/netease-games" className="underline hover:opacity-70 transition-opacity">NetEase Games</Link>. I am also an entrepreneur, <Link href="/en/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">educator</Link>, and <Link href="/en/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT expert</Link>.
+                I graduated from <Link href="/en/experience/artcenter-college-of-design" className="animated-weight-link underline hover:opacity-70">ArtCenter College of Design</Link> and currently work at <Link href="/en/experience/netease-games" className="animated-weight-link underline hover:opacity-70">NetEase Games</Link>. I am also an entrepreneur, <Link href="/en/experience/insead-business-school" className="animated-weight-link underline hover:opacity-70">educator</Link>, and <Link href="/en/creation/ppt-expert" className="animated-weight-link underline hover:opacity-70">PPT expert</Link>.
               </p>
             </>
           ) : (
@@ -122,7 +122,7 @@ export function SelfIntro({ lang }: Props) {
                 我专注于融合AI与软硬件体验，打造智能且有温度的产品。以商业成果为导向，我致力于让设计在企业中创造真实价值与可衡量的影响力。
               </p>
               <p className="mb-4">
-                我本科毕业于<Link href="/zh/experience/artcenter-college-of-design" className="underline hover:opacity-70 transition-opacity">艺术中心设计学院</Link>，目前在<Link href="/zh/experience/netease-games" className="underline hover:opacity-70 transition-opacity">网易互娱</Link>工作。我同时也是一名创业者、<Link href="/zh/experience/insead-business-school" className="underline hover:opacity-70 transition-opacity">教育者</Link>和<Link href="/zh/creation/ppt-expert" className="underline hover:opacity-70 transition-opacity">PPT专家</Link>。
+                我本科毕业于<Link href="/zh/experience/artcenter-college-of-design" className="animated-weight-link underline hover:opacity-70">艺术中心设计学院</Link>，目前在<Link href="/zh/experience/netease-games" className="animated-weight-link underline hover:opacity-70">网易互娱</Link>工作。我同时也是一名创业者、<Link href="/zh/experience/insead-business-school" className="animated-weight-link underline hover:opacity-70">教育者</Link>和<Link href="/zh/creation/ppt-expert" className="animated-weight-link underline hover:opacity-70">PPT专家</Link>。
               </p>
             </>
           )}
@@ -167,7 +167,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeQR}
         >
           <div
-            className={`mx-4 w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
+            className={`mx-4 w-full max-w-xs rounded-[32px] bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
               qrVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -201,7 +201,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeMobile}
         >
           <div
-            className={`mx-4 w-full max-w-xs rounded-2xl bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
+            className={`mx-4 w-full max-w-xs rounded-[32px] bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
               mobileVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}

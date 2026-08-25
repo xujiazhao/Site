@@ -24,7 +24,7 @@ export async function ContentDetailPage({ collection, lang, slug }: Props) {
   return (
     <main data-page-language={lang}>
       <Container>
-        <article className="mb-12">
+        <article className="mx-auto mb-12 max-w-[1024px]">
           <PostHeader
             title={post.title}
             date={post.date}

@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Post } from "@/interfaces/post";
 import DateFormatter from "@/app/_components/date-formatter";
 import { PiCaretDownBold, PiCaretUpBold } from "react-icons/pi";
+import { useExpandableGrid } from "./use-expandable-grid";
 
 type Props = {
   writings: Post[];
@@ -13,21 +13,33 @@ type Props = {
 };
 
 export function WritingSection({ writings, lang, isEn }: Props) {
-  const [expanded, setExpanded] = useState(false);
-  const extraRef = useRef<HTMLDivElement>(null);
-  const [extraHeight, setExtraHeight] = useState(0);
+  const {
+    containerRef: gridRef,
+    contentVisible,
+    expanded,
+    isAnimating,
+    toggle,
+  } = useExpandableGrid<HTMLDivElement>({
+    homePathname: `/${lang}`,
+    sectionKey: "writing",
+  });
 
   const visible = writings.slice(0, 6);
   const extra = writings.slice(6);
 
-  useEffect(() => {
-    if (extraRef.current) {
-      setExtraHeight(extraRef.current.scrollHeight);
-    }
-  }, [extra.length]);
-
-  const renderItem = (post: Post) => (
-    <Link key={post.slug} href={`/${lang}/writing/${post.slug}`} className="group col-span-3 grid grid-cols-subgrid items-baseline border-b border-neutral-100 py-2 transition-colors duration-300 hover:bg-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900">
+  const renderItem = (post: Post, isExtra = false) => (
+    <Link
+      key={post.slug}
+      href={`/${lang}/writing/${post.slug}`}
+      data-collapse-base={isExtra ? undefined : ""}
+      className={`group col-span-3 grid grid-cols-subgrid items-baseline border-b border-neutral-100 py-2 transition-[color,background-color,opacity,transform] duration-300 hover:bg-neutral-100 motion-reduce:transition-none dark:border-neutral-800 dark:hover:bg-neutral-900 ${
+        isExtra
+          ? contentVisible
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+          : ""
+      }`}
+    >
       <div className="min-w-0 mr-3">
         <h3 className="text-base font-semibold group-hover:underline">
           {post.title}
@@ -49,29 +61,22 @@ export function WritingSection({ writings, lang, isEn }: Props) {
       <h2 className="mb-6 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
         {isEn ? "Writing" : "写作"}
       </h2>
-      <div className="grid" style={{ gridTemplateColumns: '1fr auto auto', columnGap: '0.5rem' }}>
-        {visible.map(renderItem)}
-        {extra.length > 0 && (
-          <div
-            ref={extraRef}
-            className="grid grid-cols-subgrid col-span-3"
-            style={{
-              maxHeight: expanded ? extraHeight + 10 : 0,
-              opacity: expanded ? 1 : 0,
-              overflow: "hidden",
-              transition: "max-height 400ms ease-in-out, opacity 300ms ease-in-out",
-            }}
-          >
-            {extra.map(renderItem)}
-          </div>
-        )}
+      <div
+        ref={gridRef}
+        className="grid"
+        style={{ gridTemplateColumns: '1fr auto auto', columnGap: '0.5rem' }}
+      >
+        {visible.map((post) => renderItem(post))}
+        {expanded && extra.map((post) => renderItem(post, true))}
       </div>
       {extra.length > 0 && (
         <>
           <div className="flex justify-center mt-6">
             <button
-              onClick={() => setExpanded(!expanded)}
-              className="flex items-center gap-1.5 text-base text-neutral-500 transition-colors duration-300 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+              onClick={toggle}
+              disabled={isAnimating}
+              aria-expanded={expanded}
+              className="flex items-center gap-1.5 text-base text-neutral-500 transition-colors duration-300 hover:text-neutral-800 disabled:cursor-default dark:text-neutral-400 dark:hover:text-neutral-100"
             >
               {expanded
                 ? (isEn ? "Show less" : "收起")
