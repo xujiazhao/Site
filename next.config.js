@@ -6,6 +6,11 @@ const sharedConfig = {
     remotePatterns: [],
   },
   serverExternalPackages: ["puppeteer-core", "@sparticuz/chromium"],
+  outputFileTracingIncludes: {
+    "/api/resume-pdf": [
+      "./node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
+    ],
+  },
   async rewrites() {
     return [
       {

@@ -12,7 +12,8 @@
   @apply my-6 pl-5 border-l-4 font-semibold text-xl leading-relaxed;
   border-left-color: var(--md-border-blockquote);
 }
-.markdown strong {
+.markdown strong,
+.markdown b {
   font-weight: 600;
 }
 .markdown blockquote p {
@@ -67,6 +68,13 @@
 .markdown a {
   color: #EE9933;
   @apply underline;
+}
+
+/* Links stay regular even when Markdown bold syntax is nested inside them.
+   The nested text then follows the link's 400 → 600 hover animation. */
+.markdown a strong,
+.markdown a b {
+  font-weight: inherit;
 }
 
 .animated-weight-link,

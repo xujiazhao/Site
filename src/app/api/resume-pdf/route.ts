@@ -17,6 +17,34 @@ const cacheDir = isDev
   : join("/tmp", "resume-cache");
 const mdDir = join(process.cwd(), "resume", "content");
 const SAFE_VARIANT = /^[a-z0-9][a-z0-9-]*$/;
+const PDF_CACHE_VERSION = "geist-sans-variable-v1";
+const geistFontPath = join(
+  process.cwd(),
+  "node_modules",
+  "geist",
+  "dist",
+  "fonts",
+  "geist-sans",
+  "Geist-Variable.woff2",
+);
+
+let geistFontCss: string | null = null;
+
+function getGeistFontCss(): string {
+  if (geistFontCss) return geistFontCss;
+
+  const fontBase64 = fs.readFileSync(geistFontPath).toString("base64");
+  geistFontCss = `
+    @font-face {
+      font-family: "Geist Sans";
+      src: url("data:font/woff2;base64,${fontBase64}") format("woff2");
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: block;
+    }
+  `;
+  return geistFontCss;
+}
 
 async function getBrowserExecutablePath(): Promise<string> {
   if (!isDev) return chromium.executablePath();
@@ -50,7 +78,11 @@ function getMdHash(lang: string, variant: string): string | null {
     const mdPath = join(mdDir, lang, `${variant}.md`);
     if (!fs.existsSync(mdPath)) return null;
     const content = fs.readFileSync(mdPath, "utf8");
-    return createHash("sha256").update(content).digest("hex").slice(0, 12);
+    return createHash("sha256")
+      .update(PDF_CACHE_VERSION)
+      .update(content)
+      .digest("hex")
+      .slice(0, 12);
   } catch (e) {
     console.warn("[resume-pdf] Failed to hash MD:", e);
     return null;
@@ -148,6 +180,7 @@ export async function GET(request: NextRequest) {
   const padding = isEn ? "0.55in" : "15mm";
   const width = isEn ? "8.5in" : "210mm";
   const minHeight = isEn ? "11in" : "297mm";
+  const embeddedGeistFont = getGeistFontCss();
 
   const fullHtml = `<!DOCTYPE html>
 <html>
@@ -156,9 +189,9 @@ export async function GET(request: NextRequest) {
   <title>${resume.title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   ${!isEn ? '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">' : ''}
   <style>
+    ${embeddedGeistFont}
     /* Tailwind preflight subset */
     *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; }
     html { line-height: 1.5; }
@@ -168,8 +201,8 @@ export async function GET(request: NextRequest) {
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: inherit; }
     body {
-      font-family: ${isEn
-        ? "'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+      font-family: 'Geist Sans', ${isEn
+        ? "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         : "'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif"};
       color: #171717;
       -webkit-print-color-adjust: exact;
@@ -235,6 +268,16 @@ export async function GET(request: NextRequest) {
     
     await page.setContent(fullHtml, { waitUntil: "domcontentloaded", timeout: 15000 });
     await page.waitForNetworkIdle({ idleTime: 500, timeout: 15000 });
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+    });
+
+    const geistLoaded = await page.evaluate(() =>
+      document.fonts.check('12px "Geist Sans"'),
+    );
+    if (!geistLoaded) {
+      throw new Error("Geist Sans failed to load in the PDF renderer");
+    }
     
     console.log("[resume-pdf] Content set, waiting for render...");
     
