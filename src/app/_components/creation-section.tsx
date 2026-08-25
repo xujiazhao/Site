@@ -72,7 +72,7 @@ export function CreationSection({ creations, lang, isEn }: Props) {
       </h2>
       <div
         ref={gridRef}
-        className="homepage-media-breakout homepage-creation-grid grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4"
+        className="homepage-media-breakout homepage-creation-grid grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4"
       >
         {nonArchive.map((post) => renderCard(post))}
         {showArchive && archive.map((post) => (

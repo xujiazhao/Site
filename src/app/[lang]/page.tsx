@@ -44,7 +44,7 @@ export default async function Index({ params }: { params: Promise<{ lang: string
           <h2 className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
              {isEn ? "Project" : "项目"}
           </h2>
-          <div className="homepage-media-breakout homepage-project-grid grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3">
+          <div className="homepage-media-breakout homepage-project-grid grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((post) => {
               const href = `/${lang}/project/${post.slug}`;
               return (
@@ -52,7 +52,7 @@ export default async function Index({ params }: { params: Promise<{ lang: string
                   {post.coverImage ? (
                     <CoverImage src={post.coverImage} alt={post.title} />
                   ) : (
-                    <div className="overflow-hidden rounded-[48px]">
+                    <div className="overflow-hidden rounded-[24px] sm:rounded-[48px]">
                       <div className="aspect-video w-full bg-neutral-100 dark:bg-neutral-900" />
                     </div>
                   )}
