@@ -14,6 +14,7 @@ const config: Config = {
       fontFamily: {
         sans: [
           'var(--font-geist-sans)',
+          '"Noto Sans SC Variable"',
           '-apple-system',
           'BlinkMacSystemFont',
           '"PingFang SC"',

@@ -1,4 +1,6 @@
 import { GeistSans } from "geist/font/sans";
+import "@fontsource-variable/noto-sans-sc/wght.css";
+import { CustomCursor } from "./_components/custom-cursor";
 import "./[lang]/globals.css";
 
 const THEME_INIT_SCRIPT = `
@@ -12,6 +14,10 @@ const THEME_INIT_SCRIPT = `
       document.querySelector('meta[name="theme-color"]')?.setAttribute(
         "content",
         isDark ? "#0a0a0a" : "#ffffff"
+      );
+      document.documentElement.classList.toggle(
+        "custom-cursor-enabled",
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches
       );
     } catch {}
   })();
@@ -37,6 +43,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body className="bg-white font-sans text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+        <CustomCursor />
         <div className="ambient-backdrop" aria-hidden="true" />
         <div className="site-content-layer">{children}</div>
       </body>

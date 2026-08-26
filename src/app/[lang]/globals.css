@@ -82,8 +82,7 @@
   font-weight: 400;
   transition:
     font-weight 220ms cubic-bezier(0.2, 0, 0, 1),
-    color 180ms ease,
-    opacity 180ms ease;
+    color 180ms ease;
 }
 
 .animated-weight-link:hover,
@@ -91,6 +90,11 @@
 .markdown a:hover,
 .markdown a:focus-visible {
   font-weight: 600;
+}
+
+.animated-weight-link:hover,
+.animated-weight-link:focus-visible {
+  color: #EE9933;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -115,9 +119,6 @@
 .markdown th {
   @apply font-semibold;
   background-color: var(--md-bg-th);
-}
-.markdown a:hover {
-  color: #cc7a1a;
 }
 .markdown hr {
   @apply my-12 border-0 border-t;
@@ -185,6 +186,121 @@ html {
 
 body {
   @apply text-base;
+}
+
+/* The visual cursor is rendered separately so its navigation tip can animate
+   into the action dot. Native cursors remain as the no-JS/touch fallback. */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled body,
+  html.custom-cursor-enabled body * {
+    cursor: none !important;
+  }
+
+  html.custom-cursor-enabled input:not([type]),
+  html.custom-cursor-enabled input[type="text"],
+  html.custom-cursor-enabled input[type="email"],
+  html.custom-cursor-enabled input[type="search"],
+  html.custom-cursor-enabled input[type="password"],
+  html.custom-cursor-enabled input[type="url"],
+  html.custom-cursor-enabled input[type="tel"],
+  html.custom-cursor-enabled input[type="number"],
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 100ms ease;
+}
+
+.custom-cursor[data-visible="true"][data-hidden="false"] {
+  opacity: 1;
+}
+
+.custom-cursor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #EE9933;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+.custom-cursor.custom-cursor--pulsing::after {
+  animation: custom-cursor-pulse 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.custom-cursor__shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: #EE9933;
+  transform-origin: 0 0;
+  clip-path: path("M 2 2 C 1.4 2.6 1.6 3.3 1.8 4 L 6.2 20.2 C 6.7 22 9.1 22.2 10.1 20.6 L 13.8 14.8 C 14.1 14.35 14.35 14.1 14.8 13.8 L 20.6 10.1 C 22.2 9.1 22 6.7 20.2 6.2 L 4 1.8 C 3.3 1.6 2.6 1.4 2 2 Z");
+  transform: translate(0, 0) scale(1);
+  transition:
+    clip-path 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.custom-cursor[data-action="true"] .custom-cursor__shape {
+  clip-path: path("M 12 2 C 6.48 2 2 6.48 2 12 L 2 12 C 2 17.52 6.48 22 12 22 L 12 22 C 17.52 22 22 17.52 22 12 L 22 12 C 22 6.48 17.52 2 12 2 L 12 2 C 12 2 12 2 12 2 Z");
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.custom-cursor[data-pressed="true"] .custom-cursor__shape {
+  transform: scale(0.78);
+}
+
+.custom-cursor[data-action="true"][data-pressed="true"] .custom-cursor__shape {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .custom-cursor__shape {
+    transition: none;
+  }
+
+  .custom-cursor.custom-cursor--pulsing::after {
+    animation: none;
+  }
+}
+
+@keyframes custom-cursor-pulse {
+  0% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.9);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
 }
 
 /* Let the visual grids breathe beyond the reading column while keeping every
