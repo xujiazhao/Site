@@ -641,6 +641,38 @@ html[data-language-transition-running] [data-language-transition-floating] {
 }
 
 /* Cover image skeleton for cards */
+.media-skeleton-wrapper {
+  position: relative;
+  display: block;
+  min-height: 120px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  line-height: 0;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 25%,
+    var(--skeleton-highlight) 50%,
+    var(--skeleton-base) 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.5s infinite linear;
+}
+
+.media-skeleton-wrapper img {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.media-skeleton-wrapper.media-skeleton-loaded {
+  min-height: 0;
+  background: none;
+  animation: none;
+}
+
+.media-skeleton-wrapper.media-skeleton-loaded img {
+  opacity: 1;
+}
+
 .cover-skeleton {
   background: linear-gradient(
     90deg,
@@ -655,6 +687,17 @@ html[data-language-transition-running] [data-language-transition-floating] {
 .cover-skeleton.cover-loaded {
   background: none;
   animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-skeleton-wrapper,
+  .cover-skeleton {
+    animation: none;
+  }
+
+  .media-skeleton-wrapper img {
+    transition: none;
+  }
 }
 
 /* Page loading transition. The site's fixed ambient background remains visible
