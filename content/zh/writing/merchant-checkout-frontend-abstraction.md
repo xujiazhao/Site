@@ -52,7 +52,7 @@ type: "思考"
 
 指的是商户的支付渠道是分层的，用户需要先选父集，再选子集，如：
 
-![[thehut.com](http://thehut.com/) - 为The Hut Group旗下商户，使用THG通用电商能力](/assets/images/merchant-checkout-frontend-abstraction/thehut2.webp)
+![[thehut.com](http://thehut.com/) - 为The Hut Group旗下商户，使用THG通用电商能力](/assets/images/merchant-checkout-frontend-abstraction/thehub2.webp)
 
 ### 数娱类暗黑模式UI
 

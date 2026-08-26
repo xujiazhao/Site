@@ -53,7 +53,7 @@ Refers to merchants that use only a small square plus text to represent a paymen
 
 Refers to merchants whose payment channels are layered — users need to select a parent category first, then a sub-category, such as:
 
-![[thehut.com](http://thehut.com/) - A merchant under The Hut Group, using THG's universal e-commerce capabilities](/assets/images/merchant-checkout-frontend-abstraction/thehut2.webp)
+![[thehut.com](http://thehut.com/) - A merchant under The Hut Group, using THG's universal e-commerce capabilities](/assets/images/merchant-checkout-frontend-abstraction/thehub2.webp)
 
 ### Dark Mode UI for Digital Entertainment
 
