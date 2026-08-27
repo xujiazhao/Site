@@ -20,7 +20,7 @@ const ROTATING_TITLES = [
 ] as const;
 
 const CONTACT_ACTION_CLASS =
-  "inline-flex h-10 w-full appearance-none select-none items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-neutral-300 bg-transparent px-5 text-sm font-normal text-neutral-900 transition-[color,background-color,border-color,transform] duration-200 hover:bg-neutral-100 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-900 dark:focus-visible:ring-offset-neutral-950 md:w-auto";
+  "liquid-glass-control inline-flex h-10 w-full appearance-none select-none items-center justify-center gap-1.5 whitespace-nowrap rounded-xl px-5 text-sm font-normal text-neutral-900 transition-[color,background-color,border-color,box-shadow,transform] duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-neutral-100 dark:focus-visible:ring-offset-neutral-950 md:w-auto";
 
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
@@ -167,7 +167,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeQR}
         >
           <div
-            className={`mx-4 w-full max-w-xs rounded-[32px] bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
+            className={`liquid-glass-panel mx-4 w-full max-w-xs rounded-[32px] p-6 transition-all duration-200 ${
               qrVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -201,7 +201,7 @@ export function SelfIntro({ lang }: Props) {
           onClick={closeMobile}
         >
           <div
-            className={`mx-4 w-full max-w-xs rounded-[32px] bg-white p-6 shadow-xl transition-all duration-200 dark:bg-neutral-900 ${
+            className={`liquid-glass-panel mx-4 w-full max-w-xs rounded-[32px] p-6 transition-all duration-200 ${
               mobileVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
             }`}
             onClick={(e) => e.stopPropagation()}
@@ -218,7 +218,7 @@ export function SelfIntro({ lang }: Props) {
             <p className="mb-4 text-center text-base text-neutral-700 dark:text-neutral-300">WeChat ID: <span className="font-semibold">xux-ai</span></p>
             <button
               onClick={handleCopyWeChat}
-              className="w-full rounded-xl bg-neutral-800 py-2.5 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
+              className="liquid-glass-control liquid-glass-control--strong w-full rounded-xl py-2.5 text-sm font-medium text-neutral-900 transition-[background-color,box-shadow,transform] active:scale-[0.98] dark:text-neutral-100"
             >
               {isEn ? "Copy WeChat ID" : "复制 WeChat ID 到剪贴板"}
             </button>

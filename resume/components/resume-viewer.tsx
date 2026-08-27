@@ -121,8 +121,7 @@ export function ResumeViewer({ variants, lang }: ResumeViewerProps) {
           <div ref={dropdownRef} className="relative">
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className="flex h-9 cursor-pointer select-none items-center gap-1.5 whitespace-nowrap rounded-xl border border-neutral-300 px-3 text-sm font-medium text-neutral-900 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"
-              style={{ transition: "background 150ms ease" }}
+              className="liquid-glass-control flex h-9 cursor-pointer select-none items-center gap-1.5 whitespace-nowrap rounded-xl px-3 text-sm font-medium text-neutral-900 dark:text-neutral-100"
               aria-haspopup="listbox"
               aria-expanded={dropdownOpen}
             >
@@ -146,8 +145,7 @@ export function ResumeViewer({ variants, lang }: ResumeViewerProps) {
             {dropdownOpen && (
               <ul
                 role="listbox"
-                className="absolute left-0 top-[calc(100%+4px)] z-50 min-w-[140px] rounded-xl border border-neutral-200 bg-white py-1 shadow-lg hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-600"
-                style={{ transition: "border-color 150ms ease" }}
+                className="liquid-glass-control absolute left-0 top-[calc(100%+4px)] z-50 min-w-[140px] overflow-hidden rounded-xl py-1"
               >
                 {variants.map((v, i) => (
                   <li
@@ -161,7 +159,7 @@ export function ResumeViewer({ variants, lang }: ResumeViewerProps) {
                     }}
                     className={`flex items-center gap-2 mx-1 px-2 py-1.5 rounded-lg text-sm cursor-pointer select-none whitespace-nowrap ${
                       i === activeVariant
-                        ? "bg-neutral-100 font-medium text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100"
+                        ? "bg-neutral-200 font-medium text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
                         : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                     }`}
                     style={{ transition: "background 120ms ease, color 120ms ease" }}
@@ -184,7 +182,7 @@ export function ResumeViewer({ variants, lang }: ResumeViewerProps) {
               {isEn ? "PDF generation may take ~10s" : "PDF生成约需10秒"}
             </span>
             {/* Download Button */}
-            <button onClick={handleDownloadPDF} className="resume-download-btn" disabled={downloading}>
+            <button onClick={handleDownloadPDF} className="liquid-glass-control resume-download-btn" disabled={downloading}>
               {downloading ? (
                 <svg className="resume-spinner" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 12a9 9 0 1 1-6.219-8.56" />

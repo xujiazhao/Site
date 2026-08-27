@@ -164,7 +164,7 @@ export function ThemeToggle({ lang }: Props) {
     <button
       type="button"
       onClick={toggleTheme}
-      className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-neutral-300 bg-transparent text-neutral-900 transition-[color,background-color,border-color,transform] duration-200 hover:bg-neutral-100 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-900 dark:focus-visible:ring-offset-neutral-950"
+      className="liquid-glass-control relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl text-neutral-900 transition-[color,background-color,border-color,box-shadow,transform] duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-neutral-100 dark:focus-visible:ring-offset-neutral-950"
       role="switch"
       aria-checked={isDark}
       aria-label={label}

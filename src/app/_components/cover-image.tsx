@@ -23,7 +23,7 @@ export function CoverImage({ src, alt }: Props) {
 
   return (
     <div
-      className={`cover-skeleton aspect-video overflow-hidden rounded-[24px] border border-black/10 dark:border-white/10 sm:rounded-[48px]${loaded ? " cover-loaded" : ""}`}
+      className={`liquid-glass-media cover-skeleton aspect-video overflow-hidden rounded-[24px] sm:rounded-[48px]${loaded ? " cover-loaded" : ""}`}
     >
       <img
         ref={imgRef}

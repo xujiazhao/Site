@@ -94,7 +94,7 @@ export function CreationSection({ creations, lang, isEn }: Props) {
             onClick={handleToggle}
             disabled={isAnimating}
             aria-expanded={showArchive}
-            className="flex items-center gap-1.5 text-base text-neutral-500 transition-colors duration-300 hover:text-neutral-800 disabled:cursor-default dark:text-neutral-400 dark:hover:text-neutral-100"
+            className="liquid-glass-control flex items-center gap-1.5 rounded-full px-4 py-2 text-base text-neutral-500 transition-[color,background-color,box-shadow] duration-300 hover:text-neutral-800 disabled:cursor-default dark:text-neutral-300 dark:hover:text-neutral-100"
           >
             {showArchive
               ? (isEn ? "Hide earlier works" : "收起早期作品")

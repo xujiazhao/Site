@@ -82,7 +82,7 @@ export function SiteHeader({ lang }: Props) {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 h-14 border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-950">
+    <header className="liquid-glass-header fixed top-0 left-0 right-0 z-50 h-14 border-b">
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-5">
         <Link
           href={homePath}
@@ -136,13 +136,13 @@ export function SiteHeader({ lang }: Props) {
             <Link
               href={targetPath}
               onClick={handleLanguageSwitch}
-              className="relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl border border-neutral-200 bg-neutral-100 p-[3px] dark:border-neutral-700 dark:bg-neutral-900"
+              className="liquid-glass-control relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl p-[3px]"
               role="switch"
               aria-checked={isEn}
               aria-label={isEn ? "切换到中文" : "Switch to English"}
             >
               <span
-                className="absolute left-[3px] h-[28px] w-[40px] rounded-[8px] bg-white shadow-sm dark:bg-neutral-700"
+                className="absolute left-[3px] h-[28px] w-[40px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
                 style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: sliderLanguage === 'en' ? 'translateX(0)' : 'translateX(40px)' }}
               />
               <span className={`relative z-10 flex-1 text-center text-sm font-medium ${sliderLanguage === 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>

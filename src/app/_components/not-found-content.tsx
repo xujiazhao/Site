@@ -33,7 +33,7 @@ export function NotFoundContent({
           </p>
           <Link
             href={`/${lang}`}
-            className="mt-8 inline-flex h-11 items-center justify-center rounded-xl bg-neutral-900 px-6 text-sm font-medium text-white transition-[background-color,transform] hover:bg-neutral-700 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white dark:focus-visible:ring-offset-neutral-950"
+            className="liquid-glass-control liquid-glass-control--strong mt-8 inline-flex h-11 items-center justify-center rounded-xl px-6 text-sm font-medium text-neutral-900 transition-[background-color,box-shadow,transform] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:text-neutral-100 dark:focus-visible:ring-offset-neutral-950"
           >
             {isEn ? "Go to homepage" : "前往首页"}
           </Link>

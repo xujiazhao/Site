@@ -205,7 +205,7 @@ export function ChatWidget({ lang }: Props) {
           data-language-transition-floating
           data-language={lang}
           onClick={() => setIsOpen(true)}
-          className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 animate-chat-trigger-in items-center gap-2.5 whitespace-nowrap rounded-full bg-neutral-800 px-6 py-3 text-white shadow-lg transition-all hover:bg-neutral-700 hover:shadow-xl dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white ${
+          className={`liquid-glass-control liquid-glass-control--strong fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 animate-chat-trigger-in items-center gap-2.5 whitespace-nowrap rounded-full px-6 py-3 text-neutral-900 transition-all dark:text-neutral-100 ${
             isVisible
               ? "opacity-0 pointer-events-none"
               : "opacity-100"
@@ -242,7 +242,7 @@ export function ChatWidget({ lang }: Props) {
           <div className="absolute inset-0 flex flex-col items-center justify-end pointer-events-none md:pb-6 md:px-5">
             <div
               ref={chatPanelRef}
-              className="pointer-events-auto flex h-full w-full flex-col overflow-hidden bg-white transition-all duration-300 ease-out dark:bg-neutral-900 md:h-auto md:max-h-[70vh] md:max-w-[1024px] md:rounded-[32px] md:border md:border-neutral-200/50 md:shadow-2xl md:dark:border-neutral-700"
+              className="liquid-glass-panel pointer-events-auto flex h-full w-full flex-col overflow-hidden transition-all duration-300 ease-out md:h-auto md:max-h-[70vh] md:max-w-[1024px] md:rounded-[32px]"
               style={{
                 transform: animState === "open" ? "translateY(0)" : "translateY(100%)",
               }}
@@ -276,7 +276,7 @@ export function ChatWidget({ lang }: Props) {
                         <button
                           key={q}
                           onClick={() => handleQuickQuestion(q)}
-                          className="rounded-2xl border border-neutral-300/60 px-3.5 py-2.5 text-sm text-neutral-600 transition-colors hover:bg-neutral-200/40 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+                          className="liquid-glass-control rounded-2xl px-3.5 py-2.5 text-sm text-neutral-600 transition-[color,background-color,box-shadow] dark:text-neutral-300"
                         >
                           {q}
                         </button>
@@ -334,7 +334,7 @@ export function ChatWidget({ lang }: Props) {
                   <button
                     onClick={sendMessage}
                     disabled={!input.trim() || isLoading}
-                    className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-neutral-800 text-white transition-colors hover:bg-neutral-700 disabled:opacity-30 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
+                    className="liquid-glass-control liquid-glass-control--strong flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl text-neutral-900 transition-[background-color,box-shadow] disabled:opacity-30 dark:text-neutral-100"
                   >
                     <PiPaperPlaneRightFill className="w-4 h-4" />
                   </button>

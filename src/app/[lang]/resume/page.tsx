@@ -24,7 +24,7 @@ async function getProcessedResumes(lang: string) {
   return Promise.all(
     resumes.map(async (r) => ({
       ...r,
-      htmlContent: await markdownToHtml(r.content),
+      htmlContent: await markdownToHtml(r.content, { mediaSkeleton: false }),
     }))
   );
 }

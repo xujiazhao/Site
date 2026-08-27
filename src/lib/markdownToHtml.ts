@@ -2,7 +2,14 @@ import { remark } from "remark";
 import html from "remark-html";
 import remarkGfm from "remark-gfm";
 
-export default async function markdownToHtml(markdown: string) {
+type MarkdownOptions = {
+  mediaSkeleton?: boolean;
+};
+
+export default async function markdownToHtml(
+  markdown: string,
+  { mediaSkeleton = true }: MarkdownOptions = {},
+) {
   // Pre-process: convert :::grid / :::col-N / :::end to HTML grid layout
   let processed = markdown;
 
@@ -117,12 +124,14 @@ export default async function markdownToHtml(markdown: string) {
   // Render skeleton containers in the initial HTML so slow images have a
   // loading surface before hydration. Preserve intentionally small inline
   // images such as icons and emojis without a wrapper.
-  htmlStr = htmlStr.replace(/<img\b[^>]*>/g, (imageTag) => {
-    const style = imageTag.match(/\sstyle="([^"]*)"/i)?.[1] || "";
-    const styledWidth = style.match(/(?:^|;)\s*width\s*:\s*(\d+(?:\.\d+)?)px/i);
-    if (styledWidth && Number(styledWidth[1]) < 80) return imageTag;
-    return `<span class="media-skeleton-wrapper">${imageTag}</span>`;
-  });
+  if (mediaSkeleton) {
+    htmlStr = htmlStr.replace(/<img\b[^>]*>/g, (imageTag) => {
+      const style = imageTag.match(/\sstyle="([^"]*)"/i)?.[1] || "";
+      const styledWidth = style.match(/(?:^|;)\s*width\s*:\s*(\d+(?:\.\d+)?)px/i);
+      if (styledWidth && Number(styledWidth[1]) < 80) return imageTag;
+      return `<span class="media-skeleton-wrapper">${imageTag}</span>`;
+    });
+  }
 
   // Open external links in a new tab
   htmlStr = htmlStr.replace(

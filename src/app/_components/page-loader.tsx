@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import {
@@ -45,7 +45,6 @@ export function PageLoader({
 
 export function InitialPageLoader() {
   const pathname = usePathname();
-  const router = useRouter();
   const [phase, setPhase] = useState<LoaderPhase | null>(() => {
     if (typeof document === "undefined") return "visible";
     return document.documentElement.hasAttribute(HYDRATED_ATTRIBUTE)
@@ -340,20 +339,11 @@ export function InitialPageLoader() {
         return;
       }
 
-      event.preventDefault();
-      event.stopPropagation();
-
-      const href = `${url.pathname}${url.search}${url.hash}`;
-      const transitionStarted = beginTransition(url.pathname, () => {
-        router.push(href);
-      });
-      if (transitionStarted) {
-        const homePathname = getHomePathname(window.location.pathname);
-        if (homePathname) {
-          markHomeDeparture(homePathname, url.pathname);
-        } else {
-          clearPendingHomeDeparture();
-        }
+      const homePathname = getHomePathname(window.location.pathname);
+      if (homePathname) {
+        markHomeDeparture(homePathname, url.pathname);
+      } else {
+        clearPendingHomeDeparture();
       }
     };
 
@@ -376,8 +366,9 @@ export function InitialPageLoader() {
       beginTransition(targetPathname, navigate);
     };
 
-    // Own regular internal navigation in capture phase: cover the current page
-    // first, then invoke the router ourselves on the following painted frame.
+    // Observe regular internal navigation only for home-return bookkeeping.
+    // Next.js keeps ownership of the click so a visual transition can never
+    // prevent the route change itself.
     document.addEventListener("click", handleDocumentClick, true);
     window.addEventListener("popstate", handleHistoryNavigation);
     window.addEventListener("pageshow", handlePageShow);
@@ -391,7 +382,6 @@ export function InitialPageLoader() {
   }, [
     beginTransition,
     cancelTransition,
-    router,
   ]);
 
   useEffect(() => {

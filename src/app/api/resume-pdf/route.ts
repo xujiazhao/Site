@@ -168,7 +168,9 @@ export async function GET(request: NextRequest) {
   }
 
   // --- Generate PDF ---
-  const htmlContent = await markdownToHtml(resume.content);
+  const htmlContent = await markdownToHtml(resume.content, {
+    mediaSkeleton: false,
+  });
 
   // Convert relative image paths to absolute URLs so Puppeteer can fetch them
   const origin = new URL(request.url).origin;

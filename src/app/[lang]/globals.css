@@ -164,6 +164,23 @@
     --media-overlay-fg: theme('colors.neutral.500');
     --preview-overlay-bg: rgba(0, 0, 0, 0.03);
     --preview-overlay-hover: rgba(0, 0, 0, 0.06);
+    --glass-edge-bright: rgba(255, 255, 255, 0.94);
+    --glass-edge-soft: rgba(255, 255, 255, 0.32);
+    --glass-edge-shade: rgba(23, 23, 23, 0.11);
+    --glass-shadow: rgba(44, 62, 80, 0.18);
+    --glass-outline: rgba(23, 23, 23, 0.1);
+    --glass-inner-shade: rgba(23, 23, 23, 0.065);
+    --glass-inner-haze: rgba(15, 23, 42, 0.04);
+    --glass-near-shadow: rgba(15, 23, 42, 0.13);
+    --glass-ring-opacity: 0.46;
+    --glass-media-ring-opacity: 0.76;
+    --glass-top-highlight: rgba(255, 255, 255, 0.42);
+    --glass-top-highlight-hover: rgba(255, 255, 255, 0.58);
+    --glass-control-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(148, 163, 184, 0.025));
+    --glass-control-fill-hover: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(148, 163, 184, 0.04));
+    --glass-panel-fill: #ffffff;
+    --glass-panel-shadow: rgba(15, 23, 42, 0.22);
+    --glass-header: rgba(255, 255, 255, 0.66);
   }
 
   .dark {
@@ -177,6 +194,23 @@
     --media-overlay-fg: theme('colors.neutral.400');
     --preview-overlay-bg: rgba(255, 255, 255, 0.06);
     --preview-overlay-hover: rgba(255, 255, 255, 0.1);
+    --glass-edge-bright: rgba(255, 255, 255, 0.2);
+    --glass-edge-soft: rgba(255, 255, 255, 0.07);
+    --glass-edge-shade: rgba(0, 0, 0, 0.46);
+    --glass-shadow: rgba(0, 0, 0, 0.46);
+    --glass-outline: rgba(255, 255, 255, 0.07);
+    --glass-inner-shade: rgba(0, 0, 0, 0.18);
+    --glass-inner-haze: rgba(255, 255, 255, 0.03);
+    --glass-near-shadow: rgba(0, 0, 0, 0.52);
+    --glass-ring-opacity: 0.36;
+    --glass-media-ring-opacity: 0.5;
+    --glass-top-highlight: rgba(255, 255, 255, 0.16);
+    --glass-top-highlight-hover: rgba(255, 255, 255, 0.26);
+    --glass-control-fill: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.014));
+    --glass-control-fill-hover: linear-gradient(145deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.022));
+    --glass-panel-fill: #0a0a0a;
+    --glass-panel-shadow: rgba(0, 0, 0, 0.62);
+    --glass-header: rgba(10, 10, 10, 0.62);
   }
 }
 
@@ -246,19 +280,54 @@ body {
 }
 
 .custom-cursor__shape {
+  --custom-cursor-clip: path("M 2 2 C 1.4 2.6 1.6 3.3 1.8 4 L 6.2 20.2 C 6.7 22 9.1 22.2 10.1 20.6 L 13.8 14.8 C 14.1 14.35 14.35 14.1 14.8 13.8 L 20.6 10.1 C 22.2 9.1 22 6.7 20.2 6.2 L 4 1.8 C 3.3 1.6 2.6 1.4 2 2 Z");
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   width: 24px;
   height: 24px;
-  background: #EE9933;
   transform-origin: 0 0;
-  clip-path: path("M 2 2 C 1.4 2.6 1.6 3.3 1.8 4 L 6.2 20.2 C 6.7 22 9.1 22.2 10.1 20.6 L 13.8 14.8 C 14.1 14.35 14.35 14.1 14.8 13.8 L 20.6 10.1 C 22.2 9.1 22 6.7 20.2 6.2 L 4 1.8 C 3.3 1.6 2.6 1.4 2 2 Z");
   transform: translate(0, 0) scale(1);
+  filter: drop-shadow(0 2px 2px rgba(63, 31, 5, 0.26));
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.custom-cursor__rim,
+.custom-cursor__face {
+  position: absolute;
+  inset: 0;
+  clip-path: var(--custom-cursor-clip);
+  will-change: clip-path, transform;
   transition:
     clip-path 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
     transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* WebKit struggles to interpolate two polygon clips at pointer frequency.
+   Keep the lightweight container transform, but switch the contour directly. */
+.custom-cursor[data-safari="true"] .custom-cursor__rim,
+.custom-cursor[data-safari="true"] .custom-cursor__face {
+  will-change: transform;
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.custom-cursor__rim {
+  background: linear-gradient(
+    150deg,
+    #fff0d4 0%,
+    #f8b45e 30%,
+    #e98521 60%,
+    #b85f16 100%
+  );
+}
+
+.custom-cursor__face {
+  background: #ee9933;
+  transform: scale(0.84);
+  transform-origin: center;
 }
 
 .custom-cursor[data-action="true"] .custom-cursor__shape {
@@ -269,6 +338,7 @@ body {
 
 .custom-cursor[data-pressed="true"] .custom-cursor__shape {
   transform: scale(0.78);
+  filter: drop-shadow(0 1px 2px rgba(63, 31, 5, 0.22));
 }
 
 .custom-cursor[data-action="true"][data-pressed="true"] .custom-cursor__shape {
@@ -277,7 +347,9 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .custom-cursor,
-  .custom-cursor__shape {
+  .custom-cursor__shape,
+  .custom-cursor__rim,
+  .custom-cursor__face {
     transition: none;
   }
 
@@ -354,6 +426,214 @@ body {
   z-index: 1;
 }
 
+/* Shared liquid-glass surfaces. The gradients provide a crisp refractive
+   edge while backdrop-filter lets the ambient color fields show through. */
+.liquid-glass-header {
+  border-color: var(--glass-edge-soft);
+  background: var(--glass-header);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 0 var(--glass-edge-soft);
+}
+
+.liquid-glass-control {
+  --liquid-glass-blur: 6px;
+  isolation: isolate;
+  border: 1px solid var(--glass-outline);
+  background: var(--glass-control-fill);
+  -webkit-backdrop-filter: var(--liquid-glass-filter, blur(18px) saturate(160%));
+  backdrop-filter: var(--liquid-glass-filter, blur(18px) saturate(160%));
+  box-shadow:
+    inset 0 1px 0 var(--glass-top-highlight),
+    inset 0 -1px 0 var(--glass-inner-shade),
+    0 1px 3px -1px var(--glass-near-shadow),
+    0 8px 24px -16px var(--glass-shadow);
+}
+
+.liquid-glass-control:not(.fixed):not(.absolute):not(.sticky) {
+  position: relative;
+}
+
+.liquid-glass-control::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: -1px;
+  padding: 1.5px;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 24% 0%, rgba(255, 255, 255, 0.98), transparent 34%),
+    radial-gradient(circle at 78% 100%, rgba(255, 255, 255, 0.58), transparent 38%),
+    conic-gradient(
+      from 215deg,
+      var(--glass-edge-bright),
+      var(--glass-edge-soft) 22%,
+      var(--glass-edge-shade) 43%,
+      var(--glass-edge-soft) 66%,
+      var(--glass-edge-bright) 84%,
+      var(--glass-edge-soft)
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: var(--glass-ring-opacity);
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.liquid-glass-control::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 7px var(--glass-inner-haze);
+}
+
+.liquid-glass-control:hover:not(:disabled) {
+  background: var(--glass-control-fill-hover);
+  box-shadow:
+    inset 0 1px 0 var(--glass-top-highlight-hover),
+    inset 0 -1px 0 var(--glass-inner-shade),
+    0 2px 5px -2px var(--glass-near-shadow),
+    0 12px 28px -16px var(--glass-shadow);
+}
+
+.liquid-glass-control:hover:not(:disabled)::after {
+  opacity: 1;
+  filter:
+    drop-shadow(0 1px 1px var(--glass-near-shadow))
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.42));
+}
+
+.liquid-glass-control--strong {
+  --liquid-glass-blur: 9px;
+  -webkit-backdrop-filter: var(--liquid-glass-filter, blur(20px) saturate(150%));
+  backdrop-filter: var(--liquid-glass-filter, blur(20px) saturate(150%));
+  box-shadow:
+    inset 0 1px 0 var(--glass-top-highlight),
+    inset 0 -1px 0 var(--glass-inner-shade),
+    0 2px 5px -2px var(--glass-near-shadow),
+    0 10px 28px -16px var(--glass-shadow);
+}
+
+.liquid-glass-panel {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--glass-outline);
+  background: var(--glass-panel-fill);
+  box-shadow:
+    inset 0 1px 0 var(--glass-top-highlight),
+    inset 0 -1px 0 var(--glass-inner-shade),
+    0 24px 70px -24px var(--glass-panel-shadow),
+    0 8px 24px -16px var(--glass-near-shadow);
+}
+
+.liquid-glass-panel::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  inset: -1px;
+  padding: 1.5px;
+  pointer-events: none;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 215deg,
+    var(--glass-edge-bright),
+    var(--glass-edge-soft) 22%,
+    var(--glass-edge-shade) 43%,
+    var(--glass-edge-soft) 66%,
+    var(--glass-edge-bright) 84%,
+    var(--glass-edge-soft)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: var(--glass-ring-opacity);
+}
+
+.liquid-glass-media {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  contain: paint;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: linear-gradient(#fff, #fff);
+  box-shadow:
+    0 0 0 1px var(--glass-outline),
+    0 2px 5px -2px var(--glass-near-shadow),
+    0 22px 46px -34px var(--glass-shadow),
+    0 6px 16px -14px var(--glass-shadow);
+}
+
+.liquid-glass-media > img {
+  display: block;
+  border-radius: inherit;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Safari can temporarily drop border-radius clipping while a masked child is
+   promoted for scaling. The glass hover remains; only the zoom is skipped. */
+html.safari-engine .liquid-glass-media > img {
+  transform: none !important;
+}
+
+.liquid-glass-media::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  padding: 1.5px;
+  pointer-events: none;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 215deg,
+    var(--glass-edge-bright),
+    var(--glass-edge-soft) 20%,
+    var(--glass-edge-shade) 43%,
+    var(--glass-edge-soft) 65%,
+    var(--glass-edge-bright) 84%,
+    var(--glass-edge-soft)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: var(--glass-media-ring-opacity);
+  transition: opacity 240ms ease, filter 240ms ease;
+}
+
+.liquid-glass-media::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(circle at 22% -8%, rgba(255, 255, 255, 0.26), transparent 42%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.liquid-glass-media:hover::after {
+  opacity: 1;
+  filter:
+    drop-shadow(0 1px 1px var(--glass-near-shadow))
+    drop-shadow(0 0 7px rgba(255, 255, 255, 0.28));
+}
+
+.liquid-glass-media:hover::before {
+  opacity: 1;
+}
+
 .dark .ambient-backdrop {
   opacity: 0.62;
   background:
@@ -400,11 +680,6 @@ body {
 a,
 button {
   -webkit-tap-highlight-color: transparent;
-}
-
-html.page-route-transitioning a,
-html.page-route-transitioning button {
-  pointer-events: none;
 }
 
 /* Theme changes are animated as one page-level layer. Prevent nested hover and
@@ -720,6 +995,7 @@ html[data-language-transition-running] [data-language-transition-floating] {
   position: fixed;
   inset: 3.5rem 0 0;
   z-index: 60;
+  pointer-events: none;
   opacity: 1;
   will-change: opacity;
   transition: opacity 100ms linear;

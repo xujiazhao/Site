@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 const ARROW_SOURCE = "/assets/cursor/cursor-arrow.svg";
 const DOT_SOURCE = "/assets/cursor/cursor-dot.svg";
-const OUTLINE_POINTS = 48;
+const OUTLINE_POINTS = 24;
 const SVG_NAMESPACE = "http://www.w3.org/2000/svg";
 
 type CursorPoint = { x: number; y: number };
@@ -131,18 +131,26 @@ export function CustomCursor() {
 
     const root = document.documentElement;
     const controller = new AbortController();
+    const isSafari = /^((?!chrome|chromium|crios|android|edg|opr).)*safari/i.test(
+      navigator.userAgent,
+    );
     let pulseTimer: number | undefined;
     let arrowPolygon: string | null = null;
     let dotPolygon: string | null = null;
+    let actionState = false;
+    let hiddenState = false;
+    cursor.dataset.safari = String(isSafari);
     root.classList.add("custom-cursor-enabled");
+    root.classList.toggle("safari-engine", isSafari);
 
     void loadCursorPolygons(controller.signal)
       .then((polygons) => {
         arrowPolygon = polygons.arrow;
         dotPolygon = polygons.dot;
-        shape.style.clipPath = cursor.dataset.action === "true"
-          ? dotPolygon
-          : arrowPolygon;
+        shape.style.setProperty(
+          "--custom-cursor-clip",
+          cursor.dataset.action === "true" ? dotPolygon : arrowPolygon,
+        );
       })
       .catch(() => {
         // Keep the CSS fallback if the editable source is temporarily invalid.
@@ -151,10 +159,20 @@ export function CustomCursor() {
     const updateTarget = (target: EventTarget | null) => {
       if (!(target instanceof Element)) return;
       const isAction = Boolean(target.closest(ACTION_SELECTOR));
-      cursor.dataset.hidden = String(Boolean(target.closest(TEXT_SELECTOR)));
+      const isHidden = Boolean(target.closest(TEXT_SELECTOR));
+
+      if (hiddenState !== isHidden) {
+        hiddenState = isHidden;
+        cursor.dataset.hidden = String(isHidden);
+      }
+
+      if (actionState === isAction) return;
+      actionState = isAction;
       cursor.dataset.action = String(isAction);
       const nextPolygon = isAction ? dotPolygon : arrowPolygon;
-      if (nextPolygon) shape.style.clipPath = nextPolygon;
+      if (nextPolygon) {
+        shape.style.setProperty("--custom-cursor-clip", nextPolygon);
+      }
     };
 
     const handleMove = (event: PointerEvent) => {
@@ -199,6 +217,7 @@ export function CustomCursor() {
       window.removeEventListener("pointerdown", handleDown);
       window.removeEventListener("pointerup", handleUp);
       window.removeEventListener("blur", handleLeave);
+      root.classList.remove("safari-engine");
     };
   }, []);
 
@@ -209,10 +228,14 @@ export function CustomCursor() {
       data-action="false"
       data-hidden="false"
       data-pressed="false"
+      data-safari="false"
       data-visible="false"
       aria-hidden="true"
     >
-      <span ref={shapeRef} className="custom-cursor__shape" />
+      <span ref={shapeRef} className="custom-cursor__shape">
+        <span className="custom-cursor__rim" />
+        <span className="custom-cursor__face" />
+      </span>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { GeistSans } from "geist/font/sans";
 import "@fontsource-variable/noto-sans-sc/wght.css";
 import { CustomCursor } from "./_components/custom-cursor";
+import { LiquidGlassRuntime } from "./_components/liquid-glass-runtime";
 import "./[lang]/globals.css";
 
 const THEME_INIT_SCRIPT = `
@@ -44,6 +45,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white font-sans text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
         <CustomCursor />
+        <LiquidGlassRuntime />
         <div className="ambient-backdrop" aria-hidden="true" />
         <div className="site-content-layer">{children}</div>
       </body>
