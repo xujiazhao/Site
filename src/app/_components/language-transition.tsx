@@ -101,12 +101,21 @@ async function fadeInCommittedLanguage(language: string) {
   });
   root.removeAttribute(TARGET_ATTRIBUTE);
 
-  await animateLanguageOpacity({
+  const completed = await animateLanguageOpacity({
     from: 0,
     to: 1,
     duration: ENTER_DURATION,
     easeOut: true,
   });
+
+  if (
+    completed &&
+    root.getAttribute(ACTIVE_LANGUAGE_ATTRIBUTE) === language &&
+    !root.hasAttribute(TARGET_ATTRIBUTE)
+  ) {
+    root.removeAttribute(ACTIVE_LANGUAGE_ATTRIBUTE);
+    root.style.removeProperty(OPACITY_PROPERTY);
+  }
 }
 
 export async function fadeOutLanguageContent(targetLanguage: string) {
@@ -152,8 +161,8 @@ export function cancelLanguageTransition() {
   cancelActiveOpacityAnimation();
   root.removeAttribute(TARGET_ATTRIBUTE);
   root.removeAttribute(RUNNING_ATTRIBUTE);
-  root.setAttribute(ACTIVE_LANGUAGE_ATTRIBUTE, root.lang);
-  root.style.setProperty(OPACITY_PROPERTY, "1");
+  root.removeAttribute(ACTIVE_LANGUAGE_ATTRIBUTE);
+  root.style.removeProperty(OPACITY_PROPERTY);
   getTransitionTargets().forEach((target) => {
     target.getAnimations().forEach((animation) => animation.cancel());
     target.removeAttribute("data-language-transition-managed");
