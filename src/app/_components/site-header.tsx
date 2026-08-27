@@ -159,7 +159,7 @@ export function SiteHeader({ lang }: Props) {
             <Link
               href={targetPath}
               onClick={handleLanguageSwitch}
-              className="liquid-glass-control relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl p-[3px]"
+              className="language-switch-control liquid-glass-control relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl p-[3px]"
               role="switch"
               aria-checked={displayedLanguage === "en"}
               aria-label={isEn ? "切换到中文" : "Switch to English"}

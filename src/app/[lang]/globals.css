@@ -492,6 +492,13 @@ body {
   box-shadow: inset 0 0 7px var(--glass-inner-haze);
 }
 
+/* The language route replaces content while the pointer can remain over this
+   control. Apply the inherited hover/active rim immediately during that swap
+   so its edge transition does not replay as a brief flash. */
+html[data-language-transition-running] .language-switch-control::after {
+  transition: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .liquid-glass-control:hover:not(:disabled) {
     background: var(--glass-control-fill-hover);

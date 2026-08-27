@@ -175,14 +175,34 @@ export function CustomCursor() {
       }
     };
 
+    const hideCursor = () => {
+      cursor.dataset.visible = "false";
+      cursor.dataset.pressed = "false";
+    };
     const handleMove = (event: PointerEvent) => {
+      // Safari can omit pointerleave when the pointer crosses from the page
+      // into browser chrome. Its last pointermove lands exactly on a viewport
+      // edge, so do not leave the custom cursor parked at that coordinate.
+      const isAtViewportEdge =
+        event.clientX <= 0 ||
+        event.clientY <= 0 ||
+        event.clientX >= window.innerWidth - 1 ||
+        event.clientY >= window.innerHeight - 1;
+      if (isAtViewportEdge) {
+        hideCursor();
+        return;
+      }
+
       cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
       cursor.dataset.visible = "true";
       updateTarget(event.target);
     };
     const handleOver = (event: PointerEvent) => updateTarget(event.target);
-    const handleLeave = () => {
-      cursor.dataset.visible = "false";
+    const handleViewportExit = (event: PointerEvent | MouseEvent) => {
+      if (event.relatedTarget === null) hideCursor();
+    };
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== "visible") hideCursor();
     };
     const handleDown = (event: PointerEvent) => {
       cursor.dataset.pressed = "true";
@@ -203,20 +223,26 @@ export function CustomCursor() {
 
     window.addEventListener("pointermove", handleMove, { passive: true });
     document.addEventListener("pointerover", handleOver, { passive: true });
-    document.addEventListener("pointerleave", handleLeave);
+    document.addEventListener("pointerleave", hideCursor);
+    document.addEventListener("pointerout", handleViewportExit);
     window.addEventListener("pointerdown", handleDown, { passive: true });
     window.addEventListener("pointerup", handleUp, { passive: true });
-    window.addEventListener("blur", handleLeave);
+    window.addEventListener("blur", hideCursor);
+    window.addEventListener("pagehide", hideCursor);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       controller.abort();
       window.clearTimeout(pulseTimer);
       window.removeEventListener("pointermove", handleMove);
       document.removeEventListener("pointerover", handleOver);
-      document.removeEventListener("pointerleave", handleLeave);
+      document.removeEventListener("pointerleave", hideCursor);
+      document.removeEventListener("pointerout", handleViewportExit);
       window.removeEventListener("pointerdown", handleDown);
       window.removeEventListener("pointerup", handleUp);
-      window.removeEventListener("blur", handleLeave);
+      window.removeEventListener("blur", hideCursor);
+      window.removeEventListener("pagehide", hideCursor);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       root.classList.remove("safari-engine");
     };
   }, []);
