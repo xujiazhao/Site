@@ -755,6 +755,13 @@ html[data-language-transition-target="zh"] [data-language-transition-floating][d
   animation: language-content-in 300ms cubic-bezier(0, 0, 0.2, 1) both;
 }
 
+/* Once the shared language timeline has revealed a newly streamed layer,
+   releasing the document-level state must not restart its base entrance
+   animation and produce a second flash. */
+[data-language-transition-managed] {
+  animation: none !important;
+}
+
 /* After the first client-side language switch, opacity progress lives on the
    document. Keep the main route layer on `opacity`: unlike `filter`, it does
    not turn the layer into a containing block for fixed descendants. That is

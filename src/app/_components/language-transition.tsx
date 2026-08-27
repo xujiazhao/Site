@@ -113,6 +113,9 @@ async function fadeInCommittedLanguage(language: string) {
     root.getAttribute(ACTIVE_LANGUAGE_ATTRIBUTE) === language &&
     !root.hasAttribute(TARGET_ATTRIBUTE)
   ) {
+    targets.forEach((target) => {
+      target.setAttribute("data-language-transition-managed", "");
+    });
     root.removeAttribute(ACTIVE_LANGUAGE_ATTRIBUTE);
     root.style.removeProperty(OPACITY_PROPERTY);
   }
@@ -165,7 +168,7 @@ export function cancelLanguageTransition() {
   root.style.removeProperty(OPACITY_PROPERTY);
   getTransitionTargets().forEach((target) => {
     target.getAnimations().forEach((animation) => animation.cancel());
-    target.removeAttribute("data-language-transition-managed");
+    target.setAttribute("data-language-transition-managed", "");
     target.style.removeProperty("opacity");
   });
 }

@@ -184,7 +184,14 @@ export function InitialPageLoader() {
         return;
       }
 
-      fadeInCurrentPage();
+      // A full reload already runs the route layer's CSS entrance animation.
+      // Only client-side navigations need this explicit page reveal; replaying
+      // it during hydration makes the page briefly disappear and fade in twice.
+      if (isTransitioningRef.current) {
+        fadeInCurrentPage();
+      } else {
+        restorePageContent();
+      }
       setPhase((current) => (current ? "exiting" : current));
       removeTimerRef.current = window.setTimeout(() => {
         if (transitionId !== transitionIdRef.current) return;
