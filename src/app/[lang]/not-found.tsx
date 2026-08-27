@@ -1,10 +1,12 @@
+"use client";
+
 import { NotFoundContent } from "@/app/_components/not-found-content";
 import { getLanguage } from "@/lib/i18n";
-import { headers } from "next/headers";
+import { usePathname } from "next/navigation";
 
-export default async function LocalizedNotFound() {
-  const requestHeaders = await headers();
-  const lang = getLanguage(requestHeaders.get("x-site-language") || "");
+export default function LocalizedNotFound() {
+  const pathname = usePathname();
+  const lang = getLanguage(pathname.split("/")[1]);
 
   return <NotFoundContent lang={lang} hasFooter />;
 }
