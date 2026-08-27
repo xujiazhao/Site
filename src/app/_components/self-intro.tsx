@@ -1,11 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { PiXBold } from "react-icons/pi";
-import { navigateWithPageLoader } from "./navigation-transition";
 
 type Props = {
   lang: string;
@@ -26,8 +24,6 @@ const CONTACT_ACTION_CLASS =
 
 export function SelfIntro({ lang }: Props) {
   const isEn = lang === "en";
-  const router = useRouter();
-  const resumePath = `/${lang}/resume`;
 
   // Desktop QR modal
   const [qrMounted, setQrMounted] = useState(false);
@@ -132,27 +128,7 @@ export function SelfIntro({ lang }: Props) {
           )}
         </div>
         <div className="grid grid-cols-4 md:inline-flex md:flex-nowrap gap-3 text-sm">
-          <Link
-            href={resumePath}
-            className={CONTACT_ACTION_CLASS}
-            onClick={(event) => {
-              if (
-                event.button !== 0 ||
-                event.metaKey ||
-                event.ctrlKey ||
-                event.shiftKey ||
-                event.altKey
-              ) {
-                return;
-              }
-
-              event.preventDefault();
-              navigateWithPageLoader({
-                targetPathname: resumePath,
-                navigate: () => router.push(resumePath),
-              });
-            }}
-          >
+          <Link href={`/${lang}/resume`} className={CONTACT_ACTION_CLASS}>
             {isEn ? "Resume" : "简历"}
           </Link>
           <a

@@ -41,6 +41,14 @@ function getSavedTheme(): Theme {
     : "light";
 }
 
+function usesWebKitRenderingEngine() {
+  const userAgent = navigator.userAgent;
+  return (
+    /AppleWebKit/i.test(userAgent) &&
+    !/(Chrome|Chromium|Edg|OPR|Android)/i.test(userAgent)
+  );
+}
+
 function finishRotatingTitleAnimation() {
   document
     .querySelectorAll<HTMLElement>("[data-rotating-title-letter]")
@@ -134,8 +142,19 @@ export function ThemeToggle({ lang }: Props) {
     };
     const viewTransitionDocument = document as ViewTransitionDocument;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const usesWebKit = usesWebKitRenderingEngine();
     finishRotatingTitleAnimation();
     isSwitchingRef.current = true;
+
+    // Animating the whole body forces WebKit to repaint every translucent and
+    // backdrop-filtered surface on each frame. Commit the palette directly in
+    // Safari/iOS instead; the toggle icon keeps its lightweight CSS motion.
+    if (usesWebKit && !reduceMotion) {
+      commitTheme();
+      isSwitchingRef.current = false;
+      return;
+    }
+
     root.classList.add(SWITCHING_CLASS);
 
     if (reduceMotion) {

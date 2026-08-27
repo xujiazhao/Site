@@ -1033,8 +1033,8 @@ html[data-language-transition-running] [data-language-transition-floating] {
   }
 }
 
-/* Page loading transition. The site's fixed ambient background remains visible
-   throughout; only page content and the centered indicator cross-fade. */
+/* Client-side navigation transition. Hard refreshes render content directly;
+   the centered indicator appears only when a route takes long enough to load. */
 .page-loader-overlay,
 .page-loader-route {
   display: grid;
@@ -1056,7 +1056,7 @@ html[data-language-transition-running] [data-language-transition-floating] {
   pointer-events: none;
   opacity: 1;
   will-change: opacity;
-  transition: opacity 100ms linear;
+  transition: opacity 120ms linear;
 }
 
 .page-loader-overlay[data-page-loader-phase="entering"] {
@@ -1089,7 +1089,7 @@ html[data-language-transition-running] [data-language-transition-floating] {
   border-top-color: #ee9933;
   border-radius: 9999px;
   animation: page-loader-spin 700ms linear infinite;
-  transition: opacity 100ms linear;
+  transition: opacity 120ms linear;
 }
 
 .page-loader-overlay[data-page-loader-phase="entering"] .page-loader-spinner {

@@ -5,7 +5,7 @@ import { SiteHeader } from "@/app/_components/site-header";
 import { ChatWidget } from "@/app/_components/chat-widget";
 import { DocumentLanguage } from "@/app/_components/document-language";
 import { LanguageTransition } from "@/app/_components/language-transition";
-import { InitialPageLoader } from "@/app/_components/page-loader";
+import { NavigationTransitionController } from "@/app/_components/page-loader";
 import { getLanguage, LANGUAGES } from "@/lib/i18n";
 
 export async function generateMetadata({
@@ -78,7 +78,7 @@ export default async function RootLayout({
     <>
       <DocumentLanguage lang={lang} />
       <SiteHeader lang={lang} />
-      <InitialPageLoader />
+      <NavigationTransitionController />
       <LanguageTransition lang={lang}>
         <div className="min-h-screen pt-14">
           {children}

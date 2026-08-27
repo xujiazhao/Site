@@ -2,7 +2,6 @@
 
 import { useLayoutEffect } from "react";
 import { readHomeScrollPosition } from "./home-return-history";
-import { fadeInAfterHomeReturn } from "./home-return-transition";
 
 type Props = {
   homePathname: string;
@@ -11,7 +10,6 @@ type Props = {
 export function HomeViewStateRestorer({ homePathname }: Props) {
   useLayoutEffect(() => {
     const scrollPosition = readHomeScrollPosition(homePathname);
-    fadeInAfterHomeReturn();
     if (scrollPosition === null) return;
 
     window.scrollTo({ top: scrollPosition, behavior: "auto" });

@@ -11,7 +11,7 @@ import {
   canReturnToHomeHistory,
   syncHomeReturnHistoryState,
 } from "./home-return-history";
-import { fadeOutForHomeReturn } from "./home-return-transition";
+import { navigateWithPageLoader } from "./navigation-transition";
 import { ThemeToggle } from "./theme-toggle";
 
 type Props = {
@@ -131,13 +131,15 @@ export function SiteHeader({ lang }: Props) {
               pathname,
               homePath,
             );
-            void fadeOutForHomeReturn().then((shouldReturn) => {
-              if (!shouldReturn) return;
-              if (returnThroughHistory) {
-                window.history.back();
-              } else {
-                router.push(homePath);
-              }
+            navigateWithPageLoader({
+              targetPathname: homePath,
+              navigate: () => {
+                if (returnThroughHistory) {
+                  window.history.back();
+                } else {
+                  router.push(homePath);
+                }
+              },
             });
           }}
           className="flex cursor-pointer items-center gap-2 text-base font-medium tracking-tight hover:opacity-70"

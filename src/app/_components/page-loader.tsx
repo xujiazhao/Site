@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import {
@@ -20,9 +20,10 @@ type PageLoaderProps = {
   phase?: LoaderPhase;
 };
 
-const MIN_VISIBLE_DURATION = 100;
-const EXIT_DURATION = 100;
-const PAGE_EXIT_DURATION = 100;
+const LOADER_DELAY = 240;
+const MIN_VISIBLE_DURATION = 160;
+const EXIT_DURATION = 120;
+const PAGE_EXIT_DURATION = 160;
 const ROUTE_TIMEOUT = 6000;
 const HYDRATED_ATTRIBUTE = "data-site-hydrated";
 const TRANSITIONING_CLASS = "page-route-transitioning";
@@ -31,32 +32,32 @@ export function PageLoader({
   overlay = false,
   phase = "visible",
 }: PageLoaderProps) {
+  const announcesLoading = !overlay || phase === "visible";
+
   return (
     <div
       className={overlay ? "page-loader-overlay" : "page-loader-route"}
       data-page-loader-phase={overlay ? phase : undefined}
-      role="status"
-      aria-label="Loading"
+      role={announcesLoading ? "status" : undefined}
+      aria-label={announcesLoading ? "Loading" : undefined}
+      aria-hidden={announcesLoading ? undefined : true}
     >
       <span className="page-loader-spinner" aria-hidden="true" />
     </div>
   );
 }
 
-export function InitialPageLoader() {
+export function NavigationTransitionController() {
   const pathname = usePathname();
-  const [phase, setPhase] = useState<LoaderPhase | null>(() => {
-    if (typeof document === "undefined") return "visible";
-    return document.documentElement.hasAttribute(HYDRATED_ATTRIBUTE)
-      ? null
-      : "visible";
-  });
+  const router = useRouter();
+  const [phase, setPhase] = useState<LoaderPhase | null>(null);
   const previousPathnameRef = useRef(pathname);
-  const hasInitialLoaderRef = useRef(phase !== null);
   const targetPathnameRef = useRef<string | null>(null);
   const shownAtRef = useRef(0);
+  const loaderVisibleRef = useRef(false);
   const animationFrameRef = useRef<number | undefined>(undefined);
   const routeReadyFrameRef = useRef<number | undefined>(undefined);
+  const loaderDelayTimerRef = useRef<number | undefined>(undefined);
   const exitTimerRef = useRef<number | undefined>(undefined);
   const removeTimerRef = useRef<number | undefined>(undefined);
   const fallbackTimerRef = useRef<number | undefined>(undefined);
@@ -72,6 +73,9 @@ export function InitialPageLoader() {
     if (routeReadyFrameRef.current !== undefined) {
       window.cancelAnimationFrame(routeReadyFrameRef.current);
     }
+    if (loaderDelayTimerRef.current !== undefined) {
+      window.clearTimeout(loaderDelayTimerRef.current);
+    }
     if (exitTimerRef.current !== undefined) {
       window.clearTimeout(exitTimerRef.current);
     }
@@ -84,6 +88,7 @@ export function InitialPageLoader() {
 
     animationFrameRef.current = undefined;
     routeReadyFrameRef.current = undefined;
+    loaderDelayTimerRef.current = undefined;
     exitTimerRef.current = undefined;
     removeTimerRef.current = undefined;
     fallbackTimerRef.current = undefined;
@@ -159,10 +164,18 @@ export function InitialPageLoader() {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    const elapsed = performance.now() - shownAtRef.current;
-    const delay = reduceMotion
+    const loaderWasVisible = loaderVisibleRef.current;
+    const delay = reduceMotion || !loaderWasVisible
       ? 0
-      : Math.max(0, MIN_VISIBLE_DURATION - elapsed);
+      : Math.max(
+          0,
+          MIN_VISIBLE_DURATION - (performance.now() - shownAtRef.current),
+        );
+
+    if (loaderDelayTimerRef.current !== undefined) {
+      window.clearTimeout(loaderDelayTimerRef.current);
+      loaderDelayTimerRef.current = undefined;
+    }
 
     if (fallbackTimerRef.current !== undefined) {
       window.clearTimeout(fallbackTimerRef.current);
@@ -179,27 +192,22 @@ export function InitialPageLoader() {
         restorePageContent();
         setPhase(null);
         targetPathnameRef.current = null;
+        loaderVisibleRef.current = false;
         isTransitioningRef.current = false;
         document.documentElement.classList.remove(TRANSITIONING_CLASS);
         return;
       }
 
-      // A full reload already runs the route layer's CSS entrance animation.
-      // Only client-side navigations need this explicit page reveal; replaying
-      // it during hydration makes the page briefly disappear and fade in twice.
-      if (isTransitioningRef.current) {
-        fadeInCurrentPage();
-      } else {
-        restorePageContent();
-      }
-      setPhase((current) => (current ? "exiting" : current));
+      fadeInCurrentPage();
+      setPhase(loaderWasVisible ? "exiting" : null);
       removeTimerRef.current = window.setTimeout(() => {
         if (transitionId !== transitionIdRef.current) return;
         setPhase(null);
         targetPathnameRef.current = null;
+        loaderVisibleRef.current = false;
         isTransitioningRef.current = false;
         document.documentElement.classList.remove(TRANSITIONING_CLASS);
-      }, EXIT_DURATION);
+      }, Math.max(EXIT_DURATION, PAGE_EXIT_DURATION));
     }, delay);
   }, [fadeInCurrentPage, restorePageContent]);
 
@@ -248,6 +256,7 @@ export function InitialPageLoader() {
       clearTransitionTimers();
       document.documentElement.classList.add(TRANSITIONING_CLASS);
       targetPathnameRef.current = targetPathname;
+      loaderVisibleRef.current = false;
       void fadeOutCurrentPage().then(() => {
         if (
           !isMountedRef.current ||
@@ -257,16 +266,25 @@ export function InitialPageLoader() {
           return;
         }
 
-        shownAtRef.current = performance.now();
         flushSync(() => setPhase("entering"));
+
+        loaderDelayTimerRef.current = window.setTimeout(() => {
+          if (
+            transitionId !== transitionIdRef.current ||
+            !isTransitioningRef.current
+          ) {
+            return;
+          }
+
+          loaderVisibleRef.current = true;
+          shownAtRef.current = performance.now();
+          setPhase("visible");
+          loaderDelayTimerRef.current = undefined;
+        }, LOADER_DELAY);
 
         animationFrameRef.current = window.requestAnimationFrame(() => {
           if (transitionId !== transitionIdRef.current) return;
-          setPhase("visible");
-          animationFrameRef.current = window.requestAnimationFrame(() => {
-            if (transitionId !== transitionIdRef.current) return;
-            navigate?.();
-          });
+          navigate?.();
         });
 
         fallbackTimerRef.current = window.setTimeout(() => {
@@ -283,6 +301,7 @@ export function InitialPageLoader() {
     clearTransitionTimers();
     restorePageContent();
     targetPathnameRef.current = null;
+    loaderVisibleRef.current = false;
     isTransitioningRef.current = false;
     flushSync(() => setPhase(null));
     document.documentElement.classList.remove(TRANSITIONING_CLASS);
@@ -291,17 +310,6 @@ export function InitialPageLoader() {
   useEffect(() => {
     isMountedRef.current = true;
     document.documentElement.setAttribute(HYDRATED_ATTRIBUTE, "");
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    shownAtRef.current = performance.now();
-
-    if (!hasInitialLoaderRef.current || reduceMotion) {
-      setPhase(null);
-    } else {
-      document.documentElement.classList.add(TRANSITIONING_CLASS);
-      hideWhenRouteIsReady();
-    }
 
     return () => {
       isMountedRef.current = false;
@@ -311,7 +319,7 @@ export function InitialPageLoader() {
       restorePageContent();
       document.documentElement.classList.remove(TRANSITIONING_CLASS);
     };
-  }, [clearTransitionTimers, hideWhenRouteIsReady, restorePageContent]);
+  }, [clearTransitionTimers, restorePageContent]);
 
   useEffect(() => {
     const handleDocumentClick = (event: MouseEvent) => {
@@ -341,10 +349,20 @@ export function InitialPageLoader() {
       const url = new URL(anchor.href, window.location.href);
       if (
         url.origin !== window.location.origin ||
-        url.pathname === window.location.pathname
+        (
+          url.pathname === window.location.pathname &&
+          url.search === window.location.search
+        )
       ) {
         return;
       }
+
+      event.preventDefault();
+      const href = `${url.pathname}${url.search}${url.hash}`;
+      const transitionStarted = beginTransition(url.pathname, () => {
+        router.push(href);
+      });
+      if (!transitionStarted) return;
 
       const homePathname = getHomePathname(window.location.pathname);
       if (homePathname) {
@@ -355,6 +373,8 @@ export function InitialPageLoader() {
     };
 
     const handleHistoryNavigation = () => {
+      if (isTransitioningRef.current) return;
+
       // History traversal already restores the cached route and its scroll
       // position. A site loader here would briefly cover content that the
       // browser has already painted, so always cancel any in-flight overlay.
@@ -362,7 +382,7 @@ export function InitialPageLoader() {
     };
 
     const handlePageShow = (event: PageTransitionEvent) => {
-      if (!event.persisted) return;
+      if (!event.persisted || isTransitioningRef.current) return;
       cancelTransition();
     };
 
@@ -373,9 +393,10 @@ export function InitialPageLoader() {
       beginTransition(targetPathname, navigate);
     };
 
-    // Observe regular internal navigation only for home-return bookkeeping.
-    // Next.js keeps ownership of the click so a visual transition can never
-    // prevent the route change itself.
+    // Regular same-origin links share one navigation timeline. Preventing the
+    // native/Next click here lets the current page finish fading out before
+    // the router commits the destination, while component click handlers still
+    // receive the event because propagation is left intact.
     document.addEventListener("click", handleDocumentClick, true);
     window.addEventListener("popstate", handleHistoryNavigation);
     window.addEventListener("pageshow", handlePageShow);
@@ -389,6 +410,7 @@ export function InitialPageLoader() {
   }, [
     beginTransition,
     cancelTransition,
+    router,
   ]);
 
   useEffect(() => {
