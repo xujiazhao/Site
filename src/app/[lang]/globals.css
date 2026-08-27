@@ -756,11 +756,18 @@ html[data-language-transition-target="zh"] [data-language-transition-floating][d
 }
 
 /* After the first client-side language switch, opacity progress lives on the
-   document. `filter` composes with each component's own opacity state, and a
-   streamed React node replacement inherits the same progress without a flash. */
+   document. Keep the main route layer on `opacity`: unlike `filter`, it does
+   not turn the layer into a containing block for fixed descendants. That is
+   important for the resume frame in iOS Safari after a language switch. */
 html[data-language-transition-language="en"] [data-language-transition-layer][data-language="en"],
+html[data-language-transition-language="zh"] [data-language-transition-layer][data-language="zh"] {
+  opacity: var(--language-transition-opacity, 1);
+  animation: none !important;
+}
+
+/* Floating controls can own opacity states of their own, so compose their
+   language transition with a filter instead. They contain no fixed layout. */
 html[data-language-transition-language="en"] [data-language-transition-floating][data-language="en"],
-html[data-language-transition-language="zh"] [data-language-transition-layer][data-language="zh"],
 html[data-language-transition-language="zh"] [data-language-transition-floating][data-language="zh"] {
   filter: opacity(var(--language-transition-opacity, 1));
   animation: none !important;

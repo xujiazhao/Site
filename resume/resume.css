@@ -92,6 +92,7 @@ body:has(.resume-page) > footer {
 /* Download button */
 .resume-download-btn {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 36px;
@@ -210,6 +211,10 @@ body:has(.resume-page) > footer {
   }
   .resume-toolbar {
     top: 56px;
+  }
+
+  .resume-download-hint {
+    display: none;
   }
 }
 
