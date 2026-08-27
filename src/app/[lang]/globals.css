@@ -492,20 +492,40 @@ body {
   box-shadow: inset 0 0 7px var(--glass-inner-haze);
 }
 
-.liquid-glass-control:hover:not(:disabled) {
-  background: var(--glass-control-fill-hover);
-  box-shadow:
-    inset 0 1px 0 var(--glass-top-highlight-hover),
-    inset 0 -1px 0 var(--glass-inner-shade),
-    0 2px 5px -2px var(--glass-near-shadow),
-    0 12px 28px -16px var(--glass-shadow);
+@media (hover: hover) and (pointer: fine) {
+  .liquid-glass-control:hover:not(:disabled) {
+    background: var(--glass-control-fill-hover);
+    box-shadow:
+      inset 0 1px 0 var(--glass-top-highlight-hover),
+      inset 0 -1px 0 var(--glass-inner-shade),
+      0 2px 5px -2px var(--glass-near-shadow),
+      0 12px 28px -16px var(--glass-shadow);
+  }
+
+  .liquid-glass-control:hover:not(:disabled)::after {
+    opacity: 1;
+    filter:
+      drop-shadow(0 1px 1px var(--glass-near-shadow))
+      drop-shadow(0 0 5px rgba(255, 255, 255, 0.42));
+  }
 }
 
-.liquid-glass-control:hover:not(:disabled)::after {
-  opacity: 1;
-  filter:
-    drop-shadow(0 1px 1px var(--glass-near-shadow))
-    drop-shadow(0 0 5px rgba(255, 255, 255, 0.42));
+@media (hover: none), (pointer: coarse) {
+  .liquid-glass-control:active:not(:disabled) {
+    background: var(--glass-control-fill-hover);
+    box-shadow:
+      inset 0 1px 0 var(--glass-top-highlight-hover),
+      inset 0 -1px 0 var(--glass-inner-shade),
+      0 2px 5px -2px var(--glass-near-shadow),
+      0 12px 28px -16px var(--glass-shadow);
+  }
+
+  .liquid-glass-control:active:not(:disabled)::after {
+    opacity: 1;
+    filter:
+      drop-shadow(0 1px 1px var(--glass-near-shadow))
+      drop-shadow(0 0 5px rgba(255, 255, 255, 0.42));
+  }
 }
 
 .liquid-glass-control--strong {
@@ -623,15 +643,32 @@ html.safari-engine .liquid-glass-media > img {
   transition: opacity 240ms ease;
 }
 
-.liquid-glass-media:hover::after {
-  opacity: 1;
-  filter:
-    drop-shadow(0 1px 1px var(--glass-near-shadow))
-    drop-shadow(0 0 7px rgba(255, 255, 255, 0.28));
+@media (hover: hover) and (pointer: fine) {
+  .liquid-glass-media:hover::after {
+    opacity: 1;
+    filter:
+      drop-shadow(0 1px 1px var(--glass-near-shadow))
+      drop-shadow(0 0 7px rgba(255, 255, 255, 0.28));
+  }
+
+  .liquid-glass-media:hover::before {
+    opacity: 1;
+  }
 }
 
-.liquid-glass-media:hover::before {
-  opacity: 1;
+@media (hover: none), (pointer: coarse) {
+  .liquid-glass-media:active::after,
+  .group:active .liquid-glass-media::after {
+    opacity: 1;
+    filter:
+      drop-shadow(0 1px 1px var(--glass-near-shadow))
+      drop-shadow(0 0 7px rgba(255, 255, 255, 0.28));
+  }
+
+  .liquid-glass-media:active::before,
+  .group:active .liquid-glass-media::before {
+    opacity: 1;
+  }
 }
 
 .dark .ambient-backdrop {

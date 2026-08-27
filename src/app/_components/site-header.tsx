@@ -26,19 +26,38 @@ export function SiteHeader({ lang }: Props) {
   const homePath = `/${lang}`;
 
   // Build the target path for language toggle
-  const targetPath = pathname.replace(`/${lang}`, `/${targetLang}`) || `/${targetLang}`;
+  const targetPath = pathname.replace(
+    /^\/(?:en|zh)(?=\/|$)/,
+    `/${targetLang}`,
+  ) || `/${targetLang}`;
 
   const languageSwitchingRef = useRef(false);
-  const [sliderLanguage, setSliderLanguage] = useState(lang);
+  const pendingLanguageRef = useRef<string | null>(null);
+  const fallbackTimerRef = useRef<number | undefined>(undefined);
+  const [pendingLanguage, setPendingLanguage] = useState<string | null>(null);
+  const displayedLanguage = pendingLanguage ?? lang;
 
   useEffect(() => {
     router.prefetch(targetPath);
   }, [router, targetPath]);
 
   useEffect(() => {
+    if (pendingLanguageRef.current !== lang) return;
+
+    if (fallbackTimerRef.current !== undefined) {
+      window.clearTimeout(fallbackTimerRef.current);
+      fallbackTimerRef.current = undefined;
+    }
+    pendingLanguageRef.current = null;
     languageSwitchingRef.current = false;
-    setSliderLanguage(lang);
+    setPendingLanguage(null);
   }, [lang]);
+
+  useEffect(() => () => {
+    if (fallbackTimerRef.current !== undefined) {
+      window.clearTimeout(fallbackTimerRef.current);
+    }
+  }, []);
 
   useEffect(() => {
     syncHomeReturnHistoryState(pathname);
@@ -60,25 +79,29 @@ export function SiteHeader({ lang }: Props) {
     event.preventDefault();
     if (languageSwitchingRef.current) return;
     languageSwitchingRef.current = true;
-    setSliderLanguage(targetLang);
+    pendingLanguageRef.current = targetLang;
+    setPendingLanguage(targetLang);
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!reduceMotion) await fadeOutLanguageContent(targetLang);
     router.replace(targetPath, { scroll: false });
 
-    window.setTimeout(() => {
-      const targetContent = document.querySelector(
-        `[data-page-language="${targetLang}"]`,
-      );
-      if (
-        document.documentElement.lang !== targetLang ||
-        !targetContent
-      ) {
-        cancelLanguageTransition();
-        languageSwitchingRef.current = false;
-        setSliderLanguage(lang);
-      }
-    }, 2500);
+    if (fallbackTimerRef.current !== undefined) {
+      window.clearTimeout(fallbackTimerRef.current);
+    }
+    fallbackTimerRef.current = window.setTimeout(() => {
+      const routeLanguage = window.location.pathname.split("/")[1];
+      const navigationCommitted =
+        routeLanguage === targetLang ||
+        document.documentElement.lang === targetLang;
+      if (navigationCommitted) return;
+
+      cancelLanguageTransition();
+      pendingLanguageRef.current = null;
+      languageSwitchingRef.current = false;
+      setPendingLanguage(null);
+      fallbackTimerRef.current = undefined;
+    }, 8000);
   };
 
   return (
@@ -138,17 +161,17 @@ export function SiteHeader({ lang }: Props) {
               onClick={handleLanguageSwitch}
               className="liquid-glass-control relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl p-[3px]"
               role="switch"
-              aria-checked={isEn}
+              aria-checked={displayedLanguage === "en"}
               aria-label={isEn ? "切换到中文" : "Switch to English"}
             >
               <span
                 className="absolute left-[3px] h-[28px] w-[40px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
-                style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: sliderLanguage === 'en' ? 'translateX(0)' : 'translateX(40px)' }}
+                style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: displayedLanguage === 'en' ? 'translateX(0)' : 'translateX(40px)' }}
               />
-              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${sliderLanguage === 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
+              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${displayedLanguage === 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
                 EN
               </span>
-              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${sliderLanguage !== 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
+              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${displayedLanguage !== 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
                 中
               </span>
             </Link>

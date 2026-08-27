@@ -91,7 +91,7 @@ export function SelfIntro({ lang }: Props) {
         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8 mb-2">
           {isEn ? "Jiazhao Xu" : "许嘉昭"}
         </h1>
-        <p className="text-2xl md:text-3xl tracking-tight mb-8" style={{ color: '#EE9933' }}>
+        <p className="mb-8 whitespace-nowrap text-[clamp(0.875rem,4.5vw,1.5rem)] tracking-tight md:text-3xl" style={{ color: '#EE9933' }}>
           {prefixText}
           <span className="inline-block" key={titleAnimationKey}>
             {currentTitle.split("").map((char, index) => (
