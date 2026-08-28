@@ -656,7 +656,7 @@ export function PersonalGlobeOverlay({ lang, places, routes }: Props) {
           })),
           arcs: journeyArcs,
           arcColor: ROUTE_LIGHT_BLUE,
-          arcWidth: compact ? 0.11 : 0.16,
+          arcWidth: compact ? 0.9 : 0.16,
           arcHeight: 0.1,
           context: {
             alpha: true,
