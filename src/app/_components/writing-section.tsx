@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Post } from "@/interfaces/post";
 import DateFormatter from "@/app/_components/date-formatter";
-import { PiCaretDownBold, PiCaretUpBold } from "react-icons/pi";
+import { ExpandableToggleButton } from "./expandable-toggle-button";
 import { useExpandableGrid } from "./use-expandable-grid";
 
 type Props = {
@@ -72,17 +72,14 @@ export function WritingSection({ writings, lang, isEn }: Props) {
       {extra.length > 0 && (
         <>
           <div className="flex justify-center mt-6">
-            <button
+            <ExpandableToggleButton
               onClick={toggle}
               disabled={isAnimating}
-              aria-expanded={expanded}
-              className="liquid-glass-control flex items-center gap-1.5 rounded-full px-4 py-2 text-base text-neutral-500 transition-[color,background-color,box-shadow] duration-300 hover:text-neutral-800 disabled:cursor-default dark:text-neutral-300 dark:hover:text-neutral-100"
-            >
-              {expanded
+              expanded={expanded}
+              label={expanded
                 ? (isEn ? "Show less" : "收起")
                 : (isEn ? `View ${extra.length} more` : `查看更多 ${extra.length} 篇`)}
-              {expanded ? <PiCaretUpBold className="w-4 h-4" style={{ position: 'relative', top: '1px' }} /> : <PiCaretDownBold className="w-4 h-4" style={{ position: 'relative', top: '1px' }} />}
-            </button>
+            />
           </div>
         </>
       )}

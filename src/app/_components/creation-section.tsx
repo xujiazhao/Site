@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { Post } from "@/interfaces/post";
-import { PiCaretDownBold, PiCaretUpBold } from "react-icons/pi";
 import { CoverImage } from "./cover-image";
+import { ExpandableToggleButton } from "./expandable-toggle-button";
 import { useExpandableGrid } from "./use-expandable-grid";
 
 type Props = {
@@ -90,17 +90,14 @@ export function CreationSection({ creations, lang, isEn }: Props) {
       </div>
       {archive.length > 0 && (
         <div className="flex justify-center mt-6">
-          <button
+          <ExpandableToggleButton
             onClick={handleToggle}
             disabled={isAnimating}
-            aria-expanded={showArchive}
-            className="liquid-glass-control flex items-center gap-1.5 rounded-full px-4 py-2 text-base text-neutral-500 transition-[color,background-color,box-shadow] duration-300 hover:text-neutral-800 disabled:cursor-default dark:text-neutral-300 dark:hover:text-neutral-100"
-          >
-            {showArchive
+            expanded={showArchive}
+            label={showArchive
               ? (isEn ? "Hide earlier works" : "收起早期作品")
               : (isEn ? `View ${archive.length} earlier works` : `查看 ${archive.length} 个早期作品`)}
-            {showArchive ? <PiCaretUpBold className="w-4 h-4" style={{ position: 'relative', top: '1px' }} /> : <PiCaretDownBold className="w-4 h-4" style={{ position: 'relative', top: '1px' }} />}
-          </button>
+          />
         </div>
       )}
     </section>

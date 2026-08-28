@@ -739,6 +739,21 @@ html.theme-switching *::after {
   to { opacity: 1; }
 }
 
+@keyframes expandable-toggle-label-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expandable-toggle-label {
+  animation: expandable-toggle-label-in 180ms ease-out both;
+}
+
 /* A language route can commit its layout before its page payload. Keep only
    the incoming language hidden until the page confirms that its translated
    content is mounted, so stale copy can never participate in the fade-in. */
@@ -796,6 +811,10 @@ html[data-language-transition-running] [data-language-transition-floating] {
 @media (prefers-reduced-motion: reduce) {
   .animate-language-content-in,
   .animate-chat-trigger-in {
+    animation: none;
+  }
+
+  .expandable-toggle-label {
     animation: none;
   }
 
