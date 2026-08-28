@@ -119,6 +119,8 @@ const TEXT_SELECTOR = [
   'input[type="number"]',
 ].join(",");
 
+const ARROW_SELECTOR = '[data-cursor="arrow"]';
+
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const shapeRef = useRef<HTMLSpanElement>(null);
@@ -158,7 +160,8 @@ export function CustomCursor() {
 
     const updateTarget = (target: EventTarget | null) => {
       if (!(target instanceof Element)) return;
-      const isAction = Boolean(target.closest(ACTION_SELECTOR));
+      const isAction = !target.closest(ARROW_SELECTOR)
+        && Boolean(target.closest(ACTION_SELECTOR));
       const isHidden = Boolean(target.closest(TEXT_SELECTOR));
 
       if (hiddenState !== isHidden) {
@@ -207,7 +210,11 @@ export function CustomCursor() {
     const handleDown = (event: PointerEvent) => {
       cursor.dataset.pressed = "true";
       const target = event.target;
-      if (!(target instanceof Element) || !target.closest(ACTION_SELECTOR)) return;
+      if (
+        !(target instanceof Element)
+        || target.closest(ARROW_SELECTOR)
+        || !target.closest(ACTION_SELECTOR)
+      ) return;
 
       window.clearTimeout(pulseTimer);
       cursor.classList.remove("custom-cursor--pulsing");

@@ -123,6 +123,7 @@ async function fadeInCommittedLanguage(language: string) {
 
 export async function fadeOutLanguageContent(targetLanguage: string) {
   if (prefersReducedMotion()) return false;
+  if (document.querySelector(".personal-globe-page")) return false;
 
   const targets = getTransitionTargets();
   if (targets.length === 0) return false;
@@ -182,6 +183,7 @@ export function LanguageTransition({
 }) {
   const pathname = usePathname();
   const layerRef = useRef<HTMLDivElement>(null);
+  const containsAtlas = /^\/(?:en|zh)\/atlas\/?$/.test(pathname);
 
   useLayoutEffect(() => {
     const root = document.documentElement;
@@ -240,7 +242,7 @@ export function LanguageTransition({
       ref={layerRef}
       data-language-transition-layer
       data-language={lang}
-      className="animate-language-content-in"
+      className={containsAtlas ? undefined : "animate-language-content-in"}
     >
       {children}
     </div>

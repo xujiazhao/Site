@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { PiCaretDownBold } from "react-icons/pi";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 type Props = {
   expanded: boolean;
@@ -49,7 +49,7 @@ export function ExpandableToggleButton({
           {label}
         </span>
       </span>
-      <PiCaretDownBold
+      <RiArrowDownSLine
         aria-hidden="true"
         className={`relative top-px h-4 w-4 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${
           expanded ? "rotate-180" : "rotate-0"

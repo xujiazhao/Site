@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
-import { PiXBold, PiPaperPlaneRightFill, PiChatCircleDots } from "react-icons/pi";
+import { RiChatSmile3Line, RiCloseLine, RiSendPlane2Line } from "react-icons/ri";
 import { ChatMessageContent } from "./chat-message-content";
 
 type Message = {
@@ -213,7 +213,7 @@ export function ChatWidget({ lang }: Props) {
           style={{ transitionDuration: "300ms" }}
           aria-label="Open chat"
         >
-          <PiChatCircleDots className="w-5 h-5" />
+          <RiChatSmile3Line className="w-5 h-5" />
           <span className="text-base font-medium">
             {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
           </span>
@@ -250,7 +250,7 @@ export function ChatWidget({ lang }: Props) {
               {/* Header */}
               <div className="flex flex-shrink-0 items-center justify-between p-4">
                 <div className="flex items-center gap-2">
-                  <PiChatCircleDots className="h-5 w-5 text-neutral-800 dark:text-neutral-100" />
+                  <RiChatSmile3Line className="h-5 w-5 text-neutral-800 dark:text-neutral-100" />
                   <span className="text-base font-semibold text-neutral-800 dark:text-neutral-100">
                     {isEn ? "Chat with Jiazhao" : "和嘉昭聊聊"}
                   </span>
@@ -259,7 +259,7 @@ export function ChatWidget({ lang }: Props) {
                   onClick={() => setIsOpen(false)}
                   className="flex h-8 w-8 items-center justify-center rounded-lg text-neutral-400 transition-colors hover:bg-neutral-200/50 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                 >
-                  <PiXBold className="w-4 h-4" />
+                  <RiCloseLine className="w-4 h-4" />
                 </button>
               </div>
 
@@ -336,7 +336,7 @@ export function ChatWidget({ lang }: Props) {
                     disabled={!input.trim() || isLoading}
                     className="liquid-glass-control liquid-glass-control--strong flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl text-neutral-900 transition-[background-color,box-shadow] disabled:opacity-30 dark:text-neutral-100"
                   >
-                    <PiPaperPlaneRightFill className="w-4 h-4" />
+                    <RiSendPlane2Line className="w-4 h-4" />
                   </button>
                 </div>
               </div>

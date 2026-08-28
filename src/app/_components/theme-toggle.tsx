@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { PiMoonBold, PiSunBold } from "react-icons/pi";
+import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 type Theme = "light" | "dark";
 
@@ -189,7 +189,7 @@ export function ThemeToggle({ lang }: Props) {
       aria-label={label}
       title={label}
     >
-      <PiSunBold
+      <RiSunLine
         aria-hidden="true"
         className={`absolute h-[18px] w-[18px] ${iconTransition} ${
           theme === null
@@ -199,7 +199,7 @@ export function ThemeToggle({ lang }: Props) {
               : "rotate-0 scale-100 opacity-100"
         }`}
       />
-      <PiMoonBold
+      <RiMoonLine
         aria-hidden="true"
         className={`absolute h-[17px] w-[17px] ${iconTransition} ${
           theme === null

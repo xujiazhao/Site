@@ -14,6 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     });
+    entries.push({
+      url: `${SITE_URL}/${lang}/atlas`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   // Collection pages

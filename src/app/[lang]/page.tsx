@@ -7,7 +7,7 @@ import { CreationSection } from "@/app/_components/creation-section";
 import { WritingSection } from "@/app/_components/writing-section";
 import { CoverImage } from "@/app/_components/cover-image";
 import { HomeViewStateRestorer } from "@/app/_components/home-view-state-restorer";
-import { PiBriefcaseBold } from "react-icons/pi";
+import { RiBriefcaseLine } from "react-icons/ri";
 
 export default async function Index({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -35,7 +35,7 @@ export default async function Index({ params }: { params: Promise<{ lang: string
             experiences={experiences}
             lang={lang}
             isEn={isEn}
-            icon={<PiBriefcaseBold className="w-4 h-4" style={{ position: 'relative', top: '1px' }} />}
+            icon={<RiBriefcaseLine className="w-4 h-4" style={{ position: 'relative', top: '1px' }} />}
           />
         </section>
 

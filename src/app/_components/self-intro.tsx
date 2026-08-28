@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { Tooltip } from "./tooltip";
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { PiXBold } from "react-icons/pi";
+import { RiCloseLine } from "react-icons/ri";
 
 type Props = {
   lang: string;
@@ -137,13 +138,9 @@ export function SelfIntro({ lang }: Props) {
             aria-describedby="email-tooltip"
           >
             {isEn ? "Email" : "邮件"}
-            <span
-              id="email-tooltip"
-              role="tooltip"
-              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-lg bg-neutral-900 px-3 py-1.5 text-xs font-normal text-white opacity-0 shadow-lg transition-[opacity,transform] duration-150 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100 dark:bg-neutral-100 dark:text-neutral-900"
-            >
+            <Tooltip id="email-tooltip">
               hello@xujiazhao.com
-            </span>
+            </Tooltip>
           </a>
           <a href="https://www.linkedin.com/in/xujiazhao/" target="_blank" rel="noopener noreferrer" className={CONTACT_ACTION_CLASS}>
             {isEn ? "LinkedIn" : "领英"}
@@ -178,7 +175,7 @@ export function SelfIntro({ lang }: Props) {
                 onClick={closeQR}
                 className="text-xl leading-none text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-200"
               >
-                <PiXBold />
+                <RiCloseLine />
               </button>
             </div>
             <img
@@ -212,7 +209,7 @@ export function SelfIntro({ lang }: Props) {
                 onClick={closeMobile}
                 className="text-xl leading-none text-neutral-400 transition-colors hover:text-neutral-600 dark:hover:text-neutral-200"
               >
-                <PiXBold />
+                <RiCloseLine />
               </button>
             </div>
             <p className="mb-4 text-center text-base text-neutral-700 dark:text-neutral-300">WeChat ID: <span className="font-semibold">xux-ai</span></p>

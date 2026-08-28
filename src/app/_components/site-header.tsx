@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { RiCloseLine } from "react-icons/ri";
 import {
   cancelLanguageTransition,
   fadeOutLanguageContent,
@@ -13,10 +14,15 @@ import {
 } from "./home-return-history";
 import { navigateWithPageLoader } from "./navigation-transition";
 import { ThemeToggle } from "./theme-toggle";
+import { PersonalGlobeButton } from "./personal-globe-button";
 
 type Props = {
   lang: string;
 };
+
+type HeaderMode = "default" | "atlas";
+
+const ATLAS_LANGUAGE_SWITCH_ATTRIBUTE = "data-atlas-language-switching";
 
 export function SiteHeader({ lang }: Props) {
   const pathname = usePathname();
@@ -24,6 +30,13 @@ export function SiteHeader({ lang }: Props) {
   const isEn = lang === "en";
   const targetLang = isEn ? "zh" : "en";
   const homePath = `/${lang}`;
+  const atlasPath = `/${lang}/atlas`;
+  const isAtlas = pathname === atlasPath || pathname === `${atlasPath}/`;
+  const [headerMode, setHeaderMode] = useState<HeaderMode>(
+    isAtlas ? "atlas" : "default",
+  );
+  const [headerModeVisible, setHeaderModeVisible] = useState(true);
+  const displayAtlas = headerMode === "atlas";
 
   // Build the target path for language toggle
   const targetPath = pathname.replace(
@@ -40,6 +53,19 @@ export function SiteHeader({ lang }: Props) {
   useEffect(() => {
     router.prefetch(targetPath);
   }, [router, targetPath]);
+
+  useEffect(() => {
+    const nextMode: HeaderMode = isAtlas ? "atlas" : "default";
+    if (nextMode === headerMode) return;
+
+    setHeaderModeVisible(false);
+    const swapTimer = window.setTimeout(() => {
+      setHeaderMode(nextMode);
+      requestAnimationFrame(() => setHeaderModeVisible(true));
+    }, 140);
+
+    return () => window.clearTimeout(swapTimer);
+  }, [headerMode, isAtlas]);
 
   useEffect(() => {
     if (pendingLanguageRef.current !== lang) return;
@@ -83,7 +109,13 @@ export function SiteHeader({ lang }: Props) {
     setPendingLanguage(targetLang);
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion) await fadeOutLanguageContent(targetLang);
+    // Fading the entire Atlas layer forces its WebGL canvas, animated backdrop,
+    // and every glass surface into one large offscreen composition. Keep the
+    // lightweight header animation, but switch the route directly.
+    if (!reduceMotion && !isAtlas) await fadeOutLanguageContent(targetLang);
+    if (isAtlas) {
+      document.documentElement.setAttribute(ATLAS_LANGUAGE_SWITCH_ATTRIBUTE, "");
+    }
     router.replace(targetPath, { scroll: false });
 
     if (fallbackTimerRef.current !== undefined) {
@@ -97,12 +129,55 @@ export function SiteHeader({ lang }: Props) {
       if (navigationCommitted) return;
 
       cancelLanguageTransition();
+      document.documentElement.removeAttribute(ATLAS_LANGUAGE_SWITCH_ATTRIBUTE);
       pendingLanguageRef.current = null;
       languageSwitchingRef.current = false;
       setPendingLanguage(null);
       fallbackTimerRef.current = undefined;
     }, 8000);
   };
+
+  const languageSwitchControl = (
+    <div className="flex items-center">
+      <Link
+        href={targetPath}
+        onClick={handleLanguageSwitch}
+        className="language-switch-control liquid-glass-control relative flex h-9 w-[72px] cursor-pointer select-none items-center rounded-xl p-[3px]"
+        role="switch"
+        aria-checked={displayedLanguage === "en"}
+        aria-label={isEn ? "切换到中文" : "Switch to English"}
+      >
+        <span
+          className="absolute left-[3px] h-[28px] w-[32px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
+          style={{
+            top: "calc(50% - 14px)",
+            transition: "transform 200ms ease-in-out",
+            transform: displayedLanguage === "en" ? "translateX(0)" : "translateX(32px)",
+          }}
+        />
+        <span
+          className={`relative z-10 flex-1 text-center text-sm font-medium ${
+            displayedLanguage === "en"
+              ? "text-neutral-900 dark:text-white"
+              : "text-neutral-400 dark:text-neutral-500"
+          }`}
+          style={{ transition: "color 200ms ease-in-out" }}
+        >
+          EN
+        </span>
+        <span
+          className={`relative z-10 flex-1 text-center text-sm font-medium ${
+            displayedLanguage !== "en"
+              ? "text-neutral-900 dark:text-white"
+              : "text-neutral-400 dark:text-neutral-500"
+          }`}
+          style={{ transition: "color 200ms ease-in-out" }}
+        >
+          中
+        </span>
+      </Link>
+    </div>
+  );
 
   return (
     <header className="liquid-glass-header fixed top-0 left-0 right-0 z-50 h-14 border-b">
@@ -154,31 +229,39 @@ export function SiteHeader({ lang }: Props) {
             alt=""
             className="h-5 w-5 transition-[filter] duration-300 ease-out dark:invert"
           />
-          许嘉昭 Jiazhao Xu
+          <span
+            className={`transition-[opacity,transform] duration-[140ms] ease-out ${
+              headerModeVisible ? "translate-y-0 opacity-100" : "-translate-y-0.5 opacity-0"
+            }`}
+          >
+            {displayAtlas ? "My Atlas" : "许嘉昭 Jiazhao Xu"}
+          </span>
         </Link>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center">
-            <Link
-              href={targetPath}
-              onClick={handleLanguageSwitch}
-              className="language-switch-control liquid-glass-control relative flex h-9 w-[72px] cursor-pointer select-none items-center rounded-xl p-[3px]"
-              role="switch"
-              aria-checked={displayedLanguage === "en"}
-              aria-label={isEn ? "切换到中文" : "Switch to English"}
-            >
-              <span
-                className="absolute left-[3px] h-[28px] w-[32px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
-                style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: displayedLanguage === 'en' ? 'translateX(0)' : 'translateX(32px)' }}
-              />
-              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${displayedLanguage === 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
-                EN
-              </span>
-              <span className={`relative z-10 flex-1 text-center text-sm font-medium ${displayedLanguage !== 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
-                中
-              </span>
-            </Link>
-          </div>
-          <ThemeToggle lang={lang} />
+        <div
+          className={`flex items-center gap-2 transition-[opacity,transform] duration-[140ms] ease-out ${
+            headerModeVisible ? "translate-y-0 opacity-100" : "translate-y-0.5 opacity-0"
+          }`}
+        >
+          {displayAtlas ? (
+            <>
+              {languageSwitchControl}
+              <Link
+                href={homePath}
+                scroll={false}
+                className="personal-globe-close liquid-glass-control"
+                aria-label={isEn ? "Close My Atlas" : "关闭 My Atlas"}
+                title={isEn ? "Close" : "关闭"}
+              >
+                <RiCloseLine aria-hidden="true" />
+              </Link>
+            </>
+          ) : (
+            <>
+              <PersonalGlobeButton lang={lang} />
+              {languageSwitchControl}
+              <ThemeToggle lang={lang} />
+            </>
+          )}
         </div>
       </div>
     </header>

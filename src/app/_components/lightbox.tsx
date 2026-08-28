@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { PiXBold } from "react-icons/pi";
+import { RiCloseLine } from "react-icons/ri";
 
 export function Lightbox({ children }: { children: React.ReactNode }) {
   const [src, setSrc] = useState<string | null>(null);
@@ -63,7 +63,7 @@ export function Lightbox({ children }: { children: React.ReactNode }) {
             className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-10"
             aria-label="Close"
           >
-            <PiXBold size={24} />
+            <RiCloseLine size={24} />
           </button>
           <img
             src={src}
