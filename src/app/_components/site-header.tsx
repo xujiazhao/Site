@@ -161,14 +161,14 @@ export function SiteHeader({ lang }: Props) {
             <Link
               href={targetPath}
               onClick={handleLanguageSwitch}
-              className="language-switch-control liquid-glass-control relative flex h-9 w-[88px] cursor-pointer select-none items-center rounded-xl p-[3px]"
+              className="language-switch-control liquid-glass-control relative flex h-9 w-[72px] cursor-pointer select-none items-center rounded-xl p-[3px]"
               role="switch"
               aria-checked={displayedLanguage === "en"}
               aria-label={isEn ? "切换到中文" : "Switch to English"}
             >
               <span
-                className="absolute left-[3px] h-[28px] w-[40px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
-                style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: displayedLanguage === 'en' ? 'translateX(0)' : 'translateX(40px)' }}
+                className="absolute left-[3px] h-[28px] w-[32px] rounded-[8px] bg-neutral-200 dark:bg-neutral-600"
+                style={{ top: 'calc(50% - 14px)', transition: 'transform 200ms ease-in-out', transform: displayedLanguage === 'en' ? 'translateX(0)' : 'translateX(32px)' }}
               />
               <span className={`relative z-10 flex-1 text-center text-sm font-medium ${displayedLanguage === 'en' ? "text-neutral-900 dark:text-white" : "text-neutral-400 dark:text-neutral-500"}`} style={{ transition: 'color 200ms ease-in-out' }}>
                 EN
