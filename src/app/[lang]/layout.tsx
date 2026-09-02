@@ -1,5 +1,13 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, SITE_URL, SITE_DESCRIPTION_EN, SITE_DESCRIPTION_ZH, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import {
+  CMS_NAME,
+  HOME_OG_IMAGE_URL,
+  SITE_DESCRIPTION_EN,
+  SITE_DESCRIPTION_ZH,
+  SITE_NAME_EN,
+  SITE_NAME_ZH,
+  SITE_URL,
+} from "@/lib/constants";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/app/_components/site-header";
 import { ChatWidget } from "@/app/_components/chat-widget";
@@ -16,27 +24,55 @@ export async function generateMetadata({
   const { lang: requestedLanguage } = await params;
   const lang = getLanguage(requestedLanguage);
   const isEn = lang === "en";
-  const title = isEn
-    ? `${CMS_NAME} – Senior AI Experience Design Architect`
-    : "许嘉昭 – 高级 AI 体验设计架构师";
+  const title = isEn ? SITE_NAME_EN : SITE_NAME_ZH;
   const description = isEn ? SITE_DESCRIPTION_EN : SITE_DESCRIPTION_ZH;
+  const keywords = isEn
+    ? [
+        "Full-stack Designer",
+        "Product Designer",
+        "UX Designer",
+        "UI Designer",
+        "AI Product Design",
+        "Product Strategy",
+        "Front-end Development",
+        "Jiazhao Xu",
+        "Microsoft",
+        "Ant International",
+        "ArtCenter College of Design",
+      ]
+    : [
+        "全栈设计师",
+        "产品设计师",
+        "UX 设计师",
+        "UI 设计师",
+        "AI 产品设计",
+        "产品策略",
+        "前端开发",
+        "许嘉昭",
+        "微软",
+        "蚂蚁国际",
+        "艺术中心设计学院",
+      ];
 
   return {
     metadataBase: new URL(SITE_URL),
+    applicationName: title,
     title: {
       default: title,
       template: `%s | ${CMS_NAME}`,
     },
     description,
-    keywords: ["Product Designer", "UX Designer", "AI Experience Design", "Jiazhao Xu", "许嘉昭", "NetEase Games", "网易互娱", "Microsoft", "Ant International", "ArtCenter"],
+    keywords,
     authors: [{ name: CMS_NAME, url: SITE_URL }],
     creator: CMS_NAME,
+    category: "design",
+    manifest: "/favicon/site.webmanifest",
     openGraph: {
       type: "website",
       locale: isEn ? "en_US" : "zh_CN",
       alternateLocale: isEn ? "zh_CN" : "en_US",
       url: `${SITE_URL}/${lang}`,
-      siteName: CMS_NAME,
+      siteName: title,
       title,
       description,
       images: HOME_OG_IMAGE_URL ? [HOME_OG_IMAGE_URL] : [],
@@ -45,10 +81,18 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
+      images: [HOME_OG_IMAGE_URL],
     },
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     alternates: {
       canonical: `${SITE_URL}/${lang}`,

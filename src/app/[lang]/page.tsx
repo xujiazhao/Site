@@ -8,6 +8,13 @@ import { WritingSection } from "@/app/_components/writing-section";
 import { CoverImage } from "@/app/_components/cover-image";
 import { HomeViewStateRestorer } from "@/app/_components/home-view-state-restorer";
 import { RiBriefcaseLine } from "react-icons/ri";
+import {
+  SITE_DESCRIPTION_EN,
+  SITE_DESCRIPTION_ZH,
+  SITE_NAME_EN,
+  SITE_NAME_ZH,
+  SITE_URL,
+} from "@/lib/constants";
 
 export default async function Index({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -21,9 +28,49 @@ export default async function Index({ params }: { params: Promise<{ lang: string
   const creations = getAllItems("creation", lang);
 
   const isEn = lang === "en";
+  const siteName = isEn ? SITE_NAME_EN : SITE_NAME_ZH;
+  const description = isEn ? SITE_DESCRIPTION_EN : SITE_DESCRIPTION_ZH;
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: siteName,
+      alternateName: isEn ? SITE_NAME_ZH : SITE_NAME_EN,
+      description,
+      inLanguage: isEn ? "en" : "zh-CN",
+      publisher: { "@id": `${SITE_URL}/#person` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Jiazhao Xu",
+      alternateName: "许嘉昭",
+      url: SITE_URL,
+      jobTitle: isEn ? "Full-stack Designer" : "全栈设计师",
+      description,
+      sameAs: ["https://www.linkedin.com/in/xujiazhao/"],
+      knowsAbout: isEn
+        ? [
+            "AI product design",
+            "UX/UI design",
+            "product strategy",
+            "front-end development",
+          ]
+        : ["AI 产品设计", "UX/UI 设计", "产品策略", "前端开发"],
+    },
+  ];
 
   return (
     <main data-page-language={lang}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <HomeViewStateRestorer homePathname={`/${lang}`} />
       <Container>
         <SelfIntro lang={lang} />
