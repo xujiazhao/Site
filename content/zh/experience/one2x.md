@@ -4,6 +4,7 @@ dateRange: "2026.9 - 至今"
 intro: "Medeo 产品经理 · AI 视频创作"
 type: "全职"
 area: ["*AI", "*产品管理", "视频创作", "生成式 AI"]
+location: "北京"
 favicon: "/assets/favicon/one2x.svg"
 sorting: 7
 ---

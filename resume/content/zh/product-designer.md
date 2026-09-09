@@ -22,7 +22,7 @@ label: "全栈设计师"
 
 ## 工作经历
 
-### <img src="/assets/favicon/one2x.svg" alt=""> ONE2X – Medeo 产品经理 <span class="resume-meta">2026.09 – 至今</span>
+### <img src="/assets/favicon/one2x.svg" alt=""> ONE2X – Medeo 产品经理 <span class="resume-meta">北京, 2026.09 – 至今</span>
 
 - 担任 Medeo 产品经理。Medeo 是 ONE2X 旗下的 AI 视频创作与编辑产品，支持通过自然语言对话生成和修改视频，面向营销广告、知识讲解与动画短片等创作场景。
 

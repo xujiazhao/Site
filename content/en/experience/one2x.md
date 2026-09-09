@@ -4,6 +4,7 @@ dateRange: "2026.9 - Now"
 intro: "Product Manager for Medeo · AI video creation"
 type: "Full-time"
 area: ["*AI", "*Product Management", "Video Creation", "Generative AI"]
+location: "Beijing"
 favicon: "/assets/favicon/one2x.svg"
 sorting: 7
 ---

@@ -53,6 +53,7 @@ export function NavigationTransitionController() {
   const [phase, setPhase] = useState<LoaderPhase | null>(null);
   const previousPathnameRef = useRef(pathname);
   const targetPathnameRef = useRef<string | null>(null);
+  const scrollToTopPathnameRef = useRef<string | null>(null);
   const shownAtRef = useRef(0);
   const loaderVisibleRef = useRef(false);
   const animationFrameRef = useRef<number | undefined>(undefined);
@@ -231,7 +232,15 @@ export function NavigationTransitionController() {
 
       if (stableFrames >= 2) {
         routeReadyFrameRef.current = undefined;
-        hideLoader(transitionId);
+        // Cached routes can retain the previous page's offset. Reset only
+        // ordinary forward navigation, after the destination replaces loading
+        // content and before it fades in. History and hash links keep their
+        // own scroll restoration behavior.
+        if (scrollToTopPathnameRef.current === window.location.pathname) {
+          scrollToTopPathnameRef.current = null;
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        }
+        if (isTransitioningRef.current) hideLoader(transitionId);
         return;
       }
 
@@ -301,6 +310,7 @@ export function NavigationTransitionController() {
     clearTransitionTimers();
     restorePageContent();
     targetPathnameRef.current = null;
+    scrollToTopPathnameRef.current = null;
     loaderVisibleRef.current = false;
     isTransitioningRef.current = false;
     flushSync(() => setPhase(null));
@@ -360,6 +370,10 @@ export function NavigationTransitionController() {
       event.preventDefault();
       const href = `${url.pathname}${url.search}${url.hash}`;
       const transitionStarted = beginTransition(url.pathname, () => {
+        // Returning home restores its saved view; language switches and other
+        // controlled links also manage their own scroll position.
+        scrollToTopPathnameRef.current =
+          !url.hash && !getHomePathname(url.pathname) ? url.pathname : null;
         router.push(href);
       });
       if (!transitionStarted) return;
@@ -373,6 +387,7 @@ export function NavigationTransitionController() {
     };
 
     const handleHistoryNavigation = () => {
+      scrollToTopPathnameRef.current = null;
       if (isTransitioningRef.current) return;
 
       // History traversal already restores the cached route and its scroll
@@ -416,7 +431,10 @@ export function NavigationTransitionController() {
   useEffect(() => {
     if (previousPathnameRef.current === pathname) return;
     previousPathnameRef.current = pathname;
-    if (!isTransitioningRef.current) return;
+    if (
+      !isTransitioningRef.current &&
+      scrollToTopPathnameRef.current !== pathname
+    ) return;
 
     if (
       targetPathnameRef.current === null ||

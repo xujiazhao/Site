@@ -22,7 +22,7 @@ label: "Full-Stack Designer"
 
 ## Professional Experience
 
-### <img src="/assets/favicon/one2x.svg" alt=""> ONE2X – Product Manager, Medeo <span class="resume-meta">Sep 2026 – Present</span>
+### <img src="/assets/favicon/one2x.svg" alt=""> ONE2X – Product Manager, Medeo <span class="resume-meta">Beijing, Sep 2026 – Present</span>
 
 - Product Manager for Medeo, ONE2X’s AI video creation and editing product. Medeo lets users generate and refine videos through natural-language conversations for marketing ads, educational explainers, and animated shorts.
 
