@@ -19,8 +19,6 @@ import {
 export default async function Index({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const experiences = getAllItems("experience", lang)
-    // Temporarily hide the NetEase Games experience from the homepage.
-    .filter((experience) => experience.slug !== "netease-games")
     .sort((a, b) => (b.sorting || 0) - (a.sorting || 0));
   const projects = getAllItems("project", lang)
     .sort((a, b) => (b.sorting || 0) - (a.sorting || 0));

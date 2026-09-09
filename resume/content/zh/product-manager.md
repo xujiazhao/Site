@@ -22,9 +22,9 @@ label: "产品经理"
 
 ## 工作经历
 
-### <img src="/assets/favicon/netease.webp" alt=""> 网易互娱 – 高级 AI 体验设计架构师 <span class="resume-meta">广东, 2026.06 – 至今</span>
+### <img src="/assets/favicon/one2x.svg" alt=""> ONE2X – Medeo 产品经理 <span class="resume-meta">2026.09 – 至今</span>
 
-- 推动设计工作流的 AI 原生转型，并构建 AI 驱动的游戏体验系统，涵盖智能体交互、内容生成流水线与下一代玩家体验设计。
+- 担任 Medeo 产品经理。Medeo 是 ONE2X 旗下的 AI 视频创作与编辑产品，支持通过自然语言对话生成和修改视频，面向营销广告、知识讲解与动画短片等创作场景。
 
 ### <img src="/assets/favicon/msft.svg" alt=""> 微软 – 产品设计师 > 产品负责人（DRI） <span class="resume-meta">北京, 2023.01 – 2026.06</span>
 

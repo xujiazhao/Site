@@ -16,7 +16,7 @@ export function PostTitle({ children, favicon }: Props) {
           src={favicon}
           alt=""
           className={`ml-4 h-8 w-8 flex-shrink-0 md:h-10 md:w-10 lg:h-12 lg:w-12 ${
-            favicon.includes("/appleicon.") ? "dark:invert" : ""
+            favicon.includes("/appleicon.") || favicon === "/assets/favicon/one2x.svg" ? "dark:invert" : ""
           }`}
         />
       )}

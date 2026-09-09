@@ -1,6 +1,6 @@
 # xujiazhao.com
 
-Personal portfolio site for Jiazhao Xu (许嘉昭) — Senior AI Experience Design Architect at NetEase Games.
+Personal portfolio site for Jiazhao Xu (许嘉昭) — Product Manager for Medeo at ONE2X.
 
 ## Tech Stack
 
